@@ -1,0 +1,12 @@
+#!/usr/bin/perl
+
+open F, $ARGV[0];
+@_ = <F>;
+close F;
+$html = join '', @_;
+$html =~ s|\n| |g;
+$html =~ s|\r||g;
+while ($html =~ /\<span .*?\>\s*(.*?)\s*\</ig)
+  {$l++; $data = $1;
+   $data =~ y| | |s;
+   print "  <rdfs:label>$data<\/rdfs:label>\n" if $l > 7 and $1;}

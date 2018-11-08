@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  MetroRail - Avalon Station
+
+  MetroRail implements the YADS model to describe "Metro Rail"
+  - Los Angeles' underground rail network - as an example of a
+  complex resource association
+-->
+<yads>
+  <nest>
+    <!-- Avalon Station -->
+    <resource>doi:1014/metro/avalon</resource>
+    <property type="type">metro:Station</property>
+    <property type="label">Avalon</property>
+    <collection>
+      <nest>
+        <!-- Application Profile -->
+        <resource>doi:1014/profile.metro</resource>
+        <property type="type">doi:Profile</property>
+        <collection>  
+          <item>
+            <!-- Location -->
+            <collection>
+              <item>
+                <data>11667 S. Avalon Bl., Los Angeles 90067</data>
+                <property type="type">metro:Address</property>
+              </item>
+            </collection>
+          </item>
+          <item>
+            <!-- Line Interchanges -->
+            <collection>
+              <nest>
+                <!-- Line Interchange -->
+                <resource>doi:1014/metro/green_line</resource>
+                <property type="type">metro:LineChange</property>
+                <collection>
+                  <nest>
+                    <!-- Next Stop Back -->
+                    <resource>doi:1014/metro/harbor_freeway</resource>
+                    <property type="type">metro:PrevStation</property>
+                    <collection>
+                      <item>
+                        <data>0</data>
+                        <property type="type">metro:Mins</property>
+                      </item>
+                    </collection>
+                  </nest>
+                  <nest>
+                    <!-- Next Stop -->
+                    <resource>doi:1014/metro/imperial,wilmington,rosa_parks</resource>
+                    <property type="type">metro:NextStation</property>
+                    <collection>
+                      <item>
+                        <data>0</data>
+                        <property type="type">metro:Mins</property>
+                      </item>
+                    </collection>
+                  </nest>
+                </collection>
+              </nest>
+            </collection>
+          </item>
+        </collection>
+      </nest>
+    </collection>
+  </nest>
+</yads>

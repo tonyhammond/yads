@@ -1,0 +1,335 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+
+  Description of URI syntax (from RFC 2396) modelled using YADS.
+
+  Only those productions marked with an asterisk are modelled,
+  ie those with non-terminal elements. This is purely to keep
+  the visualization simpler.
+
+  ==
+
+* URI-reference = [ absoluteURI | relativeURI ] [ "#" fragment ]
+* absoluteURI   = scheme ":" ( hier_part | opaque_part )
+* relativeURI   = ( net_path | abs_path | rel_path ) [ "?" query ]
+
+* hier_part     = ( net_path | abs_path ) [ "?" query ]
+* opaque_part   = uric_no_slash *uric
+
+  uric_no_slash = unreserved | escaped | ";" | "?" | ":" | "@" |
+                  "&" | "=" | "+" | "$" | ","
+
+* net_path      = "//" authority [ abs_path ]
+* abs_path      = "/"  path_segments
+* rel_path      = rel_segment [ abs_path ]
+
+  rel_segment   = 1*( unreserved | escaped |
+                      ";" | "@" | "&" | "=" | "+" | "$" | "," )
+
+  scheme        = alpha *( alpha | digit | "+" | "-" | "." )
+
+* authority     = server | reg_name
+
+  reg_name      = 1*( unreserved | escaped | "$" | "," |
+                      ";" | ":" | "@" | "&" | "=" | "+" )
+
+* server        = [ [ userinfo "@" ] hostport ]
+  userinfo      = *( unreserved | escaped |
+                     ";" | ":" | "&" | "=" | "+" | "$" | "," )
+
+* hostport      = host [ ":" port ]
+* host          = hostname | IPv4address
+* hostname      = *( domainlabel "." ) toplabel [ "." ]
+  domainlabel   = alphanum | alphanum *( alphanum | "-" ) alphanum
+  toplabel      = alpha | alpha *( alphanum | "-" ) alphanum
+  IPv4address   = 1*digit "." 1*digit "." 1*digit "." 1*digit
+  port          = *digit
+
+* path          = [ abs_path | opaque_part ]
+* path_segments = segment *( "/" segment )
+* segment       = *pchar *( ";" param )
+* param         = *pchar
+  pchar         = unreserved | escaped |
+                  ":" | "@" | "&" | "=" | "+" | "$" | ","
+
+* query         = *uric
+
+* fragment      = *uric
+
+  uric          = reserved | unreserved | escaped
+  reserved      = ";" | "/" | "?" | ":" | "@" | "&" | "=" | "+" |
+                  "$" | ","
+  unreserved    = alphanum | mark
+  mark          = "-" | "_" | "." | "!" | "~" | "*" | "'" |
+                  "(" | ")"
+
+  escaped       = "%" hex hex
+  hex           = digit | "A" | "B" | "C" | "D" | "E" | "F" |
+                          "a" | "b" | "c" | "d" | "e" | "f"
+
+  alphanum      = alpha | digit
+  alpha         = lowalpha | upalpha
+
+  lowalpha = "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" |
+             "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" |
+             "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z"
+  upalpha  = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" |
+             "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" |
+             "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z"
+  digit    = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" |
+             "8" | "9"
+
+-->
+<yads>
+<nest>
+<!-- \#1: URI-reference -->
+<data>URI-reference</data>
+<collection order="sequenced">
+
+<item>
+<collection order="choice">
+<nest>
+<!-- \#2: absoluteURI -->
+<data>absoluteURI</data>
+<collection order="sequenced">
+<item>
+<data>scheme</data>
+</item>
+<item>
+<data>%3A</data>
+</item>
+<item>
+<collection order="choice">
+<nest>
+<!-- \#4: hier_part -->
+<data>hier_part</data>
+<collection>
+<item>
+<collection order="choice">
+<nest>
+<!-- \#7: net_path -->
+<data>net_path</data>
+<collection order="sequenced">
+<item>
+<data>%2F%2F</data>
+</item>
+<nest>
+<data>authority</data>
+<!-- \#12: authority -->
+<collection>
+<nest>
+<!-- \#14: server -->
+<data>server</data>
+<collection order="sequenced">
+<item>
+<data>userinfo</data>
+</item>
+<item>
+<data>%40</data>
+</item>
+<nest>
+<!-- \#16: hostport -->
+<data>hostport</data>
+<collection order="sequenced">
+<nest>
+<!-- \#17: host -->
+<data>host</data>
+<collection order="choice">
+<nest>
+<!-- \#18: hostname -->
+<data>hostname</data>
+<collection order="sequenced">
+<item>
+<data>domainlabel</data>
+</item>
+<item>
+<data>.</data>
+</item>
+<item>
+<data>toplabel</data>
+</item>
+<item>
+<data>.</data>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+<nest>
+<data>IPv4address</data>
+<property type="type">bnf:Rule</property>
+</nest>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+<item>
+<data>%3A</data>
+</item>
+<nest>
+<data>port</data>
+<property type="type">bnf:Rule</property>
+</nest>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+<nest>
+<data>reg_name</data>
+<property type="type">bnf:Rule</property>
+</nest>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+
+<nest>
+<!-- \#8: abs_path -->
+<data>abs_path</data>
+<collection order="sequenced">
+<item>
+<data>%2F</data>
+</item>
+<nest>
+<!-- \#24: path_segments -->
+<data>path_segments</data>
+<collection order="sequenced">
+<nest>
+<!-- \#25: segment -->
+<data>segment</data>
+<collection order="sequenced">
+<item>
+<data>pchar</data>
+</item>
+<item>
+<data>%3B</data>
+</item>
+<nest>
+<!-- \#26: param -->
+<data>param</data>
+<collection>
+<item>
+<data>pchar</data>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+<item>
+<data>%2F</data>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+
+</collection>
+</item>
+<item>
+<collection order="sequenced">
+<item>
+<data>%3F</data>
+</item>
+<nest>
+<data>query</data>
+<collection>
+<item>
+<data>uric</data>
+</item>
+</collection>
+</nest>
+</collection>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+<nest>
+<!-- \#5: opaque_part -->
+<data>opaque_part</data>
+<collection order="sequenced">
+<item>
+<data>uric_no_slash</data>
+</item>
+<item>
+<data>uric</data>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+</collection>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+<nest>
+<!-- \#3: relativeURI -->
+<data>relativeURI</data>
+<collection order="sequenced">
+<item>
+<collection order="choice">
+<item>
+<data>net_path</data>
+</item>
+<item>
+<data>abs_path</data>
+</item>
+
+<!-- \#9: rel_path
+<nest>
+<data>rel_path</data>
+<collection order="sequenced">
+<item>
+<data>rel_segment</data>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+-->
+
+</collection>
+</item>
+
+<item>
+<collection order="sequenced">
+<item>
+<data>%3F</data>
+</item>
+<item>
+<data>query</data>
+</item>
+</collection>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+
+</collection>
+</item>
+
+<item>
+<collection order="sequenced">
+<item>
+<data>%23</data>
+</item>
+<nest>
+<data>fragment</data>
+<collection>
+<item>
+<data>uric</data>
+</item>
+</collection>
+</nest>
+</collection>
+</item>
+
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+</yads>

@@ -1,0 +1,14 @@
+open F, 'stats';
+while (<F>) {
+  /"stats\/svg\/(.*?).html">(.*?)</;
+  $s = $1; $S = $2;
+  open S, ">$s.xml"; 
+  open B, "bank.xml";
+  while (<B>) {
+    s/bank/$s/g;
+    s/Bank/$S/g;
+    s/\r//g;
+    print S;
+  }
+  close S;
+}

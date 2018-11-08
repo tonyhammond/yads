@@ -1,0 +1,159 @@
+<html>
+<head>
+<title>yads: hierarchy (2)</title>
+<style type='text/css'>
+<!--
+  body { background-color: white }
+  body { color: black }
+  body { font-family: arial, helvetica, sans-serif }
+  body { font-size: 12pt }
+  h1 { color: slateblue }
+  h1 { font-size: 22pt }
+  h3 { color: slateblue }
+  h1 { font-family: arial, helvetica, sans-serif }
+  p { font-family: arial, helvetica, sans-serif }
+  td { font-family: arial, helvetica, sans-serif }
+  hr { font-family: arial, helvetica, sans-serif }
+-->
+</style>
+</head>
+<body>
+<center>
+<table width=90% border=0>
+<tr>
+<td>
+<table width=100% border=0>
+<tr align=bottom>
+<td align=left valign=bottom>
+<h1><i>yads: Vanilla XML</i></h1>
+The Vanilla XML description constitutes a middle ground between an Application and a Generic description. An RDF Resource is effectively promoted to a YADS <i>Resource</i> (Group or Container) and is qualified by RDF Literal properties.
+<p>
+<center>
+<img src="imx/hierarchy2.gif">
+</center>
+<p>
+Code from the YADS Java client library to build this intermediate description
+is as below.
+<p>
+<center>
+<table width=80% border=1 cellpadding=5 bgcolor=#dddddd>
+<tr>
+<td>
+<pre><code>
+    // Build a simple Resource and attach two Resources
+ 
+    Resource r = new Resource()
+      .addResource(new Resource("http://www.doi.org")
+        .addLabel("IDF")
+        .addDetail("International DOI Foundation.")
+        .addAccess("default")
+      )
+      .addResource(new Resource("http://www.cnri.reston.va.us")
+        .addLabel("CNRI")
+        .addDetail("Corporation for National Research Initiatives.")
+      );
+</code></pre>
+</td>
+</tr>
+</table>
+</center>
+<p>
+Contrast this with the same code to build a Generic description.
+<p>
+<center>
+<table width=80% border=1 cellpadding=5 bgcolor=#dddddd>
+<tr>
+<td>
+<pre><code>
+    // Build a simple Container and attach two Groups
+ 
+    Container c = new Container()
+      .addGroup(new Group()
+        .addMember(DObjectTypes.DOI_TYPE_RESOURCE, "http://www.doi.org")
+        .addMember(DObjectTypes.DOI_TYPE_LABEL, "IDF")
+        .addMember(DObjectTypes.DOI_TYPE_DETAIL, "International DOI Foundation.")
+        .addMember(DObjectTypes.DOI_TYPE_ACCESS, "default")
+      )
+      .addGroup(new Group()
+        .addMember(DObjectTypes.DOI_TYPE_RESOURCE,
+                     "http://www.cnri.reston.va.us")
+        .addMember(DObjectTypes.DOI_TYPE_LABEL, "CNRI")
+        .addMember(DObjectTypes.DOI_TYPE_DETAIL,
+                     "Corporation for National Research Initiatives.")
+      );
+</code></pre>
+</td>
+</tr>
+</table>
+</center>
+<p>
+Note that the intermediate Vanilla XML form can be used "as is" to model
+ a simple menu hierarchy - see descriptions #1 and #2 below which are essentially identical. Also shown is the recovery to a Generic XML description.
+<p>
+<center>
+<table width=80% border=1 cellpadding=5 bgcolor=#dddddd>
+<tr>
+<td>
+<pre><code>
+#1 - Application XML instance: Resources are not typed - just plain data
+
+&lt;data label="Further Info"&gt;
+  &lt;data label="DOI Sites"&gt;
+    &lt;data label="IDF"&gt;http://www.doi.org&lt;/data&gt; 
+    &lt;data label="CNRI"&gt;http://www.cnri.reston.va.us&lt;/data&gt; 
+  &lt;/data&gt;
+&lt;/data&gt;
+
+#2 - Vanilla XML form: Resources are "attributed" with properties (aka types)
+ 
+&lt;Resource label="Further Info"&gt;
+  &lt;Resource label="DOI Sites"&gt;
+    &lt;Resource label="IDF"&gt;http://www.doi.org&lt;/Resource&gt; 
+    &lt;Resource label="CNRI"&gt;http://www.cnri.reston.va.us&lt;/Resource&gt; 
+  &lt;/Resource&gt;
+&lt;/Resource&gt;
+
+#3 - Generic XML: Simple description of DObject
+
+&lt;Group&gt;
+  &lt;Container label="&gt;
+    &lt;Group&gt;
+      &lt;Container label="DOI Sites"&gt;
+        &lt;Group&gt;
+          &lt;Member type="resource"&gt;http://www.doi.org&lt;/Member&gt; 
+          &lt;Member type="label"&gt;IDF&lt;/Member&gt; 
+        &lt;/Group&gt;
+        &lt;Group&gt;
+          &lt;Member type="resource"&gt;http://www.cnri.reston.va.us&lt;/Member&gt; 
+          &lt;Member type="label"&gt;CNRI&lt;/Member&gt; 
+        &lt;/Group&gt;
+      &lt;/Container&gt;
+    &lt;/Group&gt;
+  &lt;/Container&gt;
+&lt;/Group&gt;
+</code></pre>
+</td>
+</tr>
+</table>
+</center>
+<p>
+</td>
+</tr>
+</table>
+<table width=100% border=0>
+<tr>
+<td>
+<hr>
+<a href="mailto:tony_hammond@harcourt.com">Mailto</a>
+<br>
+Copyright &copy; 2001 by
+Academic Press, a Harcourt Science and Technology Company.
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</center>
+</body>
+</html>

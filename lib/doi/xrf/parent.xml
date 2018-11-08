@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   DOI use case: Journal
+
+   Here a journal title is identified and key metadata elements
+   about the title are managed.
+-->
+<doi_data>
+  <doi>10.1006/jmbi</doi>
+  <collection>
+    <item>
+      <resource/>
+      <property type="detail">Resources for Jounal
+      &lt;doi:10.1006/jmbi&gt;</property>
+    </item>
+    <item>
+  <collection>
+    <item>
+      <resource>http://www.idealibrary.com/links/toc/jmbi</resource>
+      <property type="label">J. Mol. Biol.</property>
+      <property type="type">xref:Journal</property>
+      <property type="access">:default</property>
+    </item>
+    <item>
+      <resource>data:Journal of Molecular Biology</resource>
+      <property type="type">xref:JournalTitle</property>
+    </item>
+    <item>
+      <resource>data:J. Mol. Biol.</resource>
+      <property type="type">xref:JournalAbbrev</property>
+    </item>
+    <item>
+      <resource>data:1089-8638</resource>
+      <property type="type">xref:OnlineISSN</property>
+    </item>
+    <item>
+      <resource>data:0022-2836</resource>
+      <property type="type">xref:PrintISSN</property>
+    </item>
+    <item>
+      <resource>data:JMOBAK</resource>
+      <property type="type">xref:Coden</property>
+    </item>
+  </collection>
+    </item>
+  </collection>
+</doi_data>

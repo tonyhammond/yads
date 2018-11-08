@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   DOI use case: Book Review List (Last)
+
+   Here a list of resources is managed. This is the last list member
+   and identifies the previous member in the chain.
+-->
+
+<rdf:RDF xmlns:isa="doi:1014/yads-schema-2002-04-03#" xmlns:has="doi:1014/yads-schema-2002-04-03#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:Description rdf:about="">
+<rdf:type>isa:Nest</rdf:type>
+<!-- Book Review -->
+<has:resource rdf:resource="doi:10.1006/anbo.2001.1476"/>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- DOI Profile -->
+<has:resource rdf:resource="doi:10.0/profile.crossref"/>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- Review -->
+<has:resource rdf:resource="http://www.idealibrary.com/links/doi/10.1006/anbo.2001.1476"/>
+<has:label>Ann. Bot. (2001) 88: p. 520</has:label>
+<has:type>xref:Review</has:type>
+<has:access>:default</has:access>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- Prev Review -->
+<has:resource rdf:resource="doi:10.1006/anbo.2001.1475"/>
+<has:role>doi:preceding_sibling</has:role>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+<has:type>doi:Profile</has:type>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+</rdf:Description>
+</rdf:RDF>

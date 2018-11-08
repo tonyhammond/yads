@@ -1,0 +1,76 @@
+<html>
+<head>
+<link href="../css/yads.css" type=text/css rel=stylesheet>
+<title>YADS: Principles</title>
+</head>
+<body>
+<h1>
+<img src="../imx/rdf_metadata_button.40">
+<i>YADS Model Principles</i></h1>
+<hr>
+In order to support resolution of a DOI to multiple resources we make use
+ of the following principles:
+<dl>
+<dt><b>Resources</b>
+<dd>Resources are either:
+<ul>
+<li>"<i>Literals</i>" (<code>rdf:resource</code>, mapping 1:1) - inline resources identified by URI of
+scheme "data:" (RFC 2397), ie literals are represented as resources.
+<li>"<i>Resources</i>" (<code>rdf:resource</code>, mapping 1:1) - familiar web resources identified by URI; properties: anonymous, maintained by a single organization or enterprise.
+<li>"<i>Meta-Resources</i>" (<code>rdf:resource</code>, mapping 1:N) - resources identified by URI manging resource collections; 
+ properties: named, maintained across a common business sector. A good example of such a resource is a DOI (URI scheme "doi:").
+</ul>
+<dt><b>Hierarchy</b>
+<dd>There is a clear need to organize resources - by grouping, by hierarchy, by ordering.
+<dt><b>Type Primitives</b>
+<dd>Resources are typed against a limited set of primitive data types - see <a href="schema.html">Model Schema</a>
+<dt><b>Resource Map</b>
+<dd>A simple Resource Map construct allows for a resource hierarchy to be reposited in a flat DataStore.
+This Resource Map serves as a simple driver to generate a resource hierarchy serialization, eg an RDF/XML instance.
+<dt><b>Transfer Syntax</b>
+<dd>The DOI resource description is serialized as an XML document. In particular an RDF/XML serialization provides the necessary constraints. This is purely an "under the hood" exchange syntax which is not intended to be exposed to DOI end 
+users, although it does allow for downstream interop with other RDF aware applications.
+The DOI <a href="services.html">Client/Service</a> interop stack is defined for both distributed and 
+localized implementations.
+<dt><b>Neutral Semantics</b>
+<dd>The semantics that are to be exchanged between a DOI client application and a DOI service are primarily structural.
+The client/service transactions are effectively dealing with a type of "Poorboy RDF".
+<dt><b>Late Binding</b>
+<dd>An extensibility type mechanism is provided through the type "<code>has:type</code>". As an example consider how a 
+new eBook format type could be introduced:
+<p>
+<table width=90% border=1 cellpadding=5 bgcolor=#dddddd>
+<tr>
+<td bgcolor="#dddddd">
+<pre><code>
+&lt;rdf:li rdf:parseType="Resource"&gt;
+  &lt;has:resource&gt;data:,Microsoft%20Reader&lt;has:resource&gt;
+  &lt;has:type&gt;ebook:Format&lt;/has:type&gt;
+&lt;/rdf:li&gt;
+</code></pre>
+</td>
+</tr>
+</table>
+<p>
+Application specific semantics are recovered from an Application specific schema which is registered with the 
+DOI Application Profile. This mechanism allows the generic RDF for a DOI to be specialized (or enriched) into an Application specific RDF:
+<p>
+<table width=90% border=1 cellpadding=5 bgcolor=#dddddd>
+<tr>
+<td bgcolor="#dddddd">
+<pre><code>
+&lt;rdf:li rdf:parseType="Resource"&gt;
+  &lt;ebook:Format&gt;Microsoft Reader&lt;/ebook:Format&gt;
+&lt;/rdf:li&gt;
+</code></pre>
+</td>
+</tr>
+</table>
+</dl>
+</td>
+</tr>
+</table>
+<hr>
+Copyright &copy; 2002 Elsevier Science Ltd. All rights reserved. 
+</body>
+</html>

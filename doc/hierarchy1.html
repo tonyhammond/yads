@@ -1,0 +1,155 @@
+<html>
+<head>
+<title>yads: hierarchy (1)</title>
+<style type='text/css'>
+<!--
+  body { background-color: white }
+  body { color: black }
+  body { font-family: arial, helvetica, sans-serif }
+  body { font-size: 12pt }
+  h1 { color: slateblue }
+  h1 { font-size: 22pt }
+  h3 { color: slateblue }
+  h1 { font-family: arial, helvetica, sans-serif }
+  p { font-family: arial, helvetica, sans-serif }
+  td { font-family: arial, helvetica, sans-serif }
+  hr { font-family: arial, helvetica, sans-serif }
+-->
+</style>
+</head>
+<body>
+<center>
+<table width=90% border=0>
+<tr>
+<td>
+<table width=100% border=0>
+<tr align=bottom>
+<td align=left valign=bottom>
+<h1><i>yads: Resource Hierarchy</i></h1>
+A generalized DObject resource hierarchy (see diagram below) is built up from Members which are resources with the general properties "access", "detail", etc. The Members are contained within Groups which are aggregated into Containers which themselves can be Members of a Group. 
+<p>
+<center>
+<img src="imx/hierarchy1.gif">
+</center>
+<p>
+The box below shows how this DObject resource hierarchy is represented in a Generic XML description. This Generic XML description of a DObject can be transformed into an Application XML instance via an intermediate <a href="hierarchy2.html">Vanilla XML</a> form.
+<p>
+<center>
+<table width=80% border=1 cellpadding=5 bgcolor=#dddddd>
+<tr>
+<td>
+<pre><code>
+#1 - Generic XML: Simple description of DObject
+
+&lt;Group&gt;
+  &lt;Container type="tube:line" ordering="unordered"&gt;
+    &lt;Group&gt;
+      &lt;Container type="tube:line-branch" ordering="sequenced"&gt;
+        &lt;Group&gt;
+          &lt;Member type="resource"&gt;doi:1014/tube/waterloo&lt;/Member&gt; 
+          &lt;Member type="type"&gt;tube:station&lt;/Member&gt; 
+          &lt;Member type="access"&gt;Rail Link&lt;/Member&gt; 
+        &lt;/Group&gt;
+        &lt;Group&gt;
+          &lt;Member type="resource"&gt;doi:1014/tube/bank&lt;/Member&gt; 
+          &lt;Member type="type"&gt;tube:station&lt;/Member&gt; 
+        &lt;/Group&gt;
+      &lt;/Container&gt;
+    &lt;/Group&gt;
+  &lt;/Container&gt;
+&lt;/Group&gt;
+
+#2 - Vanilla XML form: Resources are "attributed" with properties (aka types)
+ 
+&lt;Resource type="tube:line" ordering="unordered"&gt;
+  &lt;Resource type="tube:line-branch" ordering="sequenced"&gt;
+    &lt;Resource type="tube:station" access="Rail Link"&gt;doi:1014/tube/waterloo&lt;/Resource&gt; 
+    &lt;Resource type="tube:station"&gt;doi:1014/tube/bank&lt;/Resource&gt; 
+  &lt;/Resource&gt;
+&lt;/Resource&gt;
+
+#3 - Application XML instance: Typed resources are named
+
+&lt;tube:line&gt;
+  &lt;tube:line-branch&gt;
+    &lt;tube:station access="Rail Link"&gt;doi:1014/tube/waterloo&lt;/tube:station&gt; 
+    &lt;tube:station&gt;doi:1014/tube/bank&lt;/tube:station&gt; 
+  &lt;/tube:line-branch&gt;
+&lt;/tube:line&gt;
+</code></pre>
+</td>
+</tr>
+</table>
+</center>
+<p>
+The reverse is also true - Application XML instances can also be transformed into a Generic XML description via an intermediate Vanilla XML form.
+<p>
+<center>
+<table width=80% border=1 cellpadding=5 bgcolor=#dddddd>
+<tr>
+<td>
+<pre><code>
+#1 - Application XML instance: Typed resources are named
+
+&lt;menu:submenu label=""&gt;
+  &lt;menu:submenu label="DOI Sites"&gt;
+    &lt;menu:item label="IDF"&gt;http://www.doi.org&lt;/menu:item&gt; 
+    &lt;menu:item label="CNRI"&gt;http://www.cnri.reston.va.us&lt;/menu:item&gt; 
+  &lt;/menu:submenu&gt;
+&lt;/menu:submenu&gt;
+
+#2 - Vanilla XML form: Resources are "attributed" with properties (aka types)
+ 
+&lt;Resource type="menu:submenu" label="" ordering="sequenced"&gt;
+  &lt;Resource type="menu:submenu" label="DOI Sites" ordering="sequenced"&gt;
+    &lt;Resource type="menu:item" label="IDF"&gt;http://www.doi.org&lt;/Resource&gt; 
+    &lt;Resource type="menu:item" label="CNRI"&gt;http://www.cnri.reston.va.us&lt;/Resource&gt; 
+  &lt;/Resource&gt;
+&lt;/Resource&gt;
+
+#3 - Generic XML: Simple description of DObject
+
+&lt;Group&gt;
+  &lt;Container type="menu:submenu" label="" ordering="sequenced"&gt;
+    &lt;Group&gt;
+      &lt;Container type="menu:submenu" label="DOI Sites" ordering="sequenced"&gt;
+        &lt;Group&gt;
+          &lt;Member type="resource"&gt;http://www.doi.org&lt;/Member&gt; 
+          &lt;Member type="type"&gt;menu:item&lt;/Member&gt; 
+          &lt;Member type="label"&gt;IDF&lt;/Member&gt; 
+        &lt;/Group&gt;
+        &lt;Group&gt;
+          &lt;Member type="resource"&gt;http://www.cnri.reston.va.us&lt;/Member&gt; 
+          &lt;Member type="type"&gt;menu:item&lt;/Member&gt;
+          &lt;Member type="label"&gt;CNRI&lt;/Member&gt; 
+        &lt;/Group&gt;
+      &lt;/Container&gt;
+    &lt;/Group&gt;
+  &lt;/Container&gt;
+&lt;/Group&gt;
+</code></pre>
+</td>
+</tr>
+</table>
+</center>
+<p>
+</td>
+</tr>
+</table>
+<table width=100% border=0>
+<tr>
+<td>
+<hr>
+<a href="mailto:tony_hammond@harcourt.com">Mailto</a>
+<br>
+Copyright &copy; 2001 by
+Academic Press, a Harcourt Science and Technology Company.
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</center>
+</body>
+</html>

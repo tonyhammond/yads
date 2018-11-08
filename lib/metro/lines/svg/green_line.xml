@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  MetroRail - Green Line
+
+  The MetroRail set of resource descriptions is a working
+  demonstration of the YADS model
+-->
+<yads>
+<nest>
+<!-- Green Line -->
+<resource>doi:1014/metro/green_line</resource>
+<collection>
+
+<item>
+<!-- Terminus Stations -->
+<collection>
+<item>
+<resource>doi:1014/metro/marine,redondo</resource>
+<property type="type">metro:Terminus</property>
+</item>
+<item>
+<resource>doi:1014/metro/i-605,i-105</resource>
+<property type="type">metro:Terminus</property>
+</item>
+</collection>
+<property type="detail">Terminus stations.</property>
+</item>
+
+<item>
+<!-- Line Stations -->
+<collection>
+<item>
+<!-- Branch Stations -->
+<collection>
+<item>
+<resource>doi:1014/metro/marine,redondo</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/douglas,rosecrans</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/el_segundo,nash</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/mariposa,nash</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/aviation</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/hawthorne</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/crenshaw</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/vermont</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/harbor_freeway</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/avalon</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/imperial,wilmington,rosa_parks</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/long_beach</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/lakewood</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/i-605,i-105</resource>
+<property type="type">metro:Station</property>
+</item>
+</collection>
+</item>
+</collection>
+<property type="detail">Line stations.</property>
+</item>
+
+<item>
+<!-- Interchange Stations -->
+<collection>
+<nest>
+<resource>doi:1014/metro/blue_line</resource>
+<collection order="choice">
+<item>
+<resource>doi:1014/metro/imperial,wilmington,rosa_parks</resource>
+<property type="type">metro:Interchange</property>
+</item>
+</collection>
+<property type="type">metro:LineChange</property>
+</nest>
+</collection>
+<property type="detail">Interchange stations.</property>
+</item>
+
+</collection>
+<property type="type">metro:Line</property>
+<property type="label">Green Line</property>
+<property type="detail">MetroRail - Green Line.</property>
+</nest>
+</yads>

@@ -1,0 +1,51 @@
+# 
+# 
+#   YADS - Notation3
+# 
+#   This document describes YADS - A Description Service
+#   in an RDF schema using Notation3.
+# 
+#   ==
+# 
+#   // From RDF Schema for YAD
+# 
+#   Resource:     doi:1014/yads-schema-2002-04-03
+#   Comment:      RDF Schema for YADS - A Description Service
+#   Author:       Tony Hammond <tony_hammond@harcourt.com>
+#   Revision:     April 3, 2002 - Tony Hammond
+# 
+#   Copyright (c) 2002 Elsevier Science Ltd. All rights reserved. 
+# 
+#   ==
+# 
+#   @prefix  : <#> .
+#   @prefix s: <http://www.w3.org/2000/01/rdf-schema> .
+#   
+#   # Nest class ( :collection & :resource )
+#   :Nest a s:Class .
+#   # Item class ( :collection | :resource )
+#   :Item a s:Class .
+#   
+#   # Resource properties
+#   :collection a s:Property ;
+#       s:domain :Item, :Nest ; s:range s:Container .
+#   :resource a s:Property ;
+#       s:domain :Item, :Nest ; s:range s:Resource .
+#   
+#   # Literal properties
+#   :access a s:Property ;
+#       s:domain :Item, :Nest ; s:range s:Literal .
+#   :detail a s:Property ;
+#       s:domain :Item, :Nest ; s:range s:Literal .
+#   :directive a s:Property ;
+#       s:domain :Item, :Nest ; s:range s:Literal .
+#   :label a s:Property ;
+#       s:domain :Item, :Nest ; s:range s:Literal .
+#   :role a s:Property ;
+#       s:domain :Item, :Nest ; s:range s:Literal .
+#   :service a s:Property ;
+#       s:domain :Item, :Nest ; s:range s:Literal .
+#   :type a s:Property ;
+#       s:domain :Item, :Nest ; s:range s:Literal .
+# 
+# 

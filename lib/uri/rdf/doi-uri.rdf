@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  Description of URI syntax for a 'doi' URI modelled using YADS.
+
+  ==
+
+  doi-uri        = scheme ":" encoded-doi [ "?" query ] 
+                                          [ "#" fragment ]
+
+  scheme         = "doi" 
+
+  encoded-doi    = prefix "/" suffix 
+  prefix         = segment
+  suffix         = segment *( "/" segment )
+
+  segment        = *pchar
+
+  query          = *( pchar / "/" / "?" )
+  fragment       = *( pchar / "/" / "?" )
+
+  pchar          = unreserved / escaped / ";" /
+                   ":" / "@" / "&" / "=" / "+" / "$" / ","
+
+  unreserved     = ALPHA / DIGIT / mark
+  escaped        = "%" HEXDIG HEXDIG
+  mark           = "-" / "_" / "." / "!" / "~" / "*" / "'" /
+                   "(" / ")"
+
+-->
+
+<rdf:RDF xmlns:isa="doi:1014/yads-schema-2002-04-03#" xmlns:has="doi:1014/yads-schema-2002-04-03#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:Description rdf:about="">
+<rdf:type>isa:Nest</rdf:type>
+<!-- \#1: doi-uri -->
+<has:resource rdf:resource="data:,doi-uri"/>
+<has:collection>
+<rdf:Seq>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- \#2: scheme -->
+<has:resource rdf:resource="data:,scheme"/>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,doi"/>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+<has:type>bnf:Rule</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%3A"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- \#3: encoded-doi -->
+<has:resource rdf:resource="data:,encoded-doi"/>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- \#4: prefix -->
+<has:resource rdf:resource="data:,prefix"/>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- \#6: segment -->
+<has:resource rdf:resource="data:,segment"/>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- \#28: pchar -->
+<has:resource rdf:resource="data:,pchar"/>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- \#29: unreserved -->
+<has:resource rdf:resource="data:,unreserved"/>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,ALPHA"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,DIGIT"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- \#31: mark -->
+<has:resource rdf:resource="data:,mark"/>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,-"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,_"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,."/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%21"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%7E"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%2A"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%27"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%28"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%29"/>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+<has:type>bnf:Rule</has:type>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+<has:type>bnf:Rule</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- \#30: escaped -->
+<has:resource rdf:resource="data:,escaped"/>
+<has:collection>
+<rdf:Seq>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%25"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,HEXDIG"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,HEXDIG"/>
+</rdf:li>
+</rdf:Seq>
+</has:collection>
+<has:type>bnf:Rule</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%3B"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%3A"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%40"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%26"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%3D"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%2B"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%24"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%2C"/>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+<has:type>bnf:Rule</has:type>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+<has:type>bnf:Rule</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- \#5: suffix -->
+<has:resource rdf:resource="data:,suffix"/>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%2F"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,segment"/>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+<has:type>bnf:Rule</has:type>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+<has:type>bnf:Rule</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:collection>
+<rdf:Seq>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%3F"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- \#7: query -->
+<has:resource rdf:resource="data:,query"/>
+<has:collection>
+<rdf:Seq>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,pchar"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%2F"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%3F"/>
+</rdf:li>
+</rdf:Seq>
+</has:collection>
+<has:type>bnf:Rule</has:type>
+</rdf:li>
+</rdf:Seq>
+</has:collection>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:collection>
+<rdf:Seq>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%23"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- \#8: fragment -->
+<has:resource rdf:resource="data:,fragment"/>
+<has:collection>
+<rdf:Seq>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,pchar"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%2F"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%3F"/>
+</rdf:li>
+</rdf:Seq>
+</has:collection>
+<has:type>bnf:Rule</has:type>
+</rdf:li>
+</rdf:Seq>
+</has:collection>
+</rdf:li>
+</rdf:Seq>
+</has:collection>
+<has:type>bnf:Rule</has:type>
+</rdf:Description>
+</rdf:RDF>

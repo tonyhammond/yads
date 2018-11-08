@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  MetroRail - Blue Line
+
+  MetroRail implements the YADS model to describe "Metro Rail"
+  - Los Angeles' underground rail network - as an example of a
+  complex resource association
+-->
+
+<rdf:RDF xmlns:isa="doi:1014/yads-schema-2002-04-03#" xmlns:has="doi:1014/yads-schema-2002-04-03#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:Description rdf:about="">
+<rdf:type>isa:Nest</rdf:type>
+<!-- Blue Line -->
+<has:resource rdf:resource="doi:1014/metro/blue_line"/>
+<has:type>metro:Line</has:type>
+<has:label>Blue Line</has:label>
+<has:detail>MetroRail - Blue Line.</has:detail>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- Application Profile -->
+<has:resource rdf:resource="doi:1014/profile.metro"/>
+<has:type>doi:Profile</has:type>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- Terminus Stations -->
+<has:detail>Terminus stations.</has:detail>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/metro/7th_street,metro_center,julian_dixon"/>
+<has:type>metro:Terminus</has:type>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- Line Stations -->
+<has:detail>Line stations.</has:detail>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- Branch Stations -->
+<has:detail>Branch stations.</has:detail>
+<has:collection>
+<rdf:Seq>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/metro/7th_street,metro_center,julian_dixon"/>
+<has:type>metro:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/metro/pico"/>
+<has:type>metro:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/metro/grand"/>
+<has:type>metro:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/metro/san_pedro"/>
+<has:type>metro:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/metro/washington"/>
+<has:type>metro:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/metro/vernon"/>
+<has:type>metro:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/metro/slauson"/>
+<has:type>metro:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/metro/florence"/>
+<has:type>metro:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/metro/firestone"/>
+<has:type>metro:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/metro/103rd_street,kenneth_hahn"/>
+<has:type>metro:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/metro/imperial,wilmington,rosa_parks"/>
+<has:type>metro:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/metro/compton"/>
+<has:type>metro:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/metro/artesia"/>
+<has:type>metro:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/metro/del_amo"/>
+<has:type>metro:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/metro/wardlow"/>
+<has:type>metro:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/metro/willow"/>
+<has:type>metro:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/metro/pacific_coast_highway"/>
+<has:type>metro:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/metro/anaheim"/>
+<has:type>metro:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/metro/5th_street"/>
+<has:type>metro:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/metro/1st_street"/>
+<has:type>metro:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/metro/transit_mall"/>
+<has:type>metro:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/metro/pacific"/>
+<has:type>metro:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/metro/anaheim"/>
+<has:type>metro:Station</has:type>
+</rdf:li>
+</rdf:Seq>
+</has:collection>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- Interchange Stations -->
+<has:detail>Interchange stations.</has:detail>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<has:resource rdf:resource="doi:1014/metro/red_line"/>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/metro/7th_street,metro_center,julian_dixon"/>
+<has:type>metro:Interchange</has:type>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+<has:type>metro:LineChange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<has:resource rdf:resource="doi:1014/metro/green_line"/>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/metro/imperial,wilmington,rosa_parks"/>
+<has:type>metro:Interchange</has:type>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+<has:type>metro:LineChange</has:type>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+</rdf:Description>
+</rdf:RDF>

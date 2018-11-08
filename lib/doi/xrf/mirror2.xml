@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   DOI use case: Mirror Sites (Issue)
+
+   Here a DLib issue is managed across five mirror sites. The origin
+   site - CNRI - is marked as the default.
+-->
+<doi_data>
+  <doi>10.1045/july2001-contents</doi>
+  <collection>
+    <item>
+      <resource/>
+      <property type="detail">Resources for DLib Issue
+      &lt;doi:10.1045/july2001-contents&gt;</property>
+    </item>
+    <item>
+  <collection order="choice">
+    <item>
+      <resource>http://www.dlib.org/dlib/july01/07contents.html</resource>
+      <property type="type">dlib:Mirror</property>
+      <property type="label">Origin site - USA.</property>
+      <property type="detail">The Corporation for National Research Initiatives, Reston, Virginia, U.S.A.</property>
+      <property type="access">:default</property>
+    </item>
+    <item>
+      <resource>http://mirrored.ukoln.ac.uk/lis-journals/dlib/dlib/dlib/july01/07contents.html</resource>
+      <property type="type">dlib:Mirror</property>
+      <property type="label">Mirror site - UK.</property>
+      <property type="detail">UKOLN: The UK Office for Library and Information Networking, Bath, England</property>
+    </item>
+    <item>
+      <resource>http://sunsite.anu.edu.au/mirrors/dlib/dlib/july01/07contents.html</resource>
+      <property type="type">dlib:Mirror</property>
+      <property type="label">Mirror site - Australia.</property>
+      <property type="detail">The Australian National University Sunsite, Canberra, Australia</property>
+    </item>
+    <item>
+      <resource>http://webdoc.sub.gwdg.de/edoc/aw/d-lib/dlib/july01/07contents.html</resource>
+      <property type="type">dlib:Mirror</property>
+      <property type="label">Mirror site - Germany.</property>
+      <property type="detail">State Library of Lower Saxony and the University Library of Goettingen, Goettingen, Germany</property>
+    </item>
+    <item>
+      <resource>http://www.dlib.org.ar/dlib/july01/07contents.html</resource>
+      <property type="type">dlib:Mirror</property>
+      <property type="label">Mirror site - Argentina.</property>
+      <property type="detail">Universidad de Belgrano, Buenos Aires, Argentina</property>
+    </item>
+  </collection>
+    </item>
+  </collection>
+</doi_data>

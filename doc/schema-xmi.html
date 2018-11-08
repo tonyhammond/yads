@@ -1,0 +1,69 @@
+<html>
+<head>
+<link href="../css/yads.css" type=text/css rel=stylesheet>
+<title>YADS: MOF/XMI Schema</title>
+</head>
+<body>
+<h1>
+<img src="../imx/rdf_metadata_button.40">
+<i>YADS Model Schema - MOF/XMI</i></h1>
+<hr>
+This is the MOF/XMI schema for the YADS model.
+<p>
+<table width=100% border=1 cellpadding=5>
+<tr>
+<td>
+<pre><code>
+  &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+  &lt;!--
+  
+    YADS - MOF/XMI
+  
+    This document describes YADS - A Description Service
+    in MOF XML Metadata Interchange format.
+  
+    Not quite there yet :)
+  
+    ==
+  
+    // From RDF Schema for YADS
+
+    Resource:     doi:1014/yads-schema-2002-04-03
+    Comment:      RDF Schema for YADS - A Description Service
+    Author:       Tony Hammond &lt;tony_hammond@harcourt.com&gt;
+    Revision:     April 3, 2002 - Tony Hammond
+  
+    Copyright (c) 2002 Elsevier Science Ltd. All rights reserved. 
+
+  --&gt;
+  &lt;XMI version="1.1" xmlns:UML="org.omg/UML1.3"&gt;
+  &lt;XMI.header&gt; 
+  &lt;XMI.model name="YADS" href="YADS.xml"/&gt; 
+  &lt;XMI.metamodel name="UML" href="UML.xml"/&gt; 
+  &lt;/XMI.header&gt; 
+  &lt;XMI.content&gt; 
+  &lt;UML:CLass name="YADS" xmi.id="yads"/&gt;
+  &lt;UML:CLass name="Item" xmi.id="item"/&gt;
+  &lt;UML:CLass name="Nest" xmi.id="nest"/&gt;
+  &lt;UML:CLass name="Collection" xmi.id="collection"/&gt;
+  &lt;UML:CLass name="Resource" xmi.id="resource"/&gt;
+  &lt;UML:CLass name="Property" xmi.id="property"/&gt;
+  &lt;UML:Association&gt;
+  &lt;UML:Association.connection&gt;
+  &lt;UML:AssociationEnd name="" type="YADS"/&gt;
+  &lt;UML:AssociationEnd name="" type="Nest"/&gt;
+  &lt;/UML:Association.connection&gt;
+  &lt;/UML:Association&gt;
+  &lt;/XMI.content&gt; 
+  &lt;/XMI&gt;
+</code></pre>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr>
+<a href="mailto:tony_hammond@harcourt.com">Mailto</a>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<nest>
+<!-- \#4: absolute-URI -->
+<data>absolute-URI</data>
+<collection order="sequenced">
+<item>
+<data>scheme</data>
+</item>
+<item>
+<data>%3A</data>
+</item>
+<item>
+<data>hier-part</data>
+</item>
+<item>
+<collection order="sequenced">
+<item>
+<data>%3F</data>
+</item>
+<item>
+<data>query</data>
+</item>
+</collection>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+

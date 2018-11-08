@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   DOI use case: Suppl. Material/Article
+
+   Here an article supplement is linked to the article.
+-->
+
+<rdf:RDF xmlns:isa="doi:1014/yads-schema-2002-04-03#" xmlns:has="doi:1014/yads-schema-2002-04-03#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:Description rdf:about="">
+<rdf:type>isa:Nest</rdf:type>
+<!-- Suppl. Material/Article -->
+<has:resource rdf:resource="doi:10.1006/asle.2000.0016.s001"/>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- DOI Profile -->
+<has:resource rdf:resource="doi:10.0/profile.crossref"/>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- Suppl. Material -->
+<has:resource rdf:resource="http://www.idealibrary.com/links/doi/10.1006/asle.2000.0016/dat/0016s01.ppt"/>
+<has:label>ASL (2000) 1: p. 156</has:label>
+<has:type>xref:Supplement</has:type>
+<has:access>:default</has:access>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- Article -->
+<has:resource rdf:resource="doi:10.1006/asle.2000.0016"/>
+<has:type>xref:Article</has:type>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+<has:type>doi:Profile</has:type>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+</rdf:Description>
+</rdf:RDF>

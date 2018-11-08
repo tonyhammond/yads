@@ -1,0 +1,725 @@
+
+digraph yads { 
+
+
+
+graph [
+
+  fontname=arial, fontsize=24
+
+  label="YADS - A Description Service"
+
+];
+
+node [
+
+  fontname=arial, fontsize=11, fontcolor=black,
+
+  style=filled, color=cornflowerblue,
+
+];
+
+edge [
+
+  fontname=arial, fontsize=11, fontcolor=black,
+
+  style=filled, color=lightblue,
+
+];
+
+rankdir=TB;
+
+
+
+subgraph cluster_1 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Nest - DLib Issue (Mirror Sites and TOC)";
+
+
+
+  ":_1" [label="isa:Nest", color=lightgrey, URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#Nest"];
+
+  ":_1" -> "doi:10.1045/july2001-contents" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+  ":_1" -> ":_2" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_2" [label="rdf:Bag", color=lightgrey];
+
+  "doi:10.1045/july2001-contents" [color=plum, URL="http://dx.doi.org/10.1045/july2001-contents"];
+
+  ":_2" [label="rdf:Bag", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"];
+
+  ":_2" -> ":_3" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_3" [label="isa:Nest"]
+
+
+
+subgraph cluster_3 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Nest - DOI Profile";
+
+
+
+  ":_3" [label="doi:Profile", color=lightgoldenrod];
+
+  ":_3" -> "doi:10.0/profile.dlib" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+  ":_3" -> ":_4" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_4" [label="rdf:Bag", color=lightgrey];
+
+
+
+  "doi:10.0/profile.dlib" [color=plum, URL="http://dx.doi.org/10.0/profile.dlib"];
+
+  ":_4" [label="rdf:Bag", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"];
+
+  ":_4" -> ":_5" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_5" [label="isa:Item"]
+
+  ":_4" -> ":_6" [label="rdf:_2", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2"];
+
+":_6" [label="isa:Item"]
+
+  ":_4" -> ":_24" [label="rdf:_3", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_3"];
+
+":_24" [label="isa:Item"]
+
+
+
+subgraph cluster_5 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item - Description";
+
+
+
+  ":_5" [label="isa:Item", color=lightgrey, URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#Item"];
+
+  ":_5" -> ":" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+  ":_5" -> "node_1" [label="has:detail", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#detail"];
+
+  ":" [color=plum, URL=""];
+
+  "node_1" [shape=box, label="Resources for DLib Article <d...>"];
+
+}
+
+
+
+subgraph cluster_6 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item - TOC";
+
+
+
+  ":_6" [label="isa:Item", color=lightgrey, URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#Item"];
+
+  ":_6" -> ":_7" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_7" [label="rdf:Seq", color=lightgrey];
+
+  ":_6" -> "node_10" [label="has:detail", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#detail"];
+
+  ":_7" [label="rdf:Seq", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"];
+
+  ":_7" -> ":_8" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_8" [label="isa:Item"]
+
+  ":_7" -> ":_12" [label="rdf:_2", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2"];
+
+":_12" [label="isa:Item"]
+
+  ":_7" -> ":_16" [label="rdf:_3", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_3"];
+
+":_16" [label="isa:Item"]
+
+  ":_7" -> ":_20" [label="rdf:_4", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_4"];
+
+":_20" [label="isa:Item"]
+
+
+
+subgraph cluster_8 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_8" [label="isa:Item", color=lightgrey, URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#Item"];
+
+  ":_8" -> ":_9" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_9" [label="rdf:Bag", color=lightgrey];
+
+  ":_9" [label="rdf:Bag", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"];
+
+  ":_9" -> ":_10" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_10" [label="isa:Item"]
+
+  ":_9" -> ":_11" [label="rdf:_2", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2"];
+
+":_11" [label="isa:Item"]
+
+
+
+subgraph cluster_10 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_10" [label="dlib:Title-String", color=lightgoldenrod];
+
+  ":_10" -> "data:,Generalizing%20the%20Op...l" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "data:,Generalizing%20the%20Op...l" [color=plum, URL="data:,Generalizing%20the%20OpenURL%20Framework%20beyond%20References%20to%20Scholarly%20Works:%20The%20Bison-Fute%20Model"];
+
+}
+
+
+
+subgraph cluster_11 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_11" [label="dlib:Author-String", color=lightgoldenrod];
+
+  ":_11" -> "data:,Herbert%20Van%20de%20So...." [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "data:,Herbert%20Van%20de%20So...." [color=plum, URL="data:,Herbert%20Van%20de%20Sompel,%20Cornell%20University%20and%20Oren%20Beit-Arie,%20Ex%20Libris%20(USA)%20Inc."];
+
+}
+
+
+
+}
+
+
+
+subgraph cluster_12 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_12" [label="isa:Item", color=lightgrey, URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#Item"];
+
+  ":_12" -> ":_13" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+  ":_13" [label="rdf:Bag", color=lightgrey];
+
+  ":_13" [label="rdf:Bag", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"];
+
+  ":_13" -> ":_14" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_14" [label="isa:Item"]
+
+  ":_13" -> ":_15" [label="rdf:_2", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2"];
+
+":_15" [label="isa:Item"]
+
+
+
+subgraph cluster_14 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_14" [label="dlib:Title-String", color=lightgoldenrod];
+
+  ":_14" -> "data:,Digital%20Libraries%20a...s" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "data:,Digital%20Libraries%20a...s" [color=plum, URL="data:,Digital%20Libraries%20and%20Education:%20Trends%20and%20Opportunities"];
+
+}
+
+
+
+subgraph cluster_15 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_15" [label="dlib:Author-String", color=lightgoldenrod];
+
+  ":_15" -> "data:,Hans%20Roes,%20Tilburg%...y" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "data:,Hans%20Roes,%20Tilburg%...y" [color=plum, URL="data:,Hans%20Roes,%20Tilburg%20University%20Library"];
+
+}
+
+
+
+}
+
+
+
+subgraph cluster_16 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_16" [label="isa:Item", color=lightgrey, URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#Item"];
+
+  ":_16" -> ":_17" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_17" [label="rdf:Bag", color=lightgrey];
+
+  ":_17" [label="rdf:Bag", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"];
+
+  ":_17" -> ":_18" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_18" [label="isa:Item"]
+
+  ":_17" -> ":_19" [label="rdf:_2", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2"];
+
+":_19" [label="isa:Item"]
+
+
+
+subgraph cluster_18 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_18" [label="dlib:Title-String", color=lightgoldenrod];
+
+  ":_18" -> "data:,E-Books%20and%20Their%2...w" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "data:,E-Books%20and%20Their%2...w" [color=plum, URL="data:,E-Books%20and%20Their%20Future%20in%20Academic%20Libraries:%20An%20Overview"];
+
+}
+
+
+
+subgraph cluster_19 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_19" [label="dlib:Author-String", color=lightgoldenrod];
+
+  ":_19" -> "data:,Lucia%20Snowhill,%20Uni...a" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "data:,Lucia%20Snowhill,%20Uni...a" [color=plum, URL="data:,Lucia%20Snowhill,%20University%20of%20California,%20Santa%20Barbara"];
+
+}
+
+
+
+}
+
+
+
+subgraph cluster_20 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_20" [label="isa:Item", color=lightgrey, URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#Item"];
+
+  ":_20" -> ":_21" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_21" [label="rdf:Bag", color=lightgrey];
+
+  ":_21" [label="rdf:Bag", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"];
+
+  ":_21" -> ":_22" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_22" [label="isa:Item"]
+
+  ":_21" -> ":_23" [label="rdf:_2", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2"];
+
+":_23" [label="isa:Item"]
+
+
+
+subgraph cluster_22 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_22" [label="dlib:Title-String", color=lightgoldenrod];
+
+  ":_22" -> "data:,Penn%20State%20Visual%2...y" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "data:,Penn%20State%20Visual%2...y" [color=plum, URL="data:,Penn%20State%20Visual%20Image%20User%20Study"];
+
+}
+
+
+
+subgraph cluster_23 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_23" [label="dlib:Author-String", color=lightgoldenrod];
+
+  ":_23" -> "data:,Henry%20Pisciotta,%20Ro...y" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "data:,Henry%20Pisciotta,%20Ro...y" [color=plum, URL="data:,Henry%20Pisciotta,%20Roger%20Brisson,%20Eric%20Ferrin,%20Michael%20Dooris,%20and%20Amanda%20Spink,%20Pennsylvania%20State%20University"];
+
+}
+
+
+
+}
+
+
+
+  "node_10" [shape=box, label="Table of Contents for July 20...."];
+
+}
+
+
+
+subgraph cluster_24 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item - Mirror Sites";
+
+
+
+  ":_24" [label="isa:Item", color=lightgrey, URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#Item"];
+
+  ":_24" -> ":_25" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_25" [label="rdf:Alt", color=lightgrey];
+
+  ":_24" -> "node_27" [label="has:detail", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#detail"];
+
+  ":_25" [label="rdf:Alt", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt"];
+
+  ":_25" -> ":_26" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_26" [label="isa:Item"]
+
+  ":_25" -> ":_27" [label="rdf:_2", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2"];
+
+":_27" [label="isa:Item"]
+
+  ":_25" -> ":_28" [label="rdf:_3", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_3"];
+
+":_28" [label="isa:Item"]
+
+  ":_25" -> ":_29" [label="rdf:_4", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_4"];
+
+":_29" [label="isa:Item"]
+
+  ":_25" -> ":_30" [label="rdf:_5", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_5"];
+
+":_30" [label="isa:Item"]
+
+
+
+subgraph cluster_26 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item - US Origin";
+
+
+
+  ":_26" [label="dlib:Mirror", color=lightgoldenrod];
+
+  ":_26" -> "http://www.dlib.org/dlib/july...l" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  ":_26" -> "node_12" [label="has:label", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#label"];
+
+  ":_26" -> "node_13" [label="has:detail", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#detail"];
+
+  ":_26" -> "node_14" [label="has:access", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#access"];
+
+  "http://www.dlib.org/dlib/july...l" [color=plum, URL="http://www.dlib.org/dlib/july01/07contents.html"];
+
+  "node_12" [shape=box, label="Origin site - USA."];
+
+  "node_13" [shape=box, label="The Corporation for National ...."];
+
+  "node_14" [shape=box, label=":default"];
+
+}
+
+
+
+subgraph cluster_27 {
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item - UK Mirror";
+
+
+
+  ":_27" [label="dlib:Mirror", color=lightgoldenrod];
+
+  ":_27" -> "http://mirrored.ukoln.ac.uk/l...l" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  ":_27" -> "node_16" [label="has:label", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#label"];
+
+  ":_27" -> "node_17" [label="has:detail", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#detail"];
+
+  "http://mirrored.ukoln.ac.uk/l...l" [color=plum, URL="http://mirrored.ukoln.ac.uk/lis-journals/dlib/dlib/dlib/july01/07contents.html"];
+
+  "node_16" [shape=box, label="Mirror site - UK."];
+
+  "node_17" [shape=box, label="UKOLN: The UK Office for Libr...d"];
+
+}
+
+
+
+subgraph cluster_28 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item - Australian Mirror";
+
+
+
+  ":_28" [label="dlib:Mirror", color=lightgoldenrod];
+
+  ":_28" -> "http://sunsite.anu.edu.au/mir...l" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  ":_28" -> "node_19" [label="has:label", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#label"];
+
+  ":_28" -> "node_20" [label="has:detail", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#detail"];
+
+  "http://sunsite.anu.edu.au/mir...l" [color=plum, URL="http://sunsite.anu.edu.au/mirrors/dlib/dlib/july01/07contents.html"];
+
+  "node_19" [shape=box, label="Mirror site - Australia."];
+
+  "node_20" [shape=box, label="The Australian National Unive...a"];
+
+}
+
+
+
+subgraph cluster_29 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item - German Mirror";
+
+
+
+  ":_29" [label="dlib:Mirror", color=lightgoldenrod];
+
+  ":_29" -> "http://webdoc.sub.gwdg.de/edo...l" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  ":_29" -> "node_22" [label="has:label", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#label"];
+
+  ":_29" -> "node_23" [label="has:detail", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#detail"];
+
+  "http://webdoc.sub.gwdg.de/edo...l" [color=plum, URL="http://webdoc.sub.gwdg.de/edoc/aw/d-lib/dlib/july01/07contents.html"];
+
+  "node_22" [shape=box, label="Mirror site - Germany."];
+
+  "node_23" [shape=box, label="State Library of Lower Saxony...y"];
+
+}
+
+
+
+subgraph cluster_30 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item - Argentine Mirror";
+
+
+
+  ":_30" [label="dlib:Mirror", color=lightgoldenrod];
+
+  ":_30" -> "http://www.dlib.org.ar/dlib/j...l" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  ":_30" -> "node_25" [label="has:label", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#label"];
+
+  ":_30" -> "node_26" [label="has:detail", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#detail"];
+
+  "http://www.dlib.org.ar/dlib/j...l" [color=plum, URL="http://www.dlib.org.ar/dlib/july01/07contents.html"];
+
+  "node_25" [shape=box, label="Mirror site - Argentina."];
+
+  "node_26" [shape=box, label="Universidad de Belgrano, Buen...a"];
+
+}
+
+
+
+  "node_27" [shape=box, label="Origin and mirror websites."];
+
+}
+
+
+
+}
+
+
+
+}
+
+
+
+}
+

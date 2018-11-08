@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!-- 
+  TubeTime - Shadwell Station 
+
+  TubeTime implements the YADS model to describe the "Tube"
+  - London's underground rail network - as an example of a
+  complex resource association
+--> 
+<yads>
+  <nest>
+    <!-- Shadwell Station -->
+    <resource>doi:1014/tube/shadwell</resource>
+    <property type="label">Shadwell</property>
+    <property type="type">tube:Station</property>
+    <collection>
+      <nest>
+        <!-- Application Profile -->
+        <resource>doi:1014/profile.tube</resource>
+        <property type="type">doi:Profile</property>
+        <collection>  
+          <item>
+            <!-- Location -->
+            <collection>
+              <item>
+                <data>Zone 2</data>
+                <property type="type">tube:Zone</property>
+              </item>
+              <item>
+                <data>D7</data>
+                <property type="type">tube:Grid</property>
+              </item>
+            </collection>
+          </item>
+          <item>
+            <!-- Line Interchanges -->
+            <collection>
+              <nest>
+                <!-- Line Interchange -->
+                <resource>doi:1014/tube/east_london_line</resource>
+                <property type="type">tube:LineChange</property>
+                <collection>
+                  <nest>
+                    <!-- Next Stop Back -->
+                    <resource>doi:1014/tube/whitechapel</resource>
+                    <property type="type">tube:PrevStation</property>
+                    <collection>  
+                      <item>
+                        <data>2</data>
+                        <property type="type">tube:Mins</property>
+                      </item>
+                    </collection>
+                  </nest>
+                  <nest>
+                    <!-- Next Stop -->
+                    <resource>doi:1014/tube/wapping</resource>
+                    <property type="type">tube:NextStation</property>
+                    <collection>  
+                      <item>
+                        <data>2</data>
+                        <property type="type">tube:Mins</property>
+                      </item>
+                    </collection>
+                  </nest>
+                </collection>
+              </nest>
+              <nest>
+                <!-- Line Interchange -->
+                <resource>doi:1014/tube/docklands_light_railway_line</resource>
+                <property type="type">tube:LineChange</property>
+                <collection>
+                  <nest>
+                    <!-- Next Stop Back -->
+                    <resource>doi:1014/tube/limehouse</resource>
+                    <property type="type">tube:PrevStation</property>
+                    <collection>  
+                      <item>
+                        <data>2</data>
+                        <property type="type">tube:Mins</property>
+                      </item>
+                    </collection>
+                  </nest>
+                  <nest>
+                    <!-- Next Stop -->
+                    <resource>doi:1014/tube/bank</resource>
+                    <property type="type">tube:NextStation</property>
+                    <collection>  
+                      <item>
+                        <data>4</data>
+                        <property type="type">tube:Mins</property>
+                      </item>
+                    </collection>
+                  </nest>
+                </collection>
+              </nest>
+              <nest>
+                <!-- Line Interchange -->
+                <resource>doi:1014/tube/docklands_light_railway_line</resource>
+                <property type="type">tube:LineChange</property>
+                <collection>
+                  <nest>
+                    <!-- Next Stop Back -->
+                    <resource>doi:1014/tube/tower_gateway</resource>
+                    <property type="type">tube:PrevStation</property>
+                    <collection>  
+                      <item>
+                        <data>3</data>
+                        <property type="type">tube:Mins</property>
+                      </item>
+                    </collection>
+                  </nest>
+                </collection>
+              </nest>
+            </collection>
+          </item>
+        </collection>
+      </nest>
+    </collection>
+  </nest>
+</yads>

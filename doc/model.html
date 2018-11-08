@@ -1,0 +1,117 @@
+<html>
+<head>
+<link href="../css/yads.css" type=text/css rel=stylesheet>
+<style type='text/css'>
+<!--
+  td { background-color: white }
+-->
+</style>
+<title>YADS: Data Model</title>
+</head>
+<body>
+<h1>
+<img src="../imx/rdf_metadata_button.40">
+<i>YADS Data Model</i></h1>
+<hr>
+The following figures trace the evolution of resolving a DOI 
+public identifier: "Single Resolution", "Multiple Resolution", 
+and leading now to what we might better term "Services Resolution".
+<p>
+YADS, a description service, is a model which has been
+developed to support "Services Resolution".
+<hr>
+<i><b>Single Resolution</b></i>
+<p>
+This is the current position with DOI - one DOI resolves to one URL. This is what is currently implemented in the
+<a href="http://www.crossref.org/">CrossRef</a> application of DOI by the scholarly publishing community.
+<p>
+<i>Fig. 1: Single resolution of a DOI. (<a href="fig1.xml">Example</a>)</i>
+<p>
+<img src='one2one.gif'>
+<p>
+Essentially this provides similar functionality to a PURL - a Persistent URL: namely, a redirect service.
+<p>
+<hr>
+<i><b>Multiple Resolution</b></i>
+<p>
+The next step in the evolution is the "One to Many" scenario.
+ The demo
+DOIs for <a href="http://www.dlib.org">D-Lib</a> magazine issues which link mirror sites
+hosting the D-Lib issue can be resolved this way.
+<p>
+<i>Fig. 2: Multiple resolution of a DOI. (<a href="fig2.xml">Example</a>)</i>
+<p>
+<img src='one2many.gif'>
+<p>
+The main problem with this approach is that a resolution service can't tell what to return
+- a single URL, or multiple URLs. And worse, there is no meaningful
+presentation for the end user. Raw URLs by and large are generally undecipherable strings.
+<p>
+<hr>
+<i><b>Services Resolution</b></i>
+<p>
+What is needed is not a resolution to data elements but a resolution to services.
+The DOI Technical Work Group is
+aiming to supply a general framework for enabling DOI Services.
+<p>
+Consistently structured and descriptive resource hierarchies associated with DOIs are a prerequisite for the deployment of DOI Services.
+Here we describe YADS, a description service model which attempts this.
+<p>
+We first generalize the data element type URL
+to be a generic <b><i>resource</i></b> which may be another DOI resource (a URI of scheme "doi:"), a familiar web
+ resource, or an inline resource (as presented in a URI of scheme "data:").
+These <b><i>resources</i></b> are qualified as required by <b><i>properties</i></b> (see <a href="properties.html">Model Properties</a>)
+such as "detail" (a human readable description), "label" (a presentational element), etc.
+which together make up a composite resource <b><i>item</i></b>.
+<p>
+<i>Fig. 3: YADS resource &amp; item.
+(Example <a href="fig3.xml">XML</a> and <a href="fig3.html">SVG</a>)
+</i>
+<p>
+<img src='resource.gif'>
+<p>
+These resource <b><i>items</i></b> are then gathered into <b><i>collections</i></b> which have
+inherent orderings: "unordered", "sequenced", or "choice".
+<p>
+<i>Fig. 4: YADS collection.
+(Example <a href="fig4.xml">XML</a> and <a href="fig4.html">SVG</a>)
+</i>
+<p>
+<img src='group.gif'>
+<p>
+Note that if an <b><i>item</i></b> contains a <b><i>collection</i></b> instead of a <b><i>resource</i></b> a
+complete resource hierarchy can be built up.
+<p>
+<i>Fig. 5: YADS resource hierarchy.
+(Example <a href="fig5.xml">XML</a> and <a href="fig5.html">SVG</a>)
+</i>
+<p>
+<img src='group1.gif'>
+<p>
+Each resource hierarchy is to be interpreted by a particular DOI application (eg 
+<a href="http://www.crossref.org/">CrossRef</a>). Multiple
+hierarchies can be supported by binding the hierarchies to
+   a DOI resource describing the application that can service the respective
+hierarhcy - the application profile. A <b><i>resource</i></b>/<b><i>collection</i></b> pairing
+such as this is termed a <b><i>nest</i></b>.
+<p>
+<i>Fig. 6: YADS nests.
+(Example <a href="fig6.xml">XML</a> and <a href="fig6.html">SVG</a>)
+</i>
+<p>
+<img src='nest.gif'>
+<p>
+And because the DOI resource itself is bound to a <b><i>collection</i></b> of profiles there
+exists a toplevel <b><i>nest</i></b>.
+<p>
+<i>Fig. 7: YADS description.
+(Example <a href="fig7.xml">XML</a> and <a href="fig7.html">SVG</a>)
+</i>
+<p>
+<img src='nest1.gif'>
+<p>
+See <a href="principles.html">Model Principles</a> for further info.
+<hr>
+Copyright &copy; 2002 Elsevier Science Ltd. All rights reserved. 
+</body>
+</html>

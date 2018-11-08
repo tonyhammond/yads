@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   DOI use case: Book Review List (Last)
+
+   Here a list of resources is managed. This is the last list member
+   and identifies the previous member in the chain.
+-->
+<yads>
+  <nest>
+    <!-- Book Review -->
+    <resource>doi:10.1006/anbo.2001.1476</resource>
+    <collection>
+      <nest>
+        <!-- DOI Profile -->
+        <resource>doi:10.0/profile.crossref</resource>
+        <collection>
+          <item>
+            <!-- Review -->
+            <resource>http://www.idealibrary.com/links/doi/10.1006/anbo.2001.1476</resource>
+            <property type="label">Ann. Bot. (2001) 88: p. 520</property>
+            <property type="type">xref:Review</property>
+            <property type="access">:default</property>
+          </item>
+          <item>
+            <!-- Prev Review -->
+            <resource>doi:10.1006/anbo.2001.1475</resource>
+            <property type="role">doi:preceding_sibling</property>
+          </item>
+        </collection>
+        <property type="type">doi:Profile</property>
+      </nest>
+    </collection>
+  </nest>
+</yads>

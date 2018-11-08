@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TubeTime - Hammersmith & City Line
+
+  TubeTime implements the YADS model to describe the "Tube"
+  - London's underground rail network - as an example of a
+  complex resource association
+-->
+
+<rdf:RDF xmlns:isa="doi:1014/yads-schema-2002-04-03#" xmlns:has="doi:1014/yads-schema-2002-04-03#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:Description rdf:about="">
+<rdf:type>isa:Nest</rdf:type>
+<!-- Hammersmith & City Line -->
+<has:resource rdf:resource="doi:1014/tube/hammersmith_&amp;_city_line"/>
+<has:type>tube:Line</has:type>
+<has:label>Hammersmith &amp; City Line</has:label>
+<has:detail>TubeTime - Hammersmith &amp; City Line.</has:detail>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- Application Profile -->
+<has:resource rdf:resource="doi:1014/profile.tube"/>
+<has:type>doi:Profile</has:type>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- Terminus Stations -->
+<has:detail>Terminus stations.</has:detail>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/hammersmith"/>
+<has:type>tube:Terminus</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/barking"/>
+<has:type>tube:Terminus</has:type>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- Line Stations -->
+<has:detail>Line stations.</has:detail>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- Branch Stations -->
+<has:detail>Branch stations.</has:detail>
+<has:collection>
+<rdf:Seq>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/hammersmith"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/goldhawk_road"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/shepherd's_bush"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/latimer_road"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/ladbroke_grove"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/westbourne_park"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/royal_oak"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/paddington"/>
+<has:type>tube:Station</has:type>
+<has:access>Rail Link</has:access>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/edgware_road"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/baker_street"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/great_portland_street"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/euston_square"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/king's_cross_st._pancras"/>
+<has:type>tube:Station</has:type>
+<has:access>Rail Link</has:access>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/farringdon"/>
+<has:type>tube:Station</has:type>
+<has:access>Rail Link</has:access>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/barbican"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/moorgate"/>
+<has:type>tube:Station</has:type>
+<has:access>Rail Link</has:access>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/liverpool_street"/>
+<has:type>tube:Station</has:type>
+<has:access>Rail Link</has:access>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/aldgate_east"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/whitechapel"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/stepney_green"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/mile_end"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/bow_road"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/bromley-by-bow"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/west_ham"/>
+<has:type>tube:Station</has:type>
+<has:access>Rail Link</has:access>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/plaistow"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/upton_park"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/east_ham"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/barking"/>
+<has:type>tube:Station</has:type>
+<has:access>Rail Link</has:access>
+</rdf:li>
+</rdf:Seq>
+</has:collection>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- Interchange Stations -->
+<has:detail>Interchange stations.</has:detail>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/piccadilly_line"/>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/hammersmith"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/king's_cross_st._pancras"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+<has:type>tube:LineChange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/bakerloo_line"/>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/baker_street"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+<has:type>tube:LineChange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/circle_line"/>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/edgware_road"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/baker_street"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/great_portland_street"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/euston_square"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/king's_cross_st._pancras"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/farringdon"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/barbican"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/moorgate"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/liverpool_street"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+<has:type>tube:LineChange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/northern_line"/>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/king's_cross_st._pancras"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+<has:type>tube:LineChange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/east_london_line"/>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/whitechapel"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+<has:type>tube:LineChange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/jubilee_line"/>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/baker_street"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/west_ham"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+<has:type>tube:LineChange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/metropolitan_line"/>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/baker_street"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/great_portland_street"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/euston_square"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/king's_cross_st._pancras"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/farringdon"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/barbican"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/moorgate"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/liverpool_street"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+<has:type>tube:LineChange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/victoria_line"/>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/king's_cross_st._pancras"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+<has:type>tube:LineChange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<has:resource rdf:resource="doi:1014/central_line"/>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/mile_end"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+<has:type>tube:LineChange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/district_line"/>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/hammersmith"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/edgware_road"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/aldgate_east"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/whitechapel"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/stepney_green"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/mile_end"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/bow_road"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/bromley-by-bow"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/west_ham"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/plaistow"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/upton_park"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/east_ham"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/barking"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+<has:type>tube:LineChange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/central_line"/>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/liverpool_street"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+<has:type>tube:LineChange</has:type>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+</rdf:Description>
+</rdf:RDF>

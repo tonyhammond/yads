@@ -1,0 +1,359 @@
+
+digraph yads { 
+
+
+
+graph [
+
+  fontname=arial, fontsize=24
+
+  label="YADS - A Description Service"
+
+];
+
+node [
+
+  fontname=arial, fontsize=11, fontcolor=black,
+
+  style=filled, color=cornflowerblue,
+
+];
+
+edge [
+
+  fontname=arial, fontsize=11, fontcolor=black,
+
+  style=filled, color=lightblue,
+
+];
+
+rankdir=TB;
+
+
+
+subgraph cluster_1 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Nest - Westlake / MacArthur Park Station";
+
+
+
+  ":_1" [label="metro:Station", color=lightgoldenrod];
+
+  ":_1" -> "doi:1014/metro/westlake,macar...k" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  ":_1" -> "node_2" [label="has:label", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#label"];
+
+  ":_1" -> ":_2" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_2" [label="rdf:Bag", color=lightgrey];
+
+  "doi:1014/metro/westlake,macar...k" [color=plum, URL="http://dx.doi.org/1014/metro/westlake,macarthur_park"];
+
+  "node_2" [shape=box, label="Westlake / MacArthur Park"];
+
+  ":_2" [label="rdf:Bag", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"];
+
+  ":_2" -> ":_3" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_3" [label="isa:Nest"]
+
+
+
+subgraph cluster_3 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Nest - Application Profile";
+
+
+
+  ":_3" [label="doi:Profile", color=lightgoldenrod];
+
+  ":_3" -> "doi:1014/profile.metro" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  ":_3" -> ":_4" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_4" [label="rdf:Bag", color=lightgrey];
+
+  "doi:1014/profile.metro" [color=plum, URL="http://dx.doi.org/1014/profile.metro"];
+
+  ":_4" [label="rdf:Bag", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"];
+
+  ":_4" -> ":_5" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_5" [label="isa:Item"]
+
+  ":_4" -> ":_8" [label="rdf:_2", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2"];
+
+":_8" [label="isa:Item"]
+
+
+
+subgraph cluster_5 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item - Location";
+
+
+
+  ":_5" [label="isa:Item", color=lightgrey, URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#Item"];
+
+  ":_5" -> ":_6" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_6" [label="rdf:Bag", color=lightgrey];
+
+  ":_6" [label="rdf:Bag", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"];
+
+  ":_6" -> ":_7" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_7" [label="isa:Item"]
+
+
+
+subgraph cluster_7 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_7" [label="metro:Address", color=lightgoldenrod];
+
+  ":_7" -> "data:,660%20S.%20Alvarado%20S...7" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "data:,660%20S.%20Alvarado%20S...7" [color=plum, URL="data:,660%20S.%20Alvarado%20St.,%20Los%20Angeles%2090057"];
+
+}
+
+
+
+}
+
+
+
+subgraph cluster_8 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item - Line Interchanges";
+
+
+
+  ":_8" [label="isa:Item", color=lightgrey, URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#Item"];
+
+  ":_8" -> ":_9" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_9" [label="rdf:Bag", color=lightgrey];
+
+  ":_9" [label="rdf:Bag", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"];
+
+  ":_9" -> ":_10" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_10" [label="isa:Nest"]
+
+
+
+subgraph cluster_10 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Nest - Line Interchange";
+
+
+
+  ":_10" [label="metro:LineChange", color=lightgoldenrod];
+
+  ":_10" -> "doi:1014/metro/red_line" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  ":_10" -> ":_11" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_11" [label="rdf:Bag", color=lightgrey];
+
+  "doi:1014/metro/red_line" [color=plum, URL="http://dx.doi.org/1014/metro/red_line"];
+
+  ":_11" [label="rdf:Bag", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"];
+
+  ":_11" -> ":_12" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_12" [label="isa:Nest"]
+
+  ":_11" -> ":_15" [label="rdf:_2", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2"];
+
+":_15" [label="isa:Nest"]
+
+
+
+subgraph cluster_12 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Nest - Next Stop Back";
+
+
+
+  ":_12" [label="metro:PrevStation", color=lightgoldenrod];
+
+  ":_12" -> "doi:1014/metro/wilshire,vermo...t" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  ":_12" -> ":_13" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_13" [label="rdf:Bag", color=lightgrey];
+
+  "doi:1014/metro/wilshire,vermo...t" [color=plum, URL="http://dx.doi.org/1014/metro/wilshire,vermont"];
+
+  ":_13" [label="rdf:Bag", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"];
+
+  ":_13" -> ":_14" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_14" [label="isa:Item"]
+
+
+
+subgraph cluster_14 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_14" [label="metro:Mins", color=lightgoldenrod];
+
+  ":_14" -> "data:,0" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "data:,0" [color=plum, URL="data:,0"];
+
+}
+
+
+
+}
+
+
+
+subgraph cluster_15 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Nest - Next Stop";
+
+
+
+  ":_15" [label="metro:NextStation", color=lightgoldenrod];
+
+  ":_15" -> "doi:1014/metro/7th_street,met...n" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  ":_15" -> ":_16" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_16" [label="rdf:Bag", color=lightgrey];
+
+  "doi:1014/metro/7th_street,met...n" [color=plum, URL="http://dx.doi.org/1014/metro/7th_street,metro_center,julian_dixon"];
+
+  ":_16" [label="rdf:Bag", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"];
+
+  ":_16" -> ":_17" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_17" [label="isa:Item"]
+
+
+
+subgraph cluster_17 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_17" [label="metro:Mins", color=lightgoldenrod];
+
+  ":_17" -> "data:,0" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "data:,0" [color=plum, URL="data:,0"];
+
+}
+
+
+
+}
+
+
+
+}
+
+
+
+}
+
+
+
+}
+
+
+
+}
+
+
+
+}
+

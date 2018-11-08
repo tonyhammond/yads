@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  MetroRail - Transit Mall Station
+
+  MetroRail implements the YADS model to describe "Metro Rail"
+  - Los Angeles' underground rail network - as an example of a
+  complex resource association
+-->
+<yads>
+  <nest>
+    <!-- Transit Mall Station -->
+    <resource>doi:1014/metro/transit_mall</resource>
+    <property type="type">metro:Station</property>
+    <property type="label">Transit Mall</property>
+    <collection>
+      <nest>
+        <!-- Application Profile -->
+        <resource>doi:1014/profile.metro</resource>
+        <property type="type">doi:Profile</property>
+        <collection>  
+          <item>
+            <!-- Location -->
+            <collection>
+              <item>
+                <data>128 W. 1st St., Long Beach 90802</data>
+                <property type="type">metro:Address</property>
+              </item>
+            </collection>
+          </item>
+          <item>
+            <!-- Line Interchanges -->
+            <collection>
+              <nest>
+                <!-- Line Interchange -->
+                <resource>doi:1014/metro/blue_line</resource>
+                <property type="type">metro:LineChange</property>
+                <collection>
+                  <nest>
+                    <!-- Next Stop Back -->
+                    <resource>doi:1014/metro/1st_street</resource>
+                    <property type="type">metro:PrevStation</property>
+                    <collection>
+                      <item>
+                        <data>0</data>
+                        <property type="type">metro:Mins</property>
+                      </item>
+                    </collection>
+                  </nest>
+                  <nest>
+                    <!-- Next Stop -->
+                    <resource>doi:1014/metro/pacific</resource>
+                    <property type="type">metro:NextStation</property>
+                    <collection>
+                      <item>
+                        <data>0</data>
+                        <property type="type">metro:Mins</property>
+                      </item>
+                    </collection>
+                  </nest>
+                </collection>
+              </nest>
+            </collection>
+          </item>
+        </collection>
+      </nest>
+    </collection>
+  </nest>
+</yads>

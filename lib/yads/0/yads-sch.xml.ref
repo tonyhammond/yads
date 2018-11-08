@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  YADS - Schematron
+
+  This document describes YADS - A Description Service
+  in a Schematron Schema.
+
+  ==
+
+  // From RDF Schema for YADS
+
+  Resource:     doi:1014/yads-schema-2002-04-03
+  Comment:      RDF Schema for YADS - A Description Service
+  Author:       Tony Hammond <tony_hammond@harcourt.com>
+  Revision:     April 3, 2002 - Tony Hammond
+
+  Copyright (c) 2002 Elsevier Science Ltd. All rights reserved. 
+
+-->
+
+<sch:schema xml:lang="en" xmlns:sch="http://www.ascc.net/xml/schematron">
+
+<sch:title>Schematron Schema for YADS</sch:title>
+<sch:ns prefix="yads" uri="http://dx.doi.org/1014/yads-schema-2002-04-03"/>
+
+<sch:pattern see="http://dx.doi.org/1014/yads-schema-2002-04-03" name="YADS">
+
+<!--
+  Toplevel wrapper element
+  ~
+-->
+<sch:rule context="yads">
+  <sch:assert test="count(*) = count(item) + count(nest)">
+    A <sch:name/> element should contain only the following child elements: &lt;item&gt;, &lt;nest&gt;. 
+  </sch:assert>
+</sch:rule>
+
+<!--
+  Item element - collection OR resource, with properties.
+  ~
+-->
+<sch:rule context="item">
+  <sch:assert test="count(*) = count(collection) + count(resource) + count(property)">
+    A <sch:name/> element should contain only the following child elements: &lt;collection&gt;, &lt;resource&gt;, &lt;property&gt;. 
+  </sch:assert>
+  <sch:assert test="(count(collection) = 1 and count(resource) = 0) or
+                     (count(collection) = 0 and count(resource) = 1)">
+    A <sch:name/> element must have one &lt;collection&gt; child element or one &lt;resource&gt; child element.
+  </sch:assert>
+  <sch:assert test="count(property[@type = 'access']) &lt;= 1">
+    A <sch:name/> element may only have one &lt;property&gt; child element with type attribute "access".
+  </sch:assert>
+  <sch:assert test="count(property[@type = 'detail']) &lt;= 1">
+    A <sch:name/> element may only have one &lt;property&gt; child element with type attribute "detail".
+  </sch:assert>
+  <sch:assert test="count(property[@type = 'directive']) &lt;= 1">
+    A <sch:name/> element may only have one &lt;property&gt; child element with type attribute "directive".
+  </sch:assert>
+  <sch:assert test="count(property[@type = 'label']) &lt;= 1">
+    A <sch:name/> element may only have one &lt;property&gt; child element with type attribute "label".
+  </sch:assert>
+  <sch:assert test="count(property[@type = 'role']) &lt;= 1">
+    A <sch:name/> element may only have one &lt;property&gt; child element with type attribute "role".
+  </sch:assert>
+  <sch:assert test="count(property[@type = 'service']) &lt;= 1">
+    A <sch:name/> element may only have one &lt;property&gt; child element with type attribute "service".
+  </sch:assert>
+  <sch:assert test="count(property[@type = 'type']) &lt;= 1">
+    A <sch:name/> element may only have one &lt;property&gt; child element with type attribute "type".
+  </sch:assert>
+</sch:rule>
+
+<!--
+  Nest element - collection AND resource, with properties.
+  ~
+-->
+<sch:rule context="nest">
+  <sch:assert test="count(*) = count(collection) + count(resource) + count(property)">
+    A <sch:name/> element should contain only the following child elements: &lt;collection&gt;, &lt;resource&gt;, &lt;property&gt;. 
+  </sch:assert>
+  <sch:assert test="(count(collection) = 1 and count(resource) = 1)">
+    A <sch:name/> element must have one &lt;collection&gt; child element and one &lt;resource&gt; child element.
+  </sch:assert>
+  <sch:assert test="count(property[@type = 'access']) &lt;= 1">
+    A <sch:name/> element may only have one &lt;property&gt; child element with type attribute "access".
+  </sch:assert>
+  <sch:assert test="count(property[@type = 'detail']) &lt;= 1">
+    A <sch:name/> element may only have one &lt;property&gt; child element with type attribute "detail".
+  </sch:assert>
+  <sch:assert test="count(property[@type = 'directive']) &lt;= 1">
+    A <sch:name/> element may only have one &lt;property&gt; child element with type attribute "directive".
+  </sch:assert>
+  <sch:assert test="count(property[@type = 'label']) &lt;= 1">
+    A <sch:name/> element may only have one &lt;property&gt; child element with type attribute "label".
+  </sch:assert>
+  <sch:assert test="count(property[@type = 'role']) &lt;= 1">
+    A <sch:name/> element may only have one &lt;property&gt; child element with type attribute "role".
+  </sch:assert>
+  <sch:assert test="count(property[@type = 'service']) &lt;= 1">
+    A <sch:name/> element may only have one &lt;property&gt; child element with type attribute "service".
+  </sch:assert>
+  <sch:assert test="count(property[@type = 'type']) &lt;= 1">
+    A <sch:name/> element may only have one &lt;property&gt; child element with type attribute "type".
+  </sch:assert>
+</sch:rule>
+
+<!--
+  Collection element - contains sequence of nest or item elements.
+  (An ordering attribute determines how the elements should be ordered.)
+-->
+<sch:rule context="collection">
+  <sch:assert test="count(*) = count(item) + count(nest)">
+    A <sch:name/> element should contain only the following elements: &lt;item&gt;, &lt;nest&gt;. 
+  </sch:assert>
+
+<!--
+  <sch:assert test="@ordering and not(normalize-space(@ordering) = 'choice')
+                    and not(normalize-space(@ordering) = 'sequenced')
+                    and not(normalize-space(@ordering) = 'unordered')">
+    An "ordering" attribute on a <sch:name/> element should contain only the following values: "choice", "sequenced", "unordered".
+  </sch:assert>
+-->
+</sch:rule>
+
+<!--
+  Resource element
+  ~
+-->
+<sch:rule context="resource">
+</sch:rule>
+
+<!--
+  Property element
+  ~
+-->
+<sch:rule context="property">
+</sch:rule>
+
+</sch:pattern>
+
+</sch:schema>

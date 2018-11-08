@@ -1,0 +1,190 @@
+<html>
+<head>
+<link href="../css/yads.css" type=text/css rel=stylesheet>
+<title>YADS: Schematron Schema</title>
+</head>
+<body>
+<h1>
+<img src="../imx/rdf_metadata_button.40">
+<i>YADS Model Schema - Schematron</i></h1>
+<hr>
+This is the Schematron schema for the YADS model.
+<p>
+<table width=100% border=1 cellpadding=5>
+<tr>
+<td>
+<pre><code>
+  &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+  &lt;!--
+  
+    YADS - Schematron
+  
+    This document describes YADS - A Description Service
+    in a Schematron Schema.
+  
+    ==
+  
+    // From RDF Schema for YADS
+  
+    Resource:     doi:1014/yads-schema-2002-04-03
+    Comment:      RDF Schema for YADS - A Description Service
+    Author:       Tony Hammond &lt;tony_hammond@harcourt.com&gt;
+    Revision:     April 3, 2002 - Tony Hammond
+  
+    Copyright (c) 2002 Elsevier Science Ltd. All rights reserved. 
+  
+  --&gt;
+  
+  &lt;sch:schema xml:lang="en" xmlns:sch="http://www.ascc.net/xml/schematron"&gt;
+  
+  &lt;sch:title&gt;Schematron Schema for YADS&lt;/sch:title&gt;
+  &lt;sch:ns prefix="yads" uri="http://dx.doi.org/1014/yads-schema-2002-04-03"/&gt;
+  
+  &lt;sch:pattern see="http://dx.doi.org/1014/yads-schema-2002-04-03" name="YADS"&gt;
+  
+  &lt;!--
+    Toplevel wrapper element
+    ~
+  --&gt;
+  &lt;sch:rule context="yads"&gt;
+    &lt;sch:assert test="count(*) = count(item) + count(nest)"
+                diagnostics="collection"/&gt;
+  &lt;/sch:rule&gt;
+  
+  &lt;!--
+    Item element - collection OR resource, with properties.
+    ~
+  --&gt;
+  &lt;sch:rule context="item"&gt;
+    &lt;sch:assert test="count(*) = count(collection) + count(resource) + count(property)"
+                diagnostics="group"/&gt;
+    &lt;sch:assert test="(count(collection) = 1 and count(resource) = 0)
+                      or (count(collection) = 0 and count(resource) = 1)"
+                diagnostics="item"/&gt;
+    &lt;sch:assert test="count(property[@type = 'access']) &lt;= 1"
+                diagnostics="acess"/&gt;
+    &lt;sch:assert test="count(property[@type = 'detail']) &lt;= 1"
+                diagnostics="detail"/&gt;
+    &lt;sch:assert test="count(property[@type = 'directive']) &lt;= 1"
+                diagnostics="directive"/&gt;
+    &lt;sch:assert test="count(property[@type = 'label']) &lt;= 1"
+                diagnostics="label"/&gt;
+    &lt;sch:assert test="count(property[@type = 'role']) &lt;= 1"
+                diagnostics="role"/&gt;
+    &lt;sch:assert test="count(property[@type = 'service']) &lt;= 1"
+                diagnostics="service"/&gt;
+    &lt;sch:assert test="count(property[@type = 'type']) &lt;= 1"
+                diagnostics="type"/&gt;
+  &lt;/sch:rule&gt;
+  
+  &lt;!--
+    Nest element - collection AND resource, with properties.
+    ~
+  --&gt;
+  &lt;sch:rule context="nest"&gt;
+    &lt;sch:assert test="count(*) = count(collection) + count(resource) + count(property)"
+                diagnostics="group"/&gt;
+    &lt;sch:assert test="(count(collection) = 1 and count(resource) = 0)
+                      or (count(collection) = 0 and count(resource) = 1)"
+                diagnostics="item"/&gt;
+    &lt;sch:assert test="count(property[@type = 'access']) &lt;= 1"
+                diagnostics="acess"/&gt;
+    &lt;sch:assert test="count(property[@type = 'detail']) &lt;= 1"
+                diagnostics="detail"/&gt;
+    &lt;sch:assert test="count(property[@type = 'directive']) &lt;= 1"
+                diagnostics="directive"/&gt;
+    &lt;sch:assert test="count(property[@type = 'label']) &lt;= 1"
+                diagnostics="label"/&gt;
+    &lt;sch:assert test="count(property[@type = 'role']) &lt;= 1"
+                diagnostics="role"/&gt;
+    &lt;sch:assert test="count(property[@type = 'service']) &lt;= 1"
+                diagnostics="service"/&gt;
+    &lt;sch:assert test="count(property[@type = 'type']) &lt;= 1"
+                diagnostics="type"/&gt;
+  &lt;/sch:rule&gt;
+  
+  &lt;!--
+    Collection element - contains sequence of nest or item elements.
+    (An ordering attribute determines how the elements should be ordered.)
+  --&gt;
+  &lt;sch:rule context="collection"&gt;
+    &lt;sch:assert test="count(*) = count(item) + count(nest)"
+                diagnostics="collection"/&gt;
+  
+  &lt;!--
+    &lt;sch:assert test="@ordering and not(normalize-space(@ordering) = 'choice')
+                      and not(normalize-space(@ordering) = 'sequenced')
+                      and not(normalize-space(@ordering) = 'unordered')"
+                diagnostics="ordering"/&gt;
+  --&gt;
+  &lt;/sch:rule&gt;
+  
+  &lt;!--
+    Resource element
+    ~
+  --&gt;
+  &lt;sch:rule context="resource"&gt;
+  &lt;/sch:rule&gt;
+  
+  &lt;!--
+    Property element
+    ~
+  --&gt;
+  &lt;sch:rule context="property"&gt;
+  &lt;/sch:rule&gt;
+  
+  &lt;/sch:pattern&gt;
+  
+  &lt;sch:diagnostics&gt;
+    &lt;sch:diagnostic id="group"&gt;
+      A &lt;sch:name/&gt; element should contain only the following child elements: &lt;collection&gt;,
+      &lt;resource&gt;, &lt;property&gt;. 
+    &lt;/sch:diagnostic&gt;
+    &lt;sch:diagnostic id="item"&gt;
+      A &lt;sch:name/&gt; element must have one &lt;collection&gt; child element or one &lt;resource&gt; child element.
+    &lt;/sch:diagnostic&gt;
+    &lt;sch:diagnostic id="nest"&gt;
+      A &lt;sch:name/&gt; element must have one &lt;collection&gt; child element or one &lt;resource&gt; child element.
+    &lt;/sch:diagnostic&gt;
+    &lt;sch:diagnostic id="collection"&gt;
+      A &lt;sch:name/&gt; element should contain only the following elements: &lt;item&gt;, &lt;nest&gt;. 
+    &lt;/sch:diagnostic&gt;
+    &lt;sch:diagnostic id="ordering"&gt;
+      An "ordering" attribute on a &lt;sch:name/&gt; element should contain only the following values:
+    "choice", "sequenced", "unordered".
+    &lt;/sch:diagnostic&gt;
+    &lt;sch:diagnostic id="access"&gt;
+      A &lt;sch:name/&gt; element may only have one &lt;property&gt; child element with type attribute "access".
+    &lt;/sch:diagnostic&gt;
+    &lt;sch:diagnostic id="detail"&gt;
+      A &lt;sch:name/&gt; element may only have one &lt;property&gt; child element with type attribute "detail".
+    &lt;/sch:diagnostic&gt;
+    &lt;sch:diagnostic id="directive"&gt;
+      A &lt;sch:name/&gt; element may only have one &lt;property&gt; child element with type attribute "directive".
+    &lt;/sch:diagnostic&gt;
+    &lt;sch:diagnostic id="label"&gt;
+      A &lt;sch:name/&gt; element may only have one &lt;property&gt; child element with type attribute "label".
+    &lt;/sch:diagnostic&gt;
+    &lt;sch:diagnostic id="role"&gt;
+      A &lt;sch:name/&gt; element may only have one &lt;property&gt; child element with type attribute "role".
+    &lt;/sch:diagnostic&gt;
+    &lt;sch:diagnostic id="service"&gt;
+      A &lt;sch:name/&gt; element may only have one &lt;property&gt; child element with type attribute "service".
+    &lt;/sch:diagnostic&gt;
+    &lt;sch:diagnostic id="type"&gt;
+      A &lt;sch:name/&gt; element may only have one &lt;property&gt; child element with type attribute "type".
+    &lt;/sch:diagnostic&gt;
+  &lt;/sch:diagnostics&gt;
+  
+  &lt;/sch:schema&gt;
+</code></pre>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr>
+Copyright &copy; 2002 Elsevier Science Ltd. All rights reserved. 
+</body>
+</html>

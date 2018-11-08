@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!-- 
+  TubeTime - Camden Town Station 
+
+  TubeTime implements the YADS model to describe the "Tube"
+  - London's underground rail network - as an example of a
+  complex resource association
+--> 
+<yads>
+  <nest>
+    <!-- Camden Town Station -->
+    <resource>doi:1014/tube/camden_town</resource>
+    <property type="label">Camden Town</property>
+    <property type="type">tube:Station</property>
+    <collection>
+      <nest>
+        <!-- Application Profile -->
+        <resource>doi:1014/profile.tube</resource>
+        <property type="type">doi:Profile</property>
+        <collection>  
+          <item>
+            <!-- Location -->
+            <collection>
+              <item>
+                <data>Zone 2</data>
+                <property type="type">tube:Zone</property>
+              </item>
+              <item>
+                <data>B5</data>
+                <property type="type">tube:Grid</property>
+              </item>
+            </collection>
+          </item>
+          <item>
+            <!-- Line Interchanges -->
+            <collection>
+              <nest>
+                <!-- Line Interchange -->
+                <resource>doi:1014/tube/northern_line</resource>
+                <property type="type">tube:LineChange</property>
+                <property type="detail">Interchange and exit only on Sundays 1300 to 1730 only.</property>
+                <collection>
+                  <nest>
+                    <!-- Next Stop Back -->
+                    <resource>doi:1014/tube/kentish_town</resource>
+                    <property type="type">tube:PrevStation</property>
+                    <collection>  
+                      <item>
+                        <data>2</data>
+                        <property type="type">tube:Mins</property>
+                      </item>
+                    </collection>
+                  </nest>
+                  <nest>
+                    <!-- Next Stop -->
+                    <resource>doi:1014/tube/euston</resource>
+                    <property type="type">tube:NextStation</property>
+                    <collection>  
+                      <item>
+                        <data>3</data>
+                        <property type="type">tube:Mins</property>
+                      </item>
+                    </collection>
+                  </nest>
+                </collection>
+              </nest>
+              <nest>
+                <!-- Line Interchange -->
+                <resource>doi:1014/tube/northern_line</resource>
+                <property type="type">tube:LineChange</property>
+                <property type="detail">Interchange and exit only on Sundays 1300 to 1730 only.</property>
+                <collection>
+                  <nest>
+                    <!-- Next Stop Back -->
+                    <resource>doi:1014/tube/chalk_farm</resource>
+                    <property type="type">tube:PrevStation</property>
+                    <collection>  
+                      <item>
+                        <data>2</data>
+                        <property type="type">tube:Mins</property>
+                      </item>
+                    </collection>
+                  </nest>
+                  <nest>
+                    <!-- Next Stop -->
+                    <resource>doi:1014/tube/mornington_crescent</resource>
+                    <property type="type">tube:NextStation</property>
+                    <collection>  
+                      <item>
+                        <data>2</data>
+                        <property type="type">tube:Mins</property>
+                      </item>
+                    </collection>
+                  </nest>
+                </collection>
+              </nest>
+            </collection>
+          </item>
+        </collection>
+      </nest>
+    </collection>
+  </nest>
+</yads>

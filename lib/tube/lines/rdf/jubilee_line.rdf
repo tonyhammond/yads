@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TubeTime - Jubilee Line
+
+  TubeTime implements the YADS model to describe the "Tube"
+  - London's underground rail network - as an example of a
+  complex resource association
+-->
+
+<rdf:RDF xmlns:isa="doi:1014/yads-schema-2002-04-03#" xmlns:has="doi:1014/yads-schema-2002-04-03#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:Description rdf:about="">
+<rdf:type>isa:Nest</rdf:type>
+<!-- Jubilee Line -->
+<has:resource rdf:resource="doi:1014/tube/jubilee_line"/>
+<has:type>tube:Line</has:type>
+<has:label>Jubilee Line</has:label>
+<has:detail>TubeTime - Jubilee Line.</has:detail>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- Application Profile -->
+<has:resource rdf:resource="doi:1014/profile.tube"/>
+<has:type>doi:Profile</has:type>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- Terminus Stations -->
+<has:detail>Terminus stations.</has:detail>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/stratford"/>
+<has:type>tube:Terminus</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/stanmore"/>
+<has:type>tube:Terminus</has:type>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- Line Stations -->
+<has:detail>Line stations.</has:detail>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- Branch Stations -->
+<has:detail>Branch stations.</has:detail>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/stratford"/>
+<has:type>tube:Station</has:type>
+<has:access>Rail Link</has:access>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/west_ham"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/canning_town"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/north_greenwich"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/canary_wharf"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/canada_water"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/bermondsey"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/london_bridge"/>
+<has:type>tube:Station</has:type>
+<has:access>Rail Link</has:access>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/southwark"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/waterloo"/>
+<has:type>tube:Station</has:type>
+<has:access>Rail Link</has:access>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/westminster"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/green_park"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/bond_street"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/baker_street"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/st._john's_wood"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/swiss_cottage"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/finchley_road"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/west_hampstead"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/kilburn"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/willesden_green"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/dollis_hill"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/neasden"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/wembley_park"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/kingsbury"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/queensbury"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/canons_park"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/stanmore"/>
+<has:type>tube:Station</has:type>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- Interchange Stations -->
+<has:detail>Interchange stations.</has:detail>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/piccadilly_line"/>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/green_park"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+<has:type>tube:LineChange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/bakerloo_line"/>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/waterloo"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/baker_street"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+<has:type>tube:LineChange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/circle_line"/>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/westminster"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/baker_street"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+<has:type>tube:LineChange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/waterloo_&amp;_city_line"/>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/waterloo"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+<has:type>tube:LineChange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/hammersmith_&amp;_city_line"/>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/west_ham"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/baker_street"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+<has:type>tube:LineChange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/northern_line"/>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/london_bridge"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/waterloo"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+<has:type>tube:LineChange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/east_london_line"/>
+<has:type>tube:LineChange</has:type>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/canada_water"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/metropolitan_line"/>
+<has:type>tube:LineChange</has:type>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/baker_street"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/finchley_road"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/wembley_park"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/victoria_line"/>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/green_park"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/district_line"/>
+<has:type>tube:LineChange</has:type>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/west_ham"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/westminster"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+<has:type>tube:LineChange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/central_line"/>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/stratford"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="doi:1014/tube/bond_street"/>
+<has:type>tube:Interchange</has:type>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+<has:type>tube:LineChange</has:type>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+</rdf:Description>
+</rdf:RDF>

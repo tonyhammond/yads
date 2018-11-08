@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TubeTime - Jubilee Line
+
+  TubeTime implements the YADS model to describe the "Tube"
+  - London's underground rail network - as an example of a
+  complex resource association
+--> 
+<yads>
+  <nest>
+    <!-- Jubilee Line -->
+    <resource>doi:1014/tube/jubilee_line</resource>
+    <property type="type">tube:Line</property>
+    <property type="label">Jubilee Line</property>
+    <property type="detail">TubeTime - Jubilee Line.</property>
+    <collection>
+      <nest>
+        <!-- Application Profile -->
+        <resource>doi:1014/profile.tube</resource>
+        <property type="type">doi:Profile</property>
+        <collection>  
+          <item>
+            <!-- Terminus Stations -->
+            <property type="detail">Terminus stations.</property>
+            <collection>
+              <item>
+                <resource>doi:1014/tube/stratford</resource>
+                <property type="type">tube:Terminus</property>
+              </item>
+              <item>
+                <resource>doi:1014/tube/stanmore</resource>
+                <property type="type">tube:Terminus</property>
+              </item>
+            </collection>
+          </item>
+          <item>
+            <!-- Line Stations -->
+            <property type="detail">Line stations.</property>
+            <collection>
+              <item>
+                <!-- Branch Stations -->
+                <property type="detail">Branch stations.</property>
+                <collection>
+                  <item>
+                    <resource>doi:1014/tube/stratford</resource>
+                    <property type="type">tube:Station</property>
+                    <property type="access">Rail Link</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/west_ham</resource>
+                    <property type="type">tube:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/canning_town</resource>
+                    <property type="type">tube:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/north_greenwich</resource>
+                    <property type="type">tube:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/canary_wharf</resource>
+                    <property type="type">tube:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/canada_water</resource>
+                    <property type="type">tube:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/bermondsey</resource>
+                    <property type="type">tube:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/london_bridge</resource>
+                    <property type="type">tube:Station</property>
+                    <property type="access">Rail Link</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/southwark</resource>
+                    <property type="type">tube:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/waterloo</resource>
+                    <property type="type">tube:Station</property>
+                    <property type="access">Rail Link</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/westminster</resource>
+                    <property type="type">tube:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/green_park</resource>
+                    <property type="type">tube:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/bond_street</resource>
+                    <property type="type">tube:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/baker_street</resource>
+                    <property type="type">tube:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/st._john's_wood</resource>
+                    <property type="type">tube:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/swiss_cottage</resource>
+                    <property type="type">tube:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/finchley_road</resource>
+                    <property type="type">tube:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/west_hampstead</resource>
+                    <property type="type">tube:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/kilburn</resource>
+                    <property type="type">tube:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/willesden_green</resource>
+                    <property type="type">tube:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/dollis_hill</resource>
+                    <property type="type">tube:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/neasden</resource>
+                    <property type="type">tube:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/wembley_park</resource>
+                    <property type="type">tube:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/kingsbury</resource>
+                    <property type="type">tube:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/queensbury</resource>
+                    <property type="type">tube:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/canons_park</resource>
+                    <property type="type">tube:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/stanmore</resource>
+                    <property type="type">tube:Station</property>
+                  </item>
+                </collection>
+              </item>
+            </collection>
+          </item>
+          <item>
+            <!-- Interchange Stations -->
+            <property type="detail">Interchange stations.</property>
+            <collection>
+              <nest>
+                <resource>doi:1014/tube/piccadilly_line</resource>
+                <collection order="choice">
+                  <item>
+                    <resource>doi:1014/tube/green_park</resource>
+                    <property type="type">tube:Interchange</property>
+                  </item>
+                </collection>
+                <property type="type">tube:LineChange</property>
+              </nest>
+              <nest>
+                <resource>doi:1014/tube/bakerloo_line</resource>
+                <collection order="choice">
+                  <item>
+                    <resource>doi:1014/tube/waterloo</resource>
+                    <property type="type">tube:Interchange</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/baker_street</resource>
+                    <property type="type">tube:Interchange</property>
+                  </item>
+                </collection>
+                <property type="type">tube:LineChange</property>
+              </nest>
+              <nest>
+                <resource>doi:1014/tube/circle_line</resource>
+                <collection order="choice">
+                  <item>
+                    <resource>doi:1014/tube/westminster</resource>
+                    <property type="type">tube:Interchange</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/baker_street</resource>
+                    <property type="type">tube:Interchange</property>
+                  </item>
+                </collection>
+                <property type="type">tube:LineChange</property>
+              </nest>
+              <nest>
+                <resource>doi:1014/tube/waterloo_&amp;_city_line</resource>
+                <collection order="choice">
+                  <item>
+                    <resource>doi:1014/tube/waterloo</resource>
+                    <property type="type">tube:Interchange</property>
+                  </item>
+                </collection>
+                <property type="type">tube:LineChange</property>
+              </nest>
+              <nest>
+                <resource>doi:1014/tube/hammersmith_&amp;_city_line</resource>
+                <collection order="choice">
+                  <item>
+                    <resource>doi:1014/tube/west_ham</resource>
+                    <property type="type">tube:Interchange</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/baker_street</resource>
+                    <property type="type">tube:Interchange</property>
+                  </item>
+                </collection>
+                <property type="type">tube:LineChange</property>
+              </nest>
+              <nest>
+                <resource>doi:1014/tube/northern_line</resource>
+                <collection order="choice">
+                  <item>
+                    <resource>doi:1014/tube/london_bridge</resource>
+                    <property type="type">tube:Interchange</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/waterloo</resource>
+                    <property type="type">tube:Interchange</property>
+                  </item>
+                </collection>
+                <property type="type">tube:LineChange</property>
+              </nest>
+              <nest>
+                <resource>doi:1014/tube/east_london_line</resource>
+                <property type="type">tube:LineChange</property>
+                <collection order="choice">
+                  <item>
+                    <resource>doi:1014/tube/canada_water</resource>
+                    <property type="type">tube:Interchange</property>
+                  </item>
+                </collection>
+              </nest>
+              <nest>
+                <resource>doi:1014/tube/metropolitan_line</resource>
+                <property type="type">tube:LineChange</property>
+                <collection order="choice">
+                  <item>
+                    <resource>doi:1014/tube/baker_street</resource>
+                    <property type="type">tube:Interchange</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/finchley_road</resource>
+                    <property type="type">tube:Interchange</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/wembley_park</resource>
+                    <property type="type">tube:Interchange</property>
+                  </item>
+                </collection>
+              </nest>
+              <nest>
+                <resource>doi:1014/tube/victoria_line</resource>
+                <collection order="choice">
+                  <item>
+                    <resource>doi:1014/tube/green_park</resource>
+                    <property type="type">tube:Interchange</property>
+                  </item>
+                </collection>
+              </nest>
+              <nest>
+                <resource>doi:1014/tube/district_line</resource>
+                <property type="type">tube:LineChange</property>
+                <collection order="choice">
+                  <item>
+                    <resource>doi:1014/tube/west_ham</resource>
+                    <property type="type">tube:Interchange</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/westminster</resource>
+                    <property type="type">tube:Interchange</property>
+                  </item>
+                </collection>
+                <property type="type">tube:LineChange</property>
+              </nest>
+              <nest>
+                <resource>doi:1014/tube/central_line</resource>
+                <collection order="choice">
+                  <item>
+                    <resource>doi:1014/tube/stratford</resource>
+                    <property type="type">tube:Interchange</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/bond_street</resource>
+                    <property type="type">tube:Interchange</property>
+                  </item>
+                </collection>
+                <property type="type">tube:LineChange</property>
+              </nest>
+            </collection>
+          </item>
+        </collection>
+      </nest>
+    </collection>
+  </nest>
+</yads>

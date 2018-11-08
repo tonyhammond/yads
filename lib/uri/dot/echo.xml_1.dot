@@ -1,0 +1,96 @@
+
+digraph yads { 
+
+graph [
+  fontname=arial, fontsize=24
+  label="YADS - A Description Service"
+];
+node [
+  fontname=arial, fontsize=11, fontcolor=black,
+  style=filled, color=cornflowerblue,
+];
+edge [
+  fontname=arial, fontsize=11, fontcolor=black,
+  style=filled, color=lightblue,
+];
+rankdir=TB;
+
+subgraph cluster_1 {
+
+  label="Nest - feed";
+  fontname=arial; fontsize=11; fontcolor="black";
+  style=dashed; color=lightgrey;
+
+  ":_1" [label="feed", color=lightgoldenrod];
+  ":_1" -> "http://bob.blog/" [label="has:resource", URL="yads#resource"];
+  ":_1" -> ":_2" [label="has:collection", URL="yads#collection"];
+  ":_2" [label="rdf:Seq", color=lightgrey];
+
+  ":_1" -> ":_6" [label="has:property", URL="yads#property"];
+  ":_6" [label="6", color=lightgrey];
+  ":_1" -> ":_7" [label="has:property", URL="yads#property"];
+  ":_7" [label="7", color=lightgrey];
+  "http://bob.blog/" [color=plum, URL="http://bob.blog/"];
+  ":_2" [label="rdf:Seq", color=lightgrey, URL="rdf#Seq"];
+  ":_2" -> ":_3" [label="rdf:_1", URL="rdf#_1"];
+  ":_3" [label="isa:Item"]
+  ":_2" -> ":_4" [label="rdf:_2", URL="rdf#_2"];
+  ":_4" [label="isa:Item"]
+  ":_2" -> ":_5" [label="rdf:_3", URL="rdf#_3"];
+  ":_5" [label="isa:Item"]
+
+subgraph cluster_3 {
+
+  label="Item";
+  fontname=arial; fontsize=11; fontcolor="black";
+  style=dashed; color=lightgrey;
+
+  ":_3" [label="entry", color=lightgoldenrod];
+  ":_3" -> "http://...2" [label="has:resource", URL="yads#resource"];
+  ":_3" -> "node_7" [label="has:label", URL="yads#label"];
+
+  "http://...2" [color=plum, URL="http://...2"];
+  "node_7" [shape=box, label="ScienceDirect"];
+}
+
+subgraph cluster_4 {
+
+  label="Item";
+  fontname=arial; fontsize=11; fontcolor="black";
+  style=dashed; color=lightgrey;
+
+  ":_4" [label="entry", color=lightgoldenrod];
+  ":_4" -> "http://...3" [label="has:resource", URL="yads#resource"];
+  ":_4" -> "node_11" [label="has:label", URL="yads#label"];
+  ":_4" -> "node_12" [label="has:detail", URL="yads#detail"];
+
+  "http://...3" [color=plum, URL="http://...3"];
+  "node_11" [shape=box, label="Graphical Abstracts"];
+  "node_12" [shape=box, label="Graphical Abstracts jg uiugyt...u"];
+}
+
+subgraph cluster_5 {
+
+  label="Item";
+  fontname=arial; fontsize=11; fontcolor="black";
+  style=dashed; color=lightgrey;
+
+  ":_5" [label="entry", color=lightgoldenrod];
+  ":_5" -> "http://...4" [label="has:resource", URL="yads#resource"];
+  ":_5" -> "node_16" [label="has:label", URL="yads#label"];
+
+  "http://...4" [color=plum, URL="http://...4"];
+  "node_16" [shape=box, label="Solid-supported ..."];
+}
+
+  ":_6" [label="6", color=lightgrey, URL="rdf#"];
+  ":_6" -> My First Weblog" [label="isa", URL="My First Weblog"];
+":_6" [label="isa:Item"]
+"My First Weblog" [label="has:resource", URL="yads#resource"];
+  ":_7" [label="7", color=lightgrey, URL="rdf#"];
+  ":_7" -> Ain't the Interweb great?" [label="isa", URL="Ain't the Interweb great?"];
+":_7" [label="isa:Item"]
+"Ain't the Interweb great?" [label="has:resource", URL="yads#resource"];
+}
+
+}

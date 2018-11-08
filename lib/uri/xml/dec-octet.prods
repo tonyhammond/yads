@@ -1,0 +1,36 @@
+<item>
+<data>DIGIT</data>
+</item>
+<item>
+<collection order="sequenced">
+<item>
+<data>%25x31-39</data>
+</item>
+<item>
+<data>DIGIT</data>
+</item>
+</collection>
+</item>
+<item>
+<collection order="sequenced">
+<item>
+<data>1</data>
+</item>
+<item>
+<data>2DIGIT</data>
+</item>
+</collection>
+</item>
+<item>
+<collection order="sequenced">
+<item>
+<data>2</data>
+</item>
+<item>
+<data>%25x30-34</data>
+</item>
+<item>
+<data>DIGIT</data>
+</item>
+</collection>
+</item>

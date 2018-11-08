@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!-- 
+  TubeTime
+
+  TubeTime implements the YADS model to describe the "Tube"
+  - London's underground rail network - as an example of a
+  complex resource association
+--> 
+<yads>
+  <nest>
+    <!-- TubeTime -->
+    <resource>doi:1014/tube</resource>
+    <property type="label">TubeTime</property>
+    <property type="detail">
+      TubeTime implements the YADS model to describe the "Tube"
+      - London's underground rail network - as an example of a
+      complex resource association
+    </property>
+    <collection>
+      <nest>
+        <!-- Application Profile -->
+        <resource>doi:1014/profile.tube</resource>
+        <property type="type">doi:Profile</property>
+        <property type="label">The Tube</property>
+        <property type="detail">TubeTime - The Tube.</property>
+        <collection>
+          <item>
+            <resource>doi:1014/tube/bakerloo_line</resource>
+            <property type="type">tube:Line</property>
+          </item>
+          <item>
+            <resource>doi:1014/tube/central_line</resource>
+            <property type="type">tube:Line</property>
+          </item>
+          <item>
+            <resource>doi:1014/tube/circle_line</resource>
+            <property type="type">tube:Line</property>
+          </item>
+          <item>
+            <resource>doi:1014/tube/district_line</resource>
+            <property type="type">tube:Line</property>
+          </item>
+          <item>
+            <resource>doi:1014/tube/east_london_line</resource>
+            <property type="type">tube:Line</property>
+          </item>
+          <item>
+            <resource>doi:1014/tube/hammersmith_&amp;_city_line</resource>
+            <property type="type">tube:Line</property>
+          </item>
+          <item>
+            <resource>doi:1014/tube/jubilee_line</resource>
+            <property type="type">tube:Line</property>
+          </item>
+          <item>
+            <resource>doi:1014/tube/metropolitan_line</resource>
+            <property type="type">tube:Line</property>
+          </item>
+          <item>
+            <resource>doi:1014/tube/northern_line</resource>
+            <property type="type">tube:Line</property>
+          </item>
+          <item>
+            <resource>doi:1014/tube/piccadilly_line</resource>
+            <property type="type">tube:Line</property>
+          </item>
+          <item>
+            <resource>doi:1014/tube/victoria_line</resource>
+            <property type="type">tube:Line</property>
+          </item>
+          <item>
+            <resource>doi:1014/tube/waterloo_&amp;_city_line</resource>
+            <property type="type">tube:Line</property>
+          </item>
+        </collection>
+      </nest>
+      <nest>
+        <!-- Application Profile -->
+        <resource>doi:doi:1014/profile.dlr</resource>
+        <property type="label">Docklands Light Railway</property>
+        <property type="detail">TubeTime - Docklands Light Railway.</property>
+        <collection>
+          <item>
+            <resource>doi:1014/tube/docklands_light_railway</resource>
+            <property type="type">dlr:Line</property>
+          </item>
+        </collection>
+      </nest>
+    </collection>
+  </nest>
+</yads>

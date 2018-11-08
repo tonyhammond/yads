@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yads>
+<!-- source: fig7.xml -->
+  <nest>
+    <!-- Digital Object -->
+    <resource>doi:10.1045/july2001-contents</resource>
+    <collection>
+      <nest>
+        <!-- DLib Profile -->
+        <resource>doi:10.0/profile.dlib</resource>
+        <collection/>
+        <property type="type">doi:Profile</property>
+      </nest>
+      <nest>
+        <!-- DLib Proxy Profile -->
+        <resource>doi:10.0/profile.dlib-proxy</resource>
+        <collection/>
+        <property type="type">doi:Profile</property>
+      </nest>
+    </collection>
+    <property type="type">doi:Object</property>
+  </nest>
+</yads>

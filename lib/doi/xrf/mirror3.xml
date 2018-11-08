@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   DOI use case: Mirror Sites (Extended Issue)
+
+   Here a DLib issue is managed across five mirror sites. The origin
+   site - CNRI - is marked as the default. A table of contents for
+   this issue is also managed.
+-->
+<doi_data>
+  <doi>10.1045/july2001-contents</doi>
+  <collection>
+    <item>
+      <resource>doi:10.0/profile.dlib</resource>
+      <property type="type">doi:Profile</property>
+    </item>
+    <item>
+  <collection>
+    <item>
+      <resource/>
+      <property type="detail">Resources for DLib Article
+      &lt;doi:10.1045/july2001-contents&gt;</property>
+    </item>
+    <item>
+                  <collection order="sequenced">
+                    <item>
+                        <collection>
+                          <item>
+                            <resource>data:Generalizing the OpenURL Framework beyond References to Scholarly Works: The Bison-Fute Model</resource>
+                            <property type="type">dlib:TitleString</property>
+                          </item>
+                          <item>
+                            <resource>data:Herbert Van de Sompel, Cornell University and Oren Beit-Arie, Ex Libris (USA) Inc.</resource>
+                            <property type="type">dlib:AuthorString</property>
+                          </item>
+                        </collection>
+                    </item>
+                    <item>
+                        <collection>
+                          <item>
+                            <resource>data:Digital Libraries and Education:Trends and Opportunities</resource>
+                            <property type="type">dlib:TitleString</property>
+                          </item>
+                          <item>
+                            <resource>data:Hans Roes, Tilburg University Library</resource>
+                            <property type="type">dlib:AuthorString</property>
+                          </item>
+                        </collection>
+                    </item>
+                    <item>
+                        <collection>
+                          <item>
+                            <resource>data:E-Books and Their Future in Academic Libraries: An Overview</resource>
+                            <property type="type">dlib:TitleString</property>
+                          </item>
+                          <item>
+                            <resource>data:Lucia Snowhill, University of California, Santa Barbara</resource>
+                            <property type="type">dlib:AuthorString</property>
+                          </item>
+                        </collection>
+                    </item>
+                    <item>
+                        <collection>
+                          <item>
+                            <resource>data:Penn State Visual Image User Study</resource>
+                            <property type="type">dlib:TitleString</property>
+                          </item>
+                          <item>
+                            <resource>data:Henry Pisciotta, Roger Brisson, Eric Ferrin, Michael Dooris, and Amanda Spink, Pennsylvania State University</resource>
+                            <property type="type">dlib:AuthorString</property>
+                          </item>
+                        </collection>
+                    </item>
+                  </collection>
+                <property type="detail">Table of Contents for July 2001 issue of D-Lib magazine.</property>
+              </item>
+    <item>
+  <collection order="choice">
+    <item>
+      <resource>http://www.dlib.org/dlib/july01/07contents.html</resource>
+      <property type="type">dlib:Mirror</property>
+      <property type="label">Origin site - USA.</property>
+      <property type="detail">The Corporation for National Research Initiatives, Reston, Virginia, U.S.A.</property>
+      <property type="access">:default</property>
+    </item>
+    <item>
+      <resource>http://mirrored.ukoln.ac.uk/lis-journals/dlib/dlib/dlib/july01/07contents.html</resource>
+      <property type="type">dlib:Mirror</property>
+      <property type="label">Mirror site - UK.</property>
+      <property type="detail">UKOLN: The UK Office for Library and Information Networking, Bath, England</property>
+    </item>
+    <item>
+      <resource>http://sunsite.anu.edu.au/mirrors/dlib/dlib/july01/07contents.html</resource>
+      <property type="type">dlib:Mirror</property>
+      <property type="label">Mirror site - Australia.</property>
+      <property type="detail">The Australian National University Sunsite, Canberra, Australia</property>
+    </item>
+    <item>
+      <resource>http://webdoc.sub.gwdg.de/edoc/aw/d-lib/dlib/july01/07contents.html</resource>
+      <property type="type">dlib:Mirror</property>
+      <property type="label">Mirror site - Germany.</property>
+      <property type="detail">State Library of Lower Saxony and the University Library of Goettingen, Goettingen, Germany</property>
+    </item>
+    <item>
+      <resource>http://www.dlib.org.ar/dlib/july01/07contents.html</resource>
+      <property type="type">dlib:Mirror</property>
+      <property type="label">Mirror site - Argentina.</property>
+      <property type="detail">Universidad de Belgrano, Buenos Aires, Argentina</property>
+    </item>
+  </collection>
+  <property type="detail">Origin and mirror websites.</property>
+    </item>
+  </collection>
+    </item>
+  </collection>
+</doi_data>

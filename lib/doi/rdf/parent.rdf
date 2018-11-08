@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   DOI use case: Journal
+
+   Here a journal title is identified and key metadata elements
+   about the title are managed.
+-->
+
+<rdf:RDF xmlns:isa="doi:1014/yads-schema-2002-04-03#" xmlns:has="doi:1014/yads-schema-2002-04-03#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:Description rdf:about="">
+<rdf:type>isa:Nest</rdf:type>
+<!-- Journal -->
+<has:resource rdf:resource="doi:10.1006/jmbi"/>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- DOI Profile -->
+<has:resource rdf:resource="doi:10.0/profile.crossref"/>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="http://www.idealibrary.com/links/toc/jmbi"/>
+<has:label>J. Mol. Biol.</has:label>
+<has:type>xref:Journal</has:type>
+<has:access>:default</has:access>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,Journal%20of%20Molecular%20Biology"/>
+<has:type>xref:Journal-Title</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,J.%20Mol.%20Biol."/>
+<has:type>xref:Journal-Abbrev</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,1089-8638"/>
+<has:type>xref:Online-ISSN</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,0022-2836"/>
+<has:type>xref:Print-ISSN</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,JMOBAK"/>
+<has:type>xref:CODEN</has:type>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+<has:type>doi:Profile</has:type>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+</rdf:Description>
+</rdf:RDF>

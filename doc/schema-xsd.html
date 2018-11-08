@@ -1,0 +1,178 @@
+<html>
+<head>
+<link href="../css/yads.css" type=text/css rel=stylesheet>
+<title>YADS: XML Schema</title>
+</head>
+<body>
+<h1>
+<img src="../imx/rdf_metadata_button.40">
+<i>YADS Model Schema - XML Schema</i></h1>
+<hr>
+This is the XML Schema for the YADS model.
+<p>
+<table width=100% border=1 cellpadding=5>
+<tr>
+<td>
+<pre><code>
+  &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+  &lt;!--
+  
+    YADS - XSD
+  
+    This document describes YADS - A Description Service
+    in a W3C XML Schema.
+  
+    ==
+  
+    // From RDF Schema for YADS
+
+    Resource:     doi:1014/yads-schema-2002-04-03
+    Comment:      RDF Schema for YADS - A Description Service
+    Author:       Tony Hammond &lt;tony_hammond@harcourt.com&gt;
+    Revision:     April 3, 2002 - Tony Hammond
+  
+    Copyright (c) 2002 Elsevier Science Ltd. All rights reserved. 
+
+  --&gt;
+  
+  &lt;xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  
+  &lt;!--
+    Toplevel wrapper element
+    ~
+  --&gt;
+  &lt;xsd:element name = "yads"&gt;
+    &lt;xsd:simpleType&gt;
+      &lt;xsd:choice&gt;
+        &lt;xsd:element ref = "item" minOccurs = "0" maxOccurs = "unbounded"/&gt;
+        &lt;xsd:element ref = "nest" minOccurs = "0" maxOccurs = "unbounded"/&gt;
+      &lt;/xsd:choice&gt;
+    &lt;/xsd:simpleType&gt;
+  &lt;/xsd:element&gt;
+  
+  &lt;!--
+    Item element - collection OR resource, with properties.
+    (The content model expressly permits any ordering.)
+  --&gt;
+  &lt;xsd:element name = "item"&gt;
+    &lt;xsd:complexType&gt;
+      &lt;xsd:sequence&gt;
+        &lt;xsd:choice&gt;
+          &lt;xsd:element ref = "collection"/&gt;
+          &lt;xsd:element ref = "resource"/&gt;
+        &lt;/xsd:choice&gt;
+        &lt;xsd:element ref = "property" minOccurs = "0" maxOccurs = "unbounded"/&gt;
+      &lt;/xsd:sequence&gt;
+    &lt;/xsd:complexType&gt;
+  &lt;/xsd:element&gt;
+  
+  &lt;!--
+    Nest element - collection AND resource, with properties.
+    (The content model expressly permits any ordering.)
+  --&gt;
+  &lt;xsd:element name = "nest"&gt;
+    &lt;xsd:complexType&gt;
+      &lt;xsd:sequence&gt;
+        &lt;xsd:choice&gt;
+          &lt;xsd:complexType&gt;
+            &lt;xsd:sequence&gt;
+                &lt;xsd:element ref = "property"
+                             minOccurs = "0" maxOccurs = "unbounded"/&gt;
+                &lt;xsd:element ref = "collection"/&gt;
+                &lt;xsd:element ref = "property"
+                             minOccurs = "0" maxOccurs = "unbounded"/&gt;
+                &lt;xsd:element ref = "resource"/&gt;
+                &lt;xsd:element ref = "property"
+                             minOccurs = "0" maxOccurs = "unbounded"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+          &lt;xsd:complexType&gt;
+            &lt;xsd:sequence&gt;
+                &lt;xsd:element ref = "property"
+                             minOccurs = "0" maxOccurs = "unbounded"/&gt;
+                &lt;xsd:element ref = "resource"/&gt;
+                &lt;xsd:element ref = "property"
+                             minOccurs = "0" maxOccurs = "unbounded"/&gt;
+                &lt;xsd:element ref = "collection"/&gt;
+                &lt;xsd:element ref = "property"
+                             minOccurs = "0" maxOccurs = "unbounded"/&gt;
+            &lt;/xsd:sequence&gt;
+          &lt;/xsd:complexType&gt;
+        &lt;/xsd:choice&gt;
+      &lt;/xsd:sequence&gt;
+    &lt;/xsd:complexType&gt;
+  &lt;/xsd:element&gt;
+  
+  &lt;!--
+    Collection element - contains sequence of nest or item elements.
+    (An ordering attribute determines how the elements should be ordered.)
+  --&gt;
+  &lt;xsd:element name = "collection"&gt;
+    &lt;xsd:complexType&gt;
+      &lt;xsd:attribute name = "order" default = "unordered"&gt;
+        &lt;xsd:simpleType&gt;
+          &lt;xsd:restriction base = "xsd:NMTOKEN"&gt;
+            &lt;xsd:enumeration value = "unordered"/&gt;
+            &lt;xsd:enumeration value = "sequenced"/&gt;
+            &lt;xsd:enumeration value = "choice"/&gt;
+          &lt;/xsd:restriction&gt;
+        &lt;/xsd:simpleType&gt;
+      &lt;/xsd:attribute&gt;
+      &lt;xsd:group&gt;
+        &lt;xsd:choice&gt;
+          &lt;xsd:element ref = "item" minOccurs="1" maxOccurs = "unbounded"/&gt;
+          &lt;xsd:element ref = "nest" minOccurs="1" maxOccurs = "unbounded"/&gt;
+        &lt;/xsd:choice&gt;
+      &lt;/xsd:group&gt;
+    &lt;/xsd:complexType&gt;
+  &lt;/xsd:element&gt;
+  
+  &lt;!--
+    Resource element
+    ~
+  --&gt;
+  &lt;xsd:element name = "resource"&gt;
+    &lt;xsd:simpleType&gt;
+      &lt;xsd:restriction base = "xsd:anyURI"&gt;
+      &lt;/xsd:restriction&gt;
+    &lt;/xsd:simpleType&gt;
+  &lt;/xsd:element&gt;
+  
+  &lt;!--
+    Property element
+    ~
+  --&gt;
+  &lt;xsd:element name = "property"&gt;
+    &lt;xsd:complexType&gt;
+      &lt;xsd:simpleContent&gt;
+        &lt;xsd:restriction base = "xsd:string"&gt;
+          &lt;xsd:attribute name = "type" use = "required"&gt;
+            &lt;xsd:simpleType&gt;
+              &lt;xsd:restriction base = "xsd:NMTOKEN"&gt;
+                &lt;xsd:enumeration value = "access"/&gt;
+                &lt;xsd:enumeration value = "detail"/&gt;
+                &lt;xsd:enumeration value = "directive"/&gt;
+                &lt;xsd:enumeration value = "label"/&gt;
+                &lt;xsd:enumeration value = "role"/&gt;
+                &lt;xsd:enumeration value = "service"/&gt;
+                &lt;xsd:enumeration value = "type"/&gt;
+              &lt;/xsd:restriction&gt;
+            &lt;/xsd:simpleType&gt;
+            &lt;/xsd:attribute&gt;
+        &lt;/xsd:restriction&gt;
+      &lt;/xsd:simpleContent&gt;
+    &lt;/xsd:complexType&gt;
+  &lt;/xsd:element&gt;
+  
+  &lt;/xsd:schema&gt;
+</code></pre>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr>
+Copyright &copy; 2002 Elsevier Science Ltd. All rights reserved. 
+</body>
+</html>

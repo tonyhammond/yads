@@ -1,0 +1,220 @@
+<html>
+<head>
+<link href="../css/yads.css" type=text/css rel=stylesheet>
+<title>YADS: RDFS Schema</title>
+</head>
+<body>
+<h1>
+<img src="../imx/rdf_metadata_button.40">
+<i>YADS Model Schema - RDFS</i></h1>
+<hr>
+This is the RDFS schema for the YADS model.
+<p>
+<table width=100% border=1 cellpadding=5 bgcolor=#dddddd>
+<tr>
+<td>
+<pre><code>
+  &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+  &lt;!--
+  
+    YADS - RDF/XML
+  
+    This document describes YADS - A Description Service
+    in an RDF Schema using an RDF/XML serialization.
+  
+    ==
+  
+    // From RDF Schema for YADS
+
+    Resource:     doi:1014/yads-schema-2002-04-03
+    Comment:      RDF Schema for YADS - A Description Service
+    Author:       Tony Hammond &lt;tony_hammond@harcourt.com&gt;
+    Revision:     April 3, 2002 - Tony Hammond
+  
+    Copyright (c) 2002 Elsevier Science Ltd. All rights reserved. 
+
+  --&gt;
+  
+  &lt;r:RDF
+    xmlns:r="http://www.w3.org/1999/02/22-rdf-syntax-ns#"	
+    xmlns:s="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#"
+  &gt;
+  
+  &lt;!--
+  
+    YADS - Base Classes
+  
+    YADS implements a simple, safe and predictable recursive data
+    model for describing resource collections. The aim is to assist
+    in programming complex resource descriptions across multiple
+    applications and to foster interoperability between them.
+  
+    (Resources are entities identified by URIs which can be divided
+    into network dereferenceable data objects - including URLs and
+    inline resources as provided for by the "data:" scheme - as
+    well as non-dereferenceable data objects - including URNs.)
+  
+    An "Item" object is the basic building block which associates a
+    resource with properties. (Note that the resource is actually
+    presented as a property of the "Item" object.) "Item" objects are
+    aggregated into "Container" objects which are ultimately managed
+    by a toplevel "Nest" parent object. A "Nest" object binds a 
+    resource to a resource hierarchy and associates properties with
+    the resource/hierarchy association.
+  
+  --&gt;
+  
+  &lt;!-- "Item" class --&gt;
+  &lt;s:Class r:ID="Item"&gt;
+    &lt;s:label&gt;Item&lt;/s:label&gt;
+    &lt;s:comment&gt;Item - Class for any "Item" object which types a blank node
+    used to associate a resource or resource hierarchy with properties.&lt;/s:comment&gt;
+    &lt;s:subClassOf r:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Object"/&gt;
+  &lt;/s:Class&gt;
+  
+  &lt;!-- "Nest" class --&gt;
+  &lt;s:Class r:ID="Nest"&gt;
+    &lt;s:label&gt;Nest&lt;/s:label&gt;
+    &lt;s:comment&gt;Nest - Class for any "Nest" object which types a blank node
+    used to associate a resource with a resource hierarchy and associates
+    properties with the resource/hierarchy association.&lt;/s:comment&gt;
+    &lt;s:subClassOf r:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Object"/&gt;
+  &lt;/s:Class&gt;
+  
+  &lt;!--
+  
+    YADS - Base Properties
+  
+    YADS defines a basic "1+7" properties model for an "Item" and a
+    "2+7" properties model for a "Nest".
+  
+    The one (mandatory) property on each "Item" is a "resource" or
+    alternatively - as a resource proxy - a "collection" which attributes
+    a "Container" (a regular RDF Container "Alt", "Bag", or "Seq") of
+    "Item" objects through which a resource hierarchy can be propagated.
+    The two (mandatory) properties on each "Nest" are a "resource" and a
+    "collection" which are bound together..
+  
+    Each "Item" or "Nest" object may have 0..7 qualifying properties
+    associated with it. Base properties are as follows:
+  
+    Properties 1 = ("resource" | "collection")         # mandatory, one of
+    Properties 2 = ("resource" & "collection")         # mandatory, two of
+    Properties 7 = (["access"] & ["detail"] & ["directive"]
+                    & ["label"] & ["role"] & ["service"]
+                    & ["type"])                        # optional, any of
+  
+    The "type" property implements a type extension mechansim. Type
+    values are resolved by consulting a profile-specific schema.
+    This allows for a late-binding of semantics. Rationale is that
+    multiple applications can build on this common infrastructure
+    and defer semantic overloading till runtime.
+  
+  --&gt;
+  
+  &lt;!-- First the resource properties --&gt;
+  
+  &lt;!-- "collection" property --&gt;
+  &lt;r:Property r:ID="collection"&gt;
+    &lt;s:label&gt;collection&lt;/s:label&gt;
+    &lt;s:comment&gt;collection - Property attributing a "collection" element for
+    grouping resources (a Container).&lt;/s:comment&gt;
+    &lt;s:range r:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Container"/&gt;
+    &lt;s:domain r:resource="#Item"/&gt;
+    &lt;s:domain r:resource="#Nest"/&gt;
+  &lt;/r:Property&gt;
+  
+  &lt;!-- "resource" property --&gt;
+  &lt;r:Property r:ID="resource"&gt;
+    &lt;s:label&gt;resource&lt;/s:label&gt;
+    &lt;s:comment&gt;resource - Property attributing a "resource" element
+    (a Resource).&lt;/s:comment&gt;
+    &lt;s:range r:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Resource"/&gt;
+    &lt;s:domain r:resource="#Item"/&gt;
+    &lt;s:domain r:resource="#Nest"/&gt;
+  &lt;/r:Property&gt;
+  
+  &lt;!-- Then the literal properties --&gt;
+  
+  &lt;!-- "access" property --&gt;
+  &lt;r:Property r:ID="access"&gt;
+    &lt;s:label&gt;access&lt;/s:label&gt;
+    &lt;s:comment&gt;access - Property attributing an "access" element for
+    addressing a resource (a Literal).&lt;/s:comment&gt;
+    &lt;s:range r:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/&gt;
+    &lt;s:domain r:resource="#Item"/&gt;
+    &lt;s:domain r:resource="#Nest"/&gt;
+  &lt;/r:Property&gt;
+  
+  &lt;!-- "detail" property --&gt;
+  &lt;r:Property r:ID="detail"&gt;
+    &lt;s:label&gt;detail&lt;/s:label&gt;
+    &lt;s:comment&gt;detail - Property attributing a "detail" element for
+    describing a resource (a Literal).&lt;/s:comment&gt;
+    &lt;s:range r:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/&gt;
+    &lt;s:domain r:resource="#Item"/&gt;
+    &lt;s:domain r:resource="#Nest"/&gt;
+  &lt;/r:Property&gt;
+  
+  &lt;!-- "directive" property --&gt;
+  &lt;r:Property r:ID="directive"&gt;
+    &lt;s:label&gt;directive&lt;/s:label&gt;
+    &lt;s:comment&gt;directive - Property attributing a "directive" element for
+    directing the behaviour of a service component (a Literal).&lt;/s:comment&gt;
+    &lt;s:range r:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/&gt;
+    &lt;s:domain r:resource="#Item"/&gt;
+    &lt;s:domain r:resource="#Nest"/&gt;
+  &lt;/r:Property&gt;
+  
+  &lt;!-- "label" property --&gt;
+  &lt;r:Property r:ID="label"&gt;
+    &lt;s:label&gt;label&lt;/s:label&gt;
+    &lt;s:comment&gt;label - Property attributing a "label" element for
+    representing a resource in a display service (a Literal).&lt;/s:comment&gt;
+    &lt;s:range r:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/&gt;
+    &lt;s:domain r:resource="#Item"/&gt;
+    &lt;s:domain r:resource="#Nest"/&gt;
+  &lt;/r:Property&gt;
+  
+  &lt;!-- "role" property --&gt;
+  &lt;r:Property r:ID="role"&gt;
+    &lt;s:label&gt;role&lt;/s:label&gt;
+    &lt;s:comment&gt;role - Property attributing a "role" element for
+    relating a resource (a Literal).&lt;/s:comment&gt;
+    &lt;s:range r:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/&gt;
+    &lt;s:domain r:resource="#Item"/&gt;
+    &lt;s:domain r:resource="#Nest"/&gt;
+  &lt;/r:Property&gt;
+  
+  &lt;!-- "service" property --&gt;
+  &lt;r:Property r:ID="service"&gt;
+    &lt;s:label&gt;service&lt;/s:label&gt;
+    &lt;s:comment&gt;service - Property attributing a "service" element for
+    a service component (a Literal).&lt;/s:comment&gt;
+    &lt;s:range r:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/&gt;
+    &lt;s:domain r:resource="#Item"/&gt;
+    &lt;s:domain r:resource="#Nest"/&gt;
+  &lt;/r:Property&gt;
+  
+  &lt;!-- "type" property --&gt;
+  &lt;r:Property r:ID="type"&gt;
+    &lt;s:label&gt;type&lt;/s:label&gt;
+    &lt;s:comment&gt;type - Property attributing a "type" element for
+    typing a resource (a Literal).&lt;/s:comment&gt;
+    &lt;s:range r:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/&gt;
+    &lt;s:domain r:resource="#Item"/&gt;
+    &lt;s:domain r:resource="#Nest"/&gt;
+  &lt;/r:Property&gt;
+  
+  &lt;/r:RDF&gt;
+</code></pre>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr>
+Copyright &copy; 2002 Elsevier Science Ltd. All rights reserved. 
+</body>
+</html>

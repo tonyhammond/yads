@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+
+  An XLink extended link modelled using YADS.
+
+  This example is taken from section 5.1 of the XLink spec,
+  "XML Linking Language (XLink) Version 1.0", see
+
+  http://www.w3.org/TR/2001/REC-xlink-20010627/
+
+-->
+<yads>
+<nest>
+<!-- XLink extended link -->
+<resource/>
+<collection>
+
+<item>
+<!-- XLink title element -->
+<data>Course Load for Pat Jones</data>
+<property type='type'>tooltip</property>
+</item>
+
+<item>
+<!-- XLink locator element -->
+<resource>href:students/patjones62.xml</resource>
+<property type='type'>person</property>
+<property type='access'>student62</property>
+<property type='role'>http://www.example.com/linkprops/student</property>
+<property type='label'>Pat Jones</property>
+</item>
+
+<item>
+<!-- XLink locator element -->
+<resource>href:profs/jaysmith7.xml</resource>
+<property type='type'>person</property>
+<property type='access'>prof7</property>
+<property type='role'>http://www.example.com/linkprops/professor</property>
+<property type='label'>Dr. Jay Smith</property>
+</item>
+
+<item>
+<!-- XLink locator element -->
+<resource>href:courses/cs101.xml</resource>
+<property type='type'>course</property>
+<property type='access'>CS-101</property>
+<property type='role'>http://www.example.com/linkprops/professor</property>
+<property type='label'>Computer Science 101</property>
+</item>
+
+<item>
+<!-- XLink resource element -->
+<data>3.5</data>
+<property type='type'>gpa</property>
+<property type='access'>PatJonesGPA</property>
+</item>
+
+<item>
+<!-- XLink arc element -->
+<collection>
+<item>
+<!-- XLink arc tail -->
+<data>student62</data>
+<property type='directive'>xlink:from</property>
+</item>
+<item>
+<!-- XLink arc head -->
+<data>PatJonesGPA</data>
+<property type='directive'>xlink:to</property>
+</item>
+</collection>
+<property type='type'>go</property>
+<property type='label'>Pat Jones's GPA</property>
+<property type='directive'>xlink:show='new';actuate='onRequest'</property>
+</item>
+
+<item>
+<!-- XLink arc element -->
+<collection>
+<item>
+<!-- XLink arc tail -->
+<data>CS-101</data>
+<property type='directive'>xlink:from</property>
+</item>
+<item>
+<!-- XLink arc head -->
+<data>student62</data>
+<property type='directive'>xlink:to</property>
+</item>
+</collection>
+<property type='type'>go</property>
+<property type='label'>Pat Jones, auditing the course</property>
+<property type='directive'>xlink:show='replace';actuate='onRequest'</property>
+<property type='role'>http://www.example.com/linkprops/auditor</property>
+</item>
+
+<item>
+<!-- XLink arc element -->
+<collection>
+<item>
+<!-- XLink arc tail -->
+<data>student62</data>
+<property type='directive'>xlink:from</property>
+</item>
+<item>
+<!-- XLink arc head -->
+<data>prof7</data>
+<property type='directive'>xlink:to</property>
+</item>
+</collection>
+<property type='type'>go</property>
+<property type='label'>Dr. Jay Smith, advisor</property>
+<property type='directive'>xlink:show='replace';actuate='onRequest'</property>
+<property type='role'>http://www.example.com/linkprops/advisor</property>
+</item>
+
+</collection>
+<property type='type'>courseload</property>
+
+</nest>
+</yads>

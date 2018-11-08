@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  OpenURL - Schema Library
+
+-->
+<yads>
+<nest>
+  <!-- Schema Library for OpenURL -->
+  <resource>http:yads.xml</resource>
+  <collection>
+    <nest>
+      <!-- BNF Library -->
+      <resource>doi:1014/yads</resource>
+      <collection>
+        <item>
+          <!-- ISO Schema -->
+          <resource>http:openurl.xml</resource>
+          <property type="label">ja</property>
+          <property type="type">ja</property>
+        </item>
+      </collection>
+      <property type="type">BNF Schemas</property>
+    </nest>
+  </collection>
+  <property type="label">Schemas for OpenURL</property>
+  <property type="type">Schemas</property>
+</nest>
+</yads>

@@ -1,0 +1,112 @@
+<html>
+<head>
+<link href="../css/yads.css" type=text/css rel=stylesheet>
+<title>YADS: Classes &amp; Properties</title>
+</head>
+<body>
+<h1>
+<img src="../imx/rdf_metadata_button.40">
+<i>YADS Classes &amp; Properties</i></h1>
+<hr>
+<td>
+YADS defines a basic "1+7" properties model for an "Item" object and a
+"2+7" properties model for a "Nest" object.
+<p>
+The one (mandatory) property on each "Item" is a "resource" or
+alternatively - as a resource proxy - a "collection" which attributes
+a set of
+"Item" objects 
+(with an ordering of "unordered", "sequenced", or "choice") 
+through which a resource hierarchy can be propagated.
+The two (mandatory) properties on each "Nest" are a "resource" and a
+"collection" which are bound together..
+<p>
+Each "Item" or "Nest" object may have 0..7 qualifying properties
+associated with it. Base properties are thus as follows:
+<p>
+<center>
+<table width="100%" border=1 cellpadding=10>
+<tr>
+<td>
+<pre>
+
+  Props 1 = ("resource" | "collection")                           # mandatory, one of
+  Props 2 = ("resource" & "collection")                           # mandatory, two of
+  Props 7 = (["access"] & ["detail"] & ["directive"] & ["label"]
+             & ["role"] & ["service"] & ["type"])                 # optional, any of
+</pre>
+</td>
+</tr>
+</table>
+</center>
+<p>
+The "type" property implements a type extension mechansim. Type
+values are resolved by consulting a profile-specific schema.
+This allows for a late-binding of semantics. Rationale is that
+multiple applications can build on this common infrastructure
+and defer semantic overloading till runtime.
+<p>
+<hr>
+<table width=100% cellpadding=0 cellspacing=10 border=0>
+<tr valign=top>
+<th width=50% align="left">
+<b>Base Classes</b>
+</th>
+<th width=50% align="left">
+<b>Base Properties</b>
+</th>
+</tr>
+<tr valign=top>
+<td bgcolor="#ffffff">
+<table border="0" cellpadding="10"><tr><td>
+<br>
+<dl>
+<dt><b>1. "Item"</b>
+<dd>A compound object with either a resource property or a collection property together with qualifying properties. 
+<dt><b>2. "Nest"</b>
+<dd>A compound object with both a resource property and a collection property together with qualifying properties. 
+</dl>
+</td></tr></table>
+</td>
+<td bgcolor="#ffffff">
+<table border="0" cellpadding="10"><tr><td>
+<br>
+<dl>
+<dt><b>0a. "collection" ~&gt; [uri]</b>
+<dd>A container for Item or Nest objects with a specified ordering.
+<dt><b>0b. "resource" ~&gt; [uri]</b>
+<dd>A generic resource. This can be variously a meta-resource, eg a DOI (identified by a URI of scheme "doi:"),
+ a familiar web resource (identified by any URI), or a "literal", ie an inline resource (identified by a URI of scheme "data:").
+<p>
+<hr>
+<p>
+<dt><b>1. "access" ~&gt; [string]</b>
+<dd>A label to mark off an access point within a resource hierarchy. Example is ":default" to indicate to a service component
+the default resource set to return.
+<dt><b>2. "detail" ~&gt; [string]</b>
+<dd>A human readable description of an Item or Nest object.
+<dt><b>3. "directive" ~&gt; [string]</b>
+<dd>A directive which controls a service behaviour.
+Example is a directive to a service component
+ not to bundle a user-supplied parameter string together with a resolution
+result set.
+<dt><b>4. "label" ~&gt; [string]</b>
+<dd>A presentational element standing for a resource in a display service.
+<dt><b>5. "role" ~&gt; [string]</b>
+<dd>Indicates the relationship of this resource with another resource.
+<dt><b>6. "service" ~&gt; [string]</b>
+<dd>Indicates a service component.
+<dt><b>7. "type" ~&gt; [string]</b>
+<dd>An extensibility type. The value is the application type (or property) of an item or nest,  and the
+definition is maintained in a schema registered under the application profile.
+</dl>
+</td></tr></table>
+</td>
+</tr>
+</table>
+<hr>
+Copyright &copy; 2002 Elsevier Science Ltd. All rights reserved. 
+</center>
+</body>
+</html>
+

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   DOI use case: Formats (Info)
+
+   Here two manifestations of a journal article are managed. Information
+   about format availability is recorded.
+-->
+<yads>
+  <nest>
+    <!-- Article (Format Metadata) -->
+    <resource>doi:10.1006/jmbi.2002.5438</resource>
+    <collection>
+      <nest>
+        <!-- DOI Profile -->
+        <resource>doi:10.0/profile.crossref</resource>
+        <collection>
+          <item>
+            <!-- Article -->
+            <resource>http://www.idealibrary.com/links/doi/10.1006/jmbi.2002.5438</resource>
+            <property type="label">J. Mol. Biol. (2002) 317: p. 375</property>
+            <property type="type">xref:Article</property>
+            <property type="access">:default</property>
+          </item>
+          <item>
+            <collection order="choice">
+              <item>
+                <!-- HTML Format -->
+                <data>HTML</data>
+              </item>
+              <item>
+                <!-- PDF Format -->
+                <data>PDF</data>
+              </item>
+            </collection>
+            <property type="type">xref:Format</property>
+          </item>
+        </collection>
+        <property type="type">doi:Profile</property>
+      </nest>
+    </collection>
+  </nest>
+</yads>

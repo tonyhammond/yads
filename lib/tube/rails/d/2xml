@@ -1,0 +1,66 @@
+#!/usr/bin/perl
+$D = $ARGV[0];
+@_ = <>;
+for (@_) {
+  if (/label/) {
+    $S = $_;
+    $S =~ s/\s*(\w+) \=\> "(.*?)"/$2 Station/;
+    chomp $S;
+    $S =~ s/\r//;
+  }
+}
+$_[12] =~ s/(data:,)(\w+)/$1Zone $2/;
+#print STDERR $_[16];
+$_[16] =~ s/(data:,)(\w+)/$1\U$2/;
+#print STDERR $_[16];
+$_[1] = "  <nest>\n";
+$_[$#_-1] = "  </nest>\n";
+$_[$#_-4] .= "        <property type=\"type\">doi:Profile</property>\n";
+$p = $_[2]; $p =~ s/^/  /;
+$_[5] =~ s/^  //;
+$_[6] =~ s/^    //;
+$r1 = $_[5]; $r1 =~ s/^  //;
+$r2 = $_[6]; $r2 =~ s/&/\&amp;/;
+$_[2] = "$r1";
+$_[$#_-2] .= "$r2    <property type=\"type\">tube:Station</property>\n";
+$_[5] = "  $p";
+$_[6] = undef;
+$_[4] .= "        <!-- Application Profile -->\n";
+$_[24] .= "                <!-- Line Interchange -->\n";
+open D, ">$D.xml";
+print D << "EOT";
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!-- 
+  TubeTime - $S 
+
+  TubeTime implements the YADS model to describe the "Tube"
+  - London's underground rail network - as an example of a
+  complex resource association
+--> 
+EOT
+# while (<>) {
+$N = 0;
+for (@_) {
+  for ($_) {
+    s/(^\s+)\# ([ \S]+)/$1\<!-- $2 --\>/;
+    s/(^\s+)\(/$1\<item\>/;
+    s/(^\s+)\)/$1\<\/item\>/;
+    s/(^\s+)\{/$1\<collection\>/;
+    s/(^\s+)\}/$1\<\/collection\>/;
+    s/^\{/\<yads\>/;
+    s/^\}/\<\/yads\>/;
+    s/(\w+)&(\w+)/$1&amp;$2/g;
+    s/resource \=\> \<data:,(.*?)\>/\<data\>$1\<\/data\>/;
+    s/resource \=\> \<(.*?)\>/\<resource\>$1\<\/resource\>/;
+    s/profile \=\> \<(.*?)\>/\<resource\>$1\<\/resource\>/;
+    s/(\w+) \=\> "(.*?)"/\<property type="$1"\>$2\<\/property\>/;
+    s|\r||g;
+  }
+  print D "    <!-- $S --\>\n" if $N == 2;
+  # print D "$N: $_";
+  print D "$_";
+
+  $N++;
+}
+
+close D;

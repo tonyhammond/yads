@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yads>
+<!-- source: fig6.xml -->
+    <nest>
+      <resource>doi:10.0/profile.dlib</resource>
+  <collection>
+    <item>
+                  <collection order="sequenced">
+                    <item>
+                        <collection>
+                          <item>
+                            <resource>data:Generalizing the OpenURL Framework beyond References to Scholarly Works: The Bison-Fute Model</resource>
+                            <property type="type">dlib:TitleString</property>
+                          </item>
+                          <item>
+                            <resource>data:Herbert Van de Sompel, Cornell University and Oren Beit-Arie, Ex Libris (USA) Inc.</resource>
+                            <property type="type">dlib:AuthorString</property>
+                          </item>
+                        </collection>
+                    </item>
+                  </collection>
+                <property type="detail">Table of Contents for July 2001 issue of D-Lib magazine.</property>
+              </item>
+    <item>
+  <collection order="choice">
+    <item>
+      <resource>http://www.dlib.org/dlib/july01/07contents.html</resource>
+      <property type="type">dlib:Mirror</property>
+      <property type="label">Origin site - USA.</property>
+      <property type="detail">The Corporation for National Research Initiatives, Reston, Virginia, U.S.A.</property>
+      <property type="access">:default</property>
+    </item>
+    <item>
+      <resource>http://mirrored.ukoln.ac.uk/lis-journals/dlib/dlib/dlib/july01/07contents.html</resource>
+      <property type="type">dlib:Mirror</property>
+      <property type="label">Mirror site - UK.</property>
+      <property type="detail">UKOLN: The UK Office for Library and Information Networking, Bath, England</property>
+    </item>
+    <item>
+      <resource>http://sunsite.anu.edu.au/mirrors/dlib/dlib/july01/07contents.html</resource>
+      <property type="type">dlib:Mirror</property>
+      <property type="label">Mirror site - Australia.</property>
+      <property type="detail">The Australian National University Sunsite, Canberra, Australia</property>
+    </item>
+  </collection>
+  <property type="detail">Origin and mirror websites.</property>
+    </item>
+  </collection>
+      <property type="type">doi:Profile</property>
+    </nest>
+</yads>

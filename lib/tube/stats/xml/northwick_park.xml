@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!-- 
+  TubeTime - Northwick Park Station 
+
+  TubeTime implements the YADS model to describe the "Tube"
+  - London's underground rail network - as an example of a
+  complex resource association
+--> 
+<yads>
+  <nest>
+    <!-- Northwick Park Station -->
+    <resource>doi:1014/tube/northwick_park</resource>
+    <property type="label">Northwick Park</property>
+    <property type="type">tube:Station</property>
+    <collection>
+      <nest>
+        <!-- Application Profile -->
+        <resource>doi:1014/profile.tube</resource>
+        <property type="type">doi:Profile</property>
+        <collection>  
+          <item>
+            <!-- Location -->
+            <collection>
+              <item>
+                <data>Zone 4</data>
+                <property type="type">tube:Zone</property>
+              </item>
+              <item>
+                <data>B3</data>
+                <property type="type">tube:Grid</property>
+              </item>
+            </collection>
+          </item>
+          <item>
+            <!-- Line Interchanges -->
+            <collection>
+              <nest>
+                <!-- Line Interchange -->
+                <resource>doi:1014/tube/metropolitan_line</resource>
+                <property type="type">tube:LineChange</property>
+                <collection>
+                  <nest>
+                    <resource>doi:1014/tube/harrow-on-the-hill</resource>
+                    <property type="type">tube:PrevStation</property>
+                    <collection>  
+                      <item>
+                        <data>3</data>
+                        <property type="type">tube:Mins</property>
+                      </item>
+                    </collection>
+                  </nest>
+                  <nest>
+                    <resource>doi:1014/tube/preston_road</resource>
+                    <property type="type">tube:NextStation</property>
+                    <collection>  
+                      <item>
+                        <data>2</data>
+                        <property type="type">tube:Mins</property>
+                      </item>
+                    </collection>
+                  </nest>
+                </collection>
+              </nest>
+            </collection>
+          </item>
+        </collection>
+      </nest>
+    </collection>
+  </nest>
+</yads>

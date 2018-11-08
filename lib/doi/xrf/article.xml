@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   DOI use case: Article/Erratum
+
+   Here an article is (forward) linked to an erratum.
+-->
+<doi_data>
+  <doi>10.1006/geno.2001.6453</doi>
+  <collection>
+    <item>
+      <resource/>
+      <property type="detail">Resources for Article
+      &lt;doi:10.1006/geno.2001.6453&gt;</property>
+    </item>
+    <item>
+  <collection>
+    <item>
+      <resource>http://www.idealibrary.com/links/doi/10.1006/geno.2001.6453</resource>
+      <property type="label">Genomics (2001) 73: p. 223</property>
+      <property type="type">xref:Article</property>
+      <property type="access">:default</property>
+    </item>
+    <item>
+      <resource>doi:10.1006/geno.2002.6726</resource>
+      <property type="type">xref:Erratum</property>
+    </item>
+  </collection>
+    </item>
+  </collection>
+</doi_data>

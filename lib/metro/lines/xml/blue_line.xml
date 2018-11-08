@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  MetroRail - Blue Line
+
+  MetroRail implements the YADS model to describe "Metro Rail"
+  - Los Angeles' underground rail network - as an example of a
+  complex resource association
+-->
+<yads>
+  <nest>
+    <!-- Blue Line -->
+    <resource>doi:1014/metro/blue_line</resource>
+    <property type="type">metro:Line</property>
+    <property type="label">Blue Line</property>
+    <property type="detail">MetroRail - Blue Line.</property>
+    <collection>
+      <nest>
+        <!-- Application Profile -->
+        <resource>doi:1014/profile.metro</resource>
+        <property type="type">doi:Profile</property>
+        <collection>  
+          <item>
+            <!-- Terminus Stations -->
+            <property type="detail">Terminus stations.</property>
+            <collection>
+              <item>
+                <resource>doi:1014/metro/7th_street,metro_center,julian_dixon</resource>
+                <property type="type">metro:Terminus</property>
+              </item>
+            </collection>
+          </item>
+          <item>
+            <!-- Line Stations -->
+            <property type="detail">Line stations.</property>
+            <collection>
+              <item>
+                <!-- Branch Stations -->
+                <property type="detail">Branch stations.</property>
+                <collection order="sequenced">
+                  <item>
+                    <resource>doi:1014/metro/7th_street,metro_center,julian_dixon</resource>
+                    <property type="type">metro:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/metro/pico</resource>
+                    <property type="type">metro:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/metro/grand</resource>
+                    <property type="type">metro:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/metro/san_pedro</resource>
+                    <property type="type">metro:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/metro/washington</resource>
+                    <property type="type">metro:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/metro/vernon</resource>
+                    <property type="type">metro:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/metro/slauson</resource>
+                    <property type="type">metro:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/metro/florence</resource>
+                    <property type="type">metro:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/metro/firestone</resource>
+                    <property type="type">metro:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/metro/103rd_street,kenneth_hahn</resource>
+                    <property type="type">metro:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/metro/imperial,wilmington,rosa_parks</resource>
+                    <property type="type">metro:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/metro/compton</resource>
+                    <property type="type">metro:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/metro/artesia</resource>
+                    <property type="type">metro:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/metro/del_amo</resource>
+                    <property type="type">metro:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/metro/wardlow</resource>
+                    <property type="type">metro:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/metro/willow</resource>
+                    <property type="type">metro:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/metro/pacific_coast_highway</resource>
+                    <property type="type">metro:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/metro/anaheim</resource>
+                    <property type="type">metro:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/metro/5th_street</resource>
+                    <property type="type">metro:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/metro/1st_street</resource>
+                    <property type="type">metro:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/metro/transit_mall</resource>
+                    <property type="type">metro:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/metro/pacific</resource>
+                    <property type="type">metro:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/metro/anaheim</resource>
+                    <property type="type">metro:Station</property>
+                  </item>
+                </collection>
+              </item>
+            </collection>
+          </item>
+          <item>
+            <!-- Interchange Stations -->
+            <property type="detail">Interchange stations.</property>
+            <collection>
+              <nest>
+                <resource>doi:1014/metro/red_line</resource>
+                <collection order="choice">
+                  <item>
+                    <resource>doi:1014/metro/7th_street,metro_center,julian_dixon</resource>
+                    <property type="type">metro:Interchange</property>
+                  </item>
+                </collection>
+                <property type="type">metro:LineChange</property>
+              </nest>
+              <nest>
+                <resource>doi:1014/metro/green_line</resource>
+                <collection order="choice">
+                  <item>
+                    <resource>doi:1014/metro/imperial,wilmington,rosa_parks</resource>
+                    <property type="type">metro:Interchange</property>
+                  </item>
+                </collection>
+                <property type="type">metro:LineChange</property>
+              </nest>
+            </collection>
+          </item>
+        </collection>
+      </nest>
+    </collection>
+  </nest>
+</yads>

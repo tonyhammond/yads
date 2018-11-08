@@ -1,0 +1,184 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<doi_batch version = "2.0.4">
+	<head>
+		<doi_batch_id>123456</doi_batch_id>
+		<timestamp>20011003110604</timestamp>
+		<depositor>
+			<name>Oxford University Press</name>
+			<email_address>crossref@oup.co.uk</email_address>
+		</depositor>
+		<registrant>OUP</registrant>
+	</head>
+	<body>
+		<book book_type = "edited_book">
+			<book_metadata language = "en">
+				<contributors>
+					<person_name sequence = "first" contributor_role = "editor">
+						<given_name>D.J.</given_name>
+						<surname>Weatlierall</surname>
+					</person_name>
+					<person_name sequence = "additional" contributor_role = "editor">
+						<given_name>J.G.G.</given_name>
+						<surname>Ledingham</surname>
+					</person_name>
+					<person_name sequence = "additional" contributor_role = "editor">
+						<given_name>D.A.</given_name>
+						<surname>Warrell</surname>
+					</person_name>
+				</contributors>
+				<series_metadata>
+					<titles>
+						<title>Oxford Textbook of Medicine</title>
+					</titles>
+					<isbn>0-19-262140-8</isbn>
+					<doi_data>
+						<doi>10.9999/0-19-262140-8</doi>
+						<resource>http://www.oup.co.uk/isbn/0-19-262140-8</resource>
+					</doi_data>
+				</series_metadata>
+				<volume>1</volume>
+				<edition_number>3</edition_number>
+				<publication_date media_type = "print">
+					<month>10</month>
+					<day>5</day>
+					<year>1999</year>
+				</publication_date>
+				<isbn>0-19-262706-6</isbn>
+				<publisher>
+					<publisher_name>Oxford University Press</publisher_name>
+					<publisher_place>Oxford</publisher_place>
+				</publisher>
+				<doi_data>
+					<doi>10.9999/0-19-262706-6</doi>
+					<resource>http://www.oup.co.uk/isbn/0-19-262706-6</resource>
+				</doi_data>
+			</book_metadata>
+			<content_item component_type = "chapter" level_sequence_number = "1" publication_type = "full_text">
+				<titles>
+					<title>Preface</title>
+				</titles>
+				<doi_data>
+					<doi>10.9999/0-19-262706-6.Preface</doi>
+					<resource>http://www.oup.co.uk/isbn/0-19-262706-6/Preface</resource>
+				</doi_data>
+			</content_item>
+			<content_item component_type = "section" level_sequence_number = "1" publication_type = "full_text">
+				<contributors>
+					<person_name sequence = "first" contributor_role = "author">
+						<given_name>C</given_name>
+						<surname>Clothier</surname>
+					</person_name>
+				</contributors>
+				<titles>
+					<title>On being a patient</title>
+				</titles>
+				<component_number>Section 1</component_number>
+				<pages>
+					<first_page>1</first_page>
+					<last_page>4</last_page>
+				</pages>
+				<publisher_item>
+					<item_number>tm3001</item_number>
+				</publisher_item>
+				<doi_data>
+					<doi>10.9999/0-19-262706-6.1</doi>
+					<resource>http://www.oup.co.uk/isbn/0-19-262706-6/1</resource>
+				</doi_data>
+			</content_item>
+			<content_item component_type = "section" level_sequence_number = "1" publication_type = "full_text">
+				<titles>
+					<title>Chemical and physical injuries and environmental and occupational diseases</title>
+				</titles>
+				<component_number>Section 8</component_number>
+				<pages>
+					<first_page>1041</first_page>
+				</pages>
+				<doi_data>
+					<doi>10.9999/0-19-262706-6.8</doi>
+					<resource>http://www.oup.co.uk/isbn/0-19-262706-6/8</resource>
+				</doi_data>
+			</content_item>
+			<content_item component_type = "section" level_sequence_number = "2" publication_type = "full_text">
+				<contributors>
+					<person_name sequence = "first" contributor_role = "editor">
+						<given_name>J.A.</given_name>
+						<surname>Vale</surname>
+					</person_name>
+				</contributors>
+				<titles>
+					<title>Poisoning</title>
+				</titles>
+				<component_number>8.1</component_number>
+				<pages>
+					<first_page>1041</first_page>
+				</pages>
+				<doi_data>
+					<doi>10.9999/0-19-262706-6.8</doi>
+					<resource>http://www.oup.co.uk/isbn/0-19-262706-6/8</resource>
+				</doi_data>
+			</content_item>
+			<content_item component_type = "chapter" level_sequence_number = "3" publication_type = "full_text">
+				<contributors>
+					<person_name sequence = "first" contributor_role = "author">
+						<given_name>T.J.</given_name>
+						<surname>Meredith</surname>
+					</person_name>
+					<person_name sequence = "additional" contributor_role = "author">
+						<given_name>J.A.</given_name>
+						<surname>Vale</surname>
+					</person_name>
+					<person_name sequence = "additional" contributor_role = "author">
+						<given_name>A.T.</given_name>
+						<surname>Proudfoot</surname>
+					</person_name>
+				</contributors>
+				<titles>
+					<title>Introduction and epidemiology</title>
+				</titles>
+				<component_number>8.1.1</component_number>
+				<pages>
+					<first_page>1043</first_page>
+					<last_page>1048</last_page>
+				</pages>
+				<publisher_item>
+					<item_number>tm3159</item_number>
+				</publisher_item>
+				<doi_data>
+					<doi>10.9999/0-19-262706-6.8.1.1</doi>
+					<resource>http://www.oup.co.uk/isbn/0-19-262706-6/8.1.1</resource>
+				</doi_data>
+			</content_item>
+			<content_item component_type = "chapter" level_sequence_number = "3" publication_type = "full_text">
+				<contributors>
+					<person_name sequence = "first" contributor_role = "author">
+						<given_name>A.T.</given_name>
+						<surname>Proudfoot</surname>
+					</person_name>
+					<person_name sequence = "additional" contributor_role = "author">
+						<given_name>J.A.</given_name>
+						<surname>Vale</surname>
+					</person_name>
+					<person_name sequence = "additional" contributor_role = "author">
+						<given_name>T.J.</given_name>
+						<surname>Meredith</surname>
+					</person_name>
+				</contributors>
+				<titles>
+					<title>Clinical and metabolic features and general principles of management</title>
+				</titles>
+				<component_number>8.1.2</component_number>
+				<pages>
+					<first_page>1049</first_page>
+					<last_page>1055</last_page>
+				</pages>
+				<publisher_item>
+					<item_number>tm3160</item_number>
+				</publisher_item>
+				<doi_data>
+					<doi>10.9999/0-19-262706-6.8.1.2</doi>
+					<resource>http://www.oup.co.uk/isbn/0-19-262706-6/8.1.2</resource>
+				</doi_data>
+			</content_item>
+		</book>
+	</body>
+</doi_batch>

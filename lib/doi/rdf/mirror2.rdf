@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   DOI use case: Mirror Sites (Issue)
+
+   Here a DLib issue is managed across five mirror sites. The origin
+   site - CNRI - is marked as the default.
+-->
+
+<rdf:RDF xmlns:isa="doi:1014/yads-schema-2002-04-03#" xmlns:has="doi:1014/yads-schema-2002-04-03#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:Description rdf:about="">
+<rdf:type>isa:Nest</rdf:type>
+<!-- DLib Issue (Mirror Sites) -->
+<has:resource rdf:resource="doi:10.1045/july2001-contents"/>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- Profile -->
+<has:resource rdf:resource="doi:10.0/profile.crossref"/>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- US Origin -->
+<has:resource rdf:resource="http://www.dlib.org/dlib/july01/07contents.html"/>
+<has:type>dlib:Mirror</has:type>
+<has:label>Origin site - USA.</has:label>
+<has:detail>The Corporation for National Research Initiatives, Reston, Virginia, U.S.A.</has:detail>
+<has:access>:default</has:access>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- UK Mirror -->
+<has:resource rdf:resource="http://mirrored.ukoln.ac.uk/lis-journals/dlib/dlib/dlib/july01/07contents.html"/>
+<has:type>dlib:Mirror</has:type>
+<has:label>Mirror site - UK.</has:label>
+<has:detail>UKOLN: The UK Office for Library and Information Networking, Bath, England</has:detail>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- Australian Mirror -->
+<has:resource rdf:resource="http://sunsite.anu.edu.au/mirrors/dlib/dlib/july01/07contents.html"/>
+<has:type>dlib:Mirror</has:type>
+<has:label>Mirror site - Australia.</has:label>
+<has:detail>The Australian National University Sunsite, Canberra, Australia</has:detail>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- German Mirror -->
+<has:resource rdf:resource="http://webdoc.sub.gwdg.de/edoc/aw/d-lib/dlib/july01/07contents.html"/>
+<has:type>dlib:Mirror</has:type>
+<has:label>Mirror site - Germany.</has:label>
+<has:detail>State Library of Lower Saxony and the University Library of Goettingen, Goettingen, Germany</has:detail>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- Argentine Mirror -->
+<has:resource rdf:resource="http://www.dlib.org.ar/dlib/july01/07contents.html"/>
+<has:type>dlib:Mirror</has:type>
+<has:label>Mirror site - Argentina.</has:label>
+<has:detail>Universidad de Belgrano, Buenos Aires, Argentina</has:detail>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+<has:type>doi:Profile</has:type>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+</rdf:Description>
+</rdf:RDF>

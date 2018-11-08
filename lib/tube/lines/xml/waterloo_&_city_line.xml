@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TubeTime - Waterloo & City Line
+
+  TubeTime implements the YADS model to describe the "Tube"
+  - London's underground rail network - as an example of a
+  complex resource association
+--> 
+<yads>
+  <nest>
+    <!-- Waterloo & City Line -->
+    <resource>doi:1014/tube/waterloo_&amp;_city_line</resource>
+    <property type="type">tube:Line</property>
+    <property type="label">Waterloo &amp; City Line</property>
+    <property type="detail">TubeTime - Waterloo &amp; City Line.</property>
+    <collection>
+      <nest>
+        <!-- Application Profile -->
+        <resource>doi:1014/profile.tube</resource>
+        <property type="type">doi:Profile</property>
+        <collection>  
+          <item>
+            <!-- Terminus Stations -->
+            <property type="detail">Terminus stations.</property>
+            <collection>
+              <item>
+                <resource>doi:1014/tube/waterloo</resource>
+                <property type="type">tube:Terminus</property>
+              </item>
+              <item>
+                <resource>doi:1014/tube/bank</resource>
+                <property type="type">tube:Terminus</property>
+              </item>
+            </collection>
+          </item>
+          <item>
+            <!-- Line Stations -->
+            <property type="detail">Line stations.</property>
+            <collection>
+              <item>
+                <!-- Branch Stations -->
+                <property type="detail">Branch stations.</property>
+                <collection order="sequenced">
+                  <item>
+                    <resource>doi:1014/tube/waterloo</resource>
+                    <property type="type">tube:Station</property>
+                    <property type="access">Rail Link</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/bank</resource>
+                    <property type="type">tube:Station</property>
+                  </item>
+                </collection>
+              </item>
+            </collection>
+          </item>
+          <item>
+            <!-- Interchange Stations -->
+            <property type="detail">Interchange stations.</property>
+            <collection>
+              <nest>
+                <!-- Line Change -->
+                <resource>doi:1014/tube/jubilee_line</resource>
+                <collection order="choice">
+                  <item>
+                    <resource>doi:1014/tube/waterloo</resource>
+                    <property type="type">tube:Interchange</property>
+                  </item>
+                </collection>
+                <property type="type">tube:LineChange</property>
+              </nest>
+              <nest>
+                <!-- Line Change -->
+                <resource>doi:1014/tube/bakerloo_line</resource>
+                <collection order="choice">
+                  <item>
+                    <resource>doi:1014/tube/waterloo</resource>
+                    <property type="type">tube:Interchange</property>
+                  </item>
+                </collection>
+                <property type="type">tube:LineChange</property>
+              </nest>
+              <nest>
+                <!-- Line Change -->
+                <resource>doi:1014/tube/circle_line</resource>
+                <collection order="choice">
+                  <item>
+                    <resource>doi:1014/tube/bank</resource>
+                    <property type="type">tube:Interchange</property>
+                  </item>
+                </collection>
+                <property type="type">tube:LineChange</property>
+              </nest>
+              <nest>
+                <!-- Line Change -->
+                <resource>doi:1014/tube/district_line</resource>
+                <collection order="choice">
+                  <item>
+                    <resource>doi:1014/tube/bank</resource>
+                    <property type="type">tube:Interchange</property>
+                  </item>
+                </collection>
+                <property type="type">tube:LineChange</property>
+              </nest>
+              <nest>
+                <!-- Line Change -->
+                <resource>doi:1014/tube/central_line</resource>
+                <collection order="choice">
+                  <item>
+                    <resource>doi:1014/tube/bank</resource>
+                    <property type="type">tube:Interchange</property>
+                  </item>
+                </collection>
+                <property type="type">tube:LineChange</property>
+              </nest>
+              <nest>
+                <!-- Line Change -->
+                <resource>doi:1014/tube/northern_line</resource>
+                <collection order="choice">
+                  <item>
+                    <resource>doi:1014/tube/waterloo</resource>
+                    <property type="type">tube:Interchange</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/bank</resource>
+                    <property type="type">tube:Interchange</property>
+                  </item>
+                </collection>
+                <property type="type">tube:LineChange</property>
+              </nest>
+            </collection>
+          </item>
+        </collection>
+      </nest>
+    </collection>
+  </nest>
+</yads>

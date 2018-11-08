@@ -1,0 +1,30 @@
+<html>
+<head>
+<link href="css/yads.css" type=text/css rel=stylesheet>
+<title>YADS Transformer</title>
+</head>
+<body>
+<h1>
+<img src="../imx/rdf_metadata_button.40">
+<i>Transformer</i></h1>
+<hr>
+The YADS description can be simply 
+transformed to a graph or to a regular RDF/XML description.
+<br>
+<form action="http://localhost:8080/tony/servlet/DescriptionServlet" method="POST">
+Enter URI of XML file to transform:&nbsp;&nbsp;
+<input type="text" name="URI"
+ value="http://localhost/tony/singleton.xml" size="72">
+<p>
+<input type="submit" value="Transform">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="reset" value="Reset">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="radio" name="Transform" value="SVG" button="on">Transform to Graph (SVG)
+&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="radio" name="Transform" value="RDF">Transform to RDF (XML)
+</form>
+<hr>
+Copyright &copy; 2002 Elsevier Science Ltd. All rights reserved. 
+</body>
+

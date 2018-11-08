@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!-- 
+  TubeTime - Bromley-by-bow Station 
+
+  TubeTime implements the YADS model to describe the "Tube"
+  - London's underground rail network - as an example of a
+  complex resource association
+--> 
+<yads>
+  <nest>
+    <!-- Bromley-by-bow Station -->
+    <resource>doi:1014/tube/bromley-by-bow</resource>
+    <property type="label">Bromley-by-bow</property>
+    <property type="type">tube:Station</property>
+    <collection>
+      <nest>
+        <!-- Application Profile -->
+        <resource>doi:1014/profile.tube</resource>
+        <property type="type">doi:Profile</property>
+        <collection>  
+          <item>
+            <!-- Location -->
+            <collection>
+              <item>
+                <data>Zone 2</data>
+                <property type="type">tube:Zone</property>
+              </item>
+              <item>
+                <data>Zone 3</data>
+                <property type="type">tube:Zone</property>
+              </item>
+              <item>
+                <data>C8</data>
+                <property type="type">tube:Grid</property>
+              </item>
+            </collection>
+          </item>
+          <item>
+            <!-- Line Interchanges -->
+            <collection>
+              <nest>
+                <!-- Line Interchange -->
+                <resource>doi:1014/tube/district_line</resource>
+                <property type="type">tube:LineChange</property>
+                <collection>
+                  <nest>
+                    <!-- Next Stop Back -->
+                    <resource>doi:1014/tube/bow_road</resource>
+                    <property type="type">tube:PrevStation</property>
+                    <collection>  
+                      <item>
+                        <data>2</data>
+                        <property type="type">tube:Mins</property>
+                      </item>
+                    </collection>
+                  </nest>
+                  <nest>
+                    <!-- Next Stop -->
+                    <resource>doi:1014/tube/west_ham</resource>
+                    <property type="type">tube:NextStation</property>
+                    <collection>  
+                      <item>
+                        <data>2</data>
+                        <property type="type">tube:Mins</property>
+                      </item>
+                    </collection>
+                  </nest>
+                </collection>
+              </nest>
+              <nest>
+                <!-- Line Interchange -->
+                <resource>doi:1014/tube/hammersmith_&amp;_city_line</resource>
+                <property type="type">tube:LineChange</property>
+                <property type="detail">No service Whitechapel-Barking early morning or late evening Mondays to Saturdays or all day Sundays. Use Distict line instead.</property>
+                <collection>
+                  <nest>
+                    <!-- Next Stop Back -->
+                    <resource>doi:1014/tube/bow_road</resource>
+                    <property type="type">tube:PrevStation</property>
+                    <collection>  
+                      <item>
+                        <data>2</data>
+                        <property type="type">tube:Mins</property>
+                      </item>
+                    </collection>
+                  </nest>
+                  <nest>
+                    <!-- Next Stop -->
+                    <resource>doi:1014/tube/west_ham</resource>
+                    <property type="type">tube:NextStation</property>
+                    <collection>  
+                      <item>
+                        <data>2</data>
+                        <property type="type">tube:Mins</property>
+                      </item>
+                    </collection>
+                  </nest>
+                </collection>
+              </nest>
+            </collection>
+          </item>
+        </collection>
+      </nest>
+    </collection>
+  </nest>
+</yads>

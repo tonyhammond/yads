@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  YADS - RELAX NG
+
+  This document describes YADS - A Description Service
+  in a RELAX NG XML Schema.
+
+  ==
+
+  // From RDF Schema for YADS
+
+  Resource:     doi:1014/yads-schema-2002-04-03
+  Comment:      RDF Schema for YADS - A Description Service
+  Author:       Tony Hammond <tony_hammond@harcourt.com>
+  Revision:     April 3, 2002 - Tony Hammond
+
+  Copyright (c) 2002 Elsevier Science Ltd. All rights reserved. 
+
+-->
+
+<grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+  ns="http://relaxng.org/ns/structure/1.0"
+  xmlns="http://relaxng.org/ns/structure/1.0"
+  xmlns:y="doi:1014/yads"
+>
+
+  <start>
+    <ref name="yads"/>
+  </start>
+
+<!--
+  Toplevel wrapper element
+  ~
+-->
+  <div y:doc="Definition of yads element.">
+
+    <define name="yads">
+      <element name="yads">
+        <zeroOrMOre>
+          <choice>
+          <ref name="item"/>
+          <ref name="nest"/>
+          </choice>
+        </zeroOrMOre>
+      </element>
+    </define>
+
+  </div>
+
+<!--
+  Item element - collection OR resource, with properties.
+  (The content model expressly permits any ordering.)
+-->
+  <div y:doc="Definition of item element.">
+
+    <define name="item">
+      <element name="item">
+        <interleave>
+          <choice>
+            <ref name="collection"/>
+            <ref name="resource"/>
+          </choice>
+          <zeroOrMore>
+            <ref name="property"/>
+          </zeroOrMore>
+        </interleave>
+      </element>
+    </define>
+
+  </div>
+
+<!--
+  Nest element - collection AND resource, with properties.
+  (The content model expressly permits any ordering.)
+-->
+  <div y:doc="Definition of nest element.">
+
+    <define name="nest">
+      <element name="nest">
+        <interleave>
+          <ref name="collection"/>
+          <ref name="resource"/>
+          <zeroOrMore>
+            <ref name="property"/>
+          </zeroOrMore>
+        </interleave>
+      </element>
+    </define>
+
+  </div>
+
+<!--
+  Collection element - contains sequence of nest or item elements.
+  (An ordering attribute determines how the elements should be ordered.)
+-->
+  <div y:doc="Definition of collection element.">
+
+    <define name="collection">
+      <element name="collection">
+        <optional>
+          <attribute name="ordering">
+            <choice>
+              <value>choice</value>
+              <value>sequenced</value>
+              <value>unordered</value>
+            </choice>
+          </attribute>
+        </optional>
+        <oneOrMore>
+          <choice>
+            <ref name="item"/>
+            <ref name="nest"/>
+          </choice>
+        </oneOrMore>
+      </element>
+    </define>
+
+  </div>
+
+<!--
+  Resource element
+  ~
+-->
+  <div y:doc="Definition of resource element.">
+
+    <define name="resource">
+      <element name="resource">
+        <data type="anyURI"/>
+      </element>
+    </define>
+
+  </div>
+
+<!--
+  Property element
+  ~
+-->
+  <div y:doc="Definition of property element.">
+
+    <define name="property">
+      <element name="property">
+        <attribute name="type">
+          <choice>
+            <value>access</value>
+            <value>detail</value>
+            <value>directive</value>
+            <value>label</value>
+            <value>role</value>
+            <value>service</value>
+            <value>type</value>
+          </choice>
+        </attribute>
+        <data type="string"/>
+      </element>
+    </define>
+
+  </div>
+
+</grammar>

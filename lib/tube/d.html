@@ -1,0 +1,513 @@
+<html>
+<head>
+<link href="../../css/yads.css" type=text/css rel=stylesheet>
+<title>TubeTime</title>
+</head>
+<body>
+<h1><img src="../../imx/rdf_metadata_button.40">
+<i>TubeTime</i></h1>
+<hr>
+TubeTime implements a description of the "Tube" - London's underground railway
+as an example of a complex resource association. Some 13 lines and 303 stations
+from 2 rail networks are separately described.
+<p>
+<hr>
+<table width="100%" cellpadding="3">
+<tr valign="top">
+<th align="left" colspan="2" width="20%">[ yads: D (<a href="rdf.html">RDF</a>, <a href="svg.html">SVG</a>, <a href="xml.html">XML</a>) ]<br><br></th>
+</tr>
+<tr valign="top">
+<th align="left" width="20%"><a href="rails/rdf/tube.rdf">Network</a></th>
+<th align="left" width="80%"></th>
+</tr>
+<tr valign="top">
+<th align="left" width="20%">Lines</th>
+<th align="left" width="80%">Stations</th>
+</tr>
+<tr valign="top">
+<td><a href="lines/d/bakerloo_line.d"><b>Bakerloo</b></a></td>
+<td>
+<a href="stats/d/baker_street.d">Baker Street</a>,
+<a href="stats/d/charing_cross.d">Charing Cross</a>,
+<a href="stats/d/edgware_road.d">Edgware Road</a>,
+<a href="stats/d/elephant_&_castle.d">Elephant &amp; Castle</a>,
+<a href="stats/d/embankment.d">Embankment</a>,
+<a href="stats/d/harlesden.d">Harlesden</a>,
+<a href="stats/d/harrow_&_wealdstone.d">Harrow &amp; Wealdstone</a>,
+<a href="stats/d/kensal_green.d">Kensal Green</a>,
+<a href="stats/d/kenton.d">Kenton</a>,
+<a href="stats/d/kilburn_park.d">Kilburn Park</a>,
+<a href="stats/d/lambeth_north.d">Lambeth North</a>,
+<a href="stats/d/maida_vale.d">Maida Vale</a>,
+<a href="stats/d/marylebone.d">Marylebone</a>,
+<a href="stats/d/north_wembley.d">North Wembley</a>,
+<a href="stats/d/oxford_circus.d">Oxford Circus</a>,
+<a href="stats/d/paddington.d">Paddington</a>,
+<a href="stats/d/piccadilly_circus.d">Piccadilly Circus</a>,
+<a href="stats/d/queen's_park.d">Queen's Park</a>,
+<a href="stats/d/regent's_park.d">Regent's Park</a>,
+<a href="stats/d/south_kenton.d">South Kenton</a>,
+<a href="stats/d/stonebridge_park.d">Stonebridge Park</a>,
+<a href="stats/d/warwick_avenue.d">Warwick Avenue</a>,
+<a href="stats/d/waterloo.d">Waterloo</a>,
+<a href="stats/d/wembley_central.d">Wembley Central</a>,
+<a href="stats/d/willesden_junction.d">Willesden Junction</a>
+</td>
+</tr>
+<tr valign="top">
+<td><a href="lines/d/central_line.d"><b>Central</b></a></td>
+<td>
+<a href="stats/d/bank.d">Bank</a>,
+<a href="stats/d/barkingside.d">Barkingside</a>,
+<a href="stats/d/bethnal_green.d">Bethnal Green</a>,
+<a href="stats/d/bond_street.d">Bond Street</a>,
+<a href="stats/d/buckhurst_hill.d">Buckhurst Hill</a>,
+<a href="stats/d/chancery_lane.d">Chancery Lane</a>,
+<a href="stats/d/chigwell.d">Chigwell</a>,
+<a href="stats/d/debden.d">Debden</a>,
+<a href="stats/d/ealing_broadway.d">Ealing Broadway</a>,
+<a href="stats/d/east_acton.d">East Acton</a>,
+<a href="stats/d/epping.d">Epping</a>,
+<a href="stats/d/fairlop.d">Fairlop</a>,
+<a href="stats/d/gants_hill.d">Gants Hill</a>,
+<a href="stats/d/grange_hill.d">Grange Hill</a>,
+<a href="stats/d/greenford.d">Greenford</a>,
+<a href="stats/d/hainault.d">Hainault</a>,
+<a href="stats/d/hanger_lane.d">Hanger Lane</a>,
+<a href="stats/d/holborn.d">Holborn</a>,
+<a href="stats/d/holland_park.d">Holland Park</a>,
+<a href="stats/d/lancaster_gate.d">Lancaster Gate</a>,
+<a href="stats/d/leyton.d">Leyton</a>,
+<a href="stats/d/leytonstone.d">Leytonstone</a>,
+<a href="stats/d/liverpool_street.d">Liverpool Street</a>,
+<a href="stats/d/loughton.d">Loughton</a>,
+<a href="stats/d/marble_arch.d">Marble Arch</a>,
+<a href="stats/d/mile_end.d">Mile End</a>,
+<a href="stats/d/newbury_park.d">Newbury Park</a>,
+<a href="stats/d/north_acton.d">North Acton</a>,
+<a href="stats/d/northolt.d">Northolt</a>,
+<a href="stats/d/notting_hill_gate.d">Notting_hill Gate</a>,
+<a href="stats/d/oxford_circus.d">Oxford Circus</a>,
+<a href="stats/d/perivale.d">Perivale</a>,
+<a href="stats/d/queensway.d">Queensway</a>,
+<a href="stats/d/redbridge.d">Redbridge</a>,
+<a href="stats/d/roding_valley.d">Roding Valley</a>,
+<a href="stats/d/ruislip_gardens.d">Ruislip Gardens</a>,
+<a href="stats/d/shepherd's_bush.d">Shepherd's Bush</a>,
+<a href="stats/d/snaresbrook.d">Snaresbrook</a>,
+<a href="stats/d/south_ruislip.d">South Ruislip</a>,
+<a href="stats/d/south_woodford.d">South Woodford</a>,
+<a href="stats/d/st._paul's.d">St. Paul's</a>,
+<a href="stats/d/stratford.d">Stratford</a>,
+<a href="stats/d/theydon_bois.d">Theydon Bois</a>,
+<a href="stats/d/tottenham_court_road.d">Tottenham Court Road</a>,
+<a href="stats/d/wanstead.d">Wanstead</a>,
+<a href="stats/d/west_acton.d">West Acton</a>,
+<a href="stats/d/west_ruislip.d">West Ruislip</a>,
+<a href="stats/d/white_city.d">White City</a>,
+<a href="stats/d/woodford.d">Woodford</a>
+</td>
+</tr>
+<tr valign="top">
+<td><a href="lines/d/circle_line.d"><b>Circle</b></a></td>
+<td>
+<a href="stats/d/aldgate.d">Aldgate</a>,
+<a href="stats/d/baker_street.d">Baker Street</a>,
+<a href="stats/d/barbican.d">Barbican</a>,
+<a href="stats/d/bayswater.d">Bayswater</a>,
+<a href="stats/d/blackfriars.d">Blackfriars</a>,
+<a href="stats/d/cannon_street.d">Cannon Street</a>,
+<a href="stats/d/circle_line.d">Circle Line</a>,
+<a href="stats/d/edgware_road.d">Edgware Road</a>,
+<a href="stats/d/embankment.d">Embankment</a>,
+<a href="stats/d/euston_square.d">Euston Square</a>,
+<a href="stats/d/farringdon.d">Farringdon</a>,
+<a href="stats/d/gloucester_road.d">Gloucester Road</a>,
+<a href="stats/d/great_portland_street.d">Great Portland Street</a>,
+<a href="stats/d/high_street_kensington.d">High Street Kensington</a>,
+<a href="stats/d/king's_cross_st._pancras.d">King's Cross St. Pancras</a>,
+<a href="stats/d/liverpool_street.d">Liverpool Street</a>,
+<a href="stats/d/mansion_house.d">Mansion House</a>,
+<a href="stats/d/monument.d">Monument</a>,
+<a href="stats/d/moorgate.d">Moorgate</a>,
+<a href="stats/d/notting_hill_gate.d">Notting Hill Gate</a>,
+<a href="stats/d/paddington.d">Paddington</a>,
+<a href="stats/d/sloane_square.d">Sloane Square</a>,
+<a href="stats/d/south_kensington.d">South Kensington</a>,
+<a href="stats/d/st._james's_park.d">St. James's Park</a>,
+<a href="stats/d/temple.d">Temple</a>,
+<a href="stats/d/tower_hill.d">Tower Hill</a>,
+<a href="stats/d/victoria.d">Victoria</a>,
+<a href="stats/d/westminster.d">Westminster</a>
+</td>
+</tr>
+<tr valign="top">
+<td><a href="lines/d/district_line.d"><b>District</b></a></td>
+<td>
+<a href="stats/d/acton_town.d">Acton Town</a>,
+<a href="stats/d/aldgate_east.d">Aldgate East</a>,
+<a href="stats/d/barking.d">Barking</a>,
+<a href="stats/d/barons_court.d">Barons Court</a>,
+<a href="stats/d/bayswater.d">Bayswater</a>,
+<a href="stats/d/becontree.d">Becontree</a>,
+<a href="stats/d/blackfriars.d">Blackfriars</a>,
+<a href="stats/d/bow_road.d">Bow Road</a>,
+<a href="stats/d/bromley-by-bow.d">Bromley-by-Bow</a>,
+<a href="stats/d/cannon_street.d">Cannon Street</a>,
+<a href="stats/d/chiswick_park.d">Chiswick Park</a>,
+<a href="stats/d/dagenham_east.d">Dagenham East</a>,
+<a href="stats/d/dagenham_heathway.d">Dagenham Heathway</a>,
+<a href="stats/d/ealing_broadway.d">Ealing Broadway</a>,
+<a href="stats/d/ealing_common.d">Ealing Common</a>,
+<a href="stats/d/earl's_court.d">Earl's Court</a>,
+<a href="stats/d/east_ham.d">East Ham</a>,
+<a href="stats/d/east_putney.d">East Putney</a>,
+<a href="stats/d/edgware_road.d">Edgware Road</a>,
+<a href="stats/d/elm_park.d">Elm Park</a>,
+<a href="stats/d/embankment.d">Embankment</a>,
+<a href="stats/d/fulham_broadway.d">Fulham Broadway</a>,
+<a href="stats/d/gloucester_road.d">Gloucester Road</a>,
+<a href="stats/d/gunnersbury.d">Gunnersbury</a>,
+<a href="stats/d/hammersmith.d">Hammersmith</a>,
+<a href="stats/d/high_street_kensington.d">High Street Kensington</a>,
+<a href="stats/d/hornchurch.d">Hornchurch</a>,
+<a href="stats/d/kensington_(olympia).d">Kensington_(Olympia)</a>,
+<a href="stats/d/kew_gardens.d">Kew Gardens</a>,
+<a href="stats/d/mansion_house.d">Mansion House</a>,
+<a href="stats/d/mile_end.d">Mile End</a>,
+<a href="stats/d/monument.d">Monument</a>,
+<a href="stats/d/notting_hill_gate.d">Notting Hill Gate</a>,
+<a href="stats/d/paddington.d">Paddington</a>,
+<a href="stats/d/parsons_green.d">Parsons Green</a>,
+<a href="stats/d/plaistow.d">Plaistow</a>,
+<a href="stats/d/putney_bridge.d">Putney Bridge</a>,
+<a href="stats/d/ravenscourt_park.d">Ravenscourt Park</a>,
+<a href="stats/d/richmond.d">Richmond</a>,
+<a href="stats/d/sloane_square.d">Sloane Square</a>,
+<a href="stats/d/south_kensington.d">South Kensington</a>,
+<a href="stats/d/southfields.d">Southfields</a>,
+<a href="stats/d/st._james's_park.d">St. James's Park</a>,
+<a href="stats/d/stamford_brook.d">Stamford Brook</a>,
+<a href="stats/d/stepney_green.d">Stepney Green</a>,
+<a href="stats/d/temple.d">Temple</a>,
+<a href="stats/d/tower_hill.d">Tower Hill</a>,
+<a href="stats/d/turnham_green.d">Turnham Green</a>,
+<a href="stats/d/upminster.d">Upminster</a>,
+<a href="stats/d/upminster_bridge.d">Upminster Bridge</a>,
+<a href="stats/d/upney.d">Upney</a>,
+<a href="stats/d/upton_park.d">Upton Park</a>,
+<a href="stats/d/victoria.d">Victoria</a>,
+<a href="stats/d/west_brompton.d">West Brompton</a>,
+<a href="stats/d/west_ham.d">West Ham</a>,
+<a href="stats/d/west_kensington.d">West Kensington</a>,
+<a href="stats/d/westminster.d">Westminster</a>,
+<a href="stats/d/whitechapel.d">Whitechapel</a>,
+<a href="stats/d/wimbledon.d">Wimbledon</a>,
+<a href="stats/d/wimbledon_park.d">Wimbledon Park</a>
+</td>
+</tr>
+<tr valign="top">
+<td><a href="lines/d/east_london_line.d"><b>East London</b></a></td>
+<td>
+<a href="stats/d/canada_water.d">Canada Water</a>,
+<a href="stats/d/new_cross.d">New Cross</a>,
+<a href="stats/d/new_cross_gate.d">New Cross Gate</a>,
+<a href="stats/d/rotherhithe.d">Rotherhithe</a>,
+<a href="stats/d/shadwell.d">Shadwell</a>,
+<a href="stats/d/shoreditch.d">Shoreditch</a>,
+<a href="stats/d/surrey_quays.d">Surrey Quays</a>,
+<a href="stats/d/wapping.d">Wapping</a>,
+<a href="stats/d/whitechapel.d">Whitechapel</a>
+</td>
+</tr>
+<tr valign="top">
+<td><a href="lines/d/hammersmith_&_city_line.d"><b>Hammersmith &amp; City</b></a></td>
+<td>
+<a href="stats/d/aldgate_east.d">Aldgate East</a>,
+<a href="stats/d/baker_street.d">Baker Street</a>,
+<a href="stats/d/barbican.d">Barbican</a>,
+<a href="stats/d/barking.d">Barking</a>,
+<a href="stats/d/bow_road.d">Bow Road</a>,
+<a href="stats/d/bromley-by-bow.d">Bromley-by-Bow</a>,
+<a href="stats/d/east_ham.d">East Ham</a>,
+<a href="stats/d/edgware_road.d">Edgware Road</a>,
+<a href="stats/d/euston_square.d">Euston Square</a>,
+<a href="stats/d/farringdon.d">Farringdon</a>,
+<a href="stats/d/goldhawk_road.d">Goldhawk Road</a>,
+<a href="stats/d/great_portland_street.d">Great Portland Street</a>,
+<a href="stats/d/hammersmith.d">Hammersmith</a>,
+<a href="stats/d/king's_cross_st._pancras.d">King's Cross St. Pancras</a>,
+<a href="stats/d/ladbroke_grove.d">Ladbroke Grove</a>,
+<a href="stats/d/latimer_road.d">Latimer Road</a>,
+<a href="stats/d/liverpool_street.d">Liverpool Street</a>,
+<a href="stats/d/mile_end.d">Mile End</a>,
+<a href="stats/d/moorgate.d">Moorgate</a>,
+<a href="stats/d/paddington.d">Paddington</a>,
+<a href="stats/d/plaistow.d">Plaistow</a>,
+<a href="stats/d/royal_oak.d">Royal Oak</a>,
+<a href="stats/d/shepherd's_bush.d">Shepherd's Bush</a>,
+<a href="stats/d/stepney_green.d">Stepney Green</a>,
+<a href="stats/d/upton_park.d">Upton Park</a>,
+<a href="stats/d/west_ham.d">West Ham</a>,
+<a href="stats/d/westbourne_park.d">Westbourne Park</a>,
+<a href="stats/d/whitechapel.d">Whitechapel</a>
+</td>
+</tr>
+<tr valign="top">
+<td><a href="lines/d/jubilee_line.d"><b>Jubilee</b></a></td>
+<td>
+<a href="stats/d/baker_street.d">Baker Street</a>,
+<a href="stats/d/bermondsey.d">Bermondsey</a>,
+<a href="stats/d/bond_street.d">Bond Street</a>,
+<a href="stats/d/canada_water.d">Canada Water</a>,
+<a href="stats/d/canary_wharf.d">Canary Wharf</a>,
+<a href="stats/d/canning_town.d">Canning Town</a>,
+<a href="stats/d/canons_park.d">Canons Park</a>,
+<a href="stats/d/dollis_hill.d">Dollis Hill</a>,
+<a href="stats/d/finchley_road.d">Finchley Road</a>,
+<a href="stats/d/green_park.d">Green Park</a>,
+<a href="stats/d/kilburn.d">Kilburn</a>,
+<a href="stats/d/kingsbury.d">Kingsbury</a>,
+<a href="stats/d/london_bridge.d">London Bridge</a>,
+<a href="stats/d/neasden.d">Neasden</a>,
+<a href="stats/d/north_greenwich.d">North Greenwich</a>,
+<a href="stats/d/queensbury.d">Queensbury</a>,
+<a href="stats/d/southwark.d">Southwark</a>,
+<a href="stats/d/st._john's_wood.d">St. John's Wood</a>,
+<a href="stats/d/stanmore.d">Stanmore</a>,
+<a href="stats/d/stratford.d">Stratford</a>,
+<a href="stats/d/swiss_cottage.d">Swiss Cottage</a>,
+<a href="stats/d/waterloo.d">Waterloo</a>,
+<a href="stats/d/wembley_park.d">Wembley Park</a>,
+<a href="stats/d/west_ham.d">West Ham</a>,
+<a href="stats/d/west_hampstead.d">West Hampstead</a>,
+<a href="stats/d/westminster.d">Westminster</a>,
+<a href="stats/d/willesden_green.d">Willesden Green</a>
+</td>
+</tr>
+<tr valign="top">
+<td><a href="lines/d/metropolitan_line.d"><b>Metropolitan</b></a></td>
+<td>
+<a href="stats/d/aldgate.d">Aldgate</a>,
+<a href="stats/d/amersham.d">Amersham</a>,
+<a href="stats/d/baker_street.d">Baker Street</a>,
+<a href="stats/d/barbican.d">Barbican</a>,
+<a href="stats/d/chalfont_&_latimer.d">Chalfont &amp; Latimer</a>,
+<a href="stats/d/chesham.d">Chesham</a>,
+<a href="stats/d/chorleywood.d">Chorleywood</a>,
+<a href="stats/d/croxley.d">Croxley</a>,
+<a href="stats/d/eastcote.d">Eastcote</a>,
+<a href="stats/d/euston_square.d">Euston Square</a>,
+<a href="stats/d/farringdon.d">Farringdon</a>,
+<a href="stats/d/finchley_road.d">Finchley Road</a>,
+<a href="stats/d/great_portland_street.d">Great Portland Street</a>,
+<a href="stats/d/harrow-on-the-hill.d">Harrow-on-the-Hill</a>,
+<a href="stats/d/hillingdon.d">Hillingdon</a>,
+<a href="stats/d/ickenham.d">Ickenham</a>,
+<a href="stats/d/king's_cross_st._pancras.d">King's Cross St. Pancras</a>,
+<a href="stats/d/liverpool_street.d">Liverpool Street</a>,
+<a href="stats/d/moor_park.d">Moor Park</a>,
+<a href="stats/d/moorgate.d">Moorgate</a>,
+<a href="stats/d/north_harrow.d">North Harrow</a>,
+<a href="stats/d/northwick_park.d">Northwick Park</a>,
+<a href="stats/d/northwood.d">Northwood</a>,
+<a href="stats/d/northwood_hills.d">Northwood Hills</a>,
+<a href="stats/d/pinner.d">Pinner</a>,
+<a href="stats/d/preston_road.d">Preston Road</a>,
+<a href="stats/d/rayners_lane.d">Rayners Lane</a>,
+<a href="stats/d/rickmansworth.d">Rickmansworth</a>,
+<a href="stats/d/ruislip.d">Ruislip</a>,
+<a href="stats/d/ruislip_manor.d">Ruislip Manor</a>,
+<a href="stats/d/uxbridge.d">Uxbridge</a>,
+<a href="stats/d/watford.d">Watford</a>,
+<a href="stats/d/wembley_park.d">Wembley Park</a>,
+<a href="stats/d/west_harrow.d">West Harrow</a>
+</td>
+</tr>
+<tr valign="top">
+<td><a href="lines/d/northern_line.d"><b>Northern</b></a></td>
+<td>
+<a href="stats/d/angel.d">Angel</a>,
+<a href="stats/d/archway.d">Archway</a>,
+<a href="stats/d/balham.d">Balham</a>,
+<a href="stats/d/bank.d">Bank</a>,
+<a href="stats/d/belsize_park.d">Belsize Park</a>,
+<a href="stats/d/borough.d">Borough</a>,
+<a href="stats/d/brent_cross.d">Brent Cross</a>,
+<a href="stats/d/burnt_oak.d">Burnt Oak</a>,
+<a href="stats/d/camden_town.d">Camden Town</a>,
+<a href="stats/d/chalk_farm.d">Chalk Farm</a>,
+<a href="stats/d/charing_cross.d">Charing Cross</a>,
+<a href="stats/d/clapham_common.d">Clapham Common</a>,
+<a href="stats/d/clapham_north.d">Clapham North</a>,
+<a href="stats/d/clapham_south.d">Clapham South</a>,
+<a href="stats/d/colindale.d">Colindale</a>,
+<a href="stats/d/colliers_wood.d">Colliers Wood</a>,
+<a href="stats/d/east_finchley.d">East Finchley</a>,
+<a href="stats/d/edgware.d">Edgware</a>,
+<a href="stats/d/elephant_&_castle.d">Elephant &amp; Castle</a>,
+<a href="stats/d/embankment.d">Embankment</a>,
+<a href="stats/d/euston.d">Euston</a>,
+<a href="stats/d/finchley_central.d">Finchley Central</a>,
+<a href="stats/d/golders_green.d">Golders Green</a>,
+<a href="stats/d/goodge_street.d">Goodge Street</a>,
+<a href="stats/d/hampstead.d">Hampstead</a>,
+<a href="stats/d/hendon_central.d">Hendon Central</a>,
+<a href="stats/d/high_barnet.d">High Barnet</a>,
+<a href="stats/d/highgate.d">Highgate</a>,
+<a href="stats/d/kennington.d">Kennington</a>,
+<a href="stats/d/kentish_town.d">Kentish Town</a>,
+<a href="stats/d/king's_cross_st._pancras.d">King's Cross St. Pancras</a>,
+<a href="stats/d/leicester_square.d">Leicester Square</a>,
+<a href="stats/d/london_bridge.d">London Bridge</a>,
+<a href="stats/d/mill_hill_east.d">Mill Hill East</a>,
+<a href="stats/d/moorgate.d">Moorgate</a>,
+<a href="stats/d/morden.d">Morden</a>,
+<a href="stats/d/mornington_crescent.d">Mornington Crescent</a>,
+<a href="stats/d/old_street.d">Old Street</a>,
+<a href="stats/d/oval.d">Oval</a>,
+<a href="stats/d/south_wimbledon.d">South Wimbledon</a>,
+<a href="stats/d/stockwell.d">Stockwell</a>,
+<a href="stats/d/tooting_bec.d">Tooting Bec</a>,
+<a href="stats/d/tooting_broadway.d">Tooting Broadway</a>,
+<a href="stats/d/tottenham_court_road.d">Tottenham Court Road</a>,
+<a href="stats/d/totteridge_&_whetstone.d">Totteridge &amp; Whetstone</a>,
+<a href="stats/d/tufnell_park.d">Tufnell Park</a>,
+<a href="stats/d/warren_street.d">Warren Street</a>,
+<a href="stats/d/waterloo.d">Waterloo</a>,
+<a href="stats/d/west_finchley.d">West Finchley</a>,
+<a href="stats/d/woodside_park.d">Woodside Park</a>
+</td>
+</tr>
+<tr valign="top">
+<td><a href="lines/d/piccadilly_line.d"><b>Piccadilly</b></a></td>
+<td>
+<a href="stats/d/acton_town.d">Acton Town</a>,
+<a href="stats/d/alperton.d">Alperton</a>,
+<a href="stats/d/arnos_grove.d">Arnos Grove</a>,
+<a href="stats/d/arsenal.d">Arsenal</a>,
+<a href="stats/d/barons_court.d">Barons Court</a>,
+<a href="stats/d/boston_manor.d">Boston Manor</a>,
+<a href="stats/d/bounds_green.d">Bounds Green</a>,
+<a href="stats/d/caledonian_road.d">Caledonian Road</a>,
+<a href="stats/d/cockfosters.d">Cockfosters</a>,
+<a href="stats/d/covent_garden.d">Covent Garden</a>,
+<a href="stats/d/ealing_common.d">Ealing Common</a>,
+<a href="stats/d/earl's_court.d">Earl's Court</a>,
+<a href="stats/d/eastcote.d">Eastcote</a>,
+<a href="stats/d/finsbury_park.d">Finsbury Park</a>,
+<a href="stats/d/gloucester_road.d">Gloucester Road</a>,
+<a href="stats/d/green_park.d">Green Park</a>,
+<a href="stats/d/hammersmith.d">Hammersmith</a>,
+<a href="stats/d/hatton_cross.d">Hatton Cross</a>,
+<a href="stats/d/heathrow_terminal_4.d">Heathrow Terminal 4</a>,
+<a href="stats/d/heathrow_terminals_1,2,3.d">Heathrow Terminals 1,2,3</a>,
+<a href="stats/d/hillingdon.d">Hillingdon</a>,
+<a href="stats/d/holborn.d">Holborn</a>,
+<a href="stats/d/holloway_road.d">Holloway Road</a>,
+<a href="stats/d/hounslow_central.d">Hounslow Central</a>,
+<a href="stats/d/hounslow_east.d">Hounslow East</a>,
+<a href="stats/d/hounslow_west.d">Hounslow West</a>,
+<a href="stats/d/hyde_park_corner.d">Hyde Park Corner</a>,
+<a href="stats/d/ickenham.d">Ickenham</a>,
+<a href="stats/d/king's_cross_st._pancras.d">King's Cross St. Pancras</a>,
+<a href="stats/d/knightsbridge.d">Knightsbridge</a>,
+<a href="stats/d/leicester_square.d">Leicester Square</a>,
+<a href="stats/d/manor_house.d">Manor House</a>,
+<a href="stats/d/north_ealing.d">North Ealing</a>,
+<a href="stats/d/northfields.d">Northfields</a>,
+<a href="stats/d/oakwood.d">Oakwood</a>,
+<a href="stats/d/osterley.d">Osterley</a>,
+<a href="stats/d/park_royal.d">Park Royal</a>,
+<a href="stats/d/piccadilly_circus.d">Piccadilly Circus</a>,
+<a href="stats/d/rayners_lane.d">Rayners Lane</a>,
+<a href="stats/d/ruislip.d">Ruislip</a>,
+<a href="stats/d/ruislip_manor.d">Ruislip Manor</a>,
+<a href="stats/d/russell_square.d">Russell Square</a>,
+<a href="stats/d/south_ealing.d">South Ealing</a>,
+<a href="stats/d/south_harrow.d">South Harrow</a>,
+<a href="stats/d/south_kensington.d">South Kensington</a>,
+<a href="stats/d/southgate.d">Southgate</a>,
+<a href="stats/d/sudbury_hill.d">Sudbury Hill</a>,
+<a href="stats/d/sudbury_town.d">Sudbury Town</a>,
+<a href="stats/d/turnham_green.d">Turnham Green</a>,
+<a href="stats/d/turnpike_lane.d">Turnpike Lane</a>,
+<a href="stats/d/uxbridge.d">Uxbridge</a>,
+<a href="stats/d/wood_green.d">Wood Green</a>
+</td>
+</tr>
+<tr valign="top">
+<td><a href="lines/d/victoria_line.d"><b>Victoria</b></a></td>
+<td>
+<a href="stats/d/blackhorse_road.d">Blackhorse Road</a>,
+<a href="stats/d/brixton.d">Brixton</a>, <a _href="stats/svg/euston.html">Euston</a>,
+<a href="stats/d/finsbury_park.d">Finsbury Park</a>,
+<a href="stats/d/green_park.d">Green Park</a>,
+<a href="stats/d/highbury_&_islington.d">Highbury &amp; Islington</a>,
+<a href="stats/d/king's_cross_st._pancras.d">King's Cross St. Pancras</a>,
+<a href="stats/d/oxford_circus.d">Oxford Circus</a>,
+<a href="stats/d/pimlico.d">Pimlico</a>,
+<a href="stats/d/seven_sisters.d">Seven Sisters</a>,
+<a href="stats/d/stockwell.d">Stockwell</a>,
+<a href="stats/d/tottenham_hale.d">Tottenham Hale</a>,
+<a href="stats/d/vauxhall.d">Vauxhall</a>,
+<a href="stats/d/victoria.d">Victoria</a>,
+<a href="stats/d/walthamstow_central.d">Walthamstow Central</a>,
+<a href="stats/d/warren_street.d">Warren Street</a>
+</td>
+</tr>
+<tr valign="top">
+<td><a href="lines/d/waterloo_&_city_line.d"><b>Waterloo &amp; City</b></a></td>
+<td>
+<a href="stats/d/bank.d">Bank</a>,
+<a href="stats/d/waterloo.d">Waterloo</a>
+</td>
+</tr>
+<tr valign="top">
+<th><br></th>
+<th></th>
+</tr>
+<tr valign="top">
+<td><a href="lines/d/docklands_light_railway_line.d"><b>Docklands Light Railway</b></a></td>
+<td>
+<a href="stats/d/all_saints.d">All Saints</a>,
+<a href="stats/d/bank.d">Bank</a>,
+<a href="stats/d/beckton.d">Beckton</a>,
+<a href="stats/d/beckton_park.d">Beckton Park</a>,
+<a href="stats/d/blackwalL.d">Blackwall</a>,
+<a href="stats/d/bow_church.d">Bow Church</a>,
+<a href="stats/d/canary_wharf.d">Canary Wharf</a>,
+<a href="stats/d/canning_town.d">Canning Town</a>,
+<a href="stats/d/crossharbour_&amp;_london_arena.d">Crossharbour &amp; London Arena</a>,
+<a href="stats/d/custom_house.d">Custom House For ExCel</a>,
+<a href="stats/d/cutty_sark.d">Cutty Sark For Maritime Greenwich</a>,
+<a href="stats/d/cyprus.d">Cyprus</a>,
+<a href="stats/d/deptford_bridge.d">Deptford Bridge</a>,
+<a href="stats/d/devons_road.d">Devons Road</a>,
+<a href="stats/d/east_india.d">East India</a>,
+<a href="stats/d/elverson_road.d">Elverson Road</a>,
+<a href="stats/d/gallions_reach.d">Gallions Reach</a>,
+<a href="stats/d/greenwich.d">Greenwich</a>,
+<a href="stats/d/heron_quays.d">Heron Quays</a>,
+<a href="stats/d/island_gardens.d">Island Gardens</a>,
+<a href="stats/d/lewisham.d">Lewisham</a>,
+<a href="stats/d/limehouse.d">Limehouse</a>,
+<a href="stats/d/mudchute.d">Mudchute</a>,
+<a href="stats/d/poplar.d">Poplar</a>,
+<a href="stats/d/prince_regent.d">Prince Regent</a>,
+<a href="stats/d/pudding_mill_lane.d">Pudding Mill Lane</a>,
+<a href="stats/d/royal_albert.d">Royal Albert</a>,
+<a href="stats/d/royal_victoria.d">Royal Victoria</a>,
+<a href="stats/d/shadwell.d">Shadwell</a>,
+<a href="stats/d/south_quay.d">South Quay</a>,
+<a href="stats/d/stratford.d">Stratford</a>,
+<a href="stats/d/tower_gateway.d">Tower Gateway</a>,
+<a href="stats/d/west_ferry.d">West Ferry</a>,
+<a href="stats/d/west_india_quay.d">West India Quay</a>,
+<a href="stats/d/westferry.d">Westferry</a>
+</td>
+</tr>
+</table>
+<hr>
+Copyright &copy; 2002 Elsevier Science Ltd. All rights reserved. 
+</body>

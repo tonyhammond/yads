@@ -1,0 +1,5 @@
+      <nest>
+        <!-- Application Profile -->
+        <resource>doi:1014/profile.metro</resource>
+        <property type="type">doi:Profile</property>
+        <collection>  

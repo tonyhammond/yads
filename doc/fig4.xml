@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yads>
+<!-- source: fig4.xml -->
+  <collection order="choice">
+    <item>
+      <resource>http://www.dlib.org/dlib/july01/07contents.html</resource>
+      <property type="type">dlib:Mirror</property>
+      <property type="label">Origin site - USA.</property>
+      <property type="detail">The Corporation for National Research Initiatives, Reston, Virginia, U.S.A.</property>
+      <property type="access">:default</property>
+    </item>
+    <item>
+      <resource>http://mirrored.ukoln.ac.uk/lis-journals/dlib/dlib/dlib/july01/07contents.html</resource>
+      <property type="type">dlib:Mirror</property>
+      <property type="label">Mirror site - UK.</property>
+      <property type="detail">UKOLN: The UK Office for Library and Information Networking, Bath, England</property>
+    </item>
+    <item>
+      <resource>http://sunsite.anu.edu.au/mirrors/dlib/dlib/july01/07contents.html</resource>
+      <property type="type">dlib:Mirror</property>
+      <property type="label">Mirror site - Australia.</property>
+      <property type="detail">The Australian National University Sunsite, Canberra, Australia</property>
+    </item>
+  </collection>
+</yads>

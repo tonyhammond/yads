@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   DOI use case: Mirror Sites (Issue)
+
+   Here a DLib issue is managed across five mirror sites. The origin
+   site - CNRI - is marked as the default.
+-->
+<yads>
+  <nest>
+    <!-- DLib Issue (Mirror Sites) -->
+    <resource>doi:10.1045/july2001-contents</resource>
+    <collection>
+      <nest>
+        <!-- Profile -->
+        <resource>doi:10.0/profile.crossref</resource>
+        <collection order="choice">
+          <item>
+            <!-- US Origin -->
+            <resource>http://www.dlib.org/dlib/july01/07contents.html</resource>
+            <property type="type">dlib:Mirror</property>
+            <property type="label">Origin site - USA.</property>
+            <property type="detail">The Corporation for National Research Initiatives, Reston, Virginia, U.S.A.</property>
+            <property type="access">:default</property>
+          </item>
+          <item>
+            <!-- UK Mirror -->
+            <resource>http://mirrored.ukoln.ac.uk/lis-journals/dlib/dlib/dlib/july01/07contents.html</resource>
+            <property type="type">dlib:Mirror</property>
+            <property type="label">Mirror site - UK.</property>
+            <property type="detail">UKOLN: The UK Office for Library and Information Networking, Bath, England</property>
+          </item>
+          <item>
+            <!-- Australian Mirror -->
+            <resource>http://sunsite.anu.edu.au/mirrors/dlib/dlib/july01/07contents.html</resource>
+            <property type="type">dlib:Mirror</property>
+            <property type="label">Mirror site - Australia.</property>
+            <property type="detail">The Australian National University Sunsite, Canberra, Australia</property>
+          </item>
+          <item>
+            <!-- German Mirror -->
+            <resource>http://webdoc.sub.gwdg.de/edoc/aw/d-lib/dlib/july01/07contents.html</resource>
+            <property type="type">dlib:Mirror</property>
+            <property type="label">Mirror site - Germany.</property>
+            <property type="detail">State Library of Lower Saxony and the University Library of Goettingen, Goettingen, Germany</property>
+          </item>
+          <item>
+            <!-- Argentine Mirror -->
+            <resource>http://www.dlib.org.ar/dlib/july01/07contents.html</resource>
+            <property type="type">dlib:Mirror</property>
+            <property type="label">Mirror site - Argentina.</property>
+            <property type="detail">Universidad de Belgrano, Buenos Aires, Argentina</property>
+          </item>
+        </collection>
+        <property type="type">doi:Profile</property>
+      </nest>
+    </collection>
+  </nest>
+</yads>

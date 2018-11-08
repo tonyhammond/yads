@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yads>
+<!-- source: fig3.xml -->
+  <item>
+    <!-- Resource and Properties -->
+    <resource>http://www.dlib.org/dlib/july01/07contents.html</resource>
+    <property type="label">Origin site - USA.</property>
+    <property type="detail">The Corporation for National Research Initiatives, Reston, Virginia, U.S.A.</property>
+  </item>
+</yads>

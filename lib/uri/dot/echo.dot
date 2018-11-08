@@ -1,0 +1,222 @@
+
+digraph yads { 
+
+graph [
+  fontname=arial, fontsize=24
+  label="YADS - A Description Service"
+];
+node [
+  fontname=arial, fontsize=11, fontcolor=black,
+  style=filled, color=cornflowerblue,
+];
+edge [
+  fontname=arial, fontsize=11, fontcolor=black,
+  style=filled, color=lightblue,
+];
+rankdir=TB;
+
+subgraph cluster_1 {
+
+  label="Item - feed";
+  fontname=arial; fontsize=11; fontcolor="black";
+  style=dashed; color=lightgrey;
+
+  ":_1" [label="feed", color=lightgoldenrod];
+
+  ":_1" -> ":_2" [label="has:property", URL="yads#property"];
+  ":_2" [label="2", color=lightgrey];
+  ":_1" -> ":_3" [label="has:property", URL="yads#property"];
+  ":_3" [label="3", color=lightgrey];
+  ":_1" -> ":_4" [label="has:property", URL="yads#property"];
+  ":_4" [label="4", color=lightgrey];
+  ":_1" -> ":_5" [label="has:property", URL="yads#property"];
+  ":_5" [label="5", color=lightgrey];
+  ":_1" -> ":_6" [label="has:property", URL="yads#property"];
+  ":_6" [label="6", color=lightgrey];
+  ":_1" -> ":_7" [label="has:property", URL="yads#property"];
+  ":_7" [label="7", color=lightgrey];
+  ":_1" -> ":_8" [label="has:collection", URL="yads#collection"];
+  ":_8" [label="rdf:Seq", color=lightgrey];
+  ":_2" [label="2", color=lightgoldenrod, URL="rdf#"];
+  ":_2" -> "node_2" [shape=box, label="has:literal", URL="yads#literal"];
+  ":_2" [label="title"]
+  "node_2" [shape=box, label="My First Weblog"];
+  ":_3" [label="3", color=lightgoldenrod, URL="rdf#"];
+  ":_3" -> "node_3" [shape=box, label="has:literal", URL="yads#literal"];
+  ":_3" [label="subtitle"]
+  "node_3" [shape=box, label="Ain't the Interweb great?"];
+  ":_4" [label="4", color=lightgoldenrod, URL="rdf#"];
+  ":_4" -> "node_4" [shape=box, label="has:literal", URL="yads#literal"];
+  ":_4" [label="link"]
+  "node_4" [shape=box, label="http://bob.blog/"];
+  ":_5" [label="5", color=lightgoldenrod, URL="rdf#"];
+  ":_5" -> "node_5" [shape=box, label="has:literal", URL="yads#literal"];
+  ":_5" [label="created"]
+  "node_5" [shape=box, label="2003-02-05T12:29:29Z"];
+  ":_6" [label="6", color=lightgoldenrod, URL="rdf#"];
+  ":_6" -> "node_6" [shape=box, label="has:literal", URL="yads#literal"];
+  ":_6" [label="issued"]
+  "node_6" [shape=box, label="2003-02-05T12:29:29Z"];
+  ":_7" [label="7", color=lightgoldenrod, URL="rdf#"];
+  ":_7" -> "node_7" [shape=box, label="has:literal", URL="yads#literal"];
+  ":_7" [label="modified"]
+  "node_7" [shape=box, label="2003-02-05T12:29:29Z"];
+  ":_8" [label="rdf:Seq", color=lightgrey, URL="rdf#Seq"];
+  ":_8" -> ":_9" [label="rdf:_1", URL="rdf#_1"];
+  ":_9" [label="isa:Item"]
+
+subgraph cluster_9 {
+
+  label="Item - entry";
+  fontname=arial; fontsize=11; fontcolor="black";
+  style=dashed; color=lightgrey;
+
+  ":_9" [label="entry", color=lightgoldenrod];
+
+  ":_9" -> ":_10" [label="has:property", URL="yads#property"];
+  ":_10" [label="10", color=lightgrey];
+  ":_9" -> ":_11" [label="has:property", URL="yads#property"];
+  ":_11" [label="11", color=lightgrey];
+  ":_9" -> ":_12" [label="has:property", URL="yads#property"];
+  ":_12" [label="12", color=lightgrey];
+  ":_9" -> ":_13" [label="has:property", URL="yads#property"];
+  ":_13" [label="13", color=lightgrey];
+  ":_9" -> ":_14" [label="has:property", URL="yads#property"];
+  ":_14" [label="14", color=lightgrey];
+  ":_9" -> ":_15" [label="has:property", URL="yads#property"];
+  ":_15" [label="15", color=lightgrey];
+  ":_9" -> ":_16" [label="has:property", URL="yads#property"];
+  ":_16" [label="16", color=lightgrey];
+  ":_9" -> ":_17" [label="has:property", URL="yads#property"];
+  ":_17" [label="17", color=lightgrey];
+  ":_9" -> ":_18" [label="has:collection", URL="yads#collection"];
+  ":_18" [label="rdf:Seq", color=lightgrey];
+  ":_10" [label="10", color=lightgoldenrod, URL="rdf#"];
+  ":_10" -> "node_10" [shape=box, label="has:literal", URL="yads#literal"];
+  ":_10" [label="title"]
+  "node_10" [shape=box, label="My First Entry"];
+  ":_11" [label="11", color=lightgoldenrod, URL="rdf#"];
+  ":_11" -> "node_11" [shape=box, label="has:literal", URL="yads#literal"];
+  ":_11" [label="subtitle"]
+  "node_11" [shape=box, label="In which a newbie learns to b...."];
+  ":_12" [label="12", color=lightgoldenrod, URL="rdf#"];
+  ":_12" -> "node_12" [shape=box, label="has:literal", URL="yads#literal"];
+  ":_12" [label="summary"]
+  "node_12" [shape=box, label="A very boring entry; just lea...."];
+  ":_13" [label="13", color=lightgoldenrod, URL="rdf#"];
+  ":_13" -> "node_13" [shape=box, label="has:literal", URL="yads#literal"];
+  ":_13" [label="link"]
+  "node_13" [shape=box, label="http://bob.blog/28"];
+  ":_14" [label="14", color=lightgoldenrod, URL="rdf#"];
+  ":_14" -> "node_14" [shape=box, label="has:literal", URL="yads#literal"];
+  ":_14" [label="id"]
+  "node_14" [shape=box, label="http://bob.blog/28"];
+  ":_15" [label="15", color=lightgoldenrod, URL="rdf#"];
+  ":_15" -> "node_15" [shape=box, label="has:literal", URL="yads#literal"];
+  ":_15" [label="created"]
+  "node_15" [shape=box, label="2003-02-05T12:29:29Z"];
+  ":_16" [label="16", color=lightgoldenrod, URL="rdf#"];
+  ":_16" -> "node_16" [shape=box, label="has:literal", URL="yads#literal"];
+  ":_16" [label="issued"]
+  "node_16" [shape=box, label="2003-02-05T12:29:29Z"];
+  ":_17" [label="17", color=lightgoldenrod, URL="rdf#"];
+  ":_17" -> "node_17" [shape=box, label="has:literal", URL="yads#literal"];
+  ":_17" [label="modified"]
+  "node_17" [shape=box, label="2003-02-05T12:29:29Z"];
+  ":_18" [label="rdf:Seq", color=lightgrey, URL="rdf#Seq"];
+  ":_18" -> ":_19" [label="rdf:_1", URL="rdf#_1"];
+  ":_19" [label="isa:Item"]
+  ":_18" -> ":_23" [label="rdf:_2", URL="rdf#_2"];
+  ":_23" [label="isa:Item"]
+  ":_18" -> ":_27" [label="rdf:_3", URL="rdf#_3"];
+  ":_27" [label="isa:Item"]
+
+subgraph cluster_19 {
+
+  label="Item - author";
+  fontname=arial; fontsize=11; fontcolor="black";
+  style=dashed; color=lightgrey;
+
+  ":_19" [label="author", color=lightgoldenrod];
+
+  ":_19" -> ":_20" [label="has:property", URL="yads#property"];
+  ":_20" [label="20", color=lightgrey];
+  ":_19" -> ":_21" [label="has:property", URL="yads#property"];
+  ":_21" [label="21", color=lightgrey];
+  ":_19" -> ":_22" [label="has:property", URL="yads#property"];
+  ":_22" [label="22", color=lightgrey];
+  ":_20" [label="20", color=lightgoldenrod, URL="rdf#"];
+  ":_20" -> "node_20" [shape=box, label="has:literal", URL="yads#literal"];
+  ":_20" [label="name"]
+  "node_20" [shape=box, label="Bob B. Bobbington"];
+  ":_21" [label="21", color=lightgoldenrod, URL="rdf#"];
+  ":_21" -> "node_21" [shape=box, label="has:literal", URL="yads#literal"];
+  ":_21" [label="homepage"]
+  "node_21" [shape=box, label="http://bob.name/"];
+  ":_22" [label="22", color=lightgoldenrod, URL="rdf#"];
+  ":_22" -> "node_22" [shape=box, label="has:literal", URL="yads#literal"];
+  ":_22" [label="weblog"]
+  "node_22" [shape=box, label="http://bob.name/"];
+}
+
+subgraph cluster_23 {
+
+  label="Item - contributor";
+  fontname=arial; fontsize=11; fontcolor="black";
+  style=dashed; color=lightgrey;
+
+  ":_23" [label="contributor", color=lightgoldenrod];
+
+  ":_23" -> ":_24" [label="has:property", URL="yads#property"];
+  ":_24" [label="24", color=lightgrey];
+  ":_23" -> ":_25" [label="has:property", URL="yads#property"];
+  ":_25" [label="25", color=lightgrey];
+  ":_23" -> ":_26" [label="has:property", URL="yads#property"];
+  ":_26" [label="26", color=lightgrey];
+  ":_24" [label="24", color=lightgoldenrod, URL="rdf#"];
+  ":_24" -> "node_24" [shape=box, label="has:literal", URL="yads#literal"];
+  ":_24" [label="name"]
+  "node_24" [shape=box, label="Yo-Yo Dyne"];
+  ":_25" [label="25", color=lightgoldenrod, URL="rdf#"];
+  ":_25" -> "node_25" [shape=box, label="has:literal", URL="yads#literal"];
+  ":_25" [label="homepage"]
+  "node_25" [shape=box, label="http://yoyo.dyne.name/"];
+  ":_26" [label="26", color=lightgoldenrod, URL="rdf#"];
+  ":_26" -> "node_26" [shape=box, label="has:literal", URL="yads#literal"];
+  ":_26" [label="weblog"]
+  "node_26" [shape=box, label="http://yoyo.dyne.name/"];
+}
+
+subgraph cluster_27 {
+
+  label="Item - content";
+  fontname=arial; fontsize=11; fontcolor="black";
+  style=dashed; color=lightgrey;
+
+  ":_27" [label="content", color=lightgoldenrod];
+
+  ":_27" -> ":_28" [label="has:property", URL="yads#property"];
+  ":_28" [label="28", color=lightgrey];
+  ":_27" -> ":_29" [label="has:property", URL="yads#property"];
+  ":_29" [label="29", color=lightgrey];
+  ":_27" -> ":_30" [label="has:property", URL="yads#property"];
+  ":_30" [label="30", color=lightgrey];
+  ":_28" [label="28", color=lightgoldenrod, URL="rdf#"];
+  ":_28" -> "node_28" [shape=box, label="has:literal", URL="yads#literal"];
+  ":_28" [label="type"]
+  "node_28" [shape=box, label="application/xhtml+xml"];
+  ":_29" [label="29", color=lightgoldenrod, URL="rdf#"];
+  ":_29" -> "node_29" [shape=box, label="has:literal", URL="yads#literal"];
+  ":_29" [label="lang"]
+  "node_29" [shape=box, label="en-us"];
+  ":_30" [label="30", color=lightgoldenrod, URL="rdf#"];
+  ":_30" -> "node_30" [shape=box, label="has:literal", URL="yads#literal"];
+  ":_30" [label="content"]
+  "node_30" [shape=box, label="<p xmlns=\"...\">Hello, <em>w...>"];
+}
+
+}
+
+}
+
+}

@@ -1,0 +1,582 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+
+  Description of URI syntax from RFC 2396bis(#3) modelled using YADS.
+
+  Productions marked with an asterisk have not been modelled,
+  This is purely to keep the visualization simpler.
+
+  ==
+
+  URI-reference = URI / relative-URI
+  URI           = scheme ":" hier-part [ "?" query ] [ "#" fragment ]
+  relative-URI  = hier-part [ "?" query ] [ "#" fragment ]
+* absolute-URI  = scheme ":" hier-part [ "?" query ]
+ 
+  scheme        = ALPHA *( ALPHA / DIGIT / "+" / "-" / "." )
+  hier-part     = net-path / abs-path / rel-path
+  query         = *( pchar / "/" / "?" )
+  fragment      = *( pchar / "/" / "?" )
+ 
+ 
+  net-path      = "//" authority [ abs-path ]
+  abs-path      = "/" path-segments
+  rel-path      = path-segments
+ 
+  authority     = [ userinfo "@" ] host [ ":" port ]
+  userinfo      = *( unreserved / escaped / ";" /
+                     ":" / "&" / "=" / "+" / "$" / "," )
+  host          = [ IPv6reference / IPv4address / hostname ]
+  IPv6reference = "[" IPv6address "]"
+* IPv6address   =                          6( h4 ":" ) ls32
+                /                     "::" 5( h4 ":" ) ls32
+                / [              h4 ] "::" 4( h4 ":" ) ls32
+                / [ *1( h4 ":" ) h4 ] "::" 3( h4 ":" ) ls32
+                / [ *2( h4 ":" ) h4 ] "::" 2( h4 ":" ) ls32
+                / [ *3( h4 ":" ) h4 ] "::"    h4 ":"   ls32
+                / [ *4( h4 ":" ) h4 ] "::"             ls32
+                / [ *5( h4 ":" ) h4 ] "::"             h4
+                / [ *6( h4 ":" ) h4 ] "::"
+  IPv4address   = dec-octet "." dec-octet "." dec-octet "." dec-octet
+  hostname      = domainlabel qualified
+  port          = *DIGIT
+ 
+* h4            = 1*4HEXDIG
+* ls32          = ( h4 ":" h4 ) / IPv4address
+* dec-octet     = DIGIT                 ; 0-9
+                / %x31-39 DIGIT         ; 10-99
+                / "1" 2DIGIT            ; 100-199
+                / "2" %x30-34 DIGIT     ; 200-249
+
+  domainlabel   = alphanum [ 0*61( alphanum / "-" ) alphanum ]
+                / "25" %x30-35          ; 250-255
+  qualified     = *( "." domainlabel ) [ "." ]
+  alphanum      = ALPHA / DIGIT
+ 
+  path-segments = segment *( "/" segment )
+  segment       = *pchar
+  pchar         = unreserved / escaped / ";" /
+                  ":" / "@" / "&" / "=" / "+" / "$" / ","
+ 
+  unreserved    = ALPHA / DIGIT / mark
+  escaped       = "%" HEXDIG HEXDIG
+  mark          = "-" / "_" / "." / "!" / "~" / "*" / "'" / "(" / ")"
+ 
+-->
+<yads>
+
+<nest>
+<!--  2396bis(#3) -->
+<data></data>
+<collection order="choice">
+
+<nest>
+<!-- \#1: URI-reference -->
+<data>URI-reference</data>
+<collection order="choice">
+
+<nest>
+<!-- \#2: URI -->
+<data>URI</data>
+<collection order="sequenced">
+<nest>
+<!-- \#5: scheme -->
+<data>scheme</data>
+<collection order="sequenced">
+<item>
+<data>ALPHA</data>
+</item>
+<item>
+<collection order="choice">
+<item>
+<data>ALPHA</data>
+</item>
+<item>
+<data>DIGIT</data>
+</item>
+<item>
+<data>%2B</data>
+</item>
+<item>
+<data>-</data>
+</item>
+<item>
+<data>.</data>
+</item>
+</collection>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+<item>
+<data>%3A</data>
+</item>
+
+<nest>
+<!-- \#6: hier-part -->
+<data>hier-part</data>
+<collection order="choice">
+
+<nest>
+<!-- \#9: net-path -->
+<data>net-path</data>
+<collection order="sequenced">
+<item>
+<data>%2F%2F</data>
+</item>
+
+<nest>
+<!-- \#12: authority -->
+<data>authority</data>
+<collection order="sequenced">
+
+<nest>
+<!-- \#13: userinfo -->
+<data>userinfo</data>
+<collection order="choice">
+<nest>
+<!-- \#29: unreserved -->
+<data>unreserved</data>
+<collection order="choice">
+<item>
+<data>ALPHA</data>
+</item>
+<item>
+<data>DIGIT</data>
+</item>
+<nest>
+<!-- \#31: mark -->
+<data>mark</data>
+<collection order="choice">
+<item>
+<data>-</data>
+</item>
+<item>
+<data>_</data>
+</item>
+<item>
+<data>.</data>
+</item>
+<item>
+<data>%21</data>
+</item>
+<item>
+<data>%7E</data>
+</item>
+<item>
+<data>%2A</data>
+</item>
+<item>
+<data>%27</data>
+</item>
+<item>
+<data>%28</data>
+</item>
+<item>
+<data>%29</data>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+<nest>
+<!-- \#30: escaped -->
+<data>escaped</data>
+<collection order="sequenced">
+<item>
+<data>%25</data>
+</item>
+<item>
+<data>HEXDIG</data>
+</item>
+<item>
+<data>HEXDIG</data>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+<item>
+<data>%3B</data>
+</item>
+<item>
+<data>%3A</data>
+</item>
+<item>
+<data>%26</data>
+</item>
+<item>
+<data>%3D</data>
+</item>
+<item>
+<data>%2B</data>
+</item>
+<item>
+<data>%24</data>
+</item>
+<item>
+<data>%2C</data>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+
+<item>
+<data>%40</data>
+</item>
+
+<nest>
+<!-- \#14: host -->
+<data>host</data>
+<collection order="choice">
+
+<nest>
+<!-- \#15: IPv6reference -->
+<data>IPv6reference</data>
+<collection order="sequenced">
+<item>
+<data>%5A</data>
+</item>
+<nest>
+<!-- \#16: IPv6address (not expanded) -->
+<data>IPv6address</data>
+<collection order="choice">
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+<item>
+<data>%5D</data>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+
+<nest>
+<!-- \#17: IPv4address -->
+<data>IPv4address</data>
+<collection order="choice">
+
+<nest>
+<!-- \#22: dec-octet (not expanded) -->
+<data>dec-octet</data>
+<collection order="choice">
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+<item>
+<data>.</data>
+</item>
+<item>
+<data>dec-octet</data>
+</item>
+<item>
+<data>.</data>
+</item>
+<item>
+<data>dec-octet</data>
+</item>
+<item>
+<data>.</data>
+</item>
+<item>
+<data>dec-octet</data>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+
+<nest>
+<!-- \#18: hostname -->
+<data>hostname</data>
+<collection order="sequenced">
+
+<nest>
+<!-- \#23: domainlabel -->
+<data>domainlabel</data>
+<collection order="choice">
+<item>
+<collection order="sequenced">
+<nest>
+<!-- \#25: alphanum -->
+<data>alphanum</data>
+<collection order="choice">
+<item>
+<data>ALPHA</data>
+</item>
+<item>
+<data>DIGIT</data>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+<item>
+<collection order="sequenced">
+<item>
+<collection order="choice">
+<item>
+<data>alphanum</data>
+</item>
+<item>
+<data>-</data>
+</item>
+</collection>
+</item>
+<item>
+<data>alphanum</data>
+</item>
+</collection>
+</item>
+</collection>
+</item>
+<item>
+<collection order="sequenced">
+<item>
+<data>25</data>
+</item>
+<item>
+<data>%25x30-35</data>
+</item>
+</collection>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+
+<nest>
+<!-- \#24: qualified -->
+<data>qualified</data>
+<collection order="sequenced">
+<item>
+<collection order="sequenced">
+<item>
+<data>.</data>
+</item>
+<item>
+<data>domainlabel</data>
+</item>
+</collection>
+</item>
+<item>
+<data>.</data>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+<item>
+<data>%3A</data>
+</item>
+
+<nest>
+<!-- \#19: port -->
+<data>port</data>
+<collection order="choice">
+<item>
+<data>DIGIT</data>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+<item>
+<data>abs-path</data>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+
+<nest>
+<!-- \#10: abs-path -->
+<data>abs-path</data>
+<collection order="sequenced">
+<item>
+<data>%2F</data>
+</item>
+
+<nest>
+<!-- \#26: path-segments -->
+<data>path-segments</data>
+<collection order="sequenced">
+
+<nest>
+<!-- \#27: segment -->
+<data>segment</data>
+<collection order="choice">
+<nest>
+<!-- \#28: pchar -->
+<data>pchar</data>
+<collection order="choice">
+<item>
+<data>unreserved</data>
+</item>
+<item>
+<data>escaped</data>
+</item>
+<item>
+<data>%3B</data>
+</item>
+<item>
+<data>%3A</data>
+</item>
+<item>
+<data>%40</data>
+</item>
+<item>
+<data>%26</data>
+</item>
+<item>
+<data>%3D</data>
+</item>
+<item>
+<data>%2B</data>
+</item>
+<item>
+<data>%24</data>
+</item>
+<item>
+<data>%2C</data>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+<item>
+<collection order="sequenced">
+<item>
+<data>%2F</data>
+</item>
+<item>
+<data>segment</data>
+</item>
+</collection>
+</item>
+
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+
+<nest>
+<!-- \#11: rel-path -->
+<data>rel-path</data>
+<collection order="sequenced">
+<item>
+<data>path-segments</data>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+
+<item>
+<collection order="sequenced">
+<item>
+<data>%3F</data>
+</item>
+<nest>
+<!-- \#7: query -->
+<data>query</data>
+<collection order="sequenced">
+<item>
+<data>pchar</data>
+</item>
+<item>
+<data>%2F</data>
+</item>
+<item>
+<data>%3F</data>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+</collection>
+</item>
+
+<item>
+<collection order="sequenced">
+<item>
+<data>%23</data>
+</item>
+<nest>
+<!-- \#8: fragment -->
+<data>fragment</data>
+<collection order="sequenced">
+<item>
+<data>pchar</data>
+</item>
+<item>
+<data>%2F</data>
+</item>
+<item>
+<data>%3F</data>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+</collection>
+</item>
+
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+
+<nest>
+<!-- \#3: relative-URI -->
+<data>relative-URI</data>
+<collection order="sequenced">
+<item>
+<data>hier-part</data>
+</item>
+<item>
+<collection order="sequenced">
+<item>
+<data>%3F</data>
+</item>
+<item>
+<data>query</data>
+</item>
+</collection>
+</item>
+<item>
+<collection order="sequenced">
+<item>
+<data>%23</data>
+</item>
+<item>
+<data>fragment</data>
+</item>
+</collection>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+
+<nest>
+<!-- \#4: absolute-URI (not expanded) -->
+<data>absolute-URI</data>
+<collection order="sequenced">
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+
+</collection>
+</nest>
+
+</yads>

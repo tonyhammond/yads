@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  An XLink extended link modelled using YADS.
+
+  This example is taken from section 5.1 of the XLink spec,
+  "XML Linking Language (XLink) Version 1.0", see
+
+  http://www.w3.org/TR/2001/REC-xlink-20010627/
+
+-->
+
+<rdf:RDF xmlns:isa="doi:1014/yads-schema-2002-04-03#" xmlns:has="doi:1014/yads-schema-2002-04-03#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:Description rdf:about="">
+<rdf:type>isa:Nest</rdf:type>
+<!-- XLink extended link -->
+<has:resource rdf:resource=""/>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- XLink title element -->
+<has:resource rdf:resource="data:,Course%20Load%20for%20Pat%20Jones"/>
+<has:type>tooltip</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- XLink locator element -->
+<has:resource rdf:resource="href:students/patjones62.xml"/>
+<has:type>person</has:type>
+<has:access>student62</has:access>
+<has:role>http://www.example.com/linkprops/student</has:role>
+<has:label>Pat Jones</has:label>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- XLink locator element -->
+<has:resource rdf:resource="href:profs/jaysmith7.xml"/>
+<has:type>person</has:type>
+<has:access>prof7</has:access>
+<has:role>http://www.example.com/linkprops/professor</has:role>
+<has:label>Dr. Jay Smith</has:label>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- XLink locator element -->
+<has:resource rdf:resource="href:courses/cs101.xml"/>
+<has:type>course</has:type>
+<has:access>CS-101</has:access>
+<has:role>http://www.example.com/linkprops/professor</has:role>
+<has:label>Computer Science 101</has:label>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- XLink resource element -->
+<has:resource rdf:resource="data:,3.5"/>
+<has:type>gpa</has:type>
+<has:access>PatJonesGPA</has:access>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- XLink arc element -->
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- XLink arc tail -->
+<has:resource rdf:resource="data:,student62"/>
+<has:directive>xlink:from</has:directive>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- XLink arc head -->
+<has:resource rdf:resource="data:,PatJonesGPA"/>
+<has:directive>xlink:to</has:directive>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+<has:type>go</has:type>
+<has:label>Pat Jones's GPA</has:label>
+<has:directive>xlink:show='new';actuate='onRequest'</has:directive>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- XLink arc element -->
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- XLink arc tail -->
+<has:resource rdf:resource="data:,CS-101"/>
+<has:directive>xlink:from</has:directive>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- XLink arc head -->
+<has:resource rdf:resource="data:,student62"/>
+<has:directive>xlink:to</has:directive>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+<has:type>go</has:type>
+<has:label>Pat Jones, auditing the course</has:label>
+<has:directive>xlink:show='replace';actuate='onRequest'</has:directive>
+<has:role>http://www.example.com/linkprops/auditor</has:role>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- XLink arc element -->
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- XLink arc tail -->
+<has:resource rdf:resource="data:,student62"/>
+<has:directive>xlink:from</has:directive>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- XLink arc head -->
+<has:resource rdf:resource="data:,prof7"/>
+<has:directive>xlink:to</has:directive>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+<has:type>go</has:type>
+<has:label>Dr. Jay Smith, advisor</has:label>
+<has:directive>xlink:show='replace';actuate='onRequest'</has:directive>
+<has:role>http://www.example.com/linkprops/advisor</has:role>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+<has:type>courseload</has:type>
+</rdf:Description>
+</rdf:RDF>

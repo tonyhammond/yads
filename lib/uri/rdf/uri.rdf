@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  Description of URI syntax (from RFC 2396) modelled using YADS.
+
+  Only those productions marked with an asterisk are modelled,
+  ie those with non-terminal elements. This is purely to keep
+  the visualization simpler.
+
+  ==
+
+* URI-reference = [ absoluteURI | relativeURI ] [ "#" fragment ]
+* absoluteURI   = scheme ":" ( hier_part | opaque_part )
+* relativeURI   = ( net_path | abs_path | rel_path ) [ "?" query ]
+
+* hier_part     = ( net_path | abs_path ) [ "?" query ]
+* opaque_part   = uric_no_slash *uric
+
+  uric_no_slash = unreserved | escaped | ";" | "?" | ":" | "@" |
+                  "&" | "=" | "+" | "$" | ","
+
+* net_path      = "//" authority [ abs_path ]
+* abs_path      = "/"  path_segments
+* rel_path      = rel_segment [ abs_path ]
+
+  rel_segment   = 1*( unreserved | escaped |
+                      ";" | "@" | "&" | "=" | "+" | "$" | "," )
+
+  scheme        = alpha *( alpha | digit | "+" | "-" | "." )
+
+* authority     = server | reg_name
+
+  reg_name      = 1*( unreserved | escaped | "$" | "," |
+                      ";" | ":" | "@" | "&" | "=" | "+" )
+
+* server        = [ [ userinfo "@" ] hostport ]
+  userinfo      = *( unreserved | escaped |
+                     ";" | ":" | "&" | "=" | "+" | "$" | "," )
+
+* hostport      = host [ ":" port ]
+* host          = hostname | IPv4address
+* hostname      = *( domainlabel "." ) toplabel [ "." ]
+  domainlabel   = alphanum | alphanum *( alphanum | "-" ) alphanum
+  toplabel      = alpha | alpha *( alphanum | "-" ) alphanum
+  IPv4address   = 1*digit "." 1*digit "." 1*digit "." 1*digit
+  port          = *digit
+
+* path          = [ abs_path | opaque_part ]
+* path_segments = segment *( "/" segment )
+* segment       = *pchar *( ";" param )
+* param         = *pchar
+  pchar         = unreserved | escaped |
+                  ":" | "@" | "&" | "=" | "+" | "$" | ","
+
+* query         = *uric
+
+* fragment      = *uric
+
+  uric          = reserved | unreserved | escaped
+  reserved      = ";" | "/" | "?" | ":" | "@" | "&" | "=" | "+" |
+                  "$" | ","
+  unreserved    = alphanum | mark
+  mark          = "-" | "_" | "." | "!" | "~" | "*" | "'" |
+                  "(" | ")"
+
+  escaped       = "%" hex hex
+  hex           = digit | "A" | "B" | "C" | "D" | "E" | "F" |
+                          "a" | "b" | "c" | "d" | "e" | "f"
+
+  alphanum      = alpha | digit
+  alpha         = lowalpha | upalpha
+
+  lowalpha = "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" |
+             "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" |
+             "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z"
+  upalpha  = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" |
+             "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" |
+             "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z"
+  digit    = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" |
+             "8" | "9"
+
+-->
+
+<rdf:RDF xmlns:isa="doi:1014/yads-schema-2002-04-03#" xmlns:has="doi:1014/yads-schema-2002-04-03#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:Description rdf:about="">
+<rdf:type>isa:Nest</rdf:type>
+<!-- \#1: URI-reference -->
+<has:resource rdf:resource="data:,URI-reference"/>
+<has:collection>
+<rdf:Seq>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- \#2: absoluteURI -->
+<has:resource rdf:resource="data:,absoluteURI"/>
+<has:collection>
+<rdf:Seq>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,scheme"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%3A"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- \#4: hier_part -->
+<has:resource rdf:resource="data:,hier_part"/>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- \#7: net_path -->
+<has:resource rdf:resource="data:,net_path"/>
+<has:collection>
+<rdf:Seq>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%2F%2F"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<has:resource rdf:resource="data:,authority"/>
+<!-- \#12: authority -->
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- \#14: server -->
+<has:resource rdf:resource="data:,server"/>
+<has:collection>
+<rdf:Seq>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,userinfo"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%40"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- \#16: hostport -->
+<has:resource rdf:resource="data:,hostport"/>
+<has:collection>
+<rdf:Seq>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- \#17: host -->
+<has:resource rdf:resource="data:,host"/>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- \#18: hostname -->
+<has:resource rdf:resource="data:,hostname"/>
+<has:collection>
+<rdf:Seq>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,domainlabel"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,."/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,toplabel"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,."/>
+</rdf:li>
+</rdf:Seq>
+</has:collection>
+<has:type>bnf:Rule</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<has:resource rdf:resource="data:,IPv4address"/>
+<has:type>bnf:Rule</has:type>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+<has:type>bnf:Rule</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%3A"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<has:resource rdf:resource="data:,port"/>
+<has:type>bnf:Rule</has:type>
+</rdf:li>
+</rdf:Seq>
+</has:collection>
+<has:type>bnf:Rule</has:type>
+</rdf:li>
+</rdf:Seq>
+</has:collection>
+<has:type>bnf:Rule</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<has:resource rdf:resource="data:,reg_name"/>
+<has:type>bnf:Rule</has:type>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+<has:type>bnf:Rule</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- \#8: abs_path -->
+<has:resource rdf:resource="data:,abs_path"/>
+<has:collection>
+<rdf:Seq>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%2F"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- \#24: path_segments -->
+<has:resource rdf:resource="data:,path_segments"/>
+<has:collection>
+<rdf:Seq>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- \#25: segment -->
+<has:resource rdf:resource="data:,segment"/>
+<has:collection>
+<rdf:Seq>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,pchar"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%3B"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- \#26: param -->
+<has:resource rdf:resource="data:,param"/>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,pchar"/>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+<has:type>bnf:Rule</has:type>
+</rdf:li>
+</rdf:Seq>
+</has:collection>
+<has:type>bnf:Rule</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%2F"/>
+</rdf:li>
+</rdf:Seq>
+</has:collection>
+<has:type>bnf:Rule</has:type>
+</rdf:li>
+</rdf:Seq>
+</has:collection>
+<has:type>bnf:Rule</has:type>
+</rdf:li>
+</rdf:Seq>
+</has:collection>
+<has:type>bnf:Rule</has:type>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:collection>
+<rdf:Seq>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%3F"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<has:resource rdf:resource="data:,query"/>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,uric"/>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+</rdf:li>
+</rdf:Seq>
+</has:collection>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+<has:type>bnf:Rule</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- \#5: opaque_part -->
+<has:resource rdf:resource="data:,opaque_part"/>
+<has:collection>
+<rdf:Seq>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,uric_no_slash"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,uric"/>
+</rdf:li>
+</rdf:Seq>
+</has:collection>
+<has:type>bnf:Rule</has:type>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+</rdf:li>
+</rdf:Seq>
+</has:collection>
+<has:type>bnf:Rule</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- \#3: relativeURI -->
+<has:resource rdf:resource="data:,relativeURI"/>
+<has:collection>
+<rdf:Seq>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,net_path"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,abs_path"/>
+</rdf:li>
+<!-- \#9: rel_path
+<nest>
+<data>rel_path</data>
+<collection order="sequenced">
+<item>
+<data>rel_segment</data>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+-->
+</rdf:Alt>
+</has:collection>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:collection>
+<rdf:Seq>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%3F"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,query"/>
+</rdf:li>
+</rdf:Seq>
+</has:collection>
+</rdf:li>
+</rdf:Seq>
+</has:collection>
+<has:type>bnf:Rule</has:type>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:collection>
+<rdf:Seq>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,%23"/>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<has:resource rdf:resource="data:,fragment"/>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,uric"/>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+</rdf:li>
+</rdf:Seq>
+</has:collection>
+</rdf:li>
+</rdf:Seq>
+</has:collection>
+<has:type>bnf:Rule</has:type>
+</rdf:Description>
+</rdf:RDF>

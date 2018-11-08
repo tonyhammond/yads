@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   DOI use case: Book Review List (Next)
+
+   Here a list of resources is managed. This is a list member
+   and identifies the previous and next members in the chain.
+-->
+<doi_data>
+  <doi>10.1006/anbo.2001.1474</doi>
+  <collection>
+    <item>
+      <resource/>
+      <property type="detail">Resources for Article
+      &lt;doi:10.1006/anbo.2001.1474&gt;</property>
+    </item>
+    <item>
+  <collection>
+    <item>
+      <resource>http://www.idealibrary.com/links/doi/10.1006/anbo.2001.1474</resource>
+      <property type="label">Ann. Bot. (2001) 88: p. 518</property>
+      <property type="type">xref:Review</property>
+      <property type="access">:default</property>
+    </item>
+    <item>
+      <resource>doi:10.1006/anbo.2001.1478</resource>
+      <property type="role">doi:preceding_sibling</property>
+    </item>
+    <item>
+      <resource>doi:10.1006/anbo.2001.1475</resource>
+      <property type="role">doi:following_sibling</property>
+    </item>
+  </collection>
+    </item>
+  </collection>
+</doi_data>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  MetroRail - Red Line
+
+  The MetroRail set of resource descriptions is a working
+  demonstration of the YADS model
+-->
+<yads>
+<nest>
+<!-- Red Line -->
+<resource>doi:1014/metro/red_line</resource>
+<collection>
+
+<item>
+<!-- Terminus Stations -->
+<collection>
+<item>
+<resource>doi:1014/metro/north_hollywood</resource>
+<property type="type">metro:Terminus</property>
+</item>
+<item>
+<resource>doi:1014/metro/union_station,gateway_transit_center</resource>
+<property type="type">metro:Terminus</property>
+</item>
+<item>
+<resource>doi:1014/metro/wilshire,western</resource>
+<property type="type">metro:Terminus</property>
+</item>
+</collection>
+<property type="detail">Terminus stations.</property>
+</item>
+
+<item>
+<!-- Line Stations -->
+<collection>
+<item>
+<!-- Branch Stations -->
+<collection>
+<item>
+<resource>doi:1014/metro/north_hollywood</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/universal_city</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/hollywood,highland</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/hollywood,vine</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/hollywood,western</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/vermont,sunset</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/vermont,santa_monica,la_city_college</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/vermont,beverly</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/wilshire,vermont</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/westlake,macarthur_park</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/7th_street,metro_center</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/pershing_square</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/civic_center,tom_bradley</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/union_station,gateway_transit_center</resource>
+<property type="type">metro:Station</property>
+</item>
+</collection>
+</item>
+<item>
+<collection>
+<item>
+<resource>doi:1014/metro/wilshire,western</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/wilshire,vermont</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/wilshire,normandie</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/westlake,macarthur_park</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/7th_street,metro_center</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/pershing_square</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/civic_center,tom_bradley</resource>
+<property type="type">metro:Station</property>
+</item>
+<item>
+<resource>doi:1014/metro/union_station,gateway_transit_center</resource>
+<property type="type">metro:Station</property>
+</item>
+</collection>
+</item>
+</collection>
+<property type="detail">Line stations.</property>
+</item>
+
+<item>
+<!-- Interchange Stations -->
+<collection>
+<nest>
+<resource>doi:1014/metro/blue_line</resource>
+<collection order="choice">
+<item>
+<resource>doi:1014/metro/7th_street,metro_center</resource>
+<property type="type">metro:Interchange</property>
+</item>
+</collection>
+<property type="type">metro:LineChange</property>
+</nest>
+</collection>
+<property type="detail">Interchange stations.</property>
+</item>
+
+</collection>
+<property type="type">metro:Line</property>
+<property type="label">Red Line</property>
+<property type="detail">MetroRail - Red Line.</property>
+</nest>
+</yads>

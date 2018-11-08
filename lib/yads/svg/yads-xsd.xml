@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  YADS - XML Schema
+
+  This document describes YADS - A Description Service
+  in a W3C XML Schema.
+
+  ==
+
+  // From RDF Schema for YADS
+
+  Resource:     doi:1014/yads-schema-2002-04-03
+  Comment:      RDF Schema for YADS - A Description Service
+  Author:       Tony Hammond <tony_hammond@harcourt.com>
+  Revision:     April 3, 2002 - Tony Hammond
+
+  Copyright (c) 2002 Elsevier Science Ltd. All rights reserved. 
+
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<!--
+  Toplevel wrapper element
+  ~
+-->
+<xsd:element name = "yads">
+  <xsd:simpleType>
+    <xsd:choice>
+      <xsd:element ref = "item" minOccurs = "0" maxOccurs = "unbounded"/>
+      <xsd:element ref = "nest" minOccurs = "0" maxOccurs = "unbounded"/>
+    </xsd:choice>
+  </xsd:simpleType>
+</xsd:element>
+
+<!--
+  Item element - collection OR resource, with properties.
+  (The content model expressly permits any ordering.)
+-->
+<xsd:element name = "item">
+  <xsd:complexType>
+    <xsd:sequence>
+      <xsd:choice>
+        <xsd:element ref = "collection"/>
+        <xsd:element ref = "resource"/>
+      </xsd:choice>
+      <xsd:element ref = "property" minOccurs = "0" maxOccurs = "unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:element>
+
+<!--
+  Nest element - collection AND resource, with properties.
+  (The content model expressly permits any ordering.)
+-->
+<xsd:element name = "nest">
+  <xsd:complexType>
+    <xsd:sequence>
+      <xsd:choice>
+        <xsd:complexType>
+          <xsd:sequence>
+              <xsd:element ref = "property"
+                           minOccurs = "0" maxOccurs = "unbounded"/>
+              <xsd:element ref = "collection"/>
+              <xsd:element ref = "property"
+                           minOccurs = "0" maxOccurs = "unbounded"/>
+              <xsd:element ref = "resource"/>
+              <xsd:element ref = "property"
+                           minOccurs = "0" maxOccurs = "unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+        <xsd:complexType>
+          <xsd:sequence>
+              <xsd:element ref = "property"
+                           minOccurs = "0" maxOccurs = "unbounded"/>
+              <xsd:element ref = "resource"/>
+              <xsd:element ref = "property"
+                           minOccurs = "0" maxOccurs = "unbounded"/>
+              <xsd:element ref = "collection"/>
+              <xsd:element ref = "property"
+                           minOccurs = "0" maxOccurs = "unbounded"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:choice>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:element>
+
+<!--
+  Collection element - contains sequence of nest or item elements.
+  (An order attribute determines how the elements should be ordered.)
+-->
+<xsd:element name = "collection">
+  <xsd:complexType>
+    <xsd:attribute name = "order" default = "unordered">
+      <xsd:simpleType>
+        <xsd:restriction base = "xsd:NMTOKEN">
+          <xsd:enumeration value = "unordered"/>
+          <xsd:enumeration value = "sequenced"/>
+          <xsd:enumeration value = "choice"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:attribute>
+    <xsd:group>
+      <xsd:choice>
+        <xsd:element ref = "item" minOccurs="1" maxOccurs = "unbounded"/>
+        <xsd:element ref = "nest" minOccurs="1" maxOccurs = "unbounded"/>
+      </xsd:choice>
+    </xsd:group>
+  </xsd:complexType>
+</xsd:element>
+
+<!--
+  Resource element
+  ~
+-->
+<xsd:element name = "resource">
+  <xsd:simpleType>
+    <xsd:restriction base = "xsd:anyURI">
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:element>
+
+<!--
+  Property element
+  ~
+-->
+<xsd:element name = "property">
+  <xsd:complexType>
+    <xsd:simpleContent>
+      <xsd:restriction base = "xsd:string">
+        <xsd:attribute name = "type" use = "required">
+          <xsd:simpleType>
+            <xsd:restriction base = "xsd:NMTOKEN">
+              <xsd:enumeration value = "access"/>
+              <xsd:enumeration value = "detail"/>
+              <xsd:enumeration value = "directive"/>
+              <xsd:enumeration value = "label"/>
+              <xsd:enumeration value = "role"/>
+              <xsd:enumeration value = "service"/>
+              <xsd:enumeration value = "type"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+          </xsd:attribute>
+      </xsd:restriction>
+    </xsd:simpleContent>
+  </xsd:complexType>
+</xsd:element>
+
+</xsd:schema>

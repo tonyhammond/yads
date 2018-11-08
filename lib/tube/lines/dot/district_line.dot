@@ -1,0 +1,4178 @@
+
+digraph yads { 
+
+
+
+graph [
+
+  fontname=arial, fontsize=24
+
+  label="YADS - A Description Service"
+
+];
+
+node [
+
+  fontname=arial, fontsize=11, fontcolor=black,
+
+  style=filled, color=cornflowerblue,
+
+];
+
+edge [
+
+  fontname=arial, fontsize=11, fontcolor=black,
+
+  style=filled, color=lightblue,
+
+];
+
+rankdir=TB;
+
+
+
+subgraph cluster_1 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Nest - District Line";
+
+
+
+  ":_1" [label="tube:Line", color=lightgoldenrod];
+
+  ":_1" -> "doi:1014/tube/district_line" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  ":_1" -> "node_2" [label="has:label", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#label"];
+
+  ":_1" -> "node_3" [label="has:detail", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#detail"];
+
+  ":_1" -> ":_2" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_2" [label="rdf:Bag", color=lightgrey];
+
+  "doi:1014/tube/district_line" [color=plum, URL="http://dx.doi.org/1014/tube/district_line"];
+
+  "node_2" [shape=box, label="District Line"];
+
+  "node_3" [shape=box, label="TubeTime - District Line."];
+
+  ":_2" [label="rdf:Bag", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"];
+
+  ":_2" -> ":_3" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_3" [label="isa:Nest"]
+
+
+
+subgraph cluster_3 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Nest - Application Profile";
+
+
+
+  ":_3" [label="doi:Profile", color=lightgoldenrod];
+
+  ":_3" -> "doi:1014/profile.tube" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  ":_3" -> ":_4" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_4" [label="rdf:Bag", color=lightgrey];
+
+  "doi:1014/profile.tube" [color=plum, URL="http://dx.doi.org/1014/profile.tube"];
+
+  ":_4" [label="rdf:Bag", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"];
+
+  ":_4" -> ":_5" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_5" [label="isa:Item"]
+
+  ":_4" -> ":_13" [label="rdf:_2", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2"];
+
+":_13" [label="isa:Item"]
+
+  ":_4" -> ":_86" [label="rdf:_3", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_3"];
+
+":_86" [label="isa:Item"]
+
+
+
+subgraph cluster_5 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item - Terminus Stations";
+
+
+
+  ":_5" [label="isa:Item", color=lightgrey, URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#Item"];
+
+  ":_5" -> "node_5" [label="has:detail", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#detail"];
+
+  ":_5" -> ":_6" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_6" [label="rdf:Bag", color=lightgrey];
+
+  "node_5" [shape=box, label="Terminus stations."];
+
+  ":_6" [label="rdf:Bag", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"];
+
+  ":_6" -> ":_7" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_7" [label="isa:Item"]
+
+  ":_6" -> ":_8" [label="rdf:_2", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2"];
+
+":_8" [label="isa:Item"]
+
+  ":_6" -> ":_9" [label="rdf:_3", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_3"];
+
+":_9" [label="isa:Item"]
+
+  ":_6" -> ":_10" [label="rdf:_4", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_4"];
+
+":_10" [label="isa:Item"]
+
+  ":_6" -> ":_11" [label="rdf:_5", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_5"];
+
+":_11" [label="isa:Item"]
+
+  ":_6" -> ":_12" [label="rdf:_6", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_6"];
+
+":_12" [label="isa:Item"]
+
+
+
+subgraph cluster_7 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_7" [label="tube:Terminus", color=lightgoldenrod];
+
+  ":_7" -> "doi:1014/tube/ealing_broadway" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/ealing_broadway" [color=plum, URL="http://dx.doi.org/1014/tube/ealing_broadway"];
+
+}
+
+
+
+subgraph cluster_8 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_8" [label="tube:Terminus", color=lightgoldenrod];
+
+  ":_8" -> "doi:1014/tube/upminster" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/upminster" [color=plum, URL="http://dx.doi.org/1014/tube/upminster"];
+
+}
+
+
+
+subgraph cluster_9 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_9" [label="tube:Terminus", color=lightgoldenrod];
+
+  ":_9" -> "doi:1014/tube/richmond" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/richmond" [color=plum, URL="http://dx.doi.org/1014/tube/richmond"];
+
+}
+
+
+
+subgraph cluster_10 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_10" [label="tube:Terminus", color=lightgoldenrod];
+
+  ":_10" -> "doi:1014/tube/wimbledon" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/wimbledon" [color=plum, URL="http://dx.doi.org/1014/tube/wimbledon"];
+
+}
+
+
+
+subgraph cluster_11 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_11" [label="tube:Terminus", color=lightgoldenrod];
+
+  ":_11" -> "doi:1014/tube/kensington_(oly...)" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/kensington_(oly...)" [color=plum, URL="http://dx.doi.org/1014/tube/kensington_(olympia)"];
+
+}
+
+
+
+subgraph cluster_12 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_12" [label="tube:Terminus", color=lightgoldenrod];
+
+  ":_12" -> "doi:1014/tube/edgware_road" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/edgware_road" [color=plum, URL="http://dx.doi.org/1014/tube/edgware_road"];
+
+}
+
+
+
+}
+
+
+
+subgraph cluster_13 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item - Line Stations";
+
+
+
+  ":_13" [label="isa:Item", color=lightgrey, URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#Item"];
+
+  ":_13" -> "node_12" [label="has:detail", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#detail"];
+
+  ":_13" -> ":_14" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_14" [label="rdf:Bag", color=lightgrey];
+
+  "node_12" [shape=box, label="Line stations."];
+
+  ":_14" [label="rdf:Bag", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"];
+
+  ":_14" -> ":_15" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_15" [label="isa:Item"]
+
+  ":_14" -> ":_60" [label="rdf:_2", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2"];
+
+":_60" [label="isa:Item"]
+
+  ":_14" -> ":_66" [label="rdf:_3", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_3"];
+
+":_66" [label="isa:Item"]
+
+  ":_14" -> ":_77" [label="rdf:_4", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_4"];
+
+":_77" [label="isa:Item"]
+
+
+
+subgraph cluster_15 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item - Branch Stations";
+
+
+
+  ":_15" [label="isa:Item", color=lightgrey, URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#Item"];
+
+  ":_15" -> "node_13647082" [label="has:detail", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#detail"];
+
+  ":_15" -> ":_16" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_16" [label="rdf:Seq", color=lightgrey];
+
+  "node_13647082" [shape=box, label="Branch stations."];
+
+  ":_16" [label="rdf:Seq", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"];
+
+  ":_16" -> ":_17" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_17" [label="isa:Item"]
+
+  ":_16" -> ":_18" [label="rdf:_2", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2"];
+
+":_18" [label="isa:Item"]
+
+  ":_16" -> ":_19" [label="rdf:_3", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_3"];
+
+":_19" [label="isa:Item"]
+
+  ":_16" -> ":_20" [label="rdf:_4", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_4"];
+
+":_20" [label="isa:Item"]
+
+  ":_16" -> ":_21" [label="rdf:_5", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_5"];
+
+":_21" [label="isa:Item"]
+
+  ":_16" -> ":_22" [label="rdf:_6", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_6"];
+
+":_22" [label="isa:Item"]
+
+  ":_16" -> ":_23" [label="rdf:_7", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_7"];
+
+":_23" [label="isa:Item"]
+
+  ":_16" -> ":_24" [label="rdf:_8", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_8"];
+
+":_24" [label="isa:Item"]
+
+  ":_16" -> ":_25" [label="rdf:_9", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_9"];
+
+":_25" [label="isa:Item"]
+
+  ":_16" -> ":_26" [label="rdf:_10", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_10"];
+
+":_26" [label="isa:Item"]
+
+  ":_16" -> ":_27" [label="rdf:_11", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_11"];
+
+":_27" [label="isa:Item"]
+
+  ":_16" -> ":_28" [label="rdf:_12", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_12"];
+
+":_28" [label="isa:Item"]
+
+  ":_16" -> ":_29" [label="rdf:_13", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_13"];
+
+":_29" [label="isa:Item"]
+
+  ":_16" -> ":_30" [label="rdf:_14", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_14"];
+
+":_30" [label="isa:Item"]
+
+  ":_16" -> ":_31" [label="rdf:_15", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_15"];
+
+":_31" [label="isa:Item"]
+
+  ":_16" -> ":_32" [label="rdf:_16", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_16"];
+
+":_32" [label="isa:Item"]
+
+  ":_16" -> ":_33" [label="rdf:_17", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_17"];
+
+":_33" [label="isa:Item"]
+
+  ":_16" -> ":_34" [label="rdf:_18", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_18"];
+
+":_34" [label="isa:Item"]
+
+  ":_16" -> ":_35" [label="rdf:_19", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_19"];
+
+":_35" [label="isa:Item"]
+
+  ":_16" -> ":_36" [label="rdf:_20", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_20"];
+
+":_36" [label="isa:Item"]
+
+  ":_16" -> ":_37" [label="rdf:_21", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_21"];
+
+":_37" [label="isa:Item"]
+
+  ":_16" -> ":_38" [label="rdf:_22", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_22"];
+
+":_38" [label="isa:Item"]
+
+  ":_16" -> ":_39" [label="rdf:_23", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_23"];
+
+":_39" [label="isa:Item"]
+
+  ":_16" -> ":_40" [label="rdf:_24", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_24"];
+
+":_40" [label="isa:Item"]
+
+  ":_16" -> ":_41" [label="rdf:_25", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_25"];
+
+":_41" [label="isa:Item"]
+
+  ":_16" -> ":_42" [label="rdf:_26", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_26"];
+
+":_42" [label="isa:Item"]
+
+  ":_16" -> ":_43" [label="rdf:_27", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_27"];
+
+":_43" [label="isa:Item"]
+
+  ":_16" -> ":_44" [label="rdf:_28", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_28"];
+
+":_44" [label="isa:Item"]
+
+  ":_16" -> ":_45" [label="rdf:_29", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_29"];
+
+":_45" [label="isa:Item"]
+
+  ":_16" -> ":_46" [label="rdf:_30", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_30"];
+
+":_46" [label="isa:Item"]
+
+  ":_16" -> ":_47" [label="rdf:_31", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_31"];
+
+":_47" [label="isa:Item"]
+
+  ":_16" -> ":_48" [label="rdf:_32", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_32"];
+
+":_48" [label="isa:Item"]
+
+  ":_16" -> ":_49" [label="rdf:_33", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_33"];
+
+":_49" [label="isa:Item"]
+
+  ":_16" -> ":_50" [label="rdf:_34", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_34"];
+
+":_50" [label="isa:Item"]
+
+  ":_16" -> ":_51" [label="rdf:_35", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_35"];
+
+":_51" [label="isa:Item"]
+
+  ":_16" -> ":_52" [label="rdf:_36", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_36"];
+
+":_52" [label="isa:Item"]
+
+  ":_16" -> ":_53" [label="rdf:_37", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_37"];
+
+":_53" [label="isa:Item"]
+
+  ":_16" -> ":_54" [label="rdf:_38", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_38"];
+
+":_54" [label="isa:Item"]
+
+  ":_16" -> ":_55" [label="rdf:_39", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_39"];
+
+":_55" [label="isa:Item"]
+
+  ":_16" -> ":_56" [label="rdf:_40", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_40"];
+
+":_56" [label="isa:Item"]
+
+  ":_16" -> ":_57" [label="rdf:_41", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_41"];
+
+":_57" [label="isa:Item"]
+
+  ":_16" -> ":_58" [label="rdf:_42", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_42"];
+
+":_58" [label="isa:Item"]
+
+  ":_16" -> ":_59" [label="rdf:_43", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_43"];
+
+":_59" [label="isa:Item"]
+
+
+
+subgraph cluster_17 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_17" [label="tube:Station", color=lightgoldenrod];
+
+  ":_17" -> "doi:1014/tube/ealing_broadway" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  ":_17" -> "node_153036394954636672808490" [label="has:access", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#access"];
+
+  "doi:1014/tube/ealing_broadway" [color=plum, URL="http://dx.doi.org/1014/tube/ealing_broadway"];
+
+  "node_153036394954636672808490" [shape=box, label="Rail Link"];
+
+}
+
+
+
+subgraph cluster_18 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_18" [label="tube:Station", color=lightgoldenrod];
+
+  ":_18" -> "doi:1014/tube/ealing_common" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/ealing_common" [color=plum, URL="http://dx.doi.org/1014/tube/ealing_common"];
+
+}
+
+
+
+subgraph cluster_19 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_19" [label="tube:Station", color=lightgoldenrod];
+
+  ":_19" -> "doi:1014/tube/acton_town" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/acton_town" [color=plum, URL="http://dx.doi.org/1014/tube/acton_town"];
+
+}
+
+
+
+subgraph cluster_20 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_20" [label="tube:Station", color=lightgoldenrod];
+
+  ":_20" -> "doi:1014/tube/chiswick_park" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/chiswick_park" [color=plum, URL="http://dx.doi.org/1014/tube/chiswick_park"];
+
+}
+
+
+
+subgraph cluster_21 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_21" [label="tube:Station", color=lightgoldenrod];
+
+  ":_21" -> "doi:1014/tube/turnham_green" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/turnham_green" [color=plum, URL="http://dx.doi.org/1014/tube/turnham_green"];
+
+}
+
+
+
+subgraph cluster_22 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_22" [label="tube:Station", color=lightgoldenrod];
+
+  ":_22" -> "doi:1014/tube/stamford_brook" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/stamford_brook" [color=plum, URL="http://dx.doi.org/1014/tube/stamford_brook"];
+
+}
+
+
+
+subgraph cluster_23 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_23" [label="tube:Station", color=lightgoldenrod];
+
+  ":_23" -> "doi:1014/tube/ravenscourt_par" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/ravenscourt_par" [color=plum, URL="http://dx.doi.org/1014/tube/ravenscourt_park"];
+
+}
+
+
+
+subgraph cluster_24 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_24" [label="tube:Station", color=lightgoldenrod];
+
+  ":_24" -> "doi:1014/tube/hammersmith" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/hammersmith" [color=plum, URL="http://dx.doi.org/1014/tube/hammersmith"];
+
+}
+
+
+
+subgraph cluster_25 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_25" [label="tube:Station", color=lightgoldenrod];
+
+  ":_25" -> "doi:1014/tube/barons_court" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/barons_court" [color=plum, URL="http://dx.doi.org/1014/tube/barons_court"];
+
+}
+
+
+
+subgraph cluster_26 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_26" [label="tube:Station", color=lightgoldenrod];
+
+  ":_26" -> "doi:1014/tube/west_kensington" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/west_kensington" [color=plum, URL="http://dx.doi.org/1014/tube/west_kensington"];
+
+}
+
+
+
+subgraph cluster_27 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_27" [label="tube:Station", color=lightgoldenrod];
+
+  ":_27" -> "doi:1014/tube/earl's_court" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/earl's_court" [color=plum, URL="http://dx.doi.org/1014/tube/earl's_court"];
+
+}
+
+
+
+subgraph cluster_28 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_28" [label="tube:Station", color=lightgoldenrod];
+
+  ":_28" -> "doi:1014/tube/gloucester_road" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/gloucester_road" [color=plum, URL="http://dx.doi.org/1014/tube/gloucester_road"];
+
+}
+
+
+
+subgraph cluster_29 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_29" [label="tube:Station", color=lightgoldenrod];
+
+  ":_29" -> "doi:1014/tube/south_kensingto" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/south_kensingto" [color=plum, URL="http://dx.doi.org/1014/tube/south_kensington"];
+
+}
+
+
+
+subgraph cluster_30 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_30" [label="tube:Station", color=lightgoldenrod];
+
+  ":_30" -> "doi:1014/tube/sloane_square" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/sloane_square" [color=plum, URL="http://dx.doi.org/1014/tube/sloane_square"];
+
+}
+
+
+
+subgraph cluster_31 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_31" [label="tube:Station", color=lightgoldenrod];
+
+  ":_31" -> "doi:1014/tube/victoria" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  ":_31" -> "node_153036394954636672808490" [label="has:access", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#access"];
+
+  "doi:1014/tube/victoria" [color=plum, URL="http://dx.doi.org/1014/tube/victoria"];
+
+  "node_153036394954636672808490" [shape=box, label="Rail Link"];
+
+}
+
+
+
+subgraph cluster_32 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_32" [label="tube:Station", color=lightgoldenrod];
+
+  ":_32" -> "doi:1014/tube/st._james's_par" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/st._james's_par" [color=plum, URL="http://dx.doi.org/1014/tube/st._james's_park"];
+
+}
+
+
+
+subgraph cluster_33 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_33" [label="tube:Station", color=lightgoldenrod];
+
+  ":_33" -> "doi:1014/tube/westminster" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/westminster" [color=plum, URL="http://dx.doi.org/1014/tube/westminster"];
+
+}
+
+
+
+subgraph cluster_34 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_34" [label="tube:Station", color=lightgoldenrod];
+
+  ":_34" -> "doi:1014/tube/embankment" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/embankment" [color=plum, URL="http://dx.doi.org/1014/tube/embankment"];
+
+}
+
+
+
+subgraph cluster_35 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_35" [label="tube:Station", color=lightgoldenrod];
+
+  ":_35" -> "doi:1014/tube/temple" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/temple" [color=plum, URL="http://dx.doi.org/1014/tube/temple"];
+
+}
+
+
+
+subgraph cluster_36 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_36" [label="tube:Station", color=lightgoldenrod];
+
+  ":_36" -> "doi:1014/tube/blackfriars" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  ":_36" -> "node_153036394954636672808490" [label="has:access", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#access"];
+
+  "doi:1014/tube/blackfriars" [color=plum, URL="http://dx.doi.org/1014/tube/blackfriars"];
+
+  "node_153036394954636672808490" [shape=box, label="Rail Link"];
+
+}
+
+
+
+subgraph cluster_37 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_37" [label="tube:Station", color=lightgoldenrod];
+
+  ":_37" -> "doi:1014/tube/mansion_house" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/mansion_house" [color=plum, URL="http://dx.doi.org/1014/tube/mansion_house"];
+
+}
+
+
+
+subgraph cluster_38 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_38" [label="tube:Station", color=lightgoldenrod];
+
+  ":_38" -> "doi:1014/tube/cannon_street" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  ":_38" -> "node_153036394954636672808490" [label="has:access", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#access"];
+
+  "doi:1014/tube/cannon_street" [color=plum, URL="http://dx.doi.org/1014/tube/cannon_street"];
+
+  "node_153036394954636672808490" [shape=box, label="Rail Link"];
+
+}
+
+
+
+subgraph cluster_39 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_39" [label="tube:Station", color=lightgoldenrod];
+
+  ":_39" -> "doi:1014/tube/monument" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/monument" [color=plum, URL="http://dx.doi.org/1014/tube/monument"];
+
+}
+
+
+
+subgraph cluster_40 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_40" [label="tube:Station", color=lightgoldenrod];
+
+  ":_40" -> "doi:1014/tube/tower_hill" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/tower_hill" [color=plum, URL="http://dx.doi.org/1014/tube/tower_hill"];
+
+}
+
+
+
+subgraph cluster_41 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_41" [label="tube:Station", color=lightgoldenrod];
+
+  ":_41" -> "doi:1014/tube/aldgate_east" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/aldgate_east" [color=plum, URL="http://dx.doi.org/1014/tube/aldgate_east"];
+
+}
+
+
+
+subgraph cluster_42 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_42" [label="tube:Station", color=lightgoldenrod];
+
+  ":_42" -> "doi:1014/tube/whitechapel" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/whitechapel" [color=plum, URL="http://dx.doi.org/1014/tube/whitechapel"];
+
+}
+
+
+
+subgraph cluster_43 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_43" [label="tube:Station", color=lightgoldenrod];
+
+  ":_43" -> "doi:1014/tube/stepney_green" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/stepney_green" [color=plum, URL="http://dx.doi.org/1014/tube/stepney_green"];
+
+}
+
+
+
+subgraph cluster_44 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_44" [label="tube:Station", color=lightgoldenrod];
+
+  ":_44" -> "doi:1014/tube/mile_end" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/mile_end" [color=plum, URL="http://dx.doi.org/1014/tube/mile_end"];
+
+}
+
+
+
+subgraph cluster_45 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_45" [label="tube:Station", color=lightgoldenrod];
+
+  ":_45" -> "doi:1014/tube/bow_road" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/bow_road" [color=plum, URL="http://dx.doi.org/1014/tube/bow_road"];
+
+}
+
+
+
+subgraph cluster_46 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_46" [label="tube:Station", color=lightgoldenrod];
+
+  ":_46" -> "doi:1014/tube/bromley-by-bow" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/bromley-by-bow" [color=plum, URL="http://dx.doi.org/1014/tube/bromley-by-bow"];
+
+}
+
+
+
+subgraph cluster_47 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_47" [label="tube:Station", color=lightgoldenrod];
+
+  ":_47" -> "doi:1014/tube/west_ham" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  ":_47" -> "node_153036394954636672808490" [label="has:access", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#access"];
+
+  "doi:1014/tube/west_ham" [color=plum, URL="http://dx.doi.org/1014/tube/west_ham"];
+
+  "node_153036394954636672808490" [shape=box, label="Rail Link"];
+
+}
+
+
+
+subgraph cluster_48 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_48" [label="tube:Station", color=lightgoldenrod];
+
+  ":_48" -> "doi:1014/tube/plaistow" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/plaistow" [color=plum, URL="http://dx.doi.org/1014/tube/plaistow"];
+
+}
+
+
+
+subgraph cluster_49 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_49" [label="tube:Station", color=lightgoldenrod];
+
+  ":_49" -> "doi:1014/tube/upton_park" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/upton_park" [color=plum, URL="http://dx.doi.org/1014/tube/upton_park"];
+
+}
+
+
+
+subgraph cluster_50 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_50" [label="tube:Station", color=lightgoldenrod];
+
+  ":_50" -> "doi:1014/tube/east_ham" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/east_ham" [color=plum, URL="http://dx.doi.org/1014/tube/east_ham"];
+
+}
+
+
+
+subgraph cluster_51 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_51" [label="tube:Station", color=lightgoldenrod];
+
+  ":_51" -> "doi:1014/tube/barking" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  ":_51" -> "node_153036394954636672808490" [label="has:access", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#access"];
+
+  "doi:1014/tube/barking" [color=plum, URL="http://dx.doi.org/1014/tube/barking"];
+
+  "node_153036394954636672808490" [shape=box, label="Rail Link"];
+
+}
+
+
+
+subgraph cluster_52 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_52" [label="tube:Station", color=lightgoldenrod];
+
+  ":_52" -> "doi:1014/tube/upney" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/upney" [color=plum, URL="http://dx.doi.org/1014/tube/upney"];
+
+}
+
+
+
+subgraph cluster_53 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_53" [label="tube:Station", color=lightgoldenrod];
+
+  ":_53" -> "doi:1014/tube/becontree" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/becontree" [color=plum, URL="http://dx.doi.org/1014/tube/becontree"];
+
+}
+
+
+
+subgraph cluster_54 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_54" [label="tube:Station", color=lightgoldenrod];
+
+  ":_54" -> "doi:1014/tube/dagenham_heathw...y" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/dagenham_heathw...y" [color=plum, URL="http://dx.doi.org/1014/tube/dagenham_heathway"];
+
+}
+
+
+
+subgraph cluster_55 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_55" [label="tube:Station", color=lightgoldenrod];
+
+  ":_55" -> "doi:1014/tube/dagenham_east" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/dagenham_east" [color=plum, URL="http://dx.doi.org/1014/tube/dagenham_east"];
+
+}
+
+
+
+subgraph cluster_56 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_56" [label="tube:Station", color=lightgoldenrod];
+
+  ":_56" -> "doi:1014/tube/elm_park" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/elm_park" [color=plum, URL="http://dx.doi.org/1014/tube/elm_park"];
+
+}
+
+
+
+subgraph cluster_57 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_57" [label="tube:Station", color=lightgoldenrod];
+
+  ":_57" -> "doi:1014/tube/hornchurch" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/hornchurch" [color=plum, URL="http://dx.doi.org/1014/tube/hornchurch"];
+
+}
+
+
+
+subgraph cluster_58 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_58" [label="tube:Station", color=lightgoldenrod];
+
+  ":_58" -> "doi:1014/tube/upminster_bridg" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/upminster_bridg" [color=plum, URL="http://dx.doi.org/1014/tube/upminster_bridge"];
+
+}
+
+
+
+subgraph cluster_59 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_59" [label="tube:Station", color=lightgoldenrod];
+
+  ":_59" -> "doi:1014/tube/upminster" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  ":_59" -> "node_153036394954636672808490" [label="has:access", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#access"];
+
+  "doi:1014/tube/upminster" [color=plum, URL="http://dx.doi.org/1014/tube/upminster"];
+
+  "node_153036394954636672808490" [shape=box, label="Rail Link"];
+
+}
+
+
+
+}
+
+
+
+subgraph cluster_60 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item - Branch Stations";
+
+
+
+  ":_60" [label="isa:Item", color=lightgrey, URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#Item"];
+
+  ":_60" -> "node_13647082" [label="has:detail", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#detail"];
+
+  ":_60" -> ":_61" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_61" [label="rdf:Seq", color=lightgrey];
+
+  "node_13647082" [shape=box, label="Branch stations."];
+
+  ":_61" [label="rdf:Seq", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"];
+
+  ":_61" -> ":_62" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_62" [label="isa:Item"]
+
+  ":_61" -> ":_63" [label="rdf:_2", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2"];
+
+":_63" [label="isa:Item"]
+
+  ":_61" -> ":_64" [label="rdf:_3", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_3"];
+
+":_64" [label="isa:Item"]
+
+  ":_61" -> ":_65" [label="rdf:_4", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_4"];
+
+":_65" [label="isa:Item"]
+
+
+
+subgraph cluster_62 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_62" [label="tube:Station", color=lightgoldenrod];
+
+  ":_62" -> "doi:1014/tube/richmond" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  ":_62" -> "node_153036394954636672808490" [label="has:access", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#access"];
+
+  "doi:1014/tube/richmond" [color=plum, URL="http://dx.doi.org/1014/tube/richmond"];
+
+  "node_153036394954636672808490" [shape=box, label="Rail Link"];
+
+}
+
+
+
+subgraph cluster_63 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_63" [label="tube:Station", color=lightgoldenrod];
+
+  ":_63" -> "doi:1014/tube/kew_gardens" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/kew_gardens" [color=plum, URL="http://dx.doi.org/1014/tube/kew_gardens"];
+
+}
+
+
+
+subgraph cluster_64 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_64" [label="tube:Station", color=lightgoldenrod];
+
+  ":_64" -> "doi:1014/tube/gunnersbury" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/gunnersbury" [color=plum, URL="http://dx.doi.org/1014/tube/gunnersbury"];
+
+}
+
+
+
+subgraph cluster_65 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_65" [label="tube:Station", color=lightgoldenrod];
+
+  ":_65" -> "doi:1014/tube/turnham_green" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/turnham_green" [color=plum, URL="http://dx.doi.org/1014/tube/turnham_green"];
+
+}
+
+
+
+}
+
+
+
+subgraph cluster_66 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item - Branch Stations";
+
+
+
+  ":_66" [label="isa:Item", color=lightgrey, URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#Item"];
+
+  ":_66" -> "node_13647082" [label="has:detail", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#detail"];
+
+  ":_66" -> ":_67" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_67" [label="rdf:Seq", color=lightgrey];
+
+  "node_13647082" [shape=box, label="Branch stations."];
+
+  ":_67" [label="rdf:Seq", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"];
+
+  ":_67" -> ":_68" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_68" [label="isa:Item"]
+
+  ":_67" -> ":_69" [label="rdf:_2", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2"];
+
+":_69" [label="isa:Item"]
+
+  ":_67" -> ":_70" [label="rdf:_3", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_3"];
+
+":_70" [label="isa:Item"]
+
+  ":_67" -> ":_71" [label="rdf:_4", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_4"];
+
+":_71" [label="isa:Item"]
+
+  ":_67" -> ":_72" [label="rdf:_5", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_5"];
+
+":_72" [label="isa:Item"]
+
+  ":_67" -> ":_73" [label="rdf:_6", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_6"];
+":_73" [label="isa:Item"]
+
+  ":_67" -> ":_74" [label="rdf:_7", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_7"];
+
+":_74" [label="isa:Item"]
+
+  ":_67" -> ":_75" [label="rdf:_8", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_8"];
+
+":_75" [label="isa:Item"]
+
+  ":_67" -> ":_76" [label="rdf:_9", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_9"];
+
+":_76" [label="isa:Item"]
+
+
+
+subgraph cluster_68 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_68" [label="tube:Station", color=lightgoldenrod];
+
+  ":_68" -> "doi:1014/tube/wimbledon" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  ":_68" -> "node_153036394954636672808490" [label="has:access", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#access"];
+
+  "doi:1014/tube/wimbledon" [color=plum, URL="http://dx.doi.org/1014/tube/wimbledon"];
+
+  "node_153036394954636672808490" [shape=box, label="Rail Link"];
+
+}
+
+
+
+subgraph cluster_69 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_69" [label="tube:Station", color=lightgoldenrod];
+
+  ":_69" -> "doi:1014/tube/wimbledon_park" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/wimbledon_park" [color=plum, URL="http://dx.doi.org/1014/tube/wimbledon_park"];
+
+}
+
+
+
+subgraph cluster_70 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_70" [label="tube:Station", color=lightgoldenrod];
+
+  ":_70" -> "doi:1014/tube/southfields" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/southfields" [color=plum, URL="http://dx.doi.org/1014/tube/southfields"];
+
+}
+
+
+
+subgraph cluster_71 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_71" [label="tube:Station", color=lightgoldenrod];
+
+  ":_71" -> "doi:1014/tube/east_putney" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/east_putney" [color=plum, URL="http://dx.doi.org/1014/tube/east_putney"];
+
+}
+
+
+
+subgraph cluster_72 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_72" [label="tube:Station", color=lightgoldenrod];
+
+  ":_72" -> "doi:1014/tube/putney_bridge" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/putney_bridge" [color=plum, URL="http://dx.doi.org/1014/tube/putney_bridge"];
+
+}
+
+
+
+subgraph cluster_73 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_73" [label="tube:Station", color=lightgoldenrod];
+
+  ":_73" -> "doi:1014/tube/parsons_green" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/parsons_green" [color=plum, URL="http://dx.doi.org/1014/tube/parsons_green"];
+
+}
+
+
+
+subgraph cluster_74 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_74" [label="tube:Station", color=lightgoldenrod];
+
+  ":_74" -> "doi:1014/tube/fulham_broadway" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/fulham_broadway" [color=plum, URL="http://dx.doi.org/1014/tube/fulham_broadway"];
+
+}
+
+
+
+subgraph cluster_75 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_75" [label="tube:Station", color=lightgoldenrod];
+
+  ":_75" -> "doi:1014/tube/west_brompton" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  ":_75" -> "node_153036394954636672808490" [label="has:access", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#access"];
+
+  "doi:1014/tube/west_brompton" [color=plum, URL="http://dx.doi.org/1014/tube/west_brompton"];
+
+  "node_153036394954636672808490" [shape=box, label="Rail Link"];
+
+}
+
+
+
+subgraph cluster_76 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_76" [label="tube:Station", color=lightgoldenrod];
+
+  ":_76" -> "doi:1014/tube/earl's_court" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/earl's_court" [color=plum, URL="http://dx.doi.org/1014/tube/earl's_court"];
+
+}
+
+
+
+}
+
+
+
+subgraph cluster_77 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item - Branch Stations";
+
+
+
+  ":_77" [label="isa:Item", color=lightgrey, URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#Item"];
+
+  ":_77" -> "node_13647082" [label="has:detail", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#detail"];
+
+  ":_77" -> ":_78" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_78" [label="rdf:Seq", color=lightgrey];
+
+  "node_13647082" [shape=box, label="Branch stations."];
+
+  ":_78" [label="rdf:Seq", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"];
+
+  ":_78" -> ":_79" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_79" [label="isa:Item"]
+
+  ":_78" -> ":_80" [label="rdf:_2", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2"];
+
+":_80" [label="isa:Item"]
+
+  ":_78" -> ":_81" [label="rdf:_3", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_3"];
+
+":_81" [label="isa:Item"]
+
+  ":_78" -> ":_82" [label="rdf:_4", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_4"];
+
+":_82" [label="isa:Item"]
+
+  ":_78" -> ":_83" [label="rdf:_5", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_5"];
+
+":_83" [label="isa:Item"]
+
+  ":_78" -> ":_84" [label="rdf:_6", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_6"];
+
+":_84" [label="isa:Item"]
+
+  ":_78" -> ":_85" [label="rdf:_7", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_7"];
+
+":_85" [label="isa:Item"]
+
+
+
+subgraph cluster_79 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_79" [label="tube:Station", color=lightgoldenrod];
+
+  ":_79" -> "doi:1014/tube/kensington_(oly...)" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  ":_79" -> "node_153036394954636672808490" [label="has:access", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#access"];
+
+  "doi:1014/tube/kensington_(oly...)" [color=plum, URL="http://dx.doi.org/1014/tube/kensington_(olympia)"];
+
+  "node_153036394954636672808490" [shape=box, label="Rail Link"];
+
+}
+
+
+
+subgraph cluster_80 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_80" [label="tube:Station", color=lightgoldenrod];
+
+  ":_80" -> "doi:1014/tube/earl's_court" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/earl's_court" [color=plum, URL="http://dx.doi.org/1014/tube/earl's_court"];
+
+}
+
+
+
+subgraph cluster_81 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_81" [label="tube:Station", color=lightgoldenrod];
+
+  ":_81" -> "doi:1014/tube/high_street_ken...n" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/high_street_ken...n" [color=plum, URL="http://dx.doi.org/1014/tube/high_street_kensington"];
+
+}
+
+
+
+subgraph cluster_82 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_82" [label="tube:Station", color=lightgoldenrod];
+
+  ":_82" -> "doi:1014/tube/notting_hill_ga...e" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/notting_hill_ga...e" [color=plum, URL="http://dx.doi.org/1014/tube/notting_hill_gate"];
+
+}
+
+
+
+subgraph cluster_83 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_83" [label="tube:Station", color=lightgoldenrod];
+
+  ":_83" -> "doi:1014/tube/bayswater" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/bayswater" [color=plum, URL="http://dx.doi.org/1014/tube/bayswater"];
+
+}
+
+
+
+subgraph cluster_84 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_84" [label="tube:Station", color=lightgoldenrod];
+
+  ":_84" -> "doi:1014/tube/paddington" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  ":_84" -> "node_153036394954636672808490" [label="has:access", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#access"];
+
+  "doi:1014/tube/paddington" [color=plum, URL="http://dx.doi.org/1014/tube/paddington"];
+
+  "node_153036394954636672808490" [shape=box, label="Rail Link"];
+
+}
+
+
+
+subgraph cluster_85 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_85" [label="tube:Station", color=lightgoldenrod];
+
+  ":_85" -> "doi:1014/tube/edgware_road" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/edgware_road" [color=plum, URL="http://dx.doi.org/1014/tube/edgware_road"];
+
+}
+
+
+
+}
+
+
+
+}
+
+
+
+subgraph cluster_86 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item - Interchange Stations";
+
+
+
+  ":_86" [label="isa:Item", color=lightgrey, URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#Item"];
+
+  ":_86" -> "node_92" [label="has:detail", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#detail"];
+
+  ":_86" -> ":_87" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_87" [label="rdf:Bag", color=lightgrey];
+
+  "node_92" [shape=box, label="Interchange stations."];
+
+  ":_87" [label="rdf:Bag", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"];
+
+  ":_87" -> ":_88" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_88" [label="isa:Nest"]
+
+  ":_87" -> ":_100" [label="rdf:_2", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2"];
+
+":_100" [label="isa:Nest"]
+
+  ":_87" -> ":_110" [label="rdf:_3", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_3"];
+
+":_110" [label="isa:Nest"]
+
+  ":_87" -> ":_114" [label="rdf:_4", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_4"];
+
+":_114" [label="isa:Nest"]
+
+  ":_87" -> ":_117" [label="rdf:_5", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_5"];
+
+":_117" [label="isa:Nest"]
+
+  ":_87" -> ":_137" [label="rdf:_6", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_6"];
+
+":_137" [label="isa:Nest"]
+
+  ":_87" -> ":_142" [label="rdf:_7", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_7"];
+
+":_142" [label="isa:Nest"]
+
+  ":_87" -> ":_146" [label="rdf:_8", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_8"];
+
+":_146" [label="isa:Nest"]
+
+  ":_87" -> ":_149" [label="rdf:_9", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_9"];
+
+":_149" [label="isa:Nest"]
+
+  ":_87" -> ":_153" [label="rdf:_10", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_10"];
+
+":_153" [label="isa:Nest"]
+
+  ":_87" -> ":_156" [label="rdf:_11", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_11"];
+
+":_156" [label="isa:Nest"]
+
+
+
+subgraph cluster_88 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Nest";
+
+
+
+  ":_88" [label="tube:LineChange", color=lightgoldenrod];
+
+  ":_88" -> "doi:1014/tube/hammersmith_&amp;_c...e" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+  ":_88" -> ":_89" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_89" [label="rdf:Alt", color=lightgrey];
+
+
+
+  "doi:1014/tube/hammersmith_&amp;_c...e" [color=plum, URL="http://dx.doi.org/1014/tube/hammersmith_&amp;_city_line"];
+
+  ":_89" [label="rdf:Alt", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt"];
+
+  ":_89" -> ":_90" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_90" [label="isa:Item"]
+
+  ":_89" -> ":_91" [label="rdf:_2", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2"];
+
+":_91" [label="isa:Item"]
+
+  ":_89" -> ":_92" [label="rdf:_3", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_3"];
+
+":_92" [label="isa:Item"]
+
+  ":_89" -> ":_93" [label="rdf:_4", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_4"];
+
+":_93" [label="isa:Item"]
+
+  ":_89" -> ":_94" [label="rdf:_5", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_5"];
+
+":_94" [label="isa:Item"]
+
+  ":_89" -> ":_95" [label="rdf:_6", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_6"];
+
+":_95" [label="isa:Item"]
+
+  ":_89" -> ":_96" [label="rdf:_7", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_7"];
+
+":_96" [label="isa:Item"]
+
+  ":_89" -> ":_97" [label="rdf:_8", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_8"];
+
+":_97" [label="isa:Item"]
+
+  ":_89" -> ":_98" [label="rdf:_9", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_9"];
+
+":_98" [label="isa:Item"]
+
+  ":_89" -> ":_99" [label="rdf:_10", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_10"];
+
+":_99" [label="isa:Item"]
+
+
+
+subgraph cluster_90 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_90" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_90" -> "doi:1014/tube/whitechapel" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/whitechapel" [color=plum, URL="http://dx.doi.org/1014/tube/whitechapel"];
+
+}
+
+
+
+subgraph cluster_91 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_91" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_91" -> "doi:1014/tube/stepney_green" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/stepney_green" [color=plum, URL="http://dx.doi.org/1014/tube/stepney_green"];
+
+}
+
+
+
+subgraph cluster_92 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_92" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_92" -> "doi:1014/tube/mile_end" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/mile_end" [color=plum, URL="http://dx.doi.org/1014/tube/mile_end"];
+
+}
+
+
+
+subgraph cluster_93 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_93" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_93" -> "doi:1014/tube/bow_road" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/bow_road" [color=plum, URL="http://dx.doi.org/1014/tube/bow_road"];
+
+}
+
+
+
+subgraph cluster_94 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_94" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_94" -> "doi:1014/tube/bromley-by-bow" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/bromley-by-bow" [color=plum, URL="http://dx.doi.org/1014/tube/bromley-by-bow"];
+
+}
+
+
+
+subgraph cluster_95 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_95" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_95" -> "doi:1014/tube/west_ham" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/west_ham" [color=plum, URL="http://dx.doi.org/1014/tube/west_ham"];
+
+}
+
+
+
+subgraph cluster_96 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_96" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_96" -> "doi:1014/tube/plaistow" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/plaistow" [color=plum, URL="http://dx.doi.org/1014/tube/plaistow"];
+
+}
+
+
+
+subgraph cluster_97 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_97" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_97" -> "doi:1014/tube/upton_park" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/upton_park" [color=plum, URL="http://dx.doi.org/1014/tube/upton_park"];
+
+}
+
+
+
+subgraph cluster_98 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_98" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_98" -> "doi:1014/tube/east_ham" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/east_ham" [color=plum, URL="http://dx.doi.org/1014/tube/east_ham"];
+
+}
+
+
+
+subgraph cluster_99 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_99" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_99" -> "doi:1014/tube/barking" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/barking" [color=plum, URL="http://dx.doi.org/1014/tube/barking"];
+
+}
+
+
+
+}
+
+
+
+subgraph cluster_100 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Nest";
+
+
+
+  ":_100" [label="tube:LineChange", color=lightgoldenrod];
+
+  ":_100" -> "doi:1014/tube/piccadilly_line" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+  ":_100" -> ":_101" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_101" [label="rdf:Alt", color=lightgrey];
+
+
+
+  "doi:1014/tube/piccadilly_line" [color=plum, URL="http://dx.doi.org/1014/tube/piccadilly_line"];
+
+  ":_101" [label="rdf:Alt", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt"];
+
+  ":_101" -> ":_102" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_102" [label="isa:Item"]
+
+  ":_101" -> ":_103" [label="rdf:_2", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2"];
+
+":_103" [label="isa:Item"]
+
+  ":_101" -> ":_104" [label="rdf:_3", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_3"];
+
+":_104" [label="isa:Item"]
+
+  ":_101" -> ":_105" [label="rdf:_4", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_4"];
+
+":_105" [label="isa:Item"]
+
+  ":_101" -> ":_106" [label="rdf:_5", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_5"];
+
+":_106" [label="isa:Item"]
+
+  ":_101" -> ":_107" [label="rdf:_6", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_6"];
+
+":_107" [label="isa:Item"]
+
+  ":_101" -> ":_108" [label="rdf:_7", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_7"];
+
+":_108" [label="isa:Item"]
+
+  ":_101" -> ":_109" [label="rdf:_8", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_8"];
+
+":_109" [label="isa:Item"]
+
+
+
+subgraph cluster_102 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_102" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_102" -> "doi:1014/tube/ealing_common" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/ealing_common" [color=plum, URL="http://dx.doi.org/1014/tube/ealing_common"];
+
+}
+
+
+
+subgraph cluster_103 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_103" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_103" -> "doi:1014/tube/acton_town" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/acton_town" [color=plum, URL="http://dx.doi.org/1014/tube/acton_town"];
+
+}
+
+
+
+subgraph cluster_104 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_104" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_104" -> "doi:1014/tube/hammersmith" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/hammersmith" [color=plum, URL="http://dx.doi.org/1014/tube/hammersmith"];
+
+}
+
+
+
+subgraph cluster_105 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_105" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_105" -> "doi:1014/tube/barons_court" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/barons_court" [color=plum, URL="http://dx.doi.org/1014/tube/barons_court"];
+
+}
+
+
+
+subgraph cluster_106 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_106" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_106" -> "doi:1014/tube/earl's_court" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/earl's_court" [color=plum, URL="http://dx.doi.org/1014/tube/earl's_court"];
+
+}
+
+
+
+subgraph cluster_107 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_107" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_107" -> "doi:1014/tube/south_kensingto" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/south_kensingto" [color=plum, URL="http://dx.doi.org/1014/tube/south_kensington"];
+
+}
+
+
+
+subgraph cluster_108 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_108" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_108" -> "doi:1014/tube/earl's_court" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/earl's_court" [color=plum, URL="http://dx.doi.org/1014/tube/earl's_court"];
+
+}
+
+
+
+subgraph cluster_109 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_109" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_109" -> "doi:1014/tube/earl's_court" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/earl's_court" [color=plum, URL="http://dx.doi.org/1014/tube/earl's_court"];
+
+}
+
+
+
+}
+
+
+
+subgraph cluster_110 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Nest";
+
+
+
+  ":_110" [label="tube:LineChange", color=lightgoldenrod];
+
+  ":_110" -> "doi:1014/tube/bakerloo_line" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+  ":_110" -> ":_111" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_111" [label="rdf:Alt", color=lightgrey];
+
+
+
+  "doi:1014/tube/bakerloo_line" [color=plum, URL="http://dx.doi.org/1014/tube/bakerloo_line"];
+
+  ":_111" [label="rdf:Alt", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt"];
+
+  ":_111" -> ":_112" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_112" [label="isa:Item"]
+
+  ":_111" -> ":_113" [label="rdf:_2", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2"];
+
+":_113" [label="isa:Item"]
+
+
+
+subgraph cluster_112 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_112" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_112" -> "doi:1014/tube/embankment" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/embankment" [color=plum, URL="http://dx.doi.org/1014/tube/embankment"];
+
+}
+
+
+
+subgraph cluster_113 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_113" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_113" -> "doi:1014/tube/paddington" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/paddington" [color=plum, URL="http://dx.doi.org/1014/tube/paddington"];
+
+}
+
+
+
+}
+
+
+
+subgraph cluster_114 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Nest";
+
+
+
+  ":_114" [label="tube:LineChange", color=lightgoldenrod];
+
+  ":_114" -> "doi:1014/tube/waterloo_&amp;_city...e" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+  ":_114" -> ":_115" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_115" [label="rdf:Alt", color=lightgrey];
+
+
+
+  "doi:1014/tube/waterloo_&amp;_city...e" [color=plum, URL="http://dx.doi.org/1014/tube/waterloo_&amp;_city_line"];
+
+  ":_115" [label="rdf:Alt", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt"];
+
+  ":_115" -> ":_116" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_116" [label="isa:Item"]
+
+
+
+subgraph cluster_116 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_116" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_116" -> "doi:1014/tube/monument" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/monument" [color=plum, URL="http://dx.doi.org/1014/tube/monument"];
+
+}
+
+
+
+}
+
+
+
+subgraph cluster_117 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Nest";
+
+
+
+  ":_117" [label="tube:LineChange", color=lightgoldenrod];
+
+  ":_117" -> "doi:1014/tube/circle_line" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+  ":_117" -> ":_118" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_118" [label="rdf:Alt", color=lightgrey];
+
+
+
+  "doi:1014/tube/circle_line" [color=plum, URL="http://dx.doi.org/1014/tube/circle_line"];
+
+  ":_118" [label="rdf:Alt", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt"];
+
+  ":_118" -> ":_119" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_119" [label="isa:Item"]
+
+  ":_118" -> ":_120" [label="rdf:_2", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2"];
+
+":_120" [label="isa:Item"]
+
+  ":_118" -> ":_121" [label="rdf:_3", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_3"];
+
+":_121" [label="isa:Item"]
+
+  ":_118" -> ":_122" [label="rdf:_4", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_4"];
+
+":_122" [label="isa:Item"]
+
+  ":_118" -> ":_123" [label="rdf:_5", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_5"];
+
+":_123" [label="isa:Item"]
+
+  ":_118" -> ":_124" [label="rdf:_6", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_6"];
+
+":_124" [label="isa:Item"]
+
+  ":_118" -> ":_125" [label="rdf:_7", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_7"];
+
+":_125" [label="isa:Item"]
+
+  ":_118" -> ":_126" [label="rdf:_8", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_8"];
+
+":_126" [label="isa:Item"]
+
+  ":_118" -> ":_127" [label="rdf:_9", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_9"];
+
+":_127" [label="isa:Item"]
+
+  ":_118" -> ":_128" [label="rdf:_10", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_10"];
+
+":_128" [label="isa:Item"]
+
+  ":_118" -> ":_129" [label="rdf:_11", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_11"];
+
+":_129" [label="isa:Item"]
+
+  ":_118" -> ":_130" [label="rdf:_12", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_12"];
+
+":_130" [label="isa:Item"]
+
+  ":_118" -> ":_131" [label="rdf:_13", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_13"];
+
+":_131" [label="isa:Item"]
+
+  ":_118" -> ":_132" [label="rdf:_14", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_14"];
+
+":_132" [label="isa:Item"]
+
+  ":_118" -> ":_133" [label="rdf:_15", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_15"];
+
+":_133" [label="isa:Item"]
+
+  ":_118" -> ":_134" [label="rdf:_16", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_16"];
+
+":_134" [label="isa:Item"]
+
+  ":_118" -> ":_135" [label="rdf:_17", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_17"];
+
+":_135" [label="isa:Item"]
+
+  ":_118" -> ":_136" [label="rdf:_18", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_18"];
+
+":_136" [label="isa:Item"]
+
+
+
+subgraph cluster_119 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_119" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_119" -> "doi:1014/tube/gloucester_road" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/gloucester_road" [color=plum, URL="http://dx.doi.org/1014/tube/gloucester_road"];
+
+}
+
+
+
+subgraph cluster_120 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_120" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_120" -> "doi:1014/tube/south_kensingto" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/south_kensingto" [color=plum, URL="http://dx.doi.org/1014/tube/south_kensington"];
+
+}
+
+
+
+subgraph cluster_121 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_121" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_121" -> "doi:1014/tube/sloane_square" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/sloane_square" [color=plum, URL="http://dx.doi.org/1014/tube/sloane_square"];
+
+}
+
+
+
+subgraph cluster_122 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_122" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_122" -> "doi:1014/tube/victoria" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/victoria" [color=plum, URL="http://dx.doi.org/1014/tube/victoria"];
+
+}
+
+
+
+subgraph cluster_123 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_123" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_123" -> "doi:1014/tube/st_james's_park" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/st_james's_park" [color=plum, URL="http://dx.doi.org/1014/tube/st_james's_park"];
+
+}
+
+
+
+subgraph cluster_124 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_124" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_124" -> "doi:1014/tube/westminster" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/westminster" [color=plum, URL="http://dx.doi.org/1014/tube/westminster"];
+
+}
+
+
+
+subgraph cluster_125 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_125" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_125" -> "doi:1014/tube/embankment" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/embankment" [color=plum, URL="http://dx.doi.org/1014/tube/embankment"];
+
+}
+
+
+
+subgraph cluster_126 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_126" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_126" -> "doi:1014/tube/temple" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/temple" [color=plum, URL="http://dx.doi.org/1014/tube/temple"];
+
+}
+
+
+
+subgraph cluster_127 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_127" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_127" -> "doi:1014/tube/blackfriars" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/blackfriars" [color=plum, URL="http://dx.doi.org/1014/tube/blackfriars"];
+
+}
+
+
+
+subgraph cluster_128 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_128" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_128" -> "doi:1014/tube/mansion_house" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/mansion_house" [color=plum, URL="http://dx.doi.org/1014/tube/mansion_house"];
+
+}
+
+
+
+subgraph cluster_129 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_129" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_129" -> "doi:1014/tube/cannon_street" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/cannon_street" [color=plum, URL="http://dx.doi.org/1014/tube/cannon_street"];
+
+}
+
+
+
+subgraph cluster_130 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_130" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_130" -> "doi:1014/tube/monument" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/monument" [color=plum, URL="http://dx.doi.org/1014/tube/monument"];
+
+}
+
+
+
+subgraph cluster_131 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_131" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_131" -> "doi:1014/tube/tower_hill" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/tower_hill" [color=plum, URL="http://dx.doi.org/1014/tube/tower_hill"];
+
+}
+
+
+
+subgraph cluster_132 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_132" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_132" -> "doi:1014/tube/high_street_ken...n" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/high_street_ken...n" [color=plum, URL="http://dx.doi.org/1014/tube/high_street_kensington"];
+
+}
+
+
+
+subgraph cluster_133 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_133" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_133" -> "doi:1014/tube/notting_hill_ga...e" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/notting_hill_ga...e" [color=plum, URL="http://dx.doi.org/1014/tube/notting_hill_gate"];
+
+}
+
+
+
+subgraph cluster_134 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_134" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_134" -> "doi:1014/tube/bayswater" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/bayswater" [color=plum, URL="http://dx.doi.org/1014/tube/bayswater"];
+
+}
+
+
+
+subgraph cluster_135 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_135" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_135" -> "doi:1014/tube/paddington" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/paddington" [color=plum, URL="http://dx.doi.org/1014/tube/paddington"];
+
+}
+
+
+
+subgraph cluster_136 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_136" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_136" -> "doi:1014/tube/edgware_road" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/edgware_road" [color=plum, URL="http://dx.doi.org/1014/tube/edgware_road"];
+
+}
+
+
+
+}
+
+
+
+subgraph cluster_137 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Nest";
+
+
+
+  ":_137" [label="tube:LineChange", color=lightgoldenrod];
+
+  ":_137" -> "doi:1014/tube/hammersmith_&amp;_c...e" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+  ":_137" -> ":_138" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_138" [label="rdf:Alt", color=lightgrey];
+
+
+
+  "doi:1014/tube/hammersmith_&amp;_c...e" [color=plum, URL="http://dx.doi.org/1014/tube/hammersmith_&amp;_city_line"];
+
+  ":_138" [label="rdf:Alt", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt"];
+
+  ":_138" -> ":_139" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_139" [label="isa:Item"]
+
+  ":_138" -> ":_140" [label="rdf:_2", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2"];
+
+":_140" [label="isa:Item"]
+
+  ":_138" -> ":_141" [label="rdf:_3", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_3"];
+
+":_141" [label="isa:Item"]
+
+
+
+subgraph cluster_139 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_139" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_139" -> "doi:1014/tube/hammersmith" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/hammersmith" [color=plum, URL="http://dx.doi.org/1014/tube/hammersmith"];
+
+}
+
+
+
+subgraph cluster_140 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_140" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_140" -> "doi:1014/tube/aldgate_east" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/aldgate_east" [color=plum, URL="http://dx.doi.org/1014/tube/aldgate_east"];
+}
+
+
+
+subgraph cluster_141 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_141" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_141" -> "doi:1014/tube/edgware_road" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/edgware_road" [color=plum, URL="http://dx.doi.org/1014/tube/edgware_road"];
+
+}
+
+
+
+}
+
+
+
+subgraph cluster_142 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Nest";
+
+
+
+  ":_142" [label="tube:LineChange", color=lightgoldenrod];
+
+  ":_142" -> "doi:1014/tube/northern_line" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+  ":_142" -> ":_143" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_143" [label="rdf:Alt", color=lightgrey];
+
+
+
+  "doi:1014/tube/northern_line" [color=plum, URL="http://dx.doi.org/1014/tube/northern_line"];
+
+  ":_143" [label="rdf:Alt", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt"];
+
+  ":_143" -> ":_144" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_144" [label="isa:Item"]
+
+  ":_143" -> ":_145" [label="rdf:_2", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2"];
+
+":_145" [label="isa:Item"]
+
+
+
+subgraph cluster_144 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_144" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_144" -> "doi:1014/tube/embankment" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/embankment" [color=plum, URL="http://dx.doi.org/1014/tube/embankment"];
+
+}
+
+
+
+subgraph cluster_145 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_145" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_145" -> "doi:1014/tube/monument" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/monument" [color=plum, URL="http://dx.doi.org/1014/tube/monument"];
+
+}
+
+
+
+}
+
+
+
+subgraph cluster_146 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Nest";
+
+
+
+  ":_146" [label="tube:LineChange", color=lightgoldenrod];
+
+  ":_146" -> "doi:1014/tube/east_london_lin" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+  ":_146" -> ":_147" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_147" [label="rdf:Alt", color=lightgrey];
+
+
+
+  "doi:1014/tube/east_london_lin" [color=plum, URL="http://dx.doi.org/1014/tube/east_london_line"];
+
+  ":_147" [label="rdf:Alt", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt"];
+
+  ":_147" -> ":_148" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_148" [label="isa:Item"]
+
+
+
+subgraph cluster_148 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_148" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_148" -> "doi:1014/tube/whitechapel" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/whitechapel" [color=plum, URL="http://dx.doi.org/1014/tube/whitechapel"];
+
+}
+
+
+
+}
+
+
+
+subgraph cluster_149 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Nest";
+
+
+
+  ":_149" [label="tube:LineChange", color=lightgoldenrod];
+
+  ":_149" -> "doi:1014/tube/jubilee_line" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+  ":_149" -> ":_150" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_150" [label="rdf:Alt", color=lightgrey];
+
+
+
+  "doi:1014/tube/jubilee_line" [color=plum, URL="http://dx.doi.org/1014/tube/jubilee_line"];
+
+  ":_150" [label="rdf:Alt", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt"];
+
+  ":_150" -> ":_151" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_151" [label="isa:Item"]
+
+  ":_150" -> ":_152" [label="rdf:_2", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2"];
+
+":_152" [label="isa:Item"]
+
+
+
+subgraph cluster_151 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_151" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_151" -> "doi:1014/tube/westminster" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/westminster" [color=plum, URL="http://dx.doi.org/1014/tube/westminster"];
+
+}
+
+
+
+subgraph cluster_152 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_152" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_152" -> "doi:1014/tube/west_ham" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/west_ham" [color=plum, URL="http://dx.doi.org/1014/tube/west_ham"];
+
+}
+
+
+
+}
+
+
+
+subgraph cluster_153 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Nest";
+
+
+
+  ":_153" [label="tube:LineChange", color=lightgoldenrod];
+
+  ":_153" -> "doi:1014/tube/victoria_line" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+  ":_153" -> ":_154" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_154" [label="rdf:Alt", color=lightgrey];
+
+
+
+  "doi:1014/tube/victoria_line" [color=plum, URL="http://dx.doi.org/1014/tube/victoria_line"];
+
+  ":_154" [label="rdf:Alt", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt"];
+
+  ":_154" -> ":_155" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_155" [label="isa:Item"]
+
+
+
+subgraph cluster_155 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_155" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_155" -> "doi:1014/tube/victoria" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/victoria" [color=plum, URL="http://dx.doi.org/1014/tube/victoria"];
+
+}
+
+
+
+}
+
+
+
+subgraph cluster_156 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Nest";
+
+
+
+  ":_156" [label="tube:LineChange", color=lightgoldenrod];
+
+  ":_156" -> "doi:1014/tube/central_line" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+  ":_156" -> ":_157" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_157" [label="rdf:Alt", color=lightgrey];
+
+
+
+  "doi:1014/tube/central_line" [color=plum, URL="http://dx.doi.org/1014/tube/central_line"];
+
+  ":_157" [label="rdf:Alt", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt"];
+
+  ":_157" -> ":_158" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_158" [label="isa:Item"]
+
+  ":_157" -> ":_159" [label="rdf:_2", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2"];
+
+":_159" [label="isa:Item"]
+
+  ":_157" -> ":_160" [label="rdf:_3", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_3"];
+
+":_160" [label="isa:Item"]
+
+  ":_157" -> ":_161" [label="rdf:_4", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_4"];
+
+":_161" [label="isa:Item"]
+
+
+
+subgraph cluster_158 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_158" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_158" -> "doi:1014/tube/ealing_broadway" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/ealing_broadway" [color=plum, URL="http://dx.doi.org/1014/tube/ealing_broadway"];
+
+}
+
+
+
+subgraph cluster_159 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_159" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_159" -> "doi:1014/tube/monument" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/monument" [color=plum, URL="http://dx.doi.org/1014/tube/monument"];
+
+}
+
+
+
+subgraph cluster_160 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+
+  ":_160" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_160" -> "doi:1014/tube/mile_end" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/mile_end" [color=plum, URL="http://dx.doi.org/1014/tube/mile_end"];
+
+}
+
+
+
+subgraph cluster_161 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item";
+
+
+  ":_161" [label="tube:Interchange", color=lightgoldenrod];
+
+  ":_161" -> "doi:1014/tube/notting_hill_ga...e" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+
+
+  "doi:1014/tube/notting_hill_ga...e" [color=plum, URL="http://dx.doi.org/1014/tube/notting_hill_gate"];
+
+}
+
+
+
+}
+
+
+
+}
+
+
+
+}
+
+
+
+}
+
+
+
+}
+

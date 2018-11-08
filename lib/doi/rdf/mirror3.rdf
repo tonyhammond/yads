@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   DOI use case: Mirror Sites (Extended Issue)
+
+   Here a DLib issue is managed across five mirror sites. The origin
+   site - CNRI - is marked as the default. A table of contents for
+   this issue is also managed.
+-->
+
+<rdf:RDF xmlns:isa="doi:1014/yads-schema-2002-04-03#" xmlns:has="doi:1014/yads-schema-2002-04-03#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:Description rdf:about="">
+<rdf:type>isa:Nest</rdf:type>
+<!-- DLib Issue (Mirror Sites and TOC) -->
+<has:resource rdf:resource="doi:10.1045/july2001-contents"/>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- DOI Profile -->
+<has:resource rdf:resource="doi:10.0/profile.dlib"/>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- Description -->
+<has:resource rdf:resource=""/>
+<has:detail>Resources for DLib Article &lt;doi:10.1045/july2001-contents&gt;</has:detail>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- TOC -->
+<has:collection>
+<rdf:Seq>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,Generalizing%20the%20OpenURL%20Framework%20beyond%20References%20to%20Scholarly%20Works:%20The%20Bison-Fute%20Model"/>
+<has:type>dlib:Title-String</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,Herbert%20Van%20de%20Sompel,%20Cornell%20University%20and%20Oren%20Beit-Arie,%20Ex%20Libris%20(USA)%20Inc."/>
+<has:type>dlib:Author-String</has:type>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,Digital%20Libraries%20and%20Education:%20Trends%20and%20Opportunities"/>
+<has:type>dlib:Title-String</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,Hans%20Roes,%20Tilburg%20University%20Library"/>
+<has:type>dlib:Author-String</has:type>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,E-Books%20and%20Their%20Future%20in%20Academic%20Libraries:%20An%20Overview"/>
+<has:type>dlib:Title-String</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,Lucia%20Snowhill,%20University%20of%20California,%20Santa%20Barbara"/>
+<has:type>dlib:Author-String</has:type>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,Penn%20State%20Visual%20Image%20User%20Study"/>
+<has:type>dlib:Title-String</has:type>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:resource rdf:resource="data:,Henry%20Pisciotta,%20Roger%20Brisson,%20Eric%20Ferrin,%20Michael%20Dooris,%20and%20Amanda%20Spink,%20Pennsylvania%20State%20University"/>
+<has:type>dlib:Author-String</has:type>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+</rdf:li>
+</rdf:Seq>
+</has:collection>
+<has:detail>Table of Contents for July 2001 issue of D-Lib magazine.</has:detail>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- Mirror Sites -->
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- US Origin -->
+<has:resource rdf:resource="http://www.dlib.org/dlib/july01/07contents.html"/>
+<has:type>dlib:Mirror</has:type>
+<has:label>Origin site - USA.</has:label>
+<has:detail>The Corporation for National Research Initiatives, Reston, Virginia, U.S.A.</has:detail>
+<has:access>:default</has:access>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- UK Mirror -->
+<has:resource rdf:resource="http://mirrored.ukoln.ac.uk/lis-journals/dlib/dlib/dlib/july01/07contents.html"/>
+<has:type>dlib:Mirror</has:type>
+<has:label>Mirror site - UK.</has:label>
+<has:detail>UKOLN: The UK Office for Library and Information Networking, Bath, England</has:detail>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- Australian Mirror -->
+<has:resource rdf:resource="http://sunsite.anu.edu.au/mirrors/dlib/dlib/july01/07contents.html"/>
+<has:type>dlib:Mirror</has:type>
+<has:label>Mirror site - Australia.</has:label>
+<has:detail>The Australian National University Sunsite, Canberra, Australia</has:detail>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- German Mirror -->
+<has:resource rdf:resource="http://webdoc.sub.gwdg.de/edoc/aw/d-lib/dlib/july01/07contents.html"/>
+<has:type>dlib:Mirror</has:type>
+<has:label>Mirror site - Germany.</has:label>
+<has:detail>State Library of Lower Saxony and the University Library of Goettingen, Goettingen, Germany</has:detail>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- Argentine Mirror -->
+<has:resource rdf:resource="http://www.dlib.org.ar/dlib/july01/07contents.html"/>
+<has:type>dlib:Mirror</has:type>
+<has:label>Mirror site - Argentina.</has:label>
+<has:detail>Universidad de Belgrano, Buenos Aires, Argentina</has:detail>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+<has:detail>Origin and mirror websites.</has:detail>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+<has:type>doi:Profile</has:type>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+</rdf:Description>
+</rdf:RDF>

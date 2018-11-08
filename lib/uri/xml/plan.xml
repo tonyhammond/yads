@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+
+  Description of Echo example using YADS.
+
+-->
+<yads>
+<item>
+<!-- Deliverables -->
+<type>Deliverables\n2003</type>
+<collection>
+
+<item>
+<!-- Identifiers -->
+<type>Identifiers</type>
+<detail>IETF</detail>
+<collection>
+<item>
+<type>RFC\ndoi:</type>
+</item>
+<item>
+<type>RFC\nniso:</type>
+</item>
+</collection>
+</item>
+
+<item>
+<!-- Metadata -->
+<type>Metadata</type>
+<detail>Lists: rss_dev, rdf-interest</detail>
+<collection>
+<item>
+<type>PRISM</type>
+<collection>
+<item>
+<type>RSS 1.0\nprism:</type>
+</item>
+<item>
+<type>RDF\nSchema</type>
+</item>
+</collection>
+</item>
+<item>
+<type>OpenURL</type>
+<collection>
+<item>
+<type>RSS 1.0\nopen:</type>
+</item>
+<item>
+<type>RDF\nSchema</type>
+</item>
+</collection>
+</item>
+<item>
+<type>CrossRef</type>
+<collection>
+<item>
+<type>RSS 1.0\nxref:</type>
+</item>
+<item>
+<type>RDF\nSchema</type>
+</item>
+</collection>
+</item>
+</collection>
+</item>
+
+<item>
+<!-- OpenURL -->
+<type>OpenURL</type>
+<detail>NISO</detail>
+<collection>
+<item>
+<type>Z39.88-2003</type>
+</item>
+<item>
+<type>DC Format</type>
+</item>
+<item>
+<type>PRISM Format</type>
+</item>
+</collection>
+</item>
+
+<item>
+<!-- Publications -->
+<type>Publications</type>
+<detail>XML, DLib, W3C</detail>
+<collection>
+<item>
+<type>XML.com</type>
+<label>What's the Point of RSS?\nCreating Applications through Extensibility</label>
+</item>
+<item>
+<type>DLib</type>
+<label>Using OpenURL ... Differently</label>
+</item>
+<item>
+<type>W3C Note</type>
+<label>OpenURL Framework Primer</label>
+</item>
+<item>
+<type>Elsevier</type>
+<label>DOI White Paper</label>
+</item>
+</collection>
+</item>
+
+</collection>
+</item>
+</yads>

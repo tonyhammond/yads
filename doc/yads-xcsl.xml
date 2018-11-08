@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  YADS - XCSL
+
+  This document describes YADS - A Description Service
+  in a XCSL Schema.
+
+  ==
+
+  // From RDF Schema for YADS
+
+  Resource:     doi:1014/yads-schema-2002-04-03
+  Comment:      RDF Schema for YADS - A Description Service
+  Author:       Tony Hammond <tony_hammond@harcourt.com>
+  Revision:     April 3, 2002 - Tony Hammond
+
+  Copyright (c) 2002 Elsevier Science Ltd. All rights reserved. 
+
+-->
+
+<CS>
+
+<!--
+  Toplevel wrapper element
+  ~
+-->
+<CONSTRAINT>
+  <SELECTOR SELEXP="//yads"/>
+  <CC>
+    count(*) = count(item) + count(nest)
+  </CC>
+  <ACTION>
+    <MESSAGE>
+      A <VALUE SELEXP="name(.)"/> element should contain only the following child elements: &lt;item&gt;, &lt;nest&gt;. 
+    </MESSAGE>
+  </ACTION>
+</CONSTRAINT>
+
+<!--
+  Item element - collection OR resource, with properties.
+  ~
+-->
+<CONSTRAINT>
+  <SELECTOR SELEXP="//yads//item"/>
+  <CC>
+    count(*) = count(collection) + count(resource) + count(property)
+  </CC>
+  <ACTION>
+    <MESSAGE>
+      A <VALUE SELEXP="name(.)"/> element should contain only the following child elements: &lt;collection&gt;, &lt;resource&gt;, &lt;property&gt;. 
+    </MESSAGE>
+  </ACTION>
+</CONSTRAINT>
+
+<CONSTRAINT>
+  <SELECTOR SELEXP="//yads//item"/>
+  <CC>
+    (count(collection) = 1 and count(resource) = 0)
+    or
+    (count(collection) = 0 and count(resource) = 1)
+  </CC>
+  <ACTION>
+    <MESSAGE>
+      A <VALUE SELEXP="name(.)"/> element must have one &lt;collection&gt; child element or one &lt;resource&gt; child element.
+    </MESSAGE>
+  </ACTION>
+</CONSTRAINT>
+
+<CONSTRAINT>
+  <SELECTOR SELEXP="//yads//item"/>
+  <CC>
+    count(property[@type = 'access']) &lt;= 1
+  </CC>
+  <ACTION>
+    <MESSAGE>
+      A <VALUE SELEXP="name(.)"/> element may only have one &lt;property&gt; child element with type attribute "access".
+    </MESSAGE>
+  </ACTION>
+</CONSTRAINT>
+
+<CONSTRAINT>
+  <SELECTOR SELEXP="//yads//item"/>
+  <CC>
+    count(property[@type = 'detail']) &lt;= 1
+  </CC>
+  <ACTION>
+    <MESSAGE>
+      A <VALUE SELEXP="name(.)"/> element may only have one &lt;property&gt; child element with type attribute "detail".
+    </MESSAGE>
+  </ACTION>
+</CONSTRAINT>
+
+<CONSTRAINT>
+  <SELECTOR SELEXP="//yads//item"/>
+  <CC>
+    count(property[@type = 'directive']) &lt;= 1
+  </CC>
+  <ACTION>
+    <MESSAGE>
+      A <VALUE SELEXP="name(.)"/> element may only have one &lt;property&gt; child element with type attribute "directive".
+    </MESSAGE>
+  </ACTION>
+</CONSTRAINT>
+
+<CONSTRAINT>
+  <SELECTOR SELEXP="//yads//item"/>
+  <CC>
+    count(property[@type = 'label']) &lt;= 1
+  </CC>
+  <ACTION>
+    <MESSAGE>
+      A <VALUE SELEXP="name(.)"/> element may only have one &lt;property&gt; child element with type attribute "label".
+    </MESSAGE>
+  </ACTION>
+</CONSTRAINT>
+
+<CONSTRAINT>
+  <SELECTOR SELEXP="//yads//item"/>
+  <CC>
+    count(property[@type = 'role']) &lt;= 1
+  </CC>
+  <ACTION>
+    <MESSAGE>
+      A <VALUE SELEXP="name(.)"/> element may only have one &lt;property&gt; child element with type attribute "role".
+    </MESSAGE>
+  </ACTION>
+</CONSTRAINT>
+
+<CONSTRAINT>
+  <SELECTOR SELEXP="//yads//item"/>
+  <CC>
+    count(property[@type = 'service']) &lt;= 1
+  </CC>
+  <ACTION>
+    <MESSAGE>
+      A <VALUE SELEXP="name(.)"/> element may only have one &lt;property&gt; child element with type attribute "service".
+    </MESSAGE>
+  </ACTION>
+</CONSTRAINT>
+
+<CONSTRAINT>
+  <SELECTOR SELEXP="//yads//item"/>
+  <CC>
+    count(property[@type = 'type']) &lt;= 1
+  </CC>
+  <ACTION>
+    <MESSAGE>
+      A <VALUE SELEXP="name(.)"/> element may only have one &lt;property&gt; child element with type attribute "type".
+    </MESSAGE>
+  </ACTION>
+</CONSTRAINT>
+
+<!--
+  Nest element - collection AND resource, with properties.
+  ~
+-->
+<CONSTRAINT>
+  <SELECTOR SELEXP="//yads//nest"/>
+  <CC>
+    count(*) = count(collection) + count(resource) + count(property)
+  </CC>
+  <ACTION>
+    <MESSAGE>
+      A <VALUE SELEXP="name(.)"/> element should contain only the following child elements: &lt;collection&gt;, &lt;resource&gt;, &lt;property&gt;. 
+    </MESSAGE>
+  </ACTION>
+</CONSTRAINT>
+
+<CONSTRAINT>
+  <SELECTOR SELEXP="//yads//nest"/>
+  <CC>
+    (count(collection) = 1 and count(resource) = 1)
+  </CC>
+  <ACTION>
+    <MESSAGE>
+      A <VALUE SELEXP="name(.)"/> element must have one &lt;collection&gt; child element and one &lt;resource&gt; child element.
+    </MESSAGE>
+  </ACTION>
+</CONSTRAINT>
+
+<CONSTRAINT>
+  <SELECTOR SELEXP="//yads//nest"/>
+  <CC>
+    count(property[@type = 'access']) &lt;= 1
+  </CC>
+  <ACTION>
+    <MESSAGE>
+      A <VALUE SELEXP="name(.)"/> element may only have one &lt;property&gt; child element with type attribute "access".
+    </MESSAGE>
+  </ACTION>
+</CONSTRAINT>
+
+<CONSTRAINT>
+  <SELECTOR SELEXP="//yads//nest"/>
+  <CC>
+    count(property[@type = 'detail']) &lt;= 1
+  </CC>
+  <ACTION>
+    <MESSAGE>
+      A <VALUE SELEXP="name(.)"/> element may only have one &lt;property&gt; child element with type attribute "detail".
+    </MESSAGE>
+  </ACTION>
+</CONSTRAINT>
+
+<CONSTRAINT>
+  <SELECTOR SELEXP="//yads//nest"/>
+  <CC>
+    count(property[@type = 'directive']) &lt;= 1
+  </CC>
+  <ACTION>
+    <MESSAGE>
+      A <VALUE SELEXP="name(.)"/> element may only have one &lt;property&gt; child element with type attribute "directive".
+    </MESSAGE>
+  </ACTION>
+</CONSTRAINT>
+
+<CONSTRAINT>
+  <SELECTOR SELEXP="//yads//nest"/>
+  <CC>
+    count(property[@type = 'label']) &lt;= 1
+  </CC>
+  <ACTION>
+    <MESSAGE>
+      A <VALUE SELEXP="name(.)"/> element may only have one &lt;property&gt; child element with type attribute "label".
+    </MESSAGE>
+  </ACTION>
+</CONSTRAINT>
+
+<CONSTRAINT>
+  <SELECTOR SELEXP="//yads//nest"/>
+  <CC>
+    count(property[@type = 'role']) &lt;= 1
+  </CC>
+  <ACTION>
+    <MESSAGE>
+      A <VALUE SELEXP="name(.)"/> element may only have one &lt;property&gt; child element with type attribute "role".
+    </MESSAGE>
+  </ACTION>
+</CONSTRAINT>
+
+<CONSTRAINT>
+  <SELECTOR SELEXP="//yads//nest"/>
+  <CC>
+    count(property[@type = 'service']) &lt;= 1
+  </CC>
+  <ACTION>
+    <MESSAGE>
+      A <VALUE SELEXP="name(.)"/> element may only have one &lt;property&gt; child element with type attribute "service".
+    </MESSAGE>
+  </ACTION>
+</CONSTRAINT>
+
+<CONSTRAINT>
+  <SELECTOR SELEXP="//yads//nest"/>
+  <CC>
+    count(property[@type = 'type']) &lt;= 1
+  </CC>
+  <ACTION>
+    <MESSAGE>
+      A <VALUE SELEXP="name(.)"/> element may only have one &lt;property&gt; child element with type attribute "type".
+    </MESSAGE>
+  </ACTION>
+</CONSTRAINT>
+
+<!--
+  Collection element - contains sequence of nest or item elements.
+  (An ordering attribute determines how the elements should be ordered.)
+-->
+<CONSTRAINT>
+  <SELECTOR SELEXP="//yads//collection"/>
+  <CC>
+    count(*) = count(item) + count(nest)
+  </CC>
+  <ACTION>
+    <MESSAGE>
+      A <VALUE SELEXP="name(.)"/> element should contain only the following child elements: &lt;item&gt;, &lt;nest&gt;. 
+    </MESSAGE>
+  </ACTION>
+</CONSTRAINT>
+
+<!--
+<CONSTRAINT>
+ <SELECTOR SELEXP="//yads//collection"/>
+  <CC>
+    @ordering and not(normalize-space(@ordering) = 'choice')
+    and not(normalize-space(@ordering) = 'sequenced')
+    and not(normalize-space(@ordering) = 'unordered')">
+  </CC>
+  <ACTION>
+    <MESSAGE>
+      An "ordering" attribute on a <VALUE SELEXP="name(.)"/> should contain only the following values: "choice", "sequenced", "unordered".
+    </MESSAGE>
+  </ACTION>
+</CONSTRAINT>
+-->
+
+<!--
+  Resource element
+  ~
+-->
+<CONSTRAINT>
+  <SELECTOR SELEXP="//yads//resource"/>
+  <CC>
+  </CC>
+  <ACTION>
+    <MESSAGE>
+    </MESSAGE>
+  </ACTION>
+</CONSTRAINT>
+
+<!--
+  Property element
+  ~
+-->
+<CONSTRAINT>
+  <SELECTOR SELEXP="//yads//property"/>
+  <CC>
+  </CC>
+  <ACTION>
+    <MESSAGE>
+    </MESSAGE>
+  </ACTION>
+</CONSTRAINT>
+
+</CS>

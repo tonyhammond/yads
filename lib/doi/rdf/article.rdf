@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   DOI use case: Article/Erratum
+
+   Here an article is (forward) linked to an erratum.
+-->
+
+<rdf:RDF xmlns:isa="doi:1014/yads-schema-2002-04-03#" xmlns:has="doi:1014/yads-schema-2002-04-03#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:Description rdf:about="">
+<rdf:type>isa:Nest</rdf:type>
+<!-- Article/Erratum -->
+<has:resource rdf:resource="doi:10.1006/geno.2001.6453"/>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- DOI Profile -->
+<has:resource rdf:resource="doi:10.0/profile.crossref"/>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- Article -->
+<has:resource rdf:resource="http://www.idealibrary.com/links/doi/10.1006/geno.2001.6453"/>
+<has:label>Genomics (2001) 73: p. 223</has:label>
+<has:type>xref:Article</has:type>
+<has:access>:default</has:access>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- Erratum -->
+<has:resource rdf:resource="doi:10.1006/geno.2002.6726"/>
+<has:type>xref:Erratum</has:type>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+<has:type>doi:Profile</has:type>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+</rdf:Description>
+</rdf:RDF>

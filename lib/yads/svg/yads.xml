@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  YADS - Schema Library
+
+  This document describes YADS - A Description Service.
+  Three schema library collections are managed: BNF, RDF, and XML.
+
+-->
+<yads>
+<nest>
+  <!-- Schema Library for YADS -->
+  <resource>http:yads.xml</resource>
+  <collection>
+    <nest>
+      <!-- BNF Library -->
+      <resource>doi:1014/yads</resource>
+      <collection>
+        <item>
+          <!-- ISO Schema -->
+          <resource>http:yads-ebnf.xml</resource>
+          <property type="label">EBNF</property>
+          <property type="type">yads:EBNF</property>
+        </item>
+      </collection>
+      <property type="type">yads:BNF Schemas</property>
+    </nest>
+    <nest>
+      <!-- RDF Library -->
+      <resource>doi:1014/yads</resource>
+      <collection>
+        <item>
+          <!-- W3C Schema -->
+          <resource>http:yads-rdfs.xml</resource>
+          <property type="label">RDF/XML</property>
+          <property type="type">yads:RDF/XML</property>
+          <property type="access">:default</property>
+        </item>
+        <item>
+          <!-- W3C Schema -->
+          <resource>http:yads-n3.xml</resource>
+          <property type="label">RDF/N3</property>
+          <property type="type">yads:RDF/N3</property>
+        </item>
+        <item>
+          <!-- W3C Schema -->
+          <resource>http:yads-daml.xml</resource>
+          <property type="label">DAML+OIL</property>
+          <property type="type">yads:DAML+OIL</property>
+        </item>
+      </collection>
+      <property type="type">yads:RDF Schemas</property>
+    </nest>
+    <nest>
+      <!-- XML Library -->
+      <resource>doi:1014/yads</resource>
+      <collection>
+        <item>
+          <!-- W3C Schema -->
+          <resource>http:yads-dtd.xml</resource>
+          <property type="label">XML DTD</property>
+          <property type="type">yads:XML DTD</property>
+        </item>
+        <item>
+          <!-- Oasis Schema -->
+          <resource>http:yads-rng.xml</resource>
+          <property type="label">RELAX NG</property>
+          <property type="type">yads:RELAX NG</property>
+        </item>
+        <item>
+          <!-- W3C Schema -->
+          <resource>http:yads-xsd.xml</resource>
+          <property type="label">XML Schema</property>
+          <property type="type">yads:XML Schema</property>
+        </item>
+        <item>
+          <!-- R. Jelliffe Schema -->
+          <resource>http:yads-sch.xml</resource>
+          <property type="label">Schematron</property>
+          <property type="type">yads:Schematron</property>
+        </item>
+        <item>
+          <!-- J. Ramalho Schema -->
+          <resource>http:yads-xcsl.xml</resource>
+          <property type="label">XCSL</property>
+          <property type="type">yads:XCSL</property>
+        </item>
+        <item>
+          <!-- OMG Schema -->
+          <resource>http:yads-xmi.xml</resource>
+          <property type="label">MOF/XMI</property>
+          <property type="type">yads:MOF/XMI</property>
+        </item>
+      </collection>
+      <property type="type">yads:XML Schemas</property>
+    </nest>
+  </collection>
+  <property type="label">Schemas for YADS</property>
+  <property type="type">yads:Schemas</property>
+</nest>
+</yads>

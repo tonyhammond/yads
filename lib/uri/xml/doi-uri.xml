@@ -1,0 +1,236 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+
+  Description of URI syntax for a 'doi' URI modelled using YADS.
+
+  ==
+
+  doi-uri        = scheme ":" encoded-doi [ "?" query ] 
+                                          [ "#" fragment ]
+
+  scheme         = "doi" 
+
+  encoded-doi    = prefix "/" suffix 
+  prefix         = segment
+  suffix         = segment *( "/" segment )
+
+  segment        = *pchar
+
+  query          = *( pchar / "/" / "?" )
+  fragment       = *( pchar / "/" / "?" )
+
+  pchar          = unreserved / escaped / ";" /
+                   ":" / "@" / "&" / "=" / "+" / "$" / ","
+
+  unreserved     = ALPHA / DIGIT / mark
+  escaped        = "%" HEXDIG HEXDIG
+  mark           = "-" / "_" / "." / "!" / "~" / "*" / "'" /
+                   "(" / ")"
+
+-->
+<yads>
+
+<nest>
+<!-- \#1: doi-uri -->
+<data>doi-uri</data>
+<collection order="sequenced">
+
+<nest>
+<!-- \#2: scheme -->
+<data>scheme</data>
+<collection>
+<item>
+<data>doi</data>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+
+<item>
+<data>%3A</data>
+</item>
+
+<nest>
+<!-- \#3: encoded-doi -->
+<data>encoded-doi</data>
+<collection>
+
+<nest>
+<!-- \#4: prefix -->
+<data>prefix</data>
+<collection>
+<nest>
+<!-- \#6: segment -->
+<data>segment</data>
+<collection order="choice">
+<nest>
+<!-- \#28: pchar -->
+<data>pchar</data>
+<collection order="choice">
+<nest>
+<!-- \#29: unreserved -->
+<data>unreserved</data>
+<collection order="choice">
+<item>
+<data>ALPHA</data>
+</item>
+<item>
+<data>DIGIT</data>
+</item>
+<nest>
+<!-- \#31: mark -->
+<data>mark</data>
+<collection order="choice">
+<item>
+<data>-</data>
+</item>
+<item>
+<data>_</data>
+</item>
+<item>
+<data>.</data>
+</item>
+<item>
+<data>%21</data>
+</item>
+<item>
+<data>%7E</data>
+</item>
+<item>
+<data>%2A</data>
+</item>
+<item>
+<data>%27</data>
+</item>
+<item>
+<data>%28</data>
+</item>
+<item>
+<data>%29</data>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+<nest>
+<!-- \#30: escaped -->
+<data>escaped</data>
+<collection order="sequenced">
+<item>
+<data>%25</data>
+</item>
+<item>
+<data>HEXDIG</data>
+</item>
+<item>
+<data>HEXDIG</data>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+<item>
+<data>%3B</data>
+</item>
+<item>
+<data>%3A</data>
+</item>
+<item>
+<data>%40</data>
+</item>
+<item>
+<data>%26</data>
+</item>
+<item>
+<data>%3D</data>
+</item>
+<item>
+<data>%2B</data>
+</item>
+<item>
+<data>%24</data>
+</item>
+<item>
+<data>%2C</data>
+</item>
+</collection>
+</nest>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+
+<nest>
+<!-- \#5: suffix -->
+<data>suffix</data>
+<collection>
+<item>
+<data>%2F</data>
+</item>
+<item>
+<data>segment</data>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+
+<item>
+<collection order="sequenced">
+<item>
+<data>%3F</data>
+</item>
+<nest>
+<!-- \#7: query -->
+<data>query</data>
+<collection order="sequenced">
+<item>
+<data>pchar</data>
+</item>
+<item>
+<data>%2F</data>
+</item>
+<item>
+<data>%3F</data>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+</collection>
+</item>
+
+<item>
+<collection order="sequenced">
+<item>
+<data>%23</data>
+</item>
+<nest>
+<!-- \#8: fragment -->
+<data>fragment</data>
+<collection order="sequenced">
+<item>
+<data>pchar</data>
+</item>
+<item>
+<data>%2F</data>
+</item>
+<item>
+<data>%3F</data>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+</collection>
+</item>
+
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+
+</yads>

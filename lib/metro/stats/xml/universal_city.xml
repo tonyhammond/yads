@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  MetroRail - Universal City Station
+
+  MetroRail implements the YADS model to describe "Metro Rail"
+  - Los Angeles' underground rail network - as an example of a
+  complex resource association
+-->
+<yads>
+  <nest>
+    <!-- Universal City Station -->
+    <resource>doi:1014/metro/universal_city</resource>
+    <property type="type">metro:Station</property>
+    <property type="label">Universal City</property>
+    <collection>
+      <nest>
+        <!-- Application Profile -->
+        <resource>doi:1014/profile.metro</resource>
+        <property type="type">doi:Profile</property>
+        <collection>  
+          <item>
+            <!-- Location -->
+            <collection>
+              <item>
+                <data>Lankershim Bl. &amp; Universal Terrace Pky., North Hollywood 91608</data>
+                <property type="type">metro:Address</property>
+              </item>
+            </collection>
+          </item>
+          <item>
+            <!-- Line Interchanges -->
+            <collection>
+              <nest>
+                <!-- Line Interchange -->
+                <resource>doi:1014/metro/red_line</resource>
+                <property type="type">metro:LineChange</property>
+                <collection>
+                  <nest>
+                    <!-- Next Stop Back -->
+                    <resource>doi:1014/metro/north_hollywood</resource>
+                    <property type="type">metro:PrevStation</property>
+                    <collection>
+                      <item>
+                        <data>0</data>
+                        <property type="type">metro:Mins</property>
+                      </item>
+                    </collection>
+                  </nest>
+                  <nest>
+                    <!-- Next Stop -->
+                    <resource>doi:1014/metro/hollywood,highland</resource>
+                    <property type="type">metro:NextStation</property>
+                    <collection>
+                      <item>
+                        <data>0</data>
+                        <property type="type">metro:Mins</property>
+                      </item>
+                    </collection>
+                  </nest>
+                </collection>
+              </nest>
+            </collection>
+          </item>
+        </collection>
+      </nest>
+    </collection>
+  </nest>
+</yads>

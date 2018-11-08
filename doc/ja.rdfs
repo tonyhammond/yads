@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  RDF Schema Declaration for:
+
+  OpenURL v1.0 Referent Type - Journal Article
+
+  Elements:  aulast, aufirst, au, org, jtitle, title, atitle, stitle,
+             date, chron, spage, epage, pages, volume, part, issue,
+             artnum, issn, eissn, coden, sici
+
+  Edited by: NISO AX, 2002-04-30
+-->
+<!DOCTYPE rdf:RDF [
+  <!ENTITY rdfns 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+  <!ENTITY rdfsns 'http://www.w3.org/2000/01/rdf-schema#'>
+  <!ENTITY dcns 'http://purl.org/dc/elements/1.1/'>
+  <!ENTITY niso 'http://www.niso.org/openurl/schema/ref-type#'>
+  <!ENTITY ja 'http://www.niso.org/openurl/ref-type/ja.rdfs#'>
+]>
+
+<rdf:RDF xmlns:rdf="&rdfns;" xmlns:rdfs="&rdfsns;" xmlns:dc="&dcns;"
+         xmlns:niso="&niso;">
+
+<!-- Description of Referent Type -->
+
+<niso:Referent-Type rdf:about="&ja;">
+  <rdf:value>OpenURL v1.0 Referent Type - Journal Article</rdf:value>
+  <dc:title>OpenURL v1.0 Referent Type - Journal Article</dc:title>
+  <dc:publisher>NISO Committee AX</dc:publisher>
+  <dc:description>This schema defines the OpenURL v1.0 Referent Type of Journal Article.</dc:description>
+  <dc:language>English</dc:language>
+  <dc:relation rdf:resource="http://library.caltech.edu/openurl/Documents/OpenURL_Draft_Standard_Edited_03.doc"/>
+  <dc:date>2002-04-30</dc:date>
+</niso:Referent-Type>
+
+<!-- aulast -->
+<rdf:Property rdf:about="&ja;aulast">
+  <niso:version>0.1</niso:version>
+  <niso:element>aulast</niso:element>
+  <niso:description>First author's family name.</niso:description>
+  <niso:instruction>This may be more than one word. In many citations, the author's family name is recorded first and is followed by a comma, i.e. Smith, Fred James.</niso:instruction>
+  <niso:example>Smith</niso:example>
+  <niso:example>Van de Sompel</niso:example>
+  <rdfs:label>aulast</rdfs:label>
+  <rdfs:comment>First author's family name.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&ja;"/>
+  <rdfs:range rdf:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/>
+  <rdfs:domain rdf:resource="&ja;Referent-Type"/>
+</rdf:Property>
+
+<!-- aufirst -->
+<rdf:Property rdf:about="&ja;aufirst">
+  <niso:version>0.1</niso:version>
+  <niso:element>aufirst</niso:element>
+  <niso:description>First author's given name or names or initials.</niso:description>
+  <niso:instruction>This data element may contain multiple words and punctuation.</niso:instruction>
+  <niso:example>Fred F.</niso:example>
+  <niso:example>LI</niso:example>
+  <rdfs:label>aufirst</rdfs:label>
+  <rdfs:comment>First author's given name or names or initials.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&ja;"/>
+  <rdfs:range rdf:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/>
+  <rdfs:domain rdf:resource="&ja;Referent-Type"/>
+</rdf:Property>
+
+<!-- au -->
+<rdf:Property rdf:about="&ja;au">
+  <niso:version>1.0</niso:version>
+  <niso:element>au</niso:element>
+  <niso:description>Undivided author name.</niso:description>
+  <niso:instruction>This data element is used when a clear division between the author's family name and first name(s) cannot be determined.</niso:instruction>
+  <niso:example>Zu Wang Wang</niso:example>
+  <niso:example>Joseph ben Hayyim Jabez</niso:example>
+  <niso:example>van Melle G</niso:example>
+  <rdfs:label>au</rdfs:label>
+  <rdfs:comment>Undivided author name.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&ja;"/>
+  <rdfs:range rdf:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/>
+  <rdfs:domain rdf:resource="&ja;Referent-Type"/>
+</rdf:Property>
+
+<!-- org -->
+<rdf:Property rdf:about="&ja;org">
+  <niso:version>1.0</niso:version>
+  <niso:element>org</niso:element>
+  <niso:description>Organization or corporation.</niso:description>
+  <niso:instruction>Organization or corporation that is the author or creator of the article.</niso:instruction>
+  <niso:example>Monsanto Corporation</niso:example>
+  <niso:example>Freedom to Read Foundation</niso:example>
+  <rdfs:label>org</rdfs:label>
+  <rdfs:comment>Organization or corporation.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&ja;"/>
+  <rdfs:range rdf:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/>
+  <rdfs:domain rdf:resource="&ja;Referent-Type"/>
+</rdf:Property>
+
+<!-- jtitle -->
+<rdf:Property rdf:about="&ja;jtitle">
+  <niso:version>1.0</niso:version>
+  <niso:element>jtitle</niso:element>
+  <niso:description>Journal title.</niso:description>
+  <niso:instruction>This is the title of the as recorded in the metadata from which the OpenURL is derived. When creating an OpenURL, use the most complete title available.</niso:instruction>
+  <rdfs:label>jtitle</rdfs:label>
+  <rdfs:comment>Journal title.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&ja;"/>
+  <rdfs:seeAlso>&ja;title</rdfs:seeAlso>
+  <rdfs:range rdf:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/>
+  <rdfs:domain rdf:resource="&ja;Referent-Type"/>
+</rdf:Property>
+
+<!-- title -->
+<rdf:Property rdf:about="&ja;title">
+  <niso:version>0.1</niso:version>
+  <niso:element>title</niso:element>
+  <niso:description>Journal title.</niso:description>
+  <niso:instruction>May be used for compatibility with v. 0.1.</niso:instruction>
+  <niso:example>Journal of the American Medical Association</niso:example>
+  <niso:example>JAMA</niso:example>
+  <niso:example>Proceedings of the ACM</niso:example>
+  <rdfs:label>title</rdfs:label>
+  <rdfs:comment>Journal title.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&ja;"/>
+  <rdfs:seeAlso>&ja;jtitle</rdfs:seeAlso>
+  <rdfs:range rdf:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/>
+  <rdfs:domain rdf:resource="&ja;Referent-Type"/>
+</rdf:Property>
+
+<!-- atitle -->
+<rdf:Property rdf:about="&ja;atitle">
+  <niso:version>0.1</niso:version>
+  <niso:element>atitle</niso:element>
+  <niso:description>Article title.</niso:description>
+  <niso:instruction>atitle is the title of an article within a journal publication</niso:instruction>
+  <niso:example>The Polarity of GaN: a Critical Review</niso:example>
+  <rdfs:label>atitle</rdfs:label>
+  <rdfs:comment>Article title.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&ja;"/>
+  <rdfs:range rdf:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/>
+  <rdfs:domain rdf:resource="&ja;Referent-Type"/>
+  <rdfs:range rdf:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/>
+  <rdfs:domain rdf:resource="&ja;Referent-Type"/>
+</rdf:Property>
+
+<!-- stitle -->
+<rdf:Property rdf:about="&ja;stitle">
+  <niso:version>0.1</niso:version>
+  <niso:element>stitle</niso:element>
+  <niso:description>Abbreviated title.</niso:description>
+  <niso:instruction>This is primarily used for journal title abbreviations, where known.</niso:instruction>
+  <niso:example>J Am Med Assn</niso:example>
+  <rdfs:label>stitle</rdfs:label>
+  <rdfs:comment>Abbreviated title.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&ja;"/>
+  <rdfs:range rdf:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/>
+  <rdfs:domain rdf:resource="&ja;Referent-Type"/>
+</rdf:Property>
+
+<!-- date -->
+<rdf:Property rdf:about="&ja;date">
+  <niso:version>0.1</niso:version>
+  <niso:element>date</niso:element>
+  <niso:description>Date of publication.</niso:description>
+  <niso:instruction>Dates will need to be normalized from strings like &quot;September 13, 1998&quot; to &quot;1998-09-13&quot;</niso:instruction>
+  <niso:example>2001-01-13</niso:example>
+  <niso:example>1998-03</niso:example>
+  <niso:example>1996</niso:example>
+  <rdfs:label>date</rdfs:label>
+  <rdfs:comment>Date of publication.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&ja;"/>
+  <rdfs:range rdf:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/>
+  <rdfs:domain rdf:resource="&ja;Referent-Type"/>
+</rdf:Property>
+
+<!-- chron -->
+<rdf:Property rdf:about="&ja;chron">
+  <niso:version>1.0</niso:version>
+  <niso:element>chron</niso:element>
+  <niso:description>Other chronology such as season, quarter, etc.</niso:description>
+  <niso:instruction>Other forms of enumeration, like &quot;Spring&quot; or &quot;1st quarter&quot; should be carried in this data element, unnormalized. Where   numeric dates are also available, place the numeric portion in the &quot;date&quot; data element. So a recorded date of publication of &quot;Spring, 1992&quot; becomes date=&quot;1992&quot;&amp;chron=&quot;Spring&quot;. These can also be expressed as &quot;ssn&quot; for the season and &quot;quarter&quot; for the normalized quarter (1|2|3|4), which are included for backwards compatibility to v 0.1.</niso:instruction>
+  <niso:example>Spring</niso:example>
+  <niso:example>Second Quarter</niso:example>
+  <niso:example>autunno</niso:example>
+  <niso:example>hiver</niso:example>
+  <rdfs:label>chron</rdfs:label>
+  <rdfs:comment>Other chronology such as season, quarter, etc.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&ja;"/>
+  <rdfs:range rdf:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/>
+  <rdfs:domain rdf:resource="&ja;Referent-Type"/>
+</rdf:Property>
+
+<!-- spage -->
+<rdf:Property rdf:about="&ja;spage">
+  <niso:version>0.1</niso:version>
+  <niso:element>spage</niso:element>
+  <niso:description>Start page.</niso:description>
+  <niso:instruction>Use where start page is known but end page is not available or is difficult to interpret, i.e.&quot; 7-10, 15, 18&quot;</niso:instruction>
+  <niso:example>34</niso:example>
+  <niso:example>F1</niso:example>
+  <rdfs:label>spage</rdfs:label>
+  <rdfs:comment>Start page.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&ja;"/>
+  <rdfs:range rdf:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/>
+  <rdfs:domain rdf:resource="&ja;Referent-Type"/>
+</rdf:Property>
+
+<!-- epage -->
+<rdf:Property rdf:about="&ja;epage">
+  <niso:version>0.1</niso:version>
+  <niso:element>epage</niso:element>
+  <niso:description>End page.</niso:description>
+  <niso:instruction>The ending page of an article.</niso:instruction>
+  <niso:example>28</niso:example>
+  <rdfs:label>epage</rdfs:label>
+  <rdfs:comment>End page.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&ja;"/>
+  <rdfs:range rdf:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/>
+  <rdfs:domain rdf:resource="&ja;Referent-Type"/>
+</rdf:Property>
+
+<!-- pages -->
+<rdf:Property rdf:about="&ja;pages">
+  <niso:version>0.1</niso:version>
+  <niso:element>pages</niso:element>
+  <niso:description>Start and end.</niso:description>
+  <niso:instruction>Use when referent records both start and end pages. Version 0.1 also included a separate data element &quot;epage&quot; for end pages; spage+epage is equivalent to pages. Epage should be recognized for backward compatibility, but where start and end pages are known the element &quot;pages&quot; is preferred.</niso:instruction>
+  <niso:instruction>Note that pages are not always numeric.</niso:instruction>
+  <niso:example>14-28</niso:example>
+  <niso:example>xv-xxii</niso:example>
+  <niso:example>A1-A7</niso:example>
+  <rdfs:label>pages</rdfs:label>
+  <rdfs:comment>Start and end.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&ja;"/>
+  <rdfs:range rdf:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/>
+  <rdfs:domain rdf:resource="&ja;Referent-Type"/>
+</rdf:Property>
+
+<!-- volume -->
+<rdf:Property rdf:about="&ja;volume">
+  <niso:version>0.1</niso:version>
+  <niso:element>volume</niso:element>
+  <niso:description>Volume.</niso:description>
+  <niso:instruction>Volume is the highest level of enumeration. Other levels of   enumeration generally subdivide the volume. Volume is usually expressed as a   number but could be roman numerals or non-numeric.</niso:instruction>
+  <niso:example>14</niso:example>
+  <niso:example>VI</niso:example>
+  <rdfs:label>volume</rdfs:label>
+  <rdfs:comment>Volume.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&ja;"/>
+  <rdfs:range rdf:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/>
+  <rdfs:domain rdf:resource="&ja;Referent-Type"/>
+</rdf:Property>
+
+<!-- part -->
+<rdf:Property rdf:about="&ja;part">
+  <niso:version>0.1</niso:version>
+  <niso:element>part</niso:element>
+  <niso:description>Part.</niso:description>
+  <niso:instruction>Part can be a special subdivision of a volume or it can be the highest level division of the journal. Parts are often designated with   letters or names.</niso:instruction>
+  <niso:example>B</niso:example>
+  <niso:example>2</niso:example>
+  <niso:example>Supplement</niso:example>
+  <rdfs:label>part</rdfs:label>
+  <rdfs:comment>Part.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&ja;"/>
+  <rdfs:range rdf:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/>
+  <rdfs:domain rdf:resource="&ja;Referent-Type"/>
+</rdf:Property>
+
+<!-- issue -->
+<rdf:Property rdf:about="&ja;issue">
+  <niso:version>0.1</niso:version>
+  <niso:element>issue</niso:element>
+  <niso:description>Number of the issue.</niso:description>
+  <niso:instruction>This is the number of the published issue of a journal, corresponding to the actual physical piece in most cases. While usually numeric, it could be non-numeric. Note that some publications use chronology in the place of enumeration, i.e. Spring, 1998.</niso:instruction>
+  <niso:example>3</niso:example>
+  <rdfs:label>issue</rdfs:label>
+  <rdfs:comment>Number of the issue.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&ja;"/>
+  <rdfs:range rdf:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/>
+  <rdfs:domain rdf:resource="&ja;Referent-Type"/>
+</rdf:Property>
+
+<!-- artnum -->
+<rdf:Property rdf:about="&ja;artnum">
+  <niso:version>0.1</niso:version>
+  <niso:element>artnum</niso:element>
+  <niso:description>Article number assigned by publisher.</niso:description>
+  <niso:instruction>Article numbers are often generated for publications that do not have usable pagination, in particular electronic journal articles. This data element can also be used for book components that have chapter numbers.</niso:instruction>
+  <niso:comment>A URL may be the only usable identifier for an online article.</niso:comment>
+  <niso:example>unifi000000090</niso:example>
+  <niso:example>http://www.firstmonday.org/issues/issue6_2/odlyzko/index.html</niso:example>
+  <rdfs:label>artnum</rdfs:label>
+  <rdfs:comment>Article number assigned by publisher.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&ja;"/>
+  <rdfs:range rdf:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/>
+  <rdfs:domain rdf:resource="&ja;Referent-Type"/>
+</rdf:Property>
+
+<!-- issn -->
+<rdf:Property rdf:about="&ja;issn">
+  <niso:version>0.1</niso:version>
+  <niso:element>issn</niso:element>
+  <niso:description>ISSN.</niso:description>
+  <niso:instruction>ISSN may contain a hyphen.</niso:instruction>
+  <rdfs:label>issn</rdfs:label>
+  <rdfs:comment>ISSN.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&ja;"/>
+  <rdfs:range rdf:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/>
+  <rdfs:domain rdf:resource="&ja;Referent-Type"/>
+</rdf:Property>
+
+<!-- eissn -->
+<rdf:Property rdf:about="&ja;eissn">
+  <niso:version>0.1</niso:version>
+  <niso:element>eissn</niso:element>
+  <niso:description>ISSN for electronic version.</niso:description>
+  <niso:instruction>Although there is no distinction by format in the assignment of ISSNs, some bibliographic services now carry both the ISSN for the paper version and a separate ISSN for the electronic version. This data element is included here to allow the OpenURL to carry both ISSNs and distinguish them.</niso:instruction>
+  <rdfs:label>eissn</rdfs:label>
+  <rdfs:comment>ISSN for electronic version.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&ja;"/>
+  <rdfs:range rdf:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/>
+  <rdfs:domain rdf:resource="&ja;Referent-Type"/>
+</rdf:Property>
+
+<!-- coden -->
+<rdf:Property rdf:about="&ja;coden">
+  <niso:version>0.1</niso:version>
+  <niso:element>coden</niso:element>
+  <niso:description>CODEN.</niso:description>
+  <rdfs:label>coden</rdfs:label>
+  <rdfs:comment>CODEN.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&ja;"/>
+  <rdfs:range rdf:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/>
+  <rdfs:domain rdf:resource="&ja;Referent-Type"/>
+</rdf:Property>
+
+<!-- sici -->
+<rdf:Property rdf:about="&ja;sici">
+  <niso:version>0.1</niso:version>
+  <niso:element>sici</niso:element>
+  <niso:description>SICI.</niso:description>
+  <rdfs:label>sici</rdfs:label>
+  <rdfs:comment>SICI.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&ja;"/>
+  <rdfs:range rdf:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/>
+  <rdfs:domain rdf:resource="&ja;Referent-Type"/>
+</rdf:Property>
+
+</rdf:RDF>

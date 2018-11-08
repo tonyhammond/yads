@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   DOI use case: Co-Hosting
+
+   Here the IDEAL and BioMedNet platforms are managed by this DOI.
+   The IDEAL platform is marked as the default resource, and the
+   BioMedNet platform indicates that it accepts CrossRef parameters.
+-->
+<doi_data>
+  <doi>10.1006/jmbi.2001.5337</doi>
+  <collection>
+    <item>
+      <resource/>
+      <property type="detail">Resources for Article
+      &lt;doi:10.1006/jmbi.2001.5337&gt;</property>
+    </item>
+    <item>
+  <collection order="choice">
+    <item>
+      <resource>http://www.idealibrary.com/links/doi/10.1006/jmbi.2001.5337</resource>
+      <property type="type">xref:Mirror</property>
+      <property type="label">IDEAL</property>
+      <property type="access">:default</property>
+    </item>
+    <item>
+      <resource>http://journals.bmn.com/journals/list/latest?uid=JMB.etd01126_10976868_v0316i02_00005337&amp;node=TOC%40%40JMB%40316%4002%40316_02</resource>
+      <property type="type">xref:Mirror</property>
+    <property type="label">BioMedNet</property>
+    <property type="directive">xref:params</property>
+    </item>
+  </collection>
+      <property type="label">J. Mol. Biol. (2002) 316: p. 217</property>
+      <property type="type">xref:Article</property>
+    </item>
+  </collection>
+</doi_data>

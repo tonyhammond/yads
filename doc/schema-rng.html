@@ -1,0 +1,187 @@
+<html>
+<head>
+<link href="../css/yads.css" type=text/css rel=stylesheet>
+<title>YADS: RELAX NG Schema</title>
+</head>
+<body>
+<h1>
+<img src="../imx/rdf_metadata_button.40">
+<i>YADS Model Schema - RELAX NG</i></h1>
+<hr>
+This is the RELAX NG schema for the YADS model.
+<p>
+<table width=100% border=1 cellpadding=5>
+<tr>
+<td>
+<pre><code>
+  &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+  &lt;!--
+  
+    YADS - RELAX NG
+  
+    This document describes YADS - A Description Service
+    in a RELAX NG XML Schema.
+  
+    ==
+  
+    // From RDF Schema for YADS
+
+    Resource:     doi:1014/yads-schema-2002-04-03
+    Comment:      RDF Schema for YADS - A Description Service
+    Author:       Tony Hammond &lt;tony_hammond@harcourt.com&gt;
+    Revision:     April 3, 2002 - Tony Hammond
+  
+    Copyright (c) 2002 Elsevier Science Ltd. All rights reserved. 
+
+  --&gt;
+  
+  &lt;grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+    ns="http://relaxng.org/ns/structure/1.0"
+    xmlns="http://relaxng.org/ns/structure/1.0"
+    xmlns:y="doi:1014/yads"
+  &gt;
+  
+    &lt;start&gt;
+      &lt;ref name="yads"/&gt;
+    &lt;/start&gt;
+  
+  &lt;!--
+    Toplevel wrapper element
+    ~
+  --&gt;
+    &lt;div y:doc="Definition of yads element."&gt;
+  
+      &lt;define name="yads"&gt;
+        &lt;element name="yads"&gt;
+          &lt;zeroOrMOre&gt;
+            &lt;choice&gt;
+            &lt;ref name="item"/&gt;
+            &lt;ref name="nest"/&gt;
+            &lt;/choice&gt;
+          &lt;/zeroOrMOre&gt;
+        &lt;/element&gt;
+      &lt;/define&gt;
+  
+    &lt;/div&gt;
+  
+  &lt;!--
+    Item element - collection OR resource, with properties.
+    (The content model expressly permits any ordering.)
+  --&gt;
+    &lt;div y:doc="Definition of item element."&gt;
+  
+      &lt;define name="item"&gt;
+        &lt;element name="item"&gt;
+          &lt;interleave&gt;
+            &lt;choice&gt;
+              &lt;ref name="collection"/&gt;
+              &lt;ref name="resource"/&gt;
+            &lt;/choice&gt;
+            &lt;zeroOrMore&gt;
+              &lt;ref name="property"/&gt;
+            &lt;/zeroOrMore&gt;
+          &lt;/interleave&gt;
+        &lt;/element&gt;
+      &lt;/define&gt;
+  
+    &lt;/div&gt;
+  
+  &lt;!--
+    Nest element - collection AND resource, with properties.
+    (The content model expressly permits any ordering.)
+  --&gt;
+    &lt;div y:doc="Definition of nest element."&gt;
+  
+      &lt;define name="nest"&gt;
+        &lt;element name="nest"&gt;
+          &lt;interleave&gt;
+            &lt;ref name="collection"/&gt;
+            &lt;ref name="resource"/&gt;
+            &lt;zeroOrMore&gt;
+              &lt;ref name="property"/&gt;
+            &lt;/zeroOrMore&gt;
+          &lt;/interleave&gt;
+        &lt;/element&gt;
+      &lt;/define&gt;
+  
+    &lt;/div&gt;
+  
+  &lt;!--
+    Collection element - contains sequence of nest or item elements.
+    (An ordering attribute determines how the elements should be ordered.)
+  --&gt;
+    &lt;div y:doc="Definition of collection element."&gt;
+  
+      &lt;define name="collection"&gt;
+        &lt;element name="collection"&gt;
+          &lt;optional&gt;
+            &lt;attribute name="ordering"&gt;
+              &lt;choice&gt;
+                &lt;value&gt;choice&lt;/value&gt;
+                &lt;value&gt;sequenced&lt;/value&gt;
+                &lt;value&gt;unordered&lt;/value&gt;
+              &lt;/choice&gt;
+            &lt;/attribute&gt;
+          &lt;/optional&gt;
+          &lt;oneOrMore&gt;
+            &lt;choice&gt;
+              &lt;ref name="item"/&gt;
+              &lt;ref name="nest"/&gt;
+            &lt;/choice&gt;
+          &lt;/oneOrMore&gt;
+        &lt;/element&gt;
+      &lt;/define&gt;
+  
+    &lt;/div&gt;
+  
+  &lt;!--
+    Resource element
+    ~
+  --&gt;
+    &lt;div y:doc="Definition of resource element."&gt;
+  
+      &lt;define name="resource"&gt;
+        &lt;element name="resource"&gt;
+          &lt;data type="anyURI"/&gt;
+        &lt;/element&gt;
+      &lt;/define&gt;
+  
+    &lt;/div&gt;
+  
+  &lt;!--
+    Property element
+    ~
+  --&gt;
+    &lt;div y:doc="Definition of property element."&gt;
+  
+      &lt;define name="property"&gt;
+        &lt;element name="property"&gt;
+          &lt;attribute name="type"&gt;
+            &lt;choice&gt;
+              &lt;value&gt;access&lt;/value&gt;
+              &lt;value&gt;detail&lt;/value&gt;
+              &lt;value&gt;directive&lt;/value&gt;
+              &lt;value&gt;label&lt;/value&gt;
+              &lt;value&gt;role&lt;/value&gt;
+              &lt;value&gt;service&lt;/value&gt;
+              &lt;value&gt;type&lt;/value&gt;
+            &lt;/choice&gt;
+          &lt;/attribute&gt;
+          &lt;data type="string"/&gt;
+        &lt;/element&gt;
+      &lt;/define&gt;
+  
+    &lt;/div&gt;
+  
+  &lt;/grammar&gt;
+</code></pre>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr>
+Copyright &copy; 2002 Elsevier Science Ltd. All rights reserved. 
+</body>
+</html>

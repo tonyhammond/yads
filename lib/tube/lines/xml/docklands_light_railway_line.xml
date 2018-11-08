@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TubeTime - Docklands Light Railway Line
+
+  TubeTime implements the YADS model to describe the "Tube"
+  - London's underground rail network - as an example of a
+  complex resource association
+--> 
+<yads>
+  <nest>
+    <!-- Docklands Light Railway Line -->
+    <resource>doi:1014/tube/docklands_light_railway</resource>
+    <property type="type">dlr:Line</property>
+    <property type="label">East London Line</property>
+    <property type="detail">TubeTime - East London Line.</property>
+    <collection>
+      <nest>
+        <!-- Application Profile -->
+        <resource>doi:1014/profile.dlr</resource>
+        <property type="type">doi:Profile</property>
+        <collection>  
+          <item>
+            <!-- Terminus Stations -->
+            <property type="detail">Terminus stations.</property>
+            <collection>
+              <item>
+                <resource>doi:1014/tube/bank</resource>
+                <property type="type">dlr:Terminus</property>
+              </item>
+              <item>
+                <resource>doi:1014/tube/beckton</resource>
+                <property type="type">dlr:Terminus</property>
+              </item>
+              <item>
+                <resource>doi:1014/tube/tower_gateway</resource>
+                <property type="type">dlr:Terminus</property>
+              </item>
+              <item>
+                <resource>doi:1014/tube/lewisham</resource>
+                <property type="type">dlr:Terminus</property>
+              </item>
+              <item>
+                <resource>doi:1014/tube/stratford</resource>
+                <property type="type">dlr:Terminus</property>
+              </item>
+            </collection>
+          </item>
+          <item>
+            <!-- Line Stations -->
+            <property type="detail">Line stations.</property>
+            <collection>
+              <item>
+                <!-- Branch Stations -->
+                <property type="detail">Branch stations.</property>
+                <collection order="sequenced">
+                  <item>
+                    <resource>doi:1014/tube/bank</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/shadwell</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/limehouse</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/westferry</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/poplar</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/blackwall</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/east_india</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/canning_town</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/royal_victoria</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/custom_house_for_excel</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/prince_regent</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/royal_albert</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/beckton_park</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/cyprus</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/gallions_reach</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/beckton</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                </collection>
+              </item>
+              <item>
+                <!-- Branch Stations -->
+                <property type="detail">Branch stations.</property>
+                <collection order="sequenced">
+                  <item>
+                    <resource>doi:1014/tube/tower_gateway</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/shadwell</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                </collection>
+              </item>
+              <item>
+                <!-- Branch Stations -->
+                <property type="detail">Branch stations.</property>
+                <collection order="sequenced">
+                  <item>
+                    <resource>doi:1014/tube/westferry</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/west_india_quay</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/canary_month</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/heron_quays</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/south_quay</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/crossharbour_and_london_arena</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/mudchute</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/island_gardens</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/cutty_sark_for_maritime_greenwich</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/greenwich</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/deptford_bridge</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/elverson_road</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/lewisham</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                </collection>
+              </item>
+              <item>
+                <!-- Branch Stations -->
+                <property type="detail">Branch stations.</property>
+                <collection order="sequenced">
+                  <item>
+                    <resource>doi:1014/tube/west_india_quay</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/poplar</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/all_saints</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/devons_road</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/bow_church</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/pudding_mill_lane</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/stratford</resource>
+                    <property type="type">dlr:Station</property>
+                  </item>
+                </collection>
+              </item>
+            </collection>
+          </item>
+          <item>
+            <!-- Interchange Stations -->
+            <property type="detail">Interchange stations.</property>
+            <collection>
+              <nest>
+                <resource>doi:1014/tube/central_line</resource>
+                <collection order="choice">
+                  <item>
+                    <resource>doi:1014/tube/bank</resource>
+                    <property type="type">dlr:Interchange</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/stratford</resource>
+                    <property type="type">dlr:Interchange</property>
+                  </item>
+                </collection>
+                <property type="type">dlr:LineChange</property>
+              </nest>
+              <nest>
+                <resource>doi:1014/tube/circle_line</resource>
+                <collection order="choice">
+                  <item>
+                    <resource>doi:1014/tube/bank</resource>
+                    <property type="type">dlr:Interchange</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/tower_gateway</resource>
+                    <property type="type">dlr:Interchange</property>
+                  </item>
+                </collection>
+                <property type="type">dlr:LineChange</property>
+              </nest>
+              <nest>
+                <resource>doi:1014/tube/district_line</resource>
+                <collection order="choice">
+                  <item>
+                    <resource>doi:1014/tube/bank</resource>
+                    <property type="type">dlr:Interchange</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/bow_church</resource>
+                    <property type="type">dlr:Interchange</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/tower_gateway</resource>
+                    <property type="type">dlr:Interchange</property>
+                  </item>
+                </collection>
+                <property type="type">dlr:LineChange</property>
+              </nest>
+              <nest>
+                <resource>doi:1014/tube/east_london_line</resource>
+                <collection order="choice">
+                  <item>
+                    <resource>doi:1014/tube/shadwell</resource>
+                    <property type="type">dlr:Interchange</property>
+                  </item>
+                </collection>
+                <property type="type">dlr:LineChange</property>
+              </nest>
+              <nest>
+                <resource>doi:1014/tube/hammersmith_&amp;_city_line</resource>
+                <collection order="choice">
+                  <item>
+                    <resource>doi:1014/tube/bow_church</resource>
+                    <property type="type">dlr:Interchange</property>
+                  </item>
+                </collection>
+                <property type="type">dlr:LineChange</property>
+              </nest>
+              <nest>
+                <resource>doi:1014/tube/jubilee_line</resource>
+                <collection order="choice">
+                  <item>
+                    <resource>doi:1014/tube/canary_wharf</resource>
+                    <property type="type">dlr:Interchange</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/canning_town</resource>
+                    <property type="type">dlr:Interchange</property>
+                  </item>
+                  <item>
+                    <resource>doi:1014/tube/stratford</resource>
+                    <property type="type">dlr:Interchange</property>
+                  </item>
+                </collection>
+                <property type="type">dlr:LineChange</property>
+              </nest>
+              <nest>
+                <resource>doi:1014/tube/northern_line</resource>
+                <collection order="choice">
+                  <item>
+                    <resource>doi:1014/tube/bank</resource>
+                    <property type="type">dlr:Interchange</property>
+                  </item>
+                </collection>
+                <property type="type">dlr:LineChange</property>
+              </nest>
+              <nest>
+                <resource>doi:1014/tube/waterloo_&amp;_city_line</resource>
+                <collection order="choice">
+                  <item>
+                    <resource>doi:1014/tube/bank</resource>
+                    <property type="type">dlr:Interchange</property>
+                  </item>
+                </collection>
+                <property type="type">dlr:LineChange</property>
+              </nest>
+            </collection>
+          </item>
+        </collection>
+      </nest>
+    </collection>
+  </nest>
+</yads>

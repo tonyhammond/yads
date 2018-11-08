@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   DOI use case: Co-Hosting
+
+   Here the IDEAL and BioMedNet platforms are managed by this DOI.
+   The IDEAL platform is marked as the default resource, and the
+   BioMedNet platform indicates that it accepts CrossRef parameters.
+-->
+
+<rdf:RDF xmlns:isa="doi:1014/yads-schema-2002-04-03#" xmlns:has="doi:1014/yads-schema-2002-04-03#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:Description rdf:about="">
+<rdf:type>isa:Nest</rdf:type>
+<!-- Co-Hosted Article -->
+<has:resource rdf:resource="doi:10.1006/jmbi.2001.5337"/>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Nest</rdf:type>
+<!-- DOI Profile -->
+<has:resource rdf:resource="doi:10.0/profile.crossref"/>
+<has:collection>
+<rdf:Bag>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<has:collection>
+<rdf:Alt>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- IDEAL -->
+<has:resource rdf:resource="http://www.idealibrary.com/links/doi/10.1006/jmbi.2001.5337"/>
+<has:type>xref:Host</has:type>
+<has:label>IDEAL</has:label>
+<has:access>:default</has:access>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- BioMedNet -->
+<has:resource rdf:resource="http://journals.bmn.com/journals/list/latest?uid=JMB.etd01126_10976868_v0316i02_00005337&amp;node=TOC%40%40JMB%40316%4002%40316_02"/>
+<has:type>xref:Host</has:type>
+<has:label>BioMedNet</has:label>
+<has:directive>xref:params</has:directive>
+</rdf:li>
+</rdf:Alt>
+</has:collection>
+<has:label>J. Mol. Biol. (2002) 316: p. 217</has:label>
+<has:type>xref:Article</has:type>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+<has:type>doi:Profile</has:type>
+</rdf:li>
+</rdf:Bag>
+</has:collection>
+</rdf:Description>
+</rdf:RDF>

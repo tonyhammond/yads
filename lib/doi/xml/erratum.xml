@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   DOI use case: Erratum/Article
+
+   Here an erratum is (backward) linked to the article it revises.
+-->
+<yads>
+  <nest>
+    <!-- Erratum/Article -->
+    <resource>doi:10.1006/geno.2002.6726</resource>
+    <collection>
+      <nest>
+        <!-- DOI Profile -->
+        <resource>doi:10.0/profile.crossref</resource>
+        <collection>
+          <item>
+            <!-- Erratum -->
+            <resource>http://www.idealibrary.com/links/doi/10.1006/geno.2002.6726</resource>
+            <property type="label">Genomics (2002) 79: p. 462</property>
+            <property type="type">xref:Erratum</property>
+            <property type="access">:default</property>
+          </item>
+          <item>
+            <!-- Article -->
+            <resource>doi:10.1006/geno.2001.6453</resource>
+            <property type="type">xref:Article</property>
+          </item>
+        </collection>
+        <property type="type">doi:Profile</property>
+      </nest>
+    </collection>
+  </nest>
+</yads>

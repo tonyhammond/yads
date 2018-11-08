@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   DOI use case: Article/Journal
+
+   Here an article is linked to its parent journal.
+-->
+<yads>
+  <nest>
+    <!-- Article/Journal -->
+    <resource>doi:10.1006/jmbi.1993.1460</resource>
+    <collection>
+      <nest>
+        <!-- DOI Profile -->
+        <resource>doi:10.0/profile.crossref</resource>
+        <collection>
+          <item>
+            <!-- Article -->
+            <resource>http://www.idealibrary.com/links/doi/10.1006/jmbi.1993.1460</resource>
+            <property type="label">J. Mol. Biol. (1993) 232: p.1060</property>
+            <property type="type">xref:Article</property>
+            <property type="access">:default</property>
+          </item>
+          <item>
+            <!-- Journal -->
+            <resource>doi:10.1006/jmbi</resource>
+            <property type="type">xref:Journal</property>
+          </item>
+        </collection>
+        <property type="type">doi:Profile</property>
+      </nest>
+    </collection>
+  </nest>
+</yads>

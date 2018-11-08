@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  Description of Echo example using YADS.
+
+-->
+
+<rdf:RDF xmlns:isa="doi:1014/yads-schema-2002-04-03#" xmlns:has="doi:1014/yads-schema-2002-04-03#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:Description rdf:about="">
+<rdf:type>isa:Item</rdf:type>
+<!-- feed -->
+feed<has:title>My First Weblog</has:title>
+<has:subtitle>Ain't the Interweb great?</has:subtitle>
+<has:link>http://bob.blog/</has:link>
+<has:created>2003-02-05T12:29:29Z</has:created>
+<has:issued>2003-02-05T12:29:29Z</has:issued>
+<has:modified>2003-02-05T12:29:29Z</has:modified>
+<has:collection>
+<rdf:Seq>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- entry -->
+entry<has:title>My First Entry</has:title>
+<has:subtitle>In which a newbie learns to blog...</has:subtitle>
+<has:summary>A very boring entry; just learning how to blog here...</has:summary>
+<has:link>http://bob.blog/28</has:link>
+<has:id>http://bob.blog/28</has:id>
+<has:created>2003-02-05T12:29:29Z</has:created>
+<has:issued>2003-02-05T12:29:29Z</has:issued>
+<has:modified>2003-02-05T12:29:29Z</has:modified>
+<has:collection>
+<rdf:Seq>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- author -->
+author<has:name>Bob B. Bobbington</has:name>
+<has:homepage>http://bob.name/</has:homepage>
+<has:weblog>http://bob.name/</has:weblog>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- contributor -->
+contributor<has:name>Yo-Yo Dyne</has:name>
+<has:homepage>http://yoyo.dyne.name/</has:homepage>
+<has:weblog>http://yoyo.dyne.name/</has:weblog>
+</rdf:li>
+<rdf:li rdf:parseType="Resource">
+<rdf:type>isa:Item</rdf:type>
+<!-- content -->
+content<has:type>application/xhtml+xml</has:type>
+<has:lang>en-us</has:lang>
+<has:content>&lt;p xmlns=\"...\"&gt;Hello, &lt;em&gt;weblog&lt;/em&gt; world! 2 &lt; 4!&lt;/p&gt;</has:content>
+</rdf:li>
+</rdf:Seq>
+</has:collection>
+</rdf:li>
+</rdf:Seq>
+</has:collection>
+</rdf:Description>
+</rdf:RDF>

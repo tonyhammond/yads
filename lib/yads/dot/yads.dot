@@ -1,0 +1,503 @@
+
+digraph yads { 
+
+
+
+graph [
+
+  fontname=arial, fontsize=24
+
+  label="YADS - A Description Service"
+
+];
+
+node [
+
+  fontname=arial, fontsize=11, fontcolor=black,
+
+  style=filled, color=cornflowerblue,
+
+];
+
+edge [
+
+  fontname=arial, fontsize=11, fontcolor=black,
+
+  style=filled, color=lightblue,
+
+];
+
+rankdir=TB;
+
+
+
+subgraph cluster_1 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Nest - Schema Library for YADS";
+
+
+
+  ":_1" [label="yads:Schemas", color=lightgoldenrod];
+
+  ":_1" -> "http:yads.xml" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+  ":_1" -> ":_2" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_2" [label="rdf:Bag", color=lightgrey];
+
+  ":_1" -> "node_25" [label="has:label", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#label"];
+
+
+
+  "http:yads.xml" [color=plum, URL="http:yads.xml"];
+
+  ":_2" [label="rdf:Bag", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"];
+
+  ":_2" -> ":_3" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_3" [label="isa:Nest"]
+
+  ":_2" -> ":_6" [label="rdf:_2", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2"];
+
+":_6" [label="isa:Nest"]
+
+  ":_2" -> ":_11" [label="rdf:_3", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_3"];
+
+":_11" [label="isa:Nest"]
+
+
+
+subgraph cluster_3 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Nest - BNF Library";
+
+
+
+  ":_3" [label="yads:BNF Schemas", color=lightgoldenrod];
+
+  ":_3" -> "doi:1014/yads" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+  ":_3" -> ":_4" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_4" [label="rdf:Bag", color=lightgrey];
+
+
+
+  "doi:1014/yads" [color=plum, URL="http://dx.doi.org/1014/yads"];
+
+  ":_4" [label="rdf:Bag", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"];
+
+  ":_4" -> ":_5" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_5" [label="isa:Item"]
+
+
+
+subgraph cluster_5 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item - ISO Schema";
+
+
+
+  ":_5" [label="yads:EBNF", color=lightgoldenrod];
+
+  ":_5" -> "http:yads-ebnf.xml" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+  ":_5" -> "node_1" [label="has:label", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#label"];
+
+
+
+  "http:yads-ebnf.xml" [color=plum, URL="http:yads-ebnf.xml"];
+
+  "node_1" [shape=box, label="EBNF"];
+
+}
+
+
+
+}
+
+
+
+subgraph cluster_6 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Nest - RDF Library";
+
+
+
+  ":_6" [label="yads:RDF Schemas", color=lightgoldenrod];
+
+  ":_6" -> "doi:1014/yads" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+  ":_6" -> ":_7" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_7" [label="rdf:Bag", color=lightgrey];
+
+
+
+  "doi:1014/yads" [color=plum, URL="http://dx.doi.org/1014/yads"];
+
+  ":_7" [label="rdf:Bag", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"];
+
+  ":_7" -> ":_8" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_8" [label="isa:Item"]
+
+  ":_7" -> ":_9" [label="rdf:_2", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2"];
+
+":_9" [label="isa:Item"]
+
+  ":_7" -> ":_10" [label="rdf:_3", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_3"];
+
+":_10" [label="isa:Item"]
+
+
+
+subgraph cluster_8 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item - W3C Schema";
+
+
+
+  ":_8" [label="yads:RDF/XML", color=lightgoldenrod];
+
+  ":_8" -> "http:yads-rdfs.xml" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+  ":_8" -> "node_4" [label="has:label", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#label"];
+
+
+
+  ":_8" -> "node_6" [label="has:access", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#access"];
+
+  "http:yads-rdfs.xml" [color=plum, URL="http:yads-rdfs.xml"];
+
+  "node_4" [shape=box, label="RDF/XML"];
+
+  "node_6" [shape=box, label=":default"];
+
+}
+
+
+
+subgraph cluster_9 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item - W3C Schema";
+
+
+
+  ":_9" [label="yads:RDF/N3", color=lightgoldenrod];
+
+  ":_9" -> "http:yads-n3.xml" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+  ":_9" -> "node_7" [label="has:label", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#label"];
+
+
+
+  "http:yads-n3.xml" [color=plum, URL="http:yads-n3.xml"];
+
+  "node_7" [shape=box, label="RDF/N3"];
+
+}
+
+
+
+subgraph cluster_10 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item - W3C Schema";
+
+
+
+  ":_10" [label="yads:DAML+OIL", color=lightgoldenrod];
+
+  ":_10" -> "http:yads-daml.xml" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+  ":_10" -> "node_9" [label="has:label", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#label"];
+
+
+
+  "http:yads-daml.xml" [color=plum, URL="http:yads-daml.xml"];
+
+  "node_9" [shape=box, label="DAML+OIL"];
+
+}
+
+
+
+}
+
+
+
+subgraph cluster_11 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Nest - XML Library";
+
+
+
+  ":_11" [label="yads:XML Schemas", color=lightgoldenrod];
+
+  ":_11" -> "doi:1014/yads" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+  ":_11" -> ":_12" [label="has:collection", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#collection"];
+
+  ":_12" [label="rdf:Bag", color=lightgrey];
+
+
+
+  "doi:1014/yads" [color=plum, URL="http://dx.doi.org/1014/yads"];
+
+  ":_12" [label="rdf:Bag", color=lightgrey, URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"];
+
+  ":_12" -> ":_13" [label="rdf:_1", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_1"];
+
+":_13" [label="isa:Item"]
+
+  ":_12" -> ":_14" [label="rdf:_2", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_2"];
+
+":_14" [label="isa:Item"]
+
+  ":_12" -> ":_15" [label="rdf:_3", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_3"];
+
+":_15" [label="isa:Item"]
+
+  ":_12" -> ":_16" [label="rdf:_4", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_4"];
+
+":_16" [label="isa:Item"]
+
+  ":_12" -> ":_17" [label="rdf:_5", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_5"];
+
+":_17" [label="isa:Item"]
+
+  ":_12" -> ":_18" [label="rdf:_6", URL="http://www.w3.org/1999/02/22-rdf-syntax-ns#_6"];
+
+":_18" [label="isa:Item"]
+
+
+
+subgraph cluster_13 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item - W3C Schema";
+
+
+
+  ":_13" [label="yads:XML DTD", color=lightgoldenrod];
+
+  ":_13" -> "http:yads-dtd.xml" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+  ":_13" -> "node_12" [label="has:label", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#label"];
+
+
+
+  "http:yads-dtd.xml" [color=plum, URL="http:yads-dtd.xml"];
+
+  "node_12" [shape=box, label="XML DTD"];
+
+}
+
+
+
+subgraph cluster_14 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item - Oasis Schema";
+
+
+
+  ":_14" [label="yads:RELAX NG", color=lightgoldenrod];
+
+  ":_14" -> "http:yads-rng.xml" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+  ":_14" -> "node_14" [label="has:label", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#label"];
+
+
+
+  "http:yads-rng.xml" [color=plum, URL="http:yads-rng.xml"];
+
+  "node_14" [shape=box, label="RELAX NG"];
+
+}
+
+
+
+subgraph cluster_15 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item - W3C Schema";
+
+
+
+  ":_15" [label="yads:XML Schema", color=lightgoldenrod];
+
+  ":_15" -> "http:yads-xsd.xml" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+  ":_15" -> "node_16" [label="has:label", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#label"];
+
+
+
+  "http:yads-xsd.xml" [color=plum, URL="http:yads-xsd.xml"];
+
+  "node_16" [shape=box, label="XML Schema"];
+
+}
+
+
+
+subgraph cluster_16 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item - R. Jelliffe Schema";
+
+
+
+  ":_16" [label="yads:Schematron", color=lightgoldenrod];
+
+  ":_16" -> "http:yads-sch.xml" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+  ":_16" -> "node_18" [label="has:label", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#label"];
+
+
+
+  "http:yads-sch.xml" [color=plum, URL="http:yads-sch.xml"];
+
+  "node_18" [shape=box, label="Schematron"];
+
+}
+
+
+
+subgraph cluster_17 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item - J. Ramalho Schema";
+
+
+
+  ":_17" [label="yads:XCSL", color=lightgoldenrod];
+
+  ":_17" -> "http:yads-xcsl.xml" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+  ":_17" -> "node_20" [label="has:label", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#label"];
+
+
+
+  "http:yads-xcsl.xml" [color=plum, URL="http:yads-xcsl.xml"];
+
+  "node_20" [shape=box, label="XCSL"];
+
+}
+
+
+
+subgraph cluster_18 {
+
+
+
+  style=dashed; color=lightgrey;
+
+  fontname=arial; fontsize=11;
+
+  fontcolor="black"; label="Item - OMG Schema";
+
+
+
+  ":_18" [label="yads:MOF/XMI", color=lightgoldenrod];
+
+  ":_18" -> "http:yads-xmi.xml" [label="has:resource", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#resource"];
+
+  ":_18" -> "node_22" [label="has:label", URL="http://www2.elsevier.co.uk/~tony/1014/yads-schema-2002-04-03#label"];
+
+
+
+  "http:yads-xmi.xml" [color=plum, URL="http:yads-xmi.xml"];
+
+  "node_22" [shape=box, label="MOF/XMI"];
+
+}
+
+
+
+}
+
+
+
+  "node_25" [shape=box, label="Schemas for YADS"];
+
+}
+
+
+
+}
+

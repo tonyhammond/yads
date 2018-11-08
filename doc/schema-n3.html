@@ -1,0 +1,80 @@
+<html>
+<head>
+<link href="../css/yads.css" type=text/css rel=stylesheet>
+<title>YADS: N3</title>
+</head>
+<body>
+<h1>
+<img src="../imx/rdf_metadata_button.40">
+<i>YADS Model Schema - N3</i></h1>
+<hr>
+This is the Notation 3 schema for the YADS model.
+<p>
+<table width=100% border=1 cellpadding=5>
+<tr>
+<td>
+<pre><code>
+  &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+  &lt;!--
+  
+    YADS - Notation3
+  
+    This document describes YADS - A Description Service
+    in an RDF Schema using Notation3.
+  
+    ==
+  
+    // From RDF Schema for YADS
+
+    Resource:     doi:1014/yads-schema-2002-04-03
+    Comment:      RDF Schema for YADS - A Description Service
+    Author:       Tony Hammond &lt;tony_hammond@harcourt.com&gt;
+    Revision:     April 3, 2002 - Tony Hammond
+  
+    Copyright (c) 2002 Elsevier Science Ltd. All rights reserved. 
+
+    == 
+
+    @prefix  : &lt;#&gt; .
+    @prefix s: &lt;http://www.w3.org/2000/01/rdf-schema&gt; .
+  
+    # Item class ( :collection | :resource )
+    :Item a s:Class .
+    # Nest class ( :collection & :resource )
+    :Nest a s:Class .
+  
+    # Resource properties
+    :collection a s:Property ;
+        s:domain :Item, :Nest ; s:range s:Container .
+    :resource a s:Property ;
+        s:domain :Item, :Nest ; s:range s:Resource .
+  
+    # Literal properties
+    :access a s:Property ;
+        s:domain :Item, :Nest ; s:range s:Literal .
+    :detail a s:Property ;
+        s:domain :Item, :Nest ; s:range s:Literal .
+    :directive a s:Property ;
+        s:domain :Item, :Nest ; s:range s:Literal .
+    :label a s:Property ;
+        s:domain :Item, :Nest ; s:range s:Literal .
+    :role a s:Property ;
+        s:domain :Item, :Nest ; s:range s:Literal .
+    :service a s:Property ;
+        s:domain :Item, :Nest ; s:range s:Literal .
+    :type a s:Property ;
+        s:domain :Item, :Nest ; s:range s:Literal .
+  
+  --&gt;
+  &lt;yads/&gt;
+</code></pre>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr>
+Copyright &copy; 2002 Elsevier Science Ltd. All rights reserved. 
+</body>
+</html>

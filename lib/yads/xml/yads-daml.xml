@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+  YADS - DAML+OIL
+
+  This document describes YADS - A Description Service
+  in a DAML+OIL Schema using an RDF/XML serialization.
+
+  ==
+
+  // From RDF Schema for YADS
+
+  Resource:     doi:1014/yads-schema-2002-04-03
+  Comment:      RDF Schema for YADS - A Description Service
+  Author:       Tony Hammond <tony_hammond@harcourt.com>
+  Revision:     April 3, 2002 - Tony Hammond
+
+  Copyright (c) 2002 Elsevier Science Ltd. All rights reserved. 
+
+-->
+
+<r:RDF
+  xmlns:r="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:s="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:d="http://www.w3.org/2001/10/daml+oil#"
+>
+
+<!--
+  YADS - Ontology
+  ~
+-->
+
+<d:Ontology r:about="">
+  <d:versionInfo>0.1</d:versionInfo>
+  <s:comment>An Ontology for YADS.</s:comment>
+  <d:imports r:resource="http://www.w3.org/2001/10/daml+oil"/>
+</d:Ontology>
+
+<!--
+  YADS - Base Classes
+  ~
+-->
+
+<!-- "Item" class -->
+<d:Class r:ID="Item">
+  <s:label>Item</s:label>
+  <s:comment>Item - Class for any "Item" object which types a blank node used to associate a resource or resource hierarchy with properties.</s:comment>
+  <!-- Constrain resource-type properties -->
+  <s:subClassOf>
+    <r:Alt>
+      <r:li>
+        <r:Bag>
+          <r:li>
+            <d:Restriction d:cardinality="1">
+              <d:onProperty r:resource="#resource"/>
+            </d:Restriction>
+          </r:li>
+          <r:li>
+            <d:Restriction d:cardinality="0">
+              <d:onProperty r:resource="#collection"/>
+            </d:Restriction>
+          </r:li>
+        </r:Bag>
+      </r:li>
+      <r:li>
+        <r:Bag>
+          <r:li>
+            <d:Restriction d:cardinality="0">
+              <d:onProperty r:resource="#resource"/>
+            </d:Restriction>
+          </r:li>
+          <r:li>
+            <d:Restriction d:cardinality="1">
+              <d:onProperty r:resource="#collection"/>
+            </d:Restriction>
+          </r:li>
+        </r:Bag>
+      </r:li>
+    </r:Alt>
+  </s:subClassOf>
+  <!-- Constrain literal-type properties -->
+  <s:subClassOf>
+    <d:Restriction d:maxCardinality="1">
+      <d:onProperty r:resource="#access"/>
+      <d:onProperty r:resource="#detail"/>
+      <d:onProperty r:resource="#directive"/>
+      <d:onProperty r:resource="#label"/>
+      <d:onProperty r:resource="#role"/>
+      <d:onProperty r:resource="#service"/>
+      <d:onProperty r:resource="#type"/>
+    </d:Restriction>
+  </s:subClassOf>
+</d:Class>
+
+<!-- "Nest" class -->
+<d:Class r:ID="Nest">
+  <s:label>Nest</s:label>
+  <s:comment>Nest - Class for any "Nest" object which types a blank node
+  used to associate a resource with a resource hierarchy and associates
+  properties with the resource/hierarchy association.</s:comment>
+  <!-- Constrain resource-type properties -->
+  <s:subClassOf>
+    <d:Restriction d:cardinality="1">
+      <d:onProperty r:resource="#resource"/>
+      <d:onProperty r:resource="#collection"/>
+    </d:Restriction>
+  </s:subClassOf>
+  <!-- Constrain literal-type properties -->
+  <s:subClassOf>
+    <d:Restriction d:maxCardinality="1">
+      <d:onProperty r:resource="#access"/>
+      <d:onProperty r:resource="#detail"/>
+      <d:onProperty r:resource="#directive"/>
+      <d:onProperty r:resource="#label"/>
+      <d:onProperty r:resource="#role"/>
+      <d:onProperty r:resource="#service"/>
+      <d:onProperty r:resource="#type"/>
+    </d:Restriction>
+  </s:subClassOf>
+</d:Class>
+
+<!--
+  YADS - Base Properties
+  ~
+-->
+
+<!-- First the resource properties -->
+
+<!-- "collection" property -->
+<d:ObjectProperty r:ID="collection">
+  <s:label>collection</s:label>
+  <s:comment>collection - Property attributing a "collection" element for grouping resources (a Container).</s:comment>
+  <s:range r:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Container"/>
+  <s:domain r:resource="#Item"/>
+  <s:domain r:resource="#Nest"/>
+</d:ObjectProperty>
+
+<!-- "resource" property -->
+<d:ObjectProperty r:ID="resource">
+  <s:label>resource</s:label>
+  <s:comment>resource - Property attributing a "resource" element (a Resource).</s:comment>
+  <s:range r:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Resource"/>
+  <s:domain r:resource="#Item"/>
+  <s:domain r:resource="#Nest"/>
+</d:ObjectProperty>
+
+<!-- Then the literal properties -->
+
+<!-- "access" property -->
+<d:ObjectProperty r:ID="access">
+  <s:label>access</s:label>
+  <s:comment>access - Property attributing an "access" element for addressing a resource (a Literal).</s:comment>
+  <s:range r:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/>
+  <s:domain r:resource="#Item"/>
+  <s:domain r:resource="#Nest"/>
+</d:ObjectProperty>
+
+<!-- "detail" property -->
+<d:ObjectProperty r:ID="detail">
+  <s:label>detail</s:label>
+  <s:comment>detail - Property attributing a "detail" element for describing a resource (a Literal).</s:comment>
+  <s:range r:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/>
+  <s:domain r:resource="#Item"/>
+  <s:domain r:resource="#Nest"/>
+</d:ObjectProperty>
+
+<!-- "directive" property -->
+<d:ObjectProperty r:ID="directive">
+  <s:label>directive</s:label>
+  <s:comment>directive - Property attributing a "directive" element for directing the behaviour of a service component (a Literal).</s:comment>
+  <s:range r:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/>
+  <s:domain r:resource="#Item"/>
+  <s:domain r:resource="#Nest"/>
+</d:ObjectProperty>
+
+<!-- "label" property -->
+<d:ObjectProperty r:ID="label">
+  <s:label>label</s:label>
+  <s:comment>label - Property attributing a "label" element for representing a resource in a display service (a Literal).</s:comment>
+  <s:range r:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/>
+  <s:domain r:resource="#Item"/>
+  <s:domain r:resource="#Nest"/>
+</d:ObjectProperty>
+
+<!-- "role" property -->
+<d:ObjectProperty r:ID="role">
+  <s:label>role</s:label>
+  <s:comment>role - Property attributing a "role" element for relating a resource (a Literal).</s:comment>
+  <s:range r:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/>
+  <s:domain r:resource="#Item"/>
+  <s:domain r:resource="#Nest"/>
+</d:ObjectProperty>
+
+<!-- "service" property -->
+<d:ObjectProperty r:ID="service">
+  <s:label>service</s:label>
+  <s:comment>service - Property attributing a "service" element for a service component (a Literal).</s:comment>
+  <s:range r:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/>
+  <s:domain r:resource="#Item"/>
+  <s:domain r:resource="#Nest"/>
+</d:ObjectProperty>
+
+<!-- "type" property -->
+<d:ObjectProperty r:ID="type">
+  <s:label>type</s:label>
+  <s:comment>type - Property attributing a "type" element for typing a resource (a Literal).</s:comment>
+  <s:range r:resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/>
+  <s:domain r:resource="#Item"/>
+  <s:domain r:resource="#Nest"/>
+</d:ObjectProperty>
+
+</r:RDF>
+

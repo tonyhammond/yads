@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!-- 
+  MetroRail
+
+  MetroRail implements the YADS model to describe "Metro Rail"
+  - Los Angeles' underground rail network - as an example of a
+  complex resource association
+--> 
+<yads>
+  <nest>
+    <!-- MetroRail -->
+    <resource>doi:1014/metro</resource>
+    <property type="label">MetroRail</property>
+    <property type="detail">
+      MetroRail implements the YADS model to describe "Metro Rail"
+      - Los Angeles' underground rail network - as an example of a
+      complex resource association
+    </property>
+    <collection>
+      <nest>
+        <!-- Application Profile -->
+        <resource>doi:1014/profile.metro</resource>
+        <property type="type">doi:Profile</property>
+        <property type="label">MetroRail</property>
+        <property type="detail">MetroRail - The LA Metro Rail.</property>
+        <collection>
+          <item>
+            <resource>doi:1014/metro/blue_line</resource>
+            <property type="type">metro:Line</property>
+          </item>
+          <item>
+            <resource>doi:1014/metro/green_line</resource>
+            <property type="type">metro:Line</property>
+          </item>
+          <item>
+            <resource>doi:1014/metro/red_line</resource>
+            <property type="type">metro:Line</property>
+          </item>
+        </collection>
+      </nest>
+    </collection>
+  </nest>
+</yads>

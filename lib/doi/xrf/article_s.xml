@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   DOI use case: Article/Suppl. Material
+
+   Here an article is linked to an article supplement.
+-->
+<doi_data>
+  <doi>10.1006/asle.2000.0016</doi>
+  <collection>
+    <item>
+      <resource/>
+      <property type="detail">Resources for Article
+      &lt;doi:10.1006/asle.2000.0016&gt;</property>
+    </item>
+    <item>
+  <collection>
+    <item>
+      <resource>http://www.idealibrary.com/links/doi/10.1006/asle.2000.0016</resource>
+      <property type="label">ASL (2000) 1: p. 156</property>
+      <property type="type">xref:Article</property>
+      <property type="access">:default</property>
+    </item>
+    <item>
+      <resource>doi:10.1006/asle.2000.0016.s001</resource>
+      <property type="type">xref:Supplement</property>
+    </item>
+  </collection>
+    </item>
+  </collection>
+</doi_data>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   DOI use case: Formats (Links)
+
+   Here two manifestations of a journal article are managed. Links
+   are made to each resource.
+-->
+<doi_data>
+  <doi>10.1006/jmbi.2002.5438</doi>
+  <collection>
+    <item>
+      <resource/>
+      <property type="detail">Resources for Article
+      &lt;doi:10.1006/jmbi.2002.5438&gt;</property>
+    </item>
+    <item>
+  <collection>
+    <item>
+      <resource>http://www.idealibrary.com/links/doi/10.1006/jmbi.2002.5438</resource>
+      <property type="access">:default</property>
+    </item>
+    <item>
+  <collection order="choice">
+    <item>
+      <resource>http://www.idealibrary.com/links/doi/10.1006/jmbi.2002.5438/full</resource>
+      <property type="type">xref:FormatHTML</property>
+    </item>
+    <item>
+      <resource>http://www.idealibrary.com/links/doi/10.1006/jmbi.2002.5438/pdf</resource>
+      <property type="type">xref:FormatPDF</property>
+    </item>
+  </collection>
+    </item>
+  </collection>
+      <property type="label">J. Mol. Biol. (2002) 317: p. 375</property>
+      <property type="type">xref:Article</property>
+    </item>
+  </collection>
+</doi_data>

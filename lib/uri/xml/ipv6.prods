@@ -1,0 +1,61 @@
+<item>
+<collection order="sequenced">
+<item>
+<collection order="sequenced">
+<nest>
+<!-- \#19: h4 -->
+<data>h4</data>
+<collection order="choice">
+<item>
+<data>4HEXDIG</data>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+<item>
+<data>%3A</data>
+</item>
+</collection>
+</item>
+<nest>
+<!-- \#20: ls32 -->
+<data>ls32</data>
+<collection order="sequenced">
+<item>
+<data>h4</data>
+</item>
+<item>
+<data>%3A</data>
+</item>
+<item>
+<data>h4</data>
+</item>
+</collection>
+<property type="type">bnf:Rule</property>
+</nest>
+</collection>
+</item>
+
+<item>
+<collection order="sequenced">
+<item>
+<data>%3A%3A</data>
+</item>
+<item>
+<collection order="sequenced">
+<item>
+<data>h4</data>
+</item>
+<item>
+<data>%3A</data>
+</item>
+</collection>
+</item>
+<item>
+<data>ls32</data>
+</item>
+</collection>
+</item>
+
+<!-- 9 IPv6address production components -->
+

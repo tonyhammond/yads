@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <nest>
+        <!-- Application Profile -->
+        <resource>doi:1014/profile.metro</resource>
+        <property type="type">doi:Profile</property>
+        <collection>  
+
+<!--
+  MetroRail - Washington Station
+
+  The MetroRail set of resource descriptions is a working
+  demonstration of the YADS model
+-->
+<yads>
+<nest>
+<!-- Washington Station -->
+<resource>doi:1014/metro/washington</resource>
+<collection>
+
+<item>
+<!-- Location -->
+<collection>
+<item>
+<data>1945 Long Beach Av., Los Angeles 90021</data>
+<property type="type">metro:Address</property>
+</item>
+</collection>
+</item>
+
+<item>
+<!-- Line Interchanges -->
+<collection>
+
+<nest>
+<!-- Line Interchange -->
+<resource>doi:1014/metro/blue_line</resource>
+<collection>
+<nest>
+<!-- Next Stop Back -->
+<resource>doi:1014/metro/san_pedro</resource>
+<collection>
+<item>
+<data>0</data>
+<property type="type">metro:Mins</property>
+</item>
+</collection>
+<property type="type">metro:PrevStation</property>
+</nest>
+<nest>
+<!-- Next Stop -->
+<resource>doi:1014/metro/vernon</resource>
+<collection>
+<item>
+<data>0</data>
+<property type="type">metro:Mins</property>
+</item>
+</collection>
+<property type="type">metro:NextStation</property>
+</nest>
+</collection>
+<property type="type">metro:LineChange</property>
+</nest>
+
+</collection>
+</item>
+
+        </collection>
+      </nest>
+</collection>
+<property type="type">metro:Station</property>
+<property type="label">Washington</property>
+</nest>
+</yads>

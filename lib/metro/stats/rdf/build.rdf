@@ -1,0 +1,12 @@
+#!/usr/bin/tcsh
+
+popd
+
+foreach f (`ls *\.xml`)
+  # build typed node RDF descriptions
+  xalan -xsl ../../../../xsl/yads2rdf.xsl -in $f -out `basename $f .xml`.rdf -param type-nodes 0
+  # build typed node RDF descriptions
+  # xalan -xsl ../../../../xsl/yads2rdf.xsl -in $f -out t_`basename $f .xml`.rdf -param type-nodes 1
+end
+
+

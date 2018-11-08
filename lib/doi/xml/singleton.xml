@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   DOI use case: Redirect
+
+   Here is the current use case for DOI - a simple redirect.
+-->
+
+<yads>
+<nest>
+<resource>doi:10.1006/jmbi.2002.1234</resource>
+<collection>  
+  <item>
+    <resource>http://www.idealibrary.com/links/doi/10.1006/jmbi.2002.1234</resource>
+  </item>
+</collection>  
+</nest>
+</yads>
