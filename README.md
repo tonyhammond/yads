@@ -1,5 +1,4 @@
-# yads
-YADS - A Description Service
+# YADS - A Description Service
 
 YADS was a data model for describing annotated hierarchical resource bundles in a generic way which could be mapped to other models and serializations.
 
