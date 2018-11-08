@@ -1,7 +1,7 @@
-*.d linguist-detectable=false
+*.d linguist-detectable=true
 *.dot linguist-detectable=false
 *.html linguist-detectable=false
 *.rdf linguist-detectable=false
 *.svg linguist-detectable=false
-*.xml linguist-detectable=true
+*.xml linguist-detectable=false
 
