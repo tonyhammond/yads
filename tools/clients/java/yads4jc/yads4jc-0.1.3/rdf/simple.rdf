@@ -1,0 +1,28 @@
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:doi="doi:1014/10.1000/system.schema.2001-07-26#"
+>
+  <doi:DObject rdf:about="doi:10.1234/567">
+    <doi:contains>
+      <rdf:Bag>
+        <rdf:li rdf:parseType="Resource">
+          <doi:profile rdf:resource="1014/10.system/profile.zero"/>
+          <doi:contains>
+            <rdf:Bag>
+              <rdf:li rdf:parseType="Resource">
+                <doi:resource rdf:resource="http://www.doi.org"/>
+                <doi:label>IDF</doi:label>
+                <doi:detail>International DOI Foundation.</doi:detail>
+              </rdf:li>
+              <rdf:li rdf:parseType="Resource">
+                <doi:resource rdf:resource="http://www.handle.net"/>
+                <doi:label>CNRI</doi:label>
+                <doi:detail>Corporation for National Research Initiatives.</doi:detail>
+              </rdf:li>
+            </rdf:Bag>
+          </doi:contains>
+        </rdf:li>
+      </rdf:Bag>
+    </doi:contains>
+  </doi:DObject>
+</rdf:RDF>

@@ -1,0 +1,113 @@
+#!/usr/bin/python
+
+########################################################################
+#
+# yadt - Yet Another DOI Tool (this version for Python)
+#
+# Author - Tony Hammond <tony_hammond@harcourt.com>
+#
+# Copyright (c) 2001 by Academic Press, a Harcourt Science and Technology 
+# Company
+# 
+########################################################################
+
+import dataObject
+import getopt
+import re
+import os, sys, traceback
+import string
+
+class YADT:
+
+    YADT_VERSION = '0.1'
+
+    def __init__(self):
+
+        self.opts = {}
+        self.doi_args = []
+
+        opts, args = getopt.getopt(sys.argv[1:], 'dtvkmu:p:Vh',
+                       [ 'dump', 'types', 'values', 'kernel', 'metadata',
+                         'username=', 'password=', 'version', 'help'])   
+
+        for opt in opts:
+            self.opts[opt[0]] = opt[1]
+    
+        self.args = args
+
+
+    def _version(self):
+
+        print 'This is YADT (Yet Another DOI Tool, Python version ', YADT_VERSION, ')'
+        print '' 
+        print 'Copyright 2001, Academic Press, Harcourt, Inc.'
+        print '' 
+        print 'This program is free software you can redistribute it and/or'
+        print 'modify it under the same terms as Python itself.'
+
+        sys.exit(1)
+
+
+    def _usage(self):
+
+        print 'Usage: yadt [options] <doi> ...'
+        print ''
+        print '  -d          : print dump of the DataGroups'
+        print '  -t          : print the DataObject data types'
+        print '  -v          : print the DataObject values'
+        print ''
+        print '  -k          : print DOI Kernel Metadata'
+        print '  -m          : print DOI Application Profile Metadata'
+        print '  -u username : authorized username'
+        print '  -p password : authorized password'
+        print ''
+        print '  -h          : print this help message'
+        print '  -V          : print the version number of yadt'
+
+        sys.exit(1)
+
+
+def _yadt():
+
+    y = YADT()
+
+    if y.opts.has_key('-h'):
+        print y._usage()
+
+    elif y.opts.has_key('-V'):
+        print y._version()
+
+    for doi in y.args: 
+
+        # doi = re.sub(r'^doi:', '', doi)  # Remove possible URI scheme
+
+        d = dataObject.DataObject(doi)
+        d.readDataStore()
+
+        if y.opts.has_key('-d'):
+            d.dumpDataGroups()
+
+        elif y.opts.has_key('-t'):
+            for type in d.dataTypes():
+                print type
+
+        elif y.opts.has_key('-t'):
+            for value in d.dataValues():
+                print value
+
+        elif y.opts.has_key('-u'):
+            d.setUsername(y.opts['-u'])
+
+        elif y.opts.has_key('-p'):
+            d.setPassword(y.opts['-p'])
+
+        elif y.opts.has_key('-k'):
+            print d.kernelMetadata()
+
+        elif y.opts.has_key('-m'):
+            print d.profileMetadata()
+
+
+if __name__ == '__main__':
+    _yadt()
+

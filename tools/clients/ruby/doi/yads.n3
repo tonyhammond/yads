@@ -1,0 +1,40 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+:DObject rdf:type rdfs:Class.
+
+:Agent rdfs:subClassOf :DObject.
+:Null rdfs:subClassOf :DObject.
+:Profile rdfs:subClassOf :DObject.
+:Registry rdfs:subClassOf :DObject.
+:Schema rdfs:subClassOf :DObject.
+:Service rdfs:subClassOf :DObject.
+:Type rdfs:subClassOf :DObject.
+
+:access rdf:type rdfs:Property ;
+    rdfs:domain :DObject ; rdfs:range rdfs:Literal .
+:contains rdf:type rdfs:Property ;
+    rdfs:domain :DObject ; rdfs:range rdfs:Container .
+:detail rdf:type rdfs:Property ;
+    rdfs:domain :DObject ; rdfs:range rdfs:Literal .
+:label rdf:type rdfs:Property ;
+    rdfs:domain :DObject ; rdfs:range rdfs:Literal .
+:resolve rdf:type rdfs:Property ;
+    rdfs:domain :DObject ; rdfs:range rdfs:Literal .
+:resource rdf:type rdfs:Property ;
+    rdfs:domain :DObject ; rdfs:range rdfs:Resource .
+:role rdf:type rdfs:Property ;
+    rdfs:domain :DObject ; rdfs:range rdfs:Literal .
+:type rdf:type rdfs:Property ;
+    rdfs:domain :DObject ; rdfs:range rdfs:Literal .
+
+:agent rdf:type rdfs:Property ;
+    rdfs:domain :DObject ; rdfs:range rdfs:Agent .
+:null rdf:type rdfs:Property ;
+    rdfs:domain :DObject ; rdfs:range rdfs:Null .
+:profile rdf:type rdfs:Property ;
+    rdfs:domain :DObject ; rdfs:range rdfs:Profile .
+:schema rdf:type rdfs:Property ;
+    rdfs:domain :DObject ; rdfs:range rdfs:Schema .
+:service rdf:type rdfs:Property ;
+    rdfs:domain :DObject ; rdfs:range rdfs:Service .

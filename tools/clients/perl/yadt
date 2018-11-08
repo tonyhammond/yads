@@ -1,0 +1,98 @@
+#!/usr/bin/perl
+
+########################################################################
+#
+# yadt - Yet Another DOI Tool (this version for Perl)
+#
+# Author - Tony Hammond <tony_hammond@harcourt.com>
+#
+# Copyright (c) 2001 by Academic Press, a Harcourt Science and Technology 
+# Company
+# 
+########################################################################
+
+use DOI::DataObject;
+use Getopt::Std;
+
+$YADT_VERSION = '0.1';
+
+_usage() unless getopts('dvtkmp:u:hV');
+_usage() if $opt_h;
+_version() if $opt_V;
+
+  while ($doi = shift) {
+
+    $doi =~ s|^doi:||;	# Remove possible URI scheme
+
+    my $d = DOI::DataObject->get($doi);
+
+    $opt_u && do {
+      $d->setUsername($opt_u);
+    };
+
+    $opt_p && do {
+      $d->setPassword($opt_p);
+    };
+
+    $opt_d && do {
+      $d->dumpDataGroups;
+    };
+
+    $opt_t && do {
+      print "$_\n" for $d->dataTypes;
+    };
+
+    $opt_v && do {
+      print "$_\n" for $d->dataValues;
+    };
+
+    $opt_k && do {
+      print $d->kernelMetadata;
+    };
+
+    $opt_m && do {
+      print $d->profileMetadata;
+    };
+
+  }
+
+sub _version {
+
+  print << "EOT";
+This is YADT (Yet Another DOI Tool, Perl version $YADT_VERSION)
+
+Copyright 2001, Academic Press, Harcourt, Inc.
+
+This program is free software; you can redistribute it and/or
+modify it under the same terms as Perl itself.
+EOT
+
+  exit;
+
+}
+
+sub _usage {
+
+  print << "EOT";
+
+Usage: yadt [options] <doi> ...
+
+  -d          : print dump of the DataGroups
+  -t          : print the DataObject data types
+  -v          : print the DataObject values
+
+  -k          : print DOI Kernel Metadata
+  -m          : print DOI Application Profile Metadata
+  -u username : authorized username
+  -p password : authorized password
+
+  -h          : print this help message
+  -V          : print the version number of yadt
+
+EOT
+
+  exit;
+
+}
+
+__END__

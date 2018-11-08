@@ -1,0 +1,108 @@
+<html>
+<head>
+<title>yads: model</title>
+<style type='text/css'>
+<!--
+  body { background-color: white }
+  body { color: black }
+  body { font-family: arial, helvetica, sans-serif }
+  body { font-size: 12pt }
+  h1 { color: slateblue }
+  h1 { font-size: 22pt }
+  h3 { color: slateblue }
+  h1 { font-family: arial, helvetica, sans-serif }
+  p { font-family: arial, helvetica, sans-serif }
+  td { font-family: arial, helvetica, sans-serif }
+  hr { font-family: arial, helvetica, sans-serif }
+-->
+</style>
+</head>
+<body>
+<center>
+<table width=90% border=0>
+<tr>
+<td>
+<table width=100% border=0>
+<tr>
+<td>
+<h1><i>yads: DObject Model</i></h1>
+<hr>
+</td>
+</tr>
+<tr>
+<td>
+The following figures trace the evolution of resolving a DOI as a network identifier: "Single Resolution", "Multiple Resolution", 
+and now leading to what we might best term "Intelligent Resolution".
+<p>
+<i><b>DOI Single Resolution</b></i>
+<br>
+This is the current position with DOI - one DOI resolves to one URL. This is what is being currently implemented in CrossRef.
+<p>
+<img src='imx/one2one.gif'>
+<p>
+Essentially this provides similar functionality to a PURL - a Persistent URL.
+<p>
+<i><b>DOI Multiple Resolution</b></i>
+<br>
+The next step in the evolution is the "One to Many" scenario.
+ The demo DOIs for D-Lib magazine issues which link mirror sites
+hosting D-Lib magazine can be resolved this way.
+<p>
+<img src='imx/one2many.gif'>
+<p>
+The problem with this approach is that one doesn't know what to return
+to the end user - a single URL, or multiple URLs. Also one has no means of presenting this information 
+- URLs in their raw state are at best an unpalatable mouthful for the end user.
+<p>
+<i><b>DOI Intelligent Resolution</b></i>
+<br>
+This is a goal of the DOI-SDI project which is
+aiming to supply a general framework for linking multiple resources. First we generalize the URL
+to any arbitrary resource which may be another DObject, a general web resource, or a literal (as presented in a
+URI of scheme "data:").
+The resources are qualified as required by <a href="properties.html">Model Properties</a>
+such as "detail" (a human readable description), "label" (a presentational element), etc.
+which together make up a composite resource group.
+<p>
+<img src='imx/resource.gif'>
+<p>
+These resource groups are then arranged within containers which have
+inherent orderings of: "unordered", "sequence", or "alternatives".
+<p>
+<img src='imx/group.gif'>
+<p>
+Note that group members may also be containers (ie have a property "contains") so that a
+complete resource hierarchy can be built up.
+<p>
+<img src='imx/group1.gif'>
+<p>
+Each resource hierarchy is to be interpreted by a particular DOI application (eg 
+CrossRef). Multiple
+hierarchies can be supported by adding a system property "profile" which is a DObject describing the
+application profile.
+<p>
+<img src='imx/DObject.gif'>
+<p>
+See <a href="principles.html">Design Principles</a> for further info.
+The underlying data model is RDF - An <a href="schema.html">RDFS Schema</a> is available.
+</td>
+</tr>
+</table>
+<table width=100% border=0>
+<tr>
+<td>
+<hr>
+<a href="mailto:tony_hammond@harcourt.com">Mailto</a>
+<br>
+Copyright &copy; 2001 by
+Academic Press, a Harcourt Science and Technology Company.
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</center>
+</body>
+</html>
+

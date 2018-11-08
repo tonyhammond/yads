@@ -1,0 +1,38 @@
+  sub _getXMLFromService {
+
+    my ($server, $path) = @_;
+ 
+    use LWP;
+    use URI::URL;
+  
+    my ($ua, $url, $req, $res);
+  
+    # Create the user agent object
+
+    $ua = new LWP::UserAgent;
+    # $ua->timeout('300');
+  
+    # Set up a request
+
+    $req = new HTTP::Request ('GET');
+  
+    # Create the URL object
+
+    $url = new URI::URL ("http://$server$path", '');
+
+    # Send the request and get a response back from the server
+
+    $req->url($url);
+
+    $res = $ua->request($req);
+     
+    # Test the status code
+
+    next if $res->code != 200;		# Try again
+              
+    return ($res->is_success) ? $res->content : undef;
+
+  }
+
+
+

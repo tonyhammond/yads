@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>yads: properties</title>
+<style type='text/css'>
+<!--
+  body { background-color: white }
+  body { color: black }
+  body { font-family: arial, helvetica, sans-serif }
+  body { font-size: 12pt }
+  h1 { color: slateblue }
+  h1 { font-size: 22pt }
+  h3 { color: slateblue }
+  h1 { font-family: arial, helvetica, sans-serif }
+  p { font-family: arial, helvetica, sans-serif }
+  td { font-family: arial, helvetica, sans-serif }
+  hr { font-family: arial, helvetica, sans-serif }
+-->
+</style>
+</head>
+<body>
+<center>
+<table width=90% border=0>
+<tr>
+<td>
+<table width=100% border=0>
+<tr>
+<td>
+<h1><i>yads: DObject Model Properties</i></h1>
+<hr>
+</td>
+</tr>
+<tr>
+<td>
+Properties come in two kinds:
+<dl>
+<dt><b>General Properties</b>
+<dd>These can be applied to both application objects as well as to system objects.
+<dt><b>System Properties</b>
+<dd>These are specific to system objects only. Such objects describe DOI Registration Agents, Application 
+Profiles, etc.
+</dl>
+The table below lists and defines each property by kind.
+<p>
+<table width=100% cellpadding=5 border=1>
+<tr valign=top>
+<td width=50%>
+<b>General Properties (8):</b>
+<dl>
+<dt><b>"access" [string]</b>
+<dd>A label to mark off an access point on a resource. Example is "default" to indicate to a DOI Service 
+the default resource to return.
+<dt><b>"contains" [string (keyword)]</b>
+<dd>Property set when a new container with a specified ordering is added to the resource group. Takes as value one of: "alt" (alternatives), "bag" (unordered), 
+"seq" (sequence).
+<dt><b>"detail" [string]</b>
+<dd>A human readble description of a resource.
+<dt><b>"label" [string]</b>
+<dd>A presentational element standing for a resource in a display service.
+<dt><b>"resolve" [string (keyword)]</b>
+<dd>A directive which controls the resolution behaviour.
+Example is a directive to a DOI Service not to bundle a user-supplied parameter string with the resolution
+result set. Takes as value one of: "parameters", "no_parameters".
+<dt><b>"resource" [uri]</b>
+<dd>The group resource being qualified. This can be variously another "DObject" (identified by DOI, using the unregistered URI scheme "doi:"),
+ a general web "resource" (identified by any URI), or a "literal", ie an inline "resource" (identified by a URI of scheme "data:").
+<dt><b>"role" [string (keyword)]</b>
+<dd>Indicates the relationship of a DObject resource. Takes as value one of:
+    "alias", "ancestor", "child", "descendant", "following", "following_sibling", "parent",
+    "preceding", "preceding_sibling". 
+<dt><b>"type" [string]</b>
+<dd>An extensibility type mechanism. The value is the application type (or property) of a group resource and the
+definition is maintained in a schema registered under the Application Profile.
+</dl>
+</td>
+<td width=50% bgcolor=#dddddd>
+<b>System Properties (5):</b>
+<dl>
+<dt><b>"agent" [uri (doi:)]</b>
+<dd>A DOI Registration Agent.
+<dt><b>"null" [uri (doi:)]</b>
+<dd>The positive absence of value. Similar to "nil", "null" or "undef" in programming languages.
+<dt><b>"profile" [uri (doi:)]</b>
+<dd>A DOI Application Profile.
+<dt><b>"schema" [uri (doi:)]</b>
+<dd>An application-specific schema which defines registered types, etc.
+<dt><b>"service" [uri (doi:)]</b>
+<dd>A registered service. Example might be a metadata lookup service.
+</dl>
+</td>
+</tr>
+</table>
+<p>
+See <a href="principles.html">Design Principles</a> for further info.
+The underlying data model is RDF - An <a href="schema.html">RDFS Schema</a> is available.
+</td>
+</tr>
+</table>
+<table width=100% border=0>
+<tr>
+<td>
+<hr>
+<a href="mailto:tony_hammond@harcourt.com">Mailto</a>
+<br>
+Copyright &copy; 2001 by
+Academic Press, a Harcourt Science and Technology Company.
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</center>
+</body>
+</html>
+

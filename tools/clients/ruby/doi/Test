@@ -1,0 +1,36 @@
+Dump for 1014/1
+
+DObject Map = { ( 0  { ( 0 ) } ) }
+
+DObject Groups (2) =
+{
+  (
+    resource => http://ibm.com
+    {
+      (
+        resource => http://ibm.com
+      )
+    }
+  )
+}
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:doi="doi:1014/10.1000/system.schema.2001-07-26#"
+>
+<doi:Object rdf:about="doi:1014/1">
+  <doi:contains>
+    <rdf:Bag>
+      <rdf:li rdf:parseType="Resource">
+        <doi:resource rdf:resource="http://ibm.com"/>
+        <doi:contains>
+          <rdf:Bag>
+            <rdf:li rdf:parseType="Resource">
+              <doi:resource rdf:resource="http://ibm.com"/>
+            </rdf:li>
+          </rdf:Bag>
+        </doi:contains>
+      </rdf:li>
+    </rdf:Bag>
+  </doi:contains>
+</doi:Object>
+</rdf:RDF>

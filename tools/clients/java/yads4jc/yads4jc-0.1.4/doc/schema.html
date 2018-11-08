@@ -1,0 +1,240 @@
+<html>
+<head>
+<title>yads: schema</title>
+<style type='text/css'>
+<!--
+  body { background-color: white }
+  body { color: black }
+  body { font-family: arial, helvetica, sans-serif }
+  body { font-size: 12pt }
+  h1 { color: slateblue }
+  h1 { font-size: 22pt }
+  h3 { color: slateblue }
+  h1 { font-family: arial, helvetica, sans-serif }
+  p { font-family: arial, helvetica, sans-serif }
+  td { font-family: arial, helvetica, sans-serif }
+  hr { font-family: arial, helvetica, sans-serif }
+-->
+</style>
+</head>
+<body>
+<center>
+<table width=90% border=0>
+<tr>
+<td>
+<table width=100% border=0>
+<tr align=bottom>
+<td align=left valign=bottom>
+<h1><i>yads: DObject Model Schema</i></h1>
+This is the RDFS Schema for the DObject Model. Note that this is a work in progress and is open for comment.
+<hr>
+<table width=100% border=1 cellpadding=5 bgcolor=#dddddd>
+<tr>
+<td>
+<pre><code>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;!--
+
+  Resource:	doi:1014/10.system/schema.doi-schema-2001-09-03
+  Comment:	RDF Schema for the DObject Model
+  Author:	Tony Hammond (tony_hammond@harcourt.com)
+  Date:		January 12, 2001
+
+  Revision:	March 23, 2001 - Tony Hammond
+  Revision:	July 26, 2001 - Tony Hammond, Eamonn Neylon
+  Revision:	September 3, 2001 - Tony Hammond, Eamonn Neylon
+
+--&gt;
+
+&lt;RDF
+  xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"	
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"	
+  xmlns:rdfs=" http://www.w3.org/TR/2000/CR-rdf-schema-20000327#"
+&gt;
+
+&lt;!-- DOI Base Class --&gt;
+
+&lt;rdfs:Class ID="DObject"&gt;
+  &lt;rdfs:label&gt;DObject&lt;/rdfs:label&gt;
+  &lt;rdfs:comment&gt;DObject - Base class for any DObject within the DOI System.&lt;/rdfs:comment&gt;
+&lt;/rdfs:Class&gt;
+
+&lt;!-- DOI Core Classes --&gt;
+
+&lt;rdfs:Class ID="Agent"&gt;
+  &lt;rdfs:label&gt;Agent&lt;/rdfs:label&gt;
+  &lt;rdfs:comment&gt;Agent - Class for DOI Registration Agents.&lt;/rdfs:comment&gt;
+  &lt;rdfs:subClassOf resource="#DObject"/&gt;
+&lt;/rdfs:Class&gt;
+
+&lt;rdfs:Class ID="Null"&gt;
+  &lt;rdfs:label&gt;Null&lt;/rdfs:label&gt;
+  &lt;rdfs:comment&gt;Null - Class for DOI Null Resource.&lt;/rdfs:comment&gt;
+  &lt;rdfs:subClassOf resource="#DObject"/&gt;
+&lt;/rdfs:Class&gt;
+
+&lt;rdfs:Class ID="Profile"&gt;
+  &lt;rdfs:label&gt;Profile&lt;/rdfs:label&gt;
+  &lt;rdfs:comment&gt;Profile - Class for DOI Application Profiles.&lt;/rdfs:comment&gt;
+  &lt;rdfs:subClassOf resource="#DObject"/&gt;
+&lt;/rdfs:Class&gt;
+
+&lt;rdfs:Class ID="Registry"&gt;
+  &lt;rdfs:label&gt;Registry&lt;/rdfs:label&gt;
+  &lt;rdfs:comment&gt;Registry - Class for DOI Registries.&lt;/rdfs:comment&gt;
+  &lt;rdfs:subClassOf resource="#DObject"/&gt;
+&lt;/rdfs:Class&gt;
+
+&lt;rdfs:Class ID="Service"&gt;
+  &lt;rdfs:label&gt;Service&lt;/rdfs:label&gt;
+  &lt;rdfs:comment&gt;Service - Class for DOI Services.&lt;/rdfs:comment&gt;
+  &lt;rdfs:subClassOf resource="#DObject"/&gt;
+&lt;/rdfs:Class&gt;
+
+&lt;rdfs:Class ID="Schema"&gt;
+  &lt;rdfs:label&gt;Schema&lt;/rdfs:label&gt;
+  &lt;rdfs:comment&gt;Schema - Class for DOI Schemas.&lt;/rdfs:comment&gt;
+  &lt;rdfs:subClassOf resource="#DObject"/&gt;
+&lt;/rdfs:Class&gt;
+
+&lt;rdfs:Class ID="Type"&gt;
+  &lt;rdfs:label&gt;Type&lt;/rdfs:label&gt;
+  &lt;rdfs:comment&gt;Type - Class for DOI Core Types (aka Properties).&lt;/rdfs:comment&gt;
+  &lt;rdfs:subClassOf resource="#DObject"/&gt;
+&lt;/rdfs:Class&gt;
+
+&lt;!-- DOI Core General Properties --&gt;
+
+&lt;Property ID="access"&gt;
+  &lt;rdfs:label&gt;access&lt;/rdfs:label&gt;
+  &lt;rdfs:comment&gt;access - Property attributing an access point in the DObject resource hierarchy 
+                         (a string literal).&lt;/rdfs:comment&gt;
+  &lt;rdfs:range resource=" http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/&gt;
+  &lt;rdfs:domain resource="#DObject"/&gt;
+&lt;/Property&gt;
+
+&lt;Property ID="contains"&gt;
+  &lt;rdfs:label&gt;contains&lt;/rdfs:label&gt;
+  &lt;rdfs:comment&gt;contains - Property attributing a container for DObject resources
+                           (an RDF Container).&lt;/rdfs:comment&gt;
+  &lt;rdfs:range resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Container"/&gt;
+  &lt;rdfs:domain resource="#DObject"/&gt;
+&lt;/Property&gt;
+
+&lt;Property ID="detail"&gt;
+  &lt;rdfs:label&gt;detail&lt;/rdfs:label&gt;
+  &lt;rdfs:comment&gt;detail - Property attributing a DOI description element
+                         (a string literal).&lt;/rdfs:comment&gt;
+  &lt;rdfs:range resource=" http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/&gt;
+  &lt;rdfs:domain resource="#DObject"/&gt;
+&lt;/Property&gt;
+
+&lt;Property ID="label"&gt;
+  &lt;rdfs:label&gt;label&lt;/rdfs:label&gt;
+  &lt;rdfs:comment&gt;label - Property attributing a DOI label element
+                        (a string literal).&lt;/rdfs:comment&gt;
+  &lt;rdfs:range resource=" http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/&gt;
+  &lt;rdfs:domain resource="#DObject"/&gt;
+&lt;/Property&gt;
+
+&lt;Property ID="resolve"&gt;
+  &lt;rdfs:label&gt;resolve&lt;/rdfs:label&gt;
+  &lt;rdfs:comment&gt;resolve - Property attributing a DOI resolution directive
+                          (a string literal).&lt;/rdfs:comment&gt;
+  &lt;rdfs:range resource=" http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/&gt;
+  &lt;rdfs:domain resource="#DObject"/&gt;
+&lt;/Property&gt;
+
+&lt;Property ID="resource"&gt;
+  &lt;rdfs:label&gt;resource&lt;/rdfs:label&gt;
+  &lt;rdfs:comment&gt;resource - Property attributing a DOI resource element
+                           (a generic URI).&lt;/rdfs:comment&gt;
+  &lt;rdfs:range resource="http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Resource"/&gt;
+  &lt;rdfs:domain resource="#DObject"/&gt;
+&lt;/Property&gt;
+
+&lt;Property ID="role"&gt;
+  &lt;rdfs:label&gt;role&lt;/rdfs:label&gt;
+  &lt;rdfs:comment&gt;role - Property attributing a role to a DOI property
+                       (a string literal).&lt;/rdfs:comment&gt;
+  &lt;rdfs:range resource=" http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/&gt;
+  &lt;rdfs:domain resource="#DObject"/&gt;
+&lt;/Property&gt;
+
+&lt;Property ID="type"&gt;
+  &lt;rdfs:label&gt;type&lt;/rdfs:label&gt;
+  &lt;rdfs:comment&gt;type - Property attributing a DOI extension type
+                       (a string literal).&lt;/rdfs:comment&gt;
+  &lt;rdfs:range resource=" http://www.w3.org/TR/2000/CR-rdf-schema-20000327#Literal"/&gt;
+  &lt;rdfs:domain resource="#DObject"/&gt;
+&lt;/Property&gt;
+
+&lt;!-- DOI Core System Properties --&gt;
+
+&lt;Property ID="agent"&gt;
+  &lt;rdfs:label&gt;agent&lt;/rdfs:label&gt;
+  &lt;rdfs:comment&gt;agent - Property attributing a DOI Registration Agent
+                        (an Agent class DObject).&lt;/rdfs:comment&gt;
+  &lt;rdfs:range resource="#Agent"/&gt;
+  &lt;rdfs:domain resource="#DObject"/&gt;
+&lt;/Property&gt;
+
+&lt;Property ID="null"&gt;
+  &lt;rdfs:label&gt;null&lt;/rdfs:label&gt;
+  &lt;rdfs:comment&gt;null - Property attributing a DOI Null Resource
+                       (a Null class DObject).&lt;/rdfs:comment&gt;
+  &lt;rdfs:range resource="#Null"/&gt;
+  &lt;rdfs:domain resource="#DObject"/&gt;
+&lt;/Property&gt;
+
+&lt;Property ID="profile"&gt;
+  &lt;rdfs:label&gt;profile&lt;/rdfs:label&gt;
+  &lt;rdfs:comment&gt;profile - Property attributing a DOI Application Profile
+                          (a Profile class DObject).&lt;/rdfs:comment&gt;
+  &lt;rdfs:range resource="#Profile"/&gt;
+  &lt;rdfs:domain resource="#DObject"/&gt;
+&lt;/Property&gt;
+
+&lt;Property ID="schema"&gt;
+  &lt;rdfs:label&gt;schema&lt;/rdfs:label&gt;
+  &lt;rdfs:comment&gt;schema - Property attributing a DOI Application Schema
+                         (a Schema class DObject).&lt;/rdfs:comment&gt;
+  &lt;rdfs:range resource="#Schema"/&gt;
+  &lt;rdfs:domain resource="#DObject"/&gt;
+&lt;/Property&gt;
+
+&lt;Property ID="service"&gt;
+  &lt;rdfs:label&gt;service&lt;/rdfs:label&gt;
+  &lt;rdfs:comment&gt;service -  Property attributing a DOI Service
+                           (a Service class DObject).&lt;/rdfs:comment&gt;
+  &lt;rdfs:range resource="#Service"/&gt;
+  &lt;rdfs:domain resource="#DObject"/&gt;
+&lt;/Property&gt;
+
+&lt;/RDF&gt;
+
+</code></pre>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table width=100% border=0>
+<tr>
+<td>
+<hr>
+<a href="mailto:tony_hammond@harcourt.com">Mailto</a>
+<br>
+Copyright &copy; 2001 by
+Academic Press, a Harcourt Science and Technology Company.
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</center>
+</body>
+</html>
