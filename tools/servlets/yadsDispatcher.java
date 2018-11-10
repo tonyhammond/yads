@@ -10,8 +10,6 @@
   #
   # Author - Tony Hammond <mailto:tony_hammond@harcourt.com>
   #
-  # Copyright 2001  - Academic Press, a Harcourt Science and Technology Company.
-  #
   ########################################################################
 */
 

@@ -10,8 +10,6 @@
   #
   # Author - Tony Hammond <mailto:tony_hammond@harcourt.com>
   #
-  # Copyright 2001  - Academic Press, a Harcourt Science and Technology Company.
-  #
   ########################################################################
 */
 
@@ -1805,8 +1803,6 @@ public class yyads extends HttpServlet implements java.io.Serializable {
       out.println("<hr>");
       out.println("<a href=\"mailto:tony_hammond@harcourt.com\">Mailto</a>");
       out.println("<br>");
-      out.println("Copyright &copy; 2001 by");
-      out.println("Academic Press, a Harcourt Science and Technology Company.");
       out.println("</td>");
       out.println("</tr>");
       out.println("</table>");

@@ -6,9 +6,6 @@
 #
 # Author - Tony Hammond <tony_hammond@harcourt.com>
 #
-# Copyright (c) 2001 by Academic Press, a Harcourt Science and Technology 
-# Company
-# 
 ########################################################################
 
 import dataObject
@@ -39,8 +36,6 @@ class YADT:
     def _version(self):
 
         print 'This is YADT (Yet Another DOI Tool, Python version ', YADT_VERSION, ')'
-        print '' 
-        print 'Copyright 2001, Academic Press, Harcourt, Inc.'
         print '' 
         print 'This program is free software you can redistribute it and/or'
         print 'modify it under the same terms as Python itself.'

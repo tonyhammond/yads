@@ -16,6 +16,5 @@
 #   Author:       Tony Hammond <tony_hammond@harcourt.com>
 #   Revision:     April 3, 2002 - Tony Hammond
 # 
-#   Copyright (c) 2002 Elsevier Science Ltd. All rights reserved. 
 # 
 # 

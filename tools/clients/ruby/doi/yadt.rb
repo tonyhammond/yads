@@ -6,9 +6,6 @@
 #
 # Author - Tony Hammond <tony_hammond@harcourt.com>
 #
-# Copyright (c) 2001 by Academic Press, a Harcourt Science and Technology 
-# Company
-# 
 ########################################################################
 
 require 'dataObject'
@@ -47,8 +44,6 @@ class YADT
   
      print <<EOT
 This is YADT (Yet Another DOI Tool, Ruby version #{YADT_VERSION})
-  
-Copyright 2001, Academic Press, Harcourt, Inc.
   
 This program is free software you can redistribute it and/or
 modify it under the same terms as Ruby itself.

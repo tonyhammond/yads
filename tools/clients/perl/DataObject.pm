@@ -4,9 +4,6 @@
 #
 # Author - Tony Hammond <tony_hammond@harcourt.com>
 #
-# Copyright (c) 2001 by Academic Press, a Harcourt Science and Technology 
-# Company
-# 
 ########################################################################
 
 package DOI::DataObject;
@@ -1196,10 +1193,5 @@ and $d->removeDatatore.
 =head1 AUTHOR
 
 Tony Hammond <F<tony_hammond@harcourt.com>>
-
-=head1 COPYRIGHT
-
-Copyright (c) 2001 by Academic Press, a Harcourt Science and Technology 
-Company
 
 =cut

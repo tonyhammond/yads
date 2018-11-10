@@ -36,7 +36,6 @@
   Author: Tony Hammond <mailto:tony_hammond@harcourt.com>
   Date:   2002.03.27
 
-  Copyright (c) 2002 Elsevier Science Ltd. All rights reserved.
 -->
 
 <xsl:output method="text" version="1.0" indent="no"/>

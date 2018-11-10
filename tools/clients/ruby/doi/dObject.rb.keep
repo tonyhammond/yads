@@ -4,9 +4,6 @@
 #
 # Author - Tony Hammond <tony_hammond@harcourt.com>
 # 
-# Copyright (c) 2001 by Academic Press, a Harcourt Science and Technology 
-# Company
-#
 ########################################################################
 
 require 'net/http'

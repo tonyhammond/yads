@@ -5,9 +5,6 @@
   #
   # Author - Tony Hammond <tony_hammond@harcourt.com>
   # 
-  # Copyright (c) 2001 by Academic Press, a Harcourt Science and Technology 
-  # Company 
-  #
   ########################################################################
 */
 
@@ -90,8 +87,6 @@ public class YADT {
   
     out.println("This is YADT (Yet Another DOI Tool, Java version " + YADT_VERSION + ")");
     out.println();
-    out.println("Copyright 2001, Academic Press, Harcourt, Inc.");
-    out.println();
   
     System.exit(1);
 
@@ -101,8 +96,6 @@ public class YADT {
   static void _usage () {
   
     out.println("This is YADT (Yet Another DOI Tool, Java version " + YADT_VERSION + ")");
-    out.println();
-    out.println("Copyright 2001, Academic Press, Harcourt, Inc.");
     out.println();
     out.println("Usage: java -classpath DObject.jar yads.doi.apps.YADT [options] <doi> ...");
     out.println();
